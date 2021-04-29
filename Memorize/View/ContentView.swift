@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
         HStack {
@@ -24,6 +25,7 @@ struct ContentView: View {
 
 // Структура для одной карты
 struct CardView: View {
+    
     var isFaceUp: Bool
     var body: some View {
         ZStack {
