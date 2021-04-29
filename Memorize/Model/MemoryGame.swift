@@ -21,16 +21,18 @@ struct MemoryGame <CardContent> {
         cards = Array<Card>()
         for indexPairs in 0..<numbersOfPairsOfCards {
             let content = cardContentFactory(indexPairs)
-            cards.append(Card(isFaceUp: false, isMatched: false, content: content))
-            cards.append(Card(isFaceUp: false, isMatched: false, content: content))
+            cards.append(Card(id: indexPairs * 2, content: content))
+            cards.append(Card(id: indexPairs * 2 + 1, content: content))
         }
     }
     
     //Предсталяет единственную карту
-    struct Card {
+    struct Card: Identifiable {
         
-        var isFaceUp: Bool
-        var isMatched: Bool
+        //Заменить id на что-то самостоятельное
+        var id: Int
+        var isFaceUp = false
+        var isMatched = false
         //Переменная content имеет “Не важно, какой” ТИП, и я назову его CardContent.
         //Это “Не важно, какой” ТИП, и меня просят вверху в угловых скобках < > СООБЩИТЬ МИРУ, что CardContent— это generic ТИП:
         var content: CardContent

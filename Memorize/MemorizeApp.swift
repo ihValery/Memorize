@@ -11,7 +11,10 @@ import SwiftUI
 struct MemorizeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //Не предназначена для тестирования, и поэтому не надо создавать значения “на лету”,
+            //Помещаем в отдельную переменную.
+            let game = EmojiMemoryGame()
+            ContentView(viewModelGame: game)
         }
     }
 }
