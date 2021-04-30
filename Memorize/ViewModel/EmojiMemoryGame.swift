@@ -16,23 +16,23 @@ class EmojiMemoryGame {
     private var modelGame: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["👻", "🎃", "🕷"]
-        return MemoryGame<String>(numbersOfPairsOfCards: emojis.count) { pairIndex in
+        let emojis = ["👻", "🎃", "🕷", "🕸", "⛓", "⚰️", "🪦", "🩸", "💀", "🧟‍♂️", "🧛🏼", "🕯"].shuffled()
+        let randomIndex = Int.random(in: 2...5)
+        return MemoryGame<String>(numbersOfPairsOfCards: randomIndex) { pairIndex in
             emojis[pairIndex]
         }
     }
     
     //MARK: - Assess to the Model
     
+    //Убедитесь, что вы выполняете перемешивание (shuffling) карт в правильном месте вашей MVVM. Перемешивание (shuffling) карт является UI элементом (то есть View или ViewModel) или это элемент Model?
     var cards: Array<MemoryGame<String>.Card> {
-        modelGame.cards
+        modelGame.cards.shuffled()
     }
 
     //MARK: - Intent(s) Намерения позволяющие изменить model.
 
-    
     func choose(card: MemoryGame<String>.Card) {
         modelGame.choose(card: card)
     }
-
 }

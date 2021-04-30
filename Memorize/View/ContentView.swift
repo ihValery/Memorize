@@ -22,7 +22,7 @@ struct ContentView: View {
         .padding()
         .foregroundColor(.orange)
         // функция font воздействует ТОЛЬКО на ВСЕ Text, входящие в стек ZStack.
-        .font(.largeTitle)
+        .font(viewModelGame.cards.count <= 9 ? .largeTitle: .subheadline)
     }
 }
 
@@ -44,6 +44,8 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: 13.0).fill()
             }
         }
+        //Заставьте карты иметь соотношение между шириной и высотой как 2/3
+        .aspectRatio(CGSize(width: 2, height: 3), contentMode: .fit)
     }
 }
 
