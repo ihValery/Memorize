@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7B6263D6C7400A4A2C1 /* Constants.swift */; };
 		8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089621E262C6AFB001D9C7A /* MemorizeApp.swift */; };
-		80896221262C6AFB001D9C7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80896220262C6AFB001D9C7A /* ContentView.swift */; };
+		80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */; };
 		80896223262C6AFE001D9C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896222262C6AFE001D9C7A /* Assets.xcassets */; };
 		80896226262C6AFE001D9C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896225262C6AFE001D9C7A /* Preview Assets.xcassets */; };
+		80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0661262D8B3F00EAF9C4 /* MemoryGame.swift */; };
+		80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		800DB7B6263D6C7400A4A2C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8089621B262C6AFB001D9C7A /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8089621E262C6AFB001D9C7A /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
-		80896220262C6AFB001D9C7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		80896222262C6AFE001D9C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80896225262C6AFE001D9C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80896227262C6AFE001D9C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80BE0661262D8B3F00EAF9C4 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		800DB7B4263D6A5B00A4A2C1 /* System32 */ = {
+			isa = PBXGroup;
+			children = (
+				8089621E262C6AFB001D9C7A /* MemorizeApp.swift */,
+				80896222262C6AFE001D9C7A /* Assets.xcassets */,
+				80896227262C6AFE001D9C7A /* Info.plist */,
+				80896224262C6AFE001D9C7A /* Preview Content */,
+			);
+			path = System32;
+			sourceTree = "<group>";
+		};
+		800DB7B5263D6BC700A4A2C1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				800DB7B6263D6C7400A4A2C1 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		80896212262C6AFB001D9C7A = {
 			isa = PBXGroup;
 			children = (
@@ -52,11 +77,11 @@
 		8089621D262C6AFB001D9C7A /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
-				8089621E262C6AFB001D9C7A /* MemorizeApp.swift */,
-				80896220262C6AFB001D9C7A /* ContentView.swift */,
-				80896222262C6AFE001D9C7A /* Assets.xcassets */,
-				80896227262C6AFE001D9C7A /* Info.plist */,
-				80896224262C6AFE001D9C7A /* Preview Content */,
+				80BE0664262D912D00EAF9C4 /* Model */,
+				80BE0665262D929400EAF9C4 /* ViewModel */,
+				80F95316263B431900F55642 /* View */,
+				800DB7B5263D6BC700A4A2C1 /* Constants */,
+				800DB7B4263D6A5B00A4A2C1 /* System32 */,
 			);
 			path = Memorize;
 			sourceTree = "<group>";
@@ -67,6 +92,30 @@
 				80896225262C6AFE001D9C7A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		80BE0664262D912D00EAF9C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80BE0661262D8B3F00EAF9C4 /* MemoryGame.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80BE0665262D929400EAF9C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		80F95316263B431900F55642 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80896221262C6AFB001D9C7A /* ContentView.swift in Sources */,
+				800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */,
+				80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */,
+				80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */,
 				8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */,
+				80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +320,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Memorize/Info.plist;
+				INFOPLIST_FILE = Memorize/System32/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -290,10 +342,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Memorize/Info.plist;
+				INFOPLIST_FILE = Memorize/System32/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
