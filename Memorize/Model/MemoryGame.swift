@@ -12,10 +12,6 @@ import Foundation
 struct MemoryGame <CardContent> {
     
     var cards: Array<Card>
-    
-    func choose(card: Card) {
-        print("Card chosen: \(card)")
-    }
         
     init(numbersOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
@@ -24,6 +20,22 @@ struct MemoryGame <CardContent> {
             cards.append(Card(id: indexPairs * 2, content: content))
             cards.append(Card(id: indexPairs * 2 + 1, content: content))
         }
+    }
+    
+    mutating func choose(_ card: Card) {
+        print("Card chosen: \(card)")
+        
+        let chosenIndex: Int = index(of: card)
+        cards[chosenIndex].isFaceUp.toggle()
+    }
+    
+    func index(of card: Card) -> Int {
+        for index in 0..<cards.count {
+            if cards[index].id == card.id {
+                return index
+            }
+        }
+        return 0 //TODO: Фальшивка return nil и проверка соотвественно
     }
     
     //Предсталяет единственную карту
