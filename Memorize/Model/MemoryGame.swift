@@ -9,9 +9,18 @@ import Foundation
 
 //Это Generic struct MemoryGame с “Не важно, какой” ТИПом CardContent,
 //который представляет собой содержимое карты Card и в нашей эмоджи игре содержимым карты
-struct MemoryGame <CardContent> {
+struct MemoryGame <CardContent> where CardContent: Equatable {
     
-    var cards: Array<Card>
+    var cards: [Card]
+    var indexOnlyOneFaceUpCard: Int? {
+        //Проясните для себя этот код.
+        get { cards.indices.filter { cards[$0].isFaceUp }.onlyOne }
+        set {
+            for index in cards.indices {
+                cards[index].isFaceUp = index == newValue
+           }
+        }
+    }
         
     init(numbersOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
@@ -23,19 +32,16 @@ struct MemoryGame <CardContent> {
     }
     
     mutating func choose(_ card: Card) {
-        print("Card chosen: \(card)")
-        
-        let chosenIndex: Int = index(of: card)
-        cards[chosenIndex].isFaceUp.toggle()
-    }
-    
-    func index(of card: Card) -> Int {
-        for index in 0..<cards.count {
-            if cards[index].id == card.id {
-                return index
+        guard let chosenIndex = cards.firstIndex(selected: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched else { return }
+        if let potentialMatchIndex = indexOnlyOneFaceUpCard {
+            if cards[chosenIndex].content == cards[potentialMatchIndex].content {
+                cards[chosenIndex].isMatched = true
+                cards[potentialMatchIndex].isMatched = true
             }
+            cards[chosenIndex].isFaceUp = true
+        } else {
+            indexOnlyOneFaceUpCard = chosenIndex
         }
-        return 0 //TODO: Фальшивка return nil и проверка соотвественно
     }
     
     //Предсталяет единственную карту
@@ -43,7 +49,7 @@ struct MemoryGame <CardContent> {
         
         //Заменить id на что-то самостоятельное
         var id: Int
-        var isFaceUp = true
+        var isFaceUp = false
         var isMatched = false
         //Переменная content имеет “Не важно, какой” ТИП, и я назову его CardContent.
         //Это “Не важно, какой” ТИП, и меня просят вверху в угловых скобках < > СООБЩИТЬ МИРУ, что CardContent— это generic ТИП:

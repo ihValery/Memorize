@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800233C9263EE1400078D8A6 /* Array+OnlyOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800233C8263EE1400078D8A6 /* Array+OnlyOne.swift */; };
 		800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7B6263D6C7400A4A2C1 /* Constants.swift */; };
+		800DB7B9263D95F000A4A2C1 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7B8263D95F000A4A2C1 /* Grid.swift */; };
+		800DB7BB263DE46000A4A2C1 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7BA263DE46000A4A2C1 /* Array+Identifiable.swift */; };
 		8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089621E262C6AFB001D9C7A /* MemorizeApp.swift */; };
 		80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */; };
 		80896223262C6AFE001D9C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896222262C6AFE001D9C7A /* Assets.xcassets */; };
@@ -17,7 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		800233C8263EE1400078D8A6 /* Array+OnlyOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+OnlyOne.swift"; sourceTree = "<group>"; };
 		800DB7B6263D6C7400A4A2C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		800DB7B8263D95F000A4A2C1 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		800DB7BA263DE46000A4A2C1 /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		8089621B262C6AFB001D9C7A /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8089621E262C6AFB001D9C7A /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
 		80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
@@ -50,12 +56,15 @@
 			path = System32;
 			sourceTree = "<group>";
 		};
-		800DB7B5263D6BC700A4A2C1 /* Constants */ = {
+		800DB7B5263D6BC700A4A2C1 /* Addition */ = {
 			isa = PBXGroup;
 			children = (
 				800DB7B6263D6C7400A4A2C1 /* Constants.swift */,
+				800DB7B8263D95F000A4A2C1 /* Grid.swift */,
+				800DB7BA263DE46000A4A2C1 /* Array+Identifiable.swift */,
+				800233C8263EE1400078D8A6 /* Array+OnlyOne.swift */,
 			);
-			path = Constants;
+			path = Addition;
 			sourceTree = "<group>";
 		};
 		80896212262C6AFB001D9C7A = {
@@ -80,7 +89,7 @@
 				80BE0664262D912D00EAF9C4 /* Model */,
 				80BE0665262D929400EAF9C4 /* ViewModel */,
 				80F95316263B431900F55642 /* View */,
-				800DB7B5263D6BC700A4A2C1 /* Constants */,
+				800DB7B5263D6BC700A4A2C1 /* Addition */,
 				800DB7B4263D6A5B00A4A2C1 /* System32 */,
 			);
 			path = Memorize;
@@ -189,9 +198,12 @@
 			files = (
 				800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */,
 				80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */,
+				800DB7BB263DE46000A4A2C1 /* Array+Identifiable.swift in Sources */,
 				80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */,
+				800233C9263EE1400078D8A6 /* Array+OnlyOne.swift in Sources */,
 				8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */,
 				80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */,
+				800DB7B9263D95F000A4A2C1 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 420;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
@@ -329,6 +342,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ihValery.Memorize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -342,6 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 420;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
@@ -351,6 +366,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ihValery.Memorize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
