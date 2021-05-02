@@ -15,15 +15,52 @@ struct EmojiMemoryGameView: View {
     
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
-        Grid(viewModelGame.cards) { card in
-            CardView(card: card)
-                .onTapGesture {
-                    viewModelGame.choose(card: card)
+        ZStack {
+            VStack {
+                Grid(viewModelGame.cards) { card in
+                    CardView(card: card)
+                        .onTapGesture {
+                            viewModelGame.choose(card: card)
+                        }
+                        .padding(5)
                 }
-                .padding(5)
+                ZStack{
+                    HStack {
+                        Text("Helloween").onTapGesture {
+                            print("Выбрать тему?")
+                        }
+                        Spacer()
+                        Text("Score:  0")
+                    }
+                    .padding([.leading, .trailing], .some(7))
+                    HStack {
+                        NewGameButton(newGameAction: viewModelGame)
+                    }
+                    
+                }
+            }
+            .padding()
+            .foregroundColor(.orange)
         }
-        .padding()
-        .foregroundColor(.orange)
+        .ignoresSafeArea(.all, edges: .bottom)
+    }
+}
+
+struct NewGameButton: View {
+    
+    var newGameAction: EmojiMemoryGame
+    
+    var body: some View {
+        Button(" NEW GAME ", action: newGameAction.newGame)
+            .font(.title.weight(.light))
+            .padding(7)
+            .background(Color.orange)
+            .cornerRadius(Constants.cornerRadius)
+            .foregroundColor(.colorText)
+//            .padding(5)
+//            .overlay(
+//                RoundedRectangle(cornerRadius: 15)
+//                    .stroke(Color.orange, lineWidth: 3))
     }
 }
 
@@ -58,6 +95,6 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         EmojiMemoryGameView(viewModelGame: EmojiMemoryGame())
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
     }
 }

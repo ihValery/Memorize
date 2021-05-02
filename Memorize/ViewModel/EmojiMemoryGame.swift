@@ -28,14 +28,19 @@ class EmojiMemoryGame: ObservableObject {
     
     //MARK: - Assess to the Model
     
-    //Убедитесь, что вы выполняете перемешивание карт в правильном месте вашей MVVM. Перемешивание карт является UI элементом (то есть View или ViewModel) или это элемент Model?
     var cards: Array<MemoryGame<String>.Card> {
-        modelGame.cards//.shuffled()
+        modelGame.cards
     }
 
     //MARK: - Intent(s) Намерения позволяющие изменить model.
 
     func choose(card: MemoryGame<String>.Card) {
         modelGame.choose(card)
+    }
+    
+    //MARK: - Новая игра
+    
+    func newGame() {
+        modelGame = EmojiMemoryGame.createMemoryGame()
     }
 }

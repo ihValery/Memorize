@@ -14,21 +14,25 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
     var cards: [Card]
     var indexOnlyOneFaceUpCard: Int? {
         //Проясните для себя этот код.
+        //Смотрим на все карты и и проверяем если одна единственная карточка
         get { cards.indices.filter { cards[$0].isFaceUp }.onlyOne }
         set {
             for index in cards.indices {
+                //Переворачиваем все карти лицом вниз кроме одной с индексом newValue
                 cards[index].isFaceUp = index == newValue
            }
         }
     }
-        
+    
+    //Инициализатор который заполняет массив карточек
     init(numbersOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
-        cards = Array<Card>()
+        cards = []
         for indexPairs in 0..<numbersOfPairsOfCards {
             let content = cardContentFactory(indexPairs)
             cards.append(Card(id: indexPairs * 2, content: content))
             cards.append(Card(id: indexPairs * 2 + 1, content: content))
         }
+        cards.shuffle()
     }
     
     mutating func choose(_ card: Card) {
