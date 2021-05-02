@@ -15,15 +15,12 @@ struct EmojiMemoryGameView: View {
     
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
-        HStack {
-            ForEach(viewModelGame.cards) { card in
-                CardView(card: card)
-                    //Заставьте карты иметь соотношение между шириной и высотой как 2/3
-                    .aspectRatio(2 / 3, contentMode: .fit)
-                    .onTapGesture {
+        Grid(viewModelGame.cards) { card in
+            CardView(card: card)
+                .onTapGesture {
                     viewModelGame.choose(card: card)
                 }
-            }
+                .padding(5)
         }
         .padding()
         .foregroundColor(.orange)
@@ -47,7 +44,9 @@ struct CardView: View {
                         .stroke(lineWidth: Constants.edgeLineWidth)
                     Text(card.content)
                 } else {
-                    RoundedRectangle(cornerRadius: Constants.cornerRadius).fill()
+                    if !card.isMatched {
+                        RoundedRectangle(cornerRadius: Constants.cornerRadius).fill()
+                    }
                 }
             }
             .font(.system(size: Constants.fontSize(for: geometry.size)))
