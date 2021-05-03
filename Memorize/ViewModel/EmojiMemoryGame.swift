@@ -14,11 +14,13 @@ class EmojiMemoryGame: ObservableObject {
     //только EmojiMemoryGame может модифицировать переменную var modelGame, но любой может смотреть на modelGame.
     //private (set) - но, мы хотим, чтобы дверь была закрытой, то есть строгий private
     //В нашем случае Property Wrapper (“обертка свойства”) @Published вызывает objectWillChange.send()
-    //каждый раз, когда переменная private var model изменяется.
+    //каждый раз, когда переменная modelGame изменяется.
     @Published private var modelGame: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
     static func createMemoryGame() -> MemoryGame<String> {
         let emojis = ["👻", "🎃", "🕷", "🕸", "⚰️", "💀", "🧟‍♂️", "🧛🏼", "🩸", "☠️"].shuffled()
+//                      "🦄", "🐗", "🐸", "🦊", "🙉", "🦋", "🐌", "🦏", "🐳", "🐈",
+//                      "🐿", "🦥", "🦔", "🦒", "🦈", "🦞", "🦟", "🐁", "🦘", "🐫"].shuffled()
 //        let randomIndex = Int.random(in: 2...5)
         return MemoryGame<String>(numbersOfPairsOfCards: 9) { pairIndex in
             emojis[pairIndex]
@@ -43,6 +45,7 @@ class EmojiMemoryGame: ObservableObject {
     
     //MARK: - Обновление счета
     func updateScore() -> String {
-        String(format: "%02d", modelGame.score)
+        String(modelGame.score)
+//        String(format: "% 3d", modelGame.score)
     }
 }

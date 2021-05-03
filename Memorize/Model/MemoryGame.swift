@@ -12,7 +12,7 @@ import Foundation
 struct MemoryGame <CardContent> where CardContent: Equatable {
     
     var cards: [Card]
-    var seeThisCard: [Int] = []
+    var sawThisCard: [Int] = []
     var score = 0
     var indexOnlyOneFaceUpCard: Int? {
         //Смотрим на все карты и и проверяем если одна единственная карточка
@@ -33,7 +33,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
             cards.append(Card(id: indexPairs * 2, content: content))
             cards.append(Card(id: indexPairs * 2 + 1, content: content))
         }
-//        cards.shuffle()
+        cards.shuffle()
     }
     
     mutating func choose(_ card: Card) {
@@ -44,7 +44,6 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
             if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
-                
                 score += 2
             } else {
                 scoring(chosenIndex, potentialMatchIndex)
@@ -54,15 +53,11 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
             indexOnlyOneFaceUpCard = chosenIndex
         }
     }
-    
+
+    ///Формирование счета в игре: -1 очко за каждое несовпадение ранее увиденной карты.
     mutating func scoring(_ chosenIndex: Int, _ potentialMatchIndex: Int) {
-        if seeThisCard.contains(cards[chosenIndex].id) { score -= 1 }
-        if seeThisCard.contains(cards[potentialMatchIndex].id) { score -= 1 }
-        
-        if !seeThisCard.contains(cards[chosenIndex].id) || !seeThisCard.contains(cards[potentialMatchIndex].id) {
-            seeThisCard.append(cards[chosenIndex].id)
-            seeThisCard.append(cards[potentialMatchIndex].id)
-        }
+        sawThisCard.contains(cards[chosenIndex].id) ? score -= 1 : sawThisCard.append(cards[chosenIndex].id)
+        sawThisCard.contains(cards[potentialMatchIndex].id) ? score -= 1 :  sawThisCard.append(cards[potentialMatchIndex].id)
     }
     
     //Предсталяет единственную карту
