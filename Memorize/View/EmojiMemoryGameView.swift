@@ -24,13 +24,15 @@ struct EmojiMemoryGameView: View {
                         }
                         .padding(5)
                 }
+                //Все перенести в структуру
                 ZStack{
                     HStack {
                         Text("Helloween").onTapGesture {
                             print("Выбрать тему?")
                         }
                         Spacer()
-                        Text("Score:  0")
+                        Text("Score:")
+                        Text(viewModelGame.updateScore())
                     }
                     .padding([.leading, .trailing], .some(7))
                     HStack {
@@ -40,7 +42,7 @@ struct EmojiMemoryGameView: View {
                 }
             }
             .padding()
-            .foregroundColor(.orange)
+            .foregroundColor(.systemOrange)
         }
         .ignoresSafeArea(.all, edges: .bottom)
     }
@@ -54,7 +56,7 @@ struct NewGameButton: View {
         Button(" NEW GAME ", action: newGameAction.newGame)
             .font(.title.weight(.light))
             .padding(7)
-            .background(Color.orange)
+            .background(Color.systemOrange)
             .cornerRadius(Constants.cornerRadius)
             .foregroundColor(.colorText)
 //            .padding(5)

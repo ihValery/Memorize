@@ -18,29 +18,31 @@ class EmojiMemoryGame: ObservableObject {
     @Published private var modelGame: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["👻", "🎃", "🕷", "🕸", "⚰️", "💀", "🧟‍♂️", "🧛🏼"].shuffled()
-        let randomIndex = Int.random(in: 2...5)
-        return MemoryGame<String>(numbersOfPairsOfCards: randomIndex) { pairIndex in
+        let emojis = ["👻", "🎃", "🕷", "🕸", "⚰️", "💀", "🧟‍♂️", "🧛🏼", "🩸", "☠️"].shuffled()
+//        let randomIndex = Int.random(in: 2...5)
+        return MemoryGame<String>(numbersOfPairsOfCards: 9) { pairIndex in
             emojis[pairIndex]
         }
     }
     
     
     //MARK: - Assess to the Model
-    
     var cards: Array<MemoryGame<String>.Card> {
         modelGame.cards
     }
 
     //MARK: - Intent(s) Намерения позволяющие изменить model.
-
     func choose(card: MemoryGame<String>.Card) {
         modelGame.choose(card)
     }
     
     //MARK: - Новая игра
-    
     func newGame() {
         modelGame = EmojiMemoryGame.createMemoryGame()
+    }
+    
+    //MARK: - Обновление счета
+    func updateScore() -> String {
+        String(format: "%02d", modelGame.score)
     }
 }

@@ -12,8 +12,9 @@ import Foundation
 struct MemoryGame <CardContent> where CardContent: Equatable {
     
     var cards: [Card]
+    var seeThisCard: [Int] = []
+    var score = 0
     var indexOnlyOneFaceUpCard: Int? {
-        //Проясните для себя этот код.
         //Смотрим на все карты и и проверяем если одна единственная карточка
         get { cards.indices.filter { cards[$0].isFaceUp }.onlyOne }
         set {
@@ -32,19 +33,35 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
             cards.append(Card(id: indexPairs * 2, content: content))
             cards.append(Card(id: indexPairs * 2 + 1, content: content))
         }
-        cards.shuffle()
+//        cards.shuffle()
     }
     
     mutating func choose(_ card: Card) {
         guard let chosenIndex = cards.firstIndex(selected: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched else { return }
+
         if let potentialMatchIndex = indexOnlyOneFaceUpCard {
+
             if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
+                
+                score += 2
+            } else {
+                scoring(chosenIndex, potentialMatchIndex)
             }
             cards[chosenIndex].isFaceUp = true
         } else {
             indexOnlyOneFaceUpCard = chosenIndex
+        }
+    }
+    
+    mutating func scoring(_ chosenIndex: Int, _ potentialMatchIndex: Int) {
+        if seeThisCard.contains(cards[chosenIndex].id) { score -= 1 }
+        if seeThisCard.contains(cards[potentialMatchIndex].id) { score -= 1 }
+        
+        if !seeThisCard.contains(cards[chosenIndex].id) || !seeThisCard.contains(cards[potentialMatchIndex].id) {
+            seeThisCard.append(cards[chosenIndex].id)
+            seeThisCard.append(cards[potentialMatchIndex].id)
         }
     }
     

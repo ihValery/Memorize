@@ -20,14 +20,6 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
         self.viewForItem = viewForItem
     }
     
-//    var body: some View {
-//        GeometryReader { geometry in
-//            ForEach(items) { item in
-//                return viewForItem(item)
-//            }
-//        }
-//    }
-    
     var body: some View {
         //1. geometry - получаем пространство, которое нам предлагается.
         GeometryReader { geometry in
