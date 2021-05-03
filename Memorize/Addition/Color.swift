@@ -13,8 +13,7 @@ extension Color {
     static var colorText: Color {
         Color(UIColor { $0.userInterfaceStyle == .dark ? .black : .white } )
     }
-
-//    static func c3(for colorScheme: ColorScheme) -> Color {
-//        colorScheme == .dark ? .black : .white
-//    }
+    static var systemOrange: Color {
+        Color(UIColor.systemOrange)
+    }
 }
