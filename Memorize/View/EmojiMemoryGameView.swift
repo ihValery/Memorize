@@ -47,7 +47,7 @@ struct EmojiMemoryGameView: View {
                                     themeApp = ThemeFactory.createTheme(type: .halloween)
                                     viewModelGame.newGame()
                                 }
-                                Button("🏀   Sport") {
+                                Button("🏀   Sport (random)") {
                                     themeApp = ThemeFactory.createTheme(type: .sport)
                                     viewModelGame.newGame()
                                 }

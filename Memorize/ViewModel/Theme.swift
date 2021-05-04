@@ -59,8 +59,8 @@ class Sport: Theme {
     var name = "Sport"
     var color = Color(UIColor.systemGreen)
     var collection = ["⛸", "🏀", "⚽️", "🥊", "🎯", "🏈", "🏓", "🎳", "🏒", "♟",
-                      "🥏", "🪃", "🥅", "🏸", "🛹", "🏂", "🏐", "🏏", "⚾️", "🎱"].shuffled()
-    var numberLevel = 14
+                      "🥏", "🪃", "🥅", "🏸", "🛹", "🥋", "🏐", "🏏", "⚾️", "🎱"].shuffled()
+    var numberLevel = Int.random(in: 9...20)
 }
 
 class Flags: Theme {
