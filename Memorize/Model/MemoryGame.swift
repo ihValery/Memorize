@@ -36,6 +36,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
         cards.shuffle()
     }
     
+    ///Функционал когда мы выбираем карточку
     mutating func choose(_ card: Card) {
         guard let chosenIndex = cards.firstIndex(selected: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched else { return }
 

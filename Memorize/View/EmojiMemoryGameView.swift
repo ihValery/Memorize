@@ -22,14 +22,26 @@ struct EmojiMemoryGameView: View {
                         .onTapGesture {
                             viewModelGame.choose(card: card)
                         }
-                        .padding(5)
+                        .padding(4)
                 }
                 //Нижняя панель
                 ZStack{
                     HStack {
-                        Text(themeApp.name).onTapGesture {
-                            print("Выбрать тему?")
-                        }
+                        Text(themeApp.name)
+                            .contextMenu {
+                                Button("🧛🏼   Halloween") {
+                                    themeApp = ThemeFactory.createTheme(type: .halloween)
+                                    viewModelGame.newGame()
+                                }
+                                Button("🏀   Sport") {
+                                    themeApp = ThemeFactory.createTheme(type: .sport)
+                                    viewModelGame.newGame()
+                                }
+                                Button("🇺🇦   Flags") {
+                                    themeApp = ThemeFactory.createTheme(type: .flags)
+                                    viewModelGame.newGame()
+                                }
+                            }
                         Spacer()
                         Text("Score:")
                         Text(viewModelGame.updateScore())
@@ -43,10 +55,6 @@ struct EmojiMemoryGameView: View {
                             .background(themeApp.color)
                             .cornerRadius(Constants.cornerRadius)
                             .foregroundColor(.colorText)
-                        //            .padding(5)
-                        //            .overlay(
-                        //                RoundedRectangle(cornerRadius: 15)
-                        //                    .stroke(Color.orange, lineWidth: 3))
                     }
                 }
             }
@@ -89,6 +97,6 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         EmojiMemoryGameView(viewModelGame: EmojiMemoryGame())
-//            .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }

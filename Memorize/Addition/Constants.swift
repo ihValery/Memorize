@@ -14,4 +14,6 @@ struct Constants {
     static func fontSize(for size: CGSize) -> CGFloat {
         min(size.height, size.width) * 0.75
     }
+    
+    var themeApp2 = ThemeFactory.createTheme(type: .halloween)
 }
