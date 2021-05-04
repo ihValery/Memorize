@@ -17,26 +17,33 @@ protocol Theme {
     var name: String { get }
     var color: Color { get }
     var collection: [String] { get }
+    var numberLevel: Int { get }
 }
 
 class Halloween: Theme {
     var name = "Halloween"
     var color = Color(UIColor.systemOrange)
     var collection = ["👻", "🎃", "🕷", "🕸", "⚰️", "💀", "🧟‍♂️", "🧛🏼", "🩸", "☠️"].shuffled()
+    var numberLevel = 9
 }
 
 class Flags: Theme {
     
     var name = "Flags"
     var color = Color(UIColor.systemBlue)
-    var collection = ["🇦🇺", "🇧🇷", "🇧🇾", "🇬🇧", "🇰🇷", "🇺🇦", "🇯🇵", "🇯🇲", "🇸🇪", "🇨🇦"].shuffled()
+    var collection = ["🇦🇺", "🇧🇷", "🇧🇾", "🇬🇧", "🇰🇷", "🇺🇦", "🇯🇵", "🇯🇲", "🇸🇪", "🇨🇦",
+                      "🇿🇦", "🇧🇪", "🇪🇪", "🇨🇿", "🇫🇷", "🇫🇮", "🇹🇷", "🇸🇱", "🇷🇴", "🇷🇺",
+                      "🇳🇴", "🇲🇱", "🇨🇬", "🇨🇾", "🇮🇹", "🇦🇹", "🇧🇸", "🇩🇰", "🇮🇩", "🇰🇿"].shuffled()
+    var numberLevel = 20
 }
 
 class Sport: Theme {
     
     var name = "Sport"
     var color = Color(UIColor.systemGreen)
-    var collection = ["⛸", "🏀", "⚽️", "🥊", "🎯", "🏈", "🏓", "🎳", "🏒", "♟"].shuffled()
+    var collection = ["⛸", "🏀", "⚽️", "🥊", "🎯", "🏈", "🏓", "🎳", "🏒", "♟",
+                      "🥏", "🪃", "🥅", "🏸", "🛹", "🏂", "🏐", "🏏", "⚾️", "🎱"].shuffled()
+    var numberLevel = 14
 }
 
 class ThemeFactory {
@@ -53,4 +60,4 @@ class ThemeFactory {
     }
 }
 
-var themeApp = ThemeFactory.createTheme(type: .sport)
+var themeApp = ThemeFactory.createTheme(type: .halloween)
