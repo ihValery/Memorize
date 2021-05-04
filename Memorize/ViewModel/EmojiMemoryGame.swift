@@ -18,12 +18,8 @@ class EmojiMemoryGame: ObservableObject {
     @Published private var modelGame: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["👻", "🎃", "🕷", "🕸", "⚰️", "💀", "🧟‍♂️", "🧛🏼", "🩸", "☠️"].shuffled()
-//                      "🦄", "🐗", "🐸", "🦊", "🙉", "🦋", "🐌", "🦏", "🐳", "🐈",
-//                      "🐿", "🦥", "🦔", "🦒", "🦈", "🦞", "🦟", "🐁", "🦘", "🐫"].shuffled()
-//        let randomIndex = Int.random(in: 2...5)
         return MemoryGame<String>(numbersOfPairsOfCards: 9) { pairIndex in
-            emojis[pairIndex]
+            themeApp.collection[pairIndex]
         }
     }
     
@@ -46,6 +42,5 @@ class EmojiMemoryGame: ObservableObject {
     //MARK: - Обновление счета
     func updateScore() -> String {
         String(modelGame.score)
-//        String(format: "% 3d", modelGame.score)
     }
 }

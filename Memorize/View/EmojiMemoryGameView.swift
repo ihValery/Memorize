@@ -24,44 +24,37 @@ struct EmojiMemoryGameView: View {
                         }
                         .padding(5)
                 }
-                NavigationPanel(navPanel: viewModelGame)
+                //Нижняя панель
+                ZStack{
+                    HStack {
+                        Text(themeApp.name).onTapGesture {
+                            print("Выбрать тему?")
+                        }
+                        Spacer()
+                        Text("Score:")
+                        Text(viewModelGame.updateScore())
+                            .frame(minWidth: 25, alignment: .trailing)
+                    }
+                    .padding([.leading, .trailing], .some(7))
+                    HStack {
+                        Button(" NEW GAME ", action: viewModelGame.newGame)
+                            .font(.title.weight(.light))
+                            .padding(7)
+                            .background(themeApp.color)
+                            .cornerRadius(Constants.cornerRadius)
+                            .foregroundColor(.colorText)
+                        //            .padding(5)
+                        //            .overlay(
+                        //                RoundedRectangle(cornerRadius: 15)
+                        //                    .stroke(Color.orange, lineWidth: 3))
+                    }
+                }
             }
             .padding(3)
             .padding([.bottom], 20)
-            .foregroundColor(.systemOrange)
+            .foregroundColor(themeApp.color)
         }
         .ignoresSafeArea(.all, edges: .bottom)
-    }
-}
-
-struct NavigationPanel: View {
-    
-    @ObservedObject var navPanel: EmojiMemoryGame
-    
-    var body: some View {
-        ZStack{
-            HStack {
-                Text("Halloween").onTapGesture {
-                    print("Выбрать тему?")
-                }
-                Spacer()
-                Text("Score:")
-                Text(navPanel.updateScore()).frame(minWidth: 25, alignment: .trailing)
-            }
-            .padding([.leading, .trailing], .some(7))
-            HStack {
-                Button(" NEW GAME ", action: navPanel.newGame)
-                    .font(.title.weight(.light))
-                    .padding(7)
-                    .background(Color.systemOrange)
-                    .cornerRadius(Constants.cornerRadius)
-                    .foregroundColor(.colorText)
-        //            .padding(5)
-        //            .overlay(
-        //                RoundedRectangle(cornerRadius: 15)
-        //                    .stroke(Color.orange, lineWidth: 3))
-            }
-        }
     }
 }
 
