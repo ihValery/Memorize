@@ -17,8 +17,8 @@ class EmojiMemoryGame: ObservableObject {
     //каждый раз, когда переменная modelGame изменяется.
     @Published private var modelGame: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
-    static func createMemoryGame() -> MemoryGame<String> {
-        return MemoryGame<String>(numbersOfPairsOfCards: themeApp.numberLevel) { pairIndex in
+    private static func createMemoryGame() -> MemoryGame<String> {
+        return MemoryGame<String>(numbersOfPairsOfCards: themeApp.number) { pairIndex in
             themeApp.collection[pairIndex]
         }
     }
@@ -30,7 +30,7 @@ class EmojiMemoryGame: ObservableObject {
     }
 
     //MARK: - Intent(s) Намерения позволяющие изменить model.
-    func choose(card: MemoryGame<String>.Card) {
+    func choose(_ card: MemoryGame<String>.Card) {
         modelGame.choose(card)
     }
     

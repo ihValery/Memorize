@@ -8,73 +8,66 @@
 import SwiftUI
 
 enum ThemeType {
-    case child
-    case animal
-    case zoo
-    case halloween
-    case sport
-    case flags
+    case child, animal, zoo, halloween, sport, flags
 }
 
 protocol Theme {
     var name: String { get }
     var color: Color { get }
     var collection: [String] { get }
-    var numberLevel: Int { get }
+    var number: Int { get }
 }
 
 class Children: Theme {
-    var name = "Child"
-    var color = Color(UIColor.systemYellow)
-    var collection = ["👸", "🧞", "🧜‍♀️", "🧚‍♀️", "👼", "🦄", "🦋", "🐠", "🐬", "🧝‍♀️", "🧙"].shuffled()
-    var numberLevel = 6
+    private (set) var name = "Child"
+    private (set) var color = Color(UIColor.systemYellow)
+    private (set) var collection = ["👸", "🧞", "🧜‍♀️", "🧚‍♀️", "👼", "🦄", "🦋", "🐠", "🐬", "🧝‍♀️", "🧙"].shuffled()
+    private (set) var number = 6
 }
 
 class Animals: Theme {
-    var name = "Animals"
-    var color = Color(UIColor.systemIndigo)
-    var collection = ["🐨", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️",
+    private (set) var name = "Animals"
+    private (set) var color = Color(UIColor.systemIndigo)
+    private (set) var collection = ["🐨", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️",
                       "🐨", "🐯", "🦁", "🐮", "🐷", "🐽", "🐸", "🐵"].shuffled()
-    var numberLevel = 6
+    private (set) var number = 6
 }
 
 class Zoo: Theme {
-    var name = "Zoo"
-    var color = Color(UIColor.systemTeal)
-    var collection = ["🐢", "🐍", "🦎", "🦑", "🦞", "🐡", "🐳", "🐅", "🐆", "🐫",
+    private (set) var name = "Zoo"
+    private (set) var color = Color(UIColor.systemTeal)
+    private (set) var collection = ["🐢", "🐍", "🦎", "🦑", "🦞", "🐡", "🐳", "🐅", "🐆", "🐫",
                       "🦏", "🐘", "🦧", "🦒", "🦘", "🐄", "🐎", "🦌", "🐏", "🐈",
                       "🐩", "🦃", "🕊", "🦩", "🦫", "🐿", "🦨"].shuffled()
-    var numberLevel = 9
+    private (set) var number = 9
 }
 
 class Halloween: Theme {
-    var name = "Halloween"
-    var color = Color(UIColor.systemOrange)
-    var collection = ["👻", "🎃", "🕷", "🕸", "⚰️", "💀", "🧟‍♂️", "🧛🏼", "🩸", "☠️", "🦇"].shuffled()
-    var numberLevel = 9
+    private (set) var name = "Halloween"
+    private (set) var color = Color(UIColor.systemOrange)
+    private (set) var collection = ["👻", "🎃", "🕷", "🕸", "⚰️", "💀", "🧟‍♂️", "🧛🏼", "🩸", "☠️", "🦇"].shuffled()
+    private (set) var number = 9
 }
 
 class Sport: Theme {
-    
-    var name = "Sport"
-    var color = Color(UIColor.systemGreen)
-    var collection = ["⛸", "🏀", "⚽️", "🥊", "🎯", "🏈", "🏓", "🎳", "🏒", "♟",
+    private (set) var name = "Sport"
+    private (set) var color = Color(UIColor.systemGreen)
+    private (set) var collection = ["⛸", "🏀", "⚽️", "🥊", "🎯", "🏈", "🏓", "🎳", "🏒", "♟",
                       "🥏", "🪃", "🥅", "🏸", "🛹", "🥋", "🏐", "🏏", "⚾️", "🎱"].shuffled()
-    var numberLevel: Int {
+    var number: Int {
         let random = [9, 12, 14, 16, 20].randomElement()!
         return random
     }
 }
 
 class Flags: Theme {
-    
-    var name = "Flags"
-    var color = Color(UIColor.systemBlue)
-    var collection = ["🇦🇺", "🇧🇷", "🇧🇾", "🇬🇧", "🇰🇷", "🇺🇦", "🇯🇵", "🇯🇲", "🇸🇪", "🇨🇦",
+    private (set) var name = "Flags"
+    private (set) var color = Color(UIColor.systemBlue)
+    private (set) var collection = ["🇦🇺", "🇧🇷", "🇧🇾", "🇬🇧", "🇰🇷", "🇺🇦", "🇯🇵", "🇯🇲", "🇸🇪", "🇨🇦",
                       "🇿🇦", "🇧🇪", "🇪🇪", "🇨🇿", "🇫🇷", "🇫🇮", "🇹🇷", "🇸🇱", "🇷🇴", "🇷🇺",
                       "🇳🇴", "🇲🇱", "🇨🇬", "🇨🇾", "🇮🇹", "🇦🇹", "🇧🇸", "🇩🇰", "🇮🇩", "🇰🇿",
                       "🇦🇱", "🇧🇯", "🇧🇶", "🇧🇦", "🇧🇬", "🇻🇳", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "🇬🇪", "🇲🇬", "🇱🇺"].shuffled()
-    var numberLevel = 36
+    private (set) var number = 36
 }
 
 class ThemeFactory {

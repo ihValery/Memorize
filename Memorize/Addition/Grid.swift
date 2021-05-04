@@ -12,8 +12,9 @@ import SwiftUI
 //          ____Generic____             _____Protocol_____  ___Protocol___
 struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
     
-    var items: [Item]
-    var viewForItem: (Item) -> ItemView
+    //Так как у нас есть инициализатор init, который их инициализирует, то нет необходимости им быть public
+    private var items: [Item]
+    private var viewForItem: (Item) -> ItemView
     
     init(_ items: [Item], viewForItem: @escaping (Item) -> ItemView) {
         self.items = items
@@ -28,13 +29,13 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
     }
     
     //2. используем GridLayout, чтобы поделить его, а затем предлагаем эти кусочки нашим маленьким sub-Views.
-    func body(for layout: GridLayout) -> some View {
+    private func body(for layout: GridLayout) -> some View {
         ForEach(items) { item in
             body(for: item, in: layout)
         }
     }
 
-    func body(for item: Item, in layout: GridLayout) -> some View {
+    private func body(for item: Item, in layout: GridLayout) -> some View {
         //Наш index никогда не будет равен nil (item всегда является элементом items изначально items)
         let index = items.firstIndex(selected: item)!
         return viewForItem(item)
@@ -45,9 +46,11 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
 }
 
 struct GridLayout {
-    var size: CGSize
-    var rowCount: Int = 0
-    var columnCount: Int = 0
+    
+    //Если не сделаем переменные private (set), то кто-нибудь может подумать, что может переустановить эту переменную var size
+    private (set) var size: CGSize
+    private (set) var rowCount: Int = 0
+    private (set) var columnCount: Int = 0
     
     init(itemCount: Int, nearAspectRatio desiredAspectRatio: Double = 1, in size: CGSize) {
         self.size = size
