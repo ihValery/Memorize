@@ -11,10 +11,11 @@ import Foundation
 //который представляет собой содержимое карты Card и в нашей эмоджи игре содержимым карты
 struct MemoryGame <CardContent> where CardContent: Equatable {
     
-    var cards: [Card]
+    //Не хотим, чтобы кто-нибудь пошел в структуру struct Card. ViewModel нужен доступ, на чтение.
+    private (set) var cards: [Card]
     
     private var sawThisCard: [Int] = []
-    var score = 0
+    private (set) var score: Int = 0
     
     private var indexOnlyOneFaceUpCard: Int? {
         //Смотрим на все карты и и проверяем если одна единственная карточка
@@ -38,7 +39,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
         cards.shuffle()
     }
     
-    ///Функционал когда мы выбираем карточку
+    ///Функционал когда мы выбираем карточку. Вся наша логика по совпадениею карт.
     mutating func choose(_ card: Card) {
         guard let chosenIndex = cards.firstIndex(selected: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched else { return }
 
@@ -58,7 +59,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
     }
 
     ///Формирование счета в игре: -1 очко за каждое несовпадение ранее увиденной карты.
-    mutating func scoring(_ chosenIndex: Int, _ potentialMatchIndex: Int) {
+    mutating private func scoring(_ chosenIndex: Int, _ potentialMatchIndex: Int) {
         sawThisCard.contains(cards[chosenIndex].id) ? score -= 1 : sawThisCard.append(cards[chosenIndex].id)
         sawThisCard.contains(cards[potentialMatchIndex].id) ? score -= 1 :  sawThisCard.append(cards[potentialMatchIndex].id)
     }
@@ -66,7 +67,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
     //Предсталяет единственную карту
     struct Card: Identifiable {
         
-        //Заменить id на что-то самостоятельное
+        //private нет смысла ставить так как уже ограничен доступ - private (set) var cards: [Card]
         var id: Int
         var isFaceUp = false
         var isMatched = false
