@@ -29,6 +29,20 @@ struct EmojiMemoryGameView: View {
                     HStack {
                         Text(themeApp.name)
                             .contextMenu {
+                                Text("Easy level")
+                                Button("🧚‍♀️   Children") {
+                                    themeApp = ThemeFactory.createTheme(type: .child)
+                                    viewModelGame.newGame()
+                                }
+                                Button("🐶   Animal") {
+                                    themeApp = ThemeFactory.createTheme(type: .animal)
+                                    viewModelGame.newGame()
+                                }
+                                Text("Middle level")
+                                Button("🦜   Zoo") {
+                                    themeApp = ThemeFactory.createTheme(type: .zoo)
+                                    viewModelGame.newGame()
+                                }
                                 Button("🧛🏼   Halloween") {
                                     themeApp = ThemeFactory.createTheme(type: .halloween)
                                     viewModelGame.newGame()
@@ -37,6 +51,7 @@ struct EmojiMemoryGameView: View {
                                     themeApp = ThemeFactory.createTheme(type: .sport)
                                     viewModelGame.newGame()
                                 }
+                                Text("Сheck yourself")
                                 Button("🇺🇦   Flags") {
                                     themeApp = ThemeFactory.createTheme(type: .flags)
                                     viewModelGame.newGame()
