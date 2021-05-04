@@ -12,9 +12,11 @@ import Foundation
 struct MemoryGame <CardContent> where CardContent: Equatable {
     
     var cards: [Card]
-    var sawThisCard: [Int] = []
+    
+    private var sawThisCard: [Int] = []
     var score = 0
-    var indexOnlyOneFaceUpCard: Int? {
+    
+    private var indexOnlyOneFaceUpCard: Int? {
         //Смотрим на все карты и и проверяем если одна единственная карточка
         get { cards.indices.filter { cards[$0].isFaceUp }.onlyOne }
         set {
