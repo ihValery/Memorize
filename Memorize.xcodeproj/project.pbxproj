@@ -11,6 +11,7 @@
 		800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7B6263D6C7400A4A2C1 /* Constants.swift */; };
 		800DB7B9263D95F000A4A2C1 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7B8263D95F000A4A2C1 /* Grid.swift */; };
 		800DB7BB263DE46000A4A2C1 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7BA263DE46000A4A2C1 /* Array+Identifiable.swift */; };
+		8015F48926427CE300AFFC2D /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8015F48826427CE300AFFC2D /* Pie.swift */; };
 		804BB9612641772100E9B51B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BB9602641772100E9B51B /* Theme.swift */; };
 		806A0233263F44A00076EC1A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A0232263F44A00076EC1A /* Color.swift */; };
 		8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089621E262C6AFB001D9C7A /* MemorizeApp.swift */; };
@@ -26,6 +27,7 @@
 		800DB7B6263D6C7400A4A2C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		800DB7B8263D95F000A4A2C1 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		800DB7BA263DE46000A4A2C1 /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
+		8015F48826427CE300AFFC2D /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Pie.swift; path = Memorize/View/Pie.swift; sourceTree = SOURCE_ROOT; };
 		804BB9602641772100E9B51B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		806A0232263F44A00076EC1A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8089621B262C6AFB001D9C7A /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,7 @@
 		800DB7B5263D6BC700A4A2C1 /* Addition */ = {
 			isa = PBXGroup;
 			children = (
+				8015F48826427CE300AFFC2D /* Pie.swift */,
 				800DB7B6263D6C7400A4A2C1 /* Constants.swift */,
 				800DB7B8263D95F000A4A2C1 /* Grid.swift */,
 				800DB7BA263DE46000A4A2C1 /* Array+Identifiable.swift */,
@@ -210,6 +213,7 @@
 				8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */,
 				80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */,
 				804BB9612641772100E9B51B /* Theme.swift in Sources */,
+				8015F48926427CE300AFFC2D /* Pie.swift in Sources */,
 				800DB7B9263D95F000A4A2C1 /* Grid.swift in Sources */,
 				806A0233263F44A00076EC1A /* Color.swift in Sources */,
 			);

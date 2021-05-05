@@ -21,15 +21,15 @@ protocol Theme {
 class Children: Theme {
     private (set) var name = "Child"
     private (set) var color = Color(UIColor.systemYellow)
-    private (set) var collection = ["👸", "🧞", "🧜‍♀️", "🧚‍♀️", "👼", "🦄", "🦋", "🐠", "🐬", "🧝‍♀️", "🧙"].shuffled()
-    private (set) var number = 6
+    private (set) var collection = ["👸", "🧞", "🧜‍♀️", "🧚‍♀️", "🦄", "🦋", "🐠", "🐬"].shuffled()
+    private (set) var number = 4
 }
 
 class Animals: Theme {
     private (set) var name = "Animals"
     private (set) var color = Color(UIColor.systemIndigo)
     private (set) var collection = ["🐨", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️",
-                      "🐨", "🐯", "🦁", "🐮", "🐷", "🐽", "🐸", "🐵"].shuffled()
+                                    "🐷", "🐯", "🦁", "🐮", "🐸", "🐵"].shuffled()
     private (set) var number = 6
 }
 
@@ -37,8 +37,8 @@ class Zoo: Theme {
     private (set) var name = "Zoo"
     private (set) var color = Color(UIColor.systemTeal)
     private (set) var collection = ["🐢", "🐍", "🦎", "🦑", "🦞", "🐡", "🐳", "🐅", "🐆", "🐫",
-                      "🦏", "🐘", "🦧", "🦒", "🦘", "🐄", "🐎", "🦌", "🐏", "🐈",
-                      "🐩", "🦃", "🕊", "🦩", "🦫", "🐿", "🦨"].shuffled()
+                                    "🦏", "🐘", "🦧", "🦒", "🦘", "🐄", "🐎", "🦌", "🐏", "🐈",
+                                    "🐩", "🦃", "🕊", "🦩", "🦫", "🐿", "🦨"].shuffled()
     private (set) var number = 9
 }
 
@@ -53,7 +53,7 @@ class Sport: Theme {
     private (set) var name = "Sport"
     private (set) var color = Color(UIColor.systemGreen)
     private (set) var collection = ["⛸", "🏀", "⚽️", "🥊", "🎯", "🏈", "🏓", "🎳", "🏒", "♟",
-                      "🥏", "🪃", "🥅", "🏸", "🛹", "🥋", "🏐", "🏏", "⚾️", "🎱"].shuffled()
+                                    "🥏", "🪃", "🥅", "🏸", "🛹", "🥋", "🏐", "🏏", "⚾️", "🎱"].shuffled()
     var number: Int {
         let random = [9, 12, 14, 16, 20].randomElement()!
         return random
@@ -64,9 +64,9 @@ class Flags: Theme {
     private (set) var name = "Flags"
     private (set) var color = Color(UIColor.systemBlue)
     private (set) var collection = ["🇦🇺", "🇧🇷", "🇧🇾", "🇬🇧", "🇰🇷", "🇺🇦", "🇯🇵", "🇯🇲", "🇸🇪", "🇨🇦",
-                      "🇿🇦", "🇧🇪", "🇪🇪", "🇨🇿", "🇫🇷", "🇫🇮", "🇹🇷", "🇸🇱", "🇷🇴", "🇷🇺",
-                      "🇳🇴", "🇲🇱", "🇨🇬", "🇨🇾", "🇮🇹", "🇦🇹", "🇧🇸", "🇩🇰", "🇮🇩", "🇰🇿",
-                      "🇦🇱", "🇧🇯", "🇧🇶", "🇧🇦", "🇧🇬", "🇻🇳", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "🇬🇪", "🇲🇬", "🇱🇺"].shuffled()
+                                    "🇿🇦", "🇧🇪", "🇪🇪", "🇨🇿", "🇫🇷", "🇫🇮", "🇹🇷", "🇸🇱", "🇷🇴", "🇷🇺",
+                                    "🇳🇴", "🇲🇱", "🇨🇬", "🇨🇾", "🇮🇹", "🇦🇹", "🇧🇸", "🇩🇰", "🇮🇩", "🇰🇿",
+                                    "🇦🇱", "🇧🇯", "🇧🇶", "🇧🇦", "🇧🇬", "🇻🇳", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "🇬🇪", "🇲🇬", "🇱🇺"].shuffled()
     private (set) var number = 36
 }
 
@@ -87,4 +87,4 @@ class ThemeFactory {
     }
 }
 
-var themeApp = ThemeFactory.createTheme(type: .halloween)
+var themeApp = ThemeFactory.createTheme(type: .animal)

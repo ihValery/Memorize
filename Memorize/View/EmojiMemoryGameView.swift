@@ -104,6 +104,8 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: Constants.cornerRadius)
                     // Могут быть другие аргументы, и один из них — ширина линии обводки lineWdth.
                     .stroke(lineWidth: Constants.edgeLineWidth)
+//                Pie(startAngle: Angle.degrees(270), endAngle: Angle.degrees(25), clockwise: true).padding(5).opacity(0.25)
+                Star(clockwise: false).padding(5).opacity(0.3)
                 Text(card.content)
             } else {
                 if !card.isMatched {
@@ -118,7 +120,12 @@ struct CardView: View {
 // Обеспечивает связь между кодом, и областью справа, которая называется Preview.
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiMemoryGameView(viewModelGame: EmojiMemoryGame())
-            .preferredColorScheme(.dark)
+        let oneCard = EmojiMemoryGame()
+        oneCard.choose(oneCard.cards[0])
+        oneCard.choose(oneCard.cards[1])
+
+        return EmojiMemoryGameView(viewModelGame: oneCard)
+//        EmojiMemoryGameView(viewModelGame: EmojiMemoryGame())
+//            .preferredColorScheme(.dark)
     }
 }
