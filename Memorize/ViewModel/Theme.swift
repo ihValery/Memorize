@@ -28,7 +28,7 @@ class Children: Theme {
 class Animals: Theme {
     private (set) var name = "Animals"
     private (set) var color = Color(UIColor.systemIndigo)
-    private (set) var collection = ["🐨", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻‍❄️",
+    private (set) var collection = ["🐨", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼",
                                     "🐷", "🐯", "🦁", "🐮", "🐸", "🐵"].shuffled()
     private (set) var number = 6
 }
