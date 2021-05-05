@@ -104,8 +104,13 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: Constants.cornerRadius)
                     // Могут быть другие аргументы, и один из них — ширина линии обводки lineWdth.
                     .stroke(lineWidth: Constants.edgeLineWidth)
-//                Pie(startAngle: Angle.degrees(270), endAngle: Angle.degrees(25), clockwise: true).padding(5).opacity(0.25)
-                Star().padding(5).opacity(0.25)
+                
+                if themeApp.number <= 8 {
+                    Star().padding(5).opacity(0.25)
+                } else {
+                    Pie(startAngle: Angle.degrees(270), endAngle: Angle.degrees(25), clockwise: true).padding(5).opacity(0.25)
+                }
+                
                 Text(card.content)
             } else {
                 if !card.isMatched {
