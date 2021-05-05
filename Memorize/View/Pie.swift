@@ -41,10 +41,10 @@ struct Star: Shape {
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let radius = min(rect.width, rect.height) / 2
         let pointOne = CGPoint(x: center.x, y: center.y - radius)
-        let pointTwo = CGPoint(x: center.x - radius, y: center.y + radius)
-        let pointThree = CGPoint(x: center.x + radius, y: center.y - radius / 4)
-        let pointFour = CGPoint(x: center.x - radius, y: center.y - radius / 4)
-        let pointFive = CGPoint(x: center.x + radius, y: center.y + radius)
+        let pointTwo = CGPoint(x: center.x - radius + radius / 6, y: center.y + radius - radius / 6)
+        let pointThree = CGPoint(x: center.x + radius, y: center.y - radius / 3)
+        let pointFour = CGPoint(x: center.x - radius, y: center.y - radius / 3)
+        let pointFive = CGPoint(x: center.x + radius - radius / 6, y: center.y + radius - radius / 6)
         
         
         var p = Path()

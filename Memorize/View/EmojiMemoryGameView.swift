@@ -105,7 +105,7 @@ struct CardView: View {
                     // Могут быть другие аргументы, и один из них — ширина линии обводки lineWdth.
                     .stroke(lineWidth: Constants.edgeLineWidth)
 //                Pie(startAngle: Angle.degrees(270), endAngle: Angle.degrees(25), clockwise: true).padding(5).opacity(0.25)
-                Star(clockwise: false).padding(5).opacity(0.3)
+                Star().padding(5).opacity(0.25)
                 Text(card.content)
             } else {
                 if !card.isMatched {
