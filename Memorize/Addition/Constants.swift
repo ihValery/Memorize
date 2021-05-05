@@ -12,6 +12,6 @@ struct Constants {
     static let edgeLineWidth: CGFloat = 3
     
     static func fontSize(for size: CGSize) -> CGFloat {
-        min(size.height, size.width) * 0.75
+        min(size.height, size.width) * 0.7
     }
 }
