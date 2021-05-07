@@ -26,7 +26,7 @@ struct BottomPanel: View {
                     .font(.title.weight(.light))
                     .padding(7)
                     .background(themeApp.color)
-                    .cornerRadius(Constants.cornerRadius)
+                    .cornerRadius(13)
                     .foregroundColor(.colorText)
             }
         }

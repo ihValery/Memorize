@@ -21,23 +21,21 @@ struct CardView: View {
     private func bodyForCard(for size: CGSize) -> some View {
         return ZStack {
             if card.isFaceUp {
-                RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                    .fill(Color.white)
-                RoundedRectangle(cornerRadius: Constants.cornerRadius)
-                    .stroke(lineWidth: Constants.edgeLineWidth)
+                RoundedRectangle(cornerRadius: 13).fill(Color.white)
+                RoundedRectangle(cornerRadius: 13).stroke(lineWidth: 3)
+                
                 substrateForAnimation()
                 Text(card.content)
             } else {
                 if !card.isMatched {
-                    RoundedRectangle(cornerRadius: Constants.cornerRadius).fill()
+                    RoundedRectangle(cornerRadius: 13).fill()
                 }
             }
         }
-        .font(.system(size: Constants.fontSize(for: size)))
+        .font(.system(size: fontSize(for: size)))
     }
     
     @ViewBuilder private func substrateForAnimation() -> some View {
-        
         if themeApp.number <= 8 {
             Star().padding(5).opacity(0.25)
         } else {
@@ -48,7 +46,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        let card = EmojiMemoryGame().cards
-        CardView(card: card.first!)
+        let card = EmojiMemoryGame().cards.first!
+        CardView(card: card)
     }
 }

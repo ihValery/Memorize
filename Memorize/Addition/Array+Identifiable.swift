@@ -8,7 +8,6 @@
 import Foundation
 
 extension Array where Element: Identifiable {
-    
     ///Ищем индекс выбранного элемента в массиве, и как только нашли первый подходящий, то возвращаем его индекс.
     func firstIndex(selected: Element) -> Int? {
         for index in 0..<self.count {
