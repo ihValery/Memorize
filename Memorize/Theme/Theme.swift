@@ -45,7 +45,7 @@ class Zoo: Theme {
 class Halloween: Theme {
     private (set) var name = "Halloween"
     private (set) var color = Color(UIColor.systemOrange)
-    private (set) var collection = ["👻", "🎃", "🕷", "🕸", "⚰️", "💀", "🧟‍♂️", "🧛🏼", "🩸", "☠️", "🦇"].shuffled()
+    private (set) var collection = ["👻", "🩸", "🕷", "☠️", "🕸", "⚰️", "🧟‍♂️", "🧛🏼", "🎃", "💀", "🦇"].shuffled()
     private (set) var number = 9
 }
 
@@ -71,8 +71,8 @@ class Flags: Theme {
 }
 
 class ThemeFactory {
-        
-    static func createTheme(type: ThemeType) -> Theme {
+    
+    func createTheme(type: ThemeType) -> Theme {
         var theme: Theme
         
         switch type {
@@ -87,4 +87,4 @@ class ThemeFactory {
     }
 }
 
-var themeApp = ThemeFactory.createTheme(type: .animal)
+var themeApp = ThemeFactory().createTheme(type: .halloween)

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 class EmojiMemoryGame: ObservableObject {
     
@@ -17,7 +18,8 @@ class EmojiMemoryGame: ObservableObject {
     //каждый раз, когда переменная modelGame изменяется.
     @Published private var modelGame: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
-    private static func createMemoryGame() -> MemoryGame<String> {
+    static private func createMemoryGame() -> MemoryGame<String> {
+
         return MemoryGame<String>(numbersOfPairsOfCards: themeApp.number) { pairIndex in
             themeApp.collection[pairIndex]
         }
