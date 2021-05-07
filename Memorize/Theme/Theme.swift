@@ -86,5 +86,3 @@ class ThemeFactory {
         return theme
     }
 }
-
-var themeApp = ThemeFactory().createTheme(type: .halloween)
