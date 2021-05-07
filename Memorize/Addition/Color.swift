@@ -13,7 +13,4 @@ extension Color {
     static var colorText: Color {
         Color(UIColor { $0.userInterfaceStyle == .dark ? .black : .white } )
     }
-    static var systemOrange: Color {
-        Color(UIColor.systemOrange)
-    }
 }
