@@ -13,9 +13,8 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
     
     //Не хотим, чтобы кто-нибудь пошел в структуру struct Card. ViewModel нужен доступ, на чтение.
     private (set) var cards: [Card]
-    
-    private var sawThisCard: [Int] = []
     private (set) var score: Int = 0
+    private var sawThisCard: [Int] = []
     
     private var indexOnlyOneFaceUpCard: Int? {
         //Смотрим на все карты и и проверяем если одна единственная карточка
