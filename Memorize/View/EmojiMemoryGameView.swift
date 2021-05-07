@@ -32,7 +32,7 @@ struct EmojiMemoryGameView: View {
     private func bottomPanel() -> some View {
         ZStack{
             HStack {
-                nameThemePlusContexMenu()
+                nameThemePlusContextMenu()
                 Spacer()
                 Text("Score:")
                 Text(viewModelGame.updateScore())
@@ -50,34 +50,34 @@ struct EmojiMemoryGameView: View {
         }
     }
     
-    private func nameThemePlusContexMenu() -> some View {
+    private func nameThemePlusContextMenu() -> some View {
         Text(themeApp.name)
             .contextMenu {
                 Text("Easy level")
                 Button("🧚‍♀️   Children") {
-                    themeApp = ThemeFactory.createTheme(type: .child)
+                    themeApp = ThemeFactory().createTheme(type: .child)
                     viewModelGame.newGame()
                 }
                 Button("🐶   Animal") {
-                    themeApp = ThemeFactory.createTheme(type: .animal)
+                    themeApp = ThemeFactory().createTheme(type: .animal)
                     viewModelGame.newGame()
                 }
                 Text("Middle level")
                 Button("🦜   Zoo") {
-                    themeApp = ThemeFactory.createTheme(type: .zoo)
+                    themeApp = ThemeFactory().createTheme(type: .zoo)
                     viewModelGame.newGame()
                 }
                 Button("🧛🏼   Halloween") {
-                    themeApp = ThemeFactory.createTheme(type: .halloween)
+                    themeApp = ThemeFactory().createTheme(type: .halloween)
                     viewModelGame.newGame()
                 }
                 Button("🏀   Sport (random)") {
-                    themeApp = ThemeFactory.createTheme(type: .sport)
+                    themeApp = ThemeFactory().createTheme(type: .sport)
                     viewModelGame.newGame()
                 }
                 Text("Сheck yourself")
                 Button("🇺🇦   Flags") {
-                    themeApp = ThemeFactory.createTheme(type: .flags)
+                    themeApp = ThemeFactory().createTheme(type: .flags)
                     viewModelGame.newGame()
                 }
             }
@@ -112,6 +112,7 @@ struct CardView: View {
                 }
                 
                 Text(card.content)
+                
             } else {
                 if !card.isMatched {
                     RoundedRectangle(cornerRadius: Constants.cornerRadius).fill()
@@ -126,11 +127,8 @@ struct CardView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let oneCard = EmojiMemoryGame()
-        oneCard.choose(oneCard.cards[0])
-        oneCard.choose(oneCard.cards[1])
 
         return EmojiMemoryGameView(viewModelGame: oneCard)
-//        EmojiMemoryGameView(viewModelGame: EmojiMemoryGame())
-//            .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }
