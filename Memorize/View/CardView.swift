@@ -18,24 +18,20 @@ struct CardView: View {
         }
     }
     
+    @ViewBuilder
     private func bodyForCard(for size: CGSize) -> some View {
-        return ZStack {
-            if card.isFaceUp {
-                RoundedRectangle(cornerRadius: 13).fill(Color.white)
-                RoundedRectangle(cornerRadius: 13).stroke(lineWidth: 3)
-                
+        if card.isFaceUp || !card.isMatched {
+            ZStack {
                 substrateForAnimation()
                 Text(card.content)
-            } else {
-                if !card.isMatched {
-                    RoundedRectangle(cornerRadius: 13).fill()
-                }
+                    .font(.system(size: fontSize(for: size)))
             }
+            .cardify(isFaceUp: card.isFaceUp)
         }
-        .font(.system(size: fontSize(for: size)))
     }
     
-    @ViewBuilder private func substrateForAnimation() -> some View {
+    @ViewBuilder
+    private func substrateForAnimation() -> some View {
         if themeApp.number <= 8 {
             Star().padding(5).opacity(0.25)
         } else {
