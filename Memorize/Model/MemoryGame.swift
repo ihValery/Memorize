@@ -47,7 +47,8 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
             if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
-                score += 2
+//                score += 2
+                score = score + 2 + Int(card.bonusTimeRemaining)
             } else {
                 scoring(chosenIndex, potentialMatchIndex)
             }
@@ -68,10 +69,72 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
         
         //private нет смысла ставить так как уже ограничен доступ - private (set) var cards: [Card]
         var id: Int
-        var isFaceUp = false
-        var isMatched = false
+        //Способ с использованием Наблюдателя Свойства didSet { } гораздо более надежный
+        var isFaceUp: Bool = false {
+            didSet {
+                isFaceUp ? startUsingBonusTime() : stopUsingBonusTime()
+            }
+        }
+        var isMatched: Bool = false {
+            didSet {
+                stopUsingBonusTime()
+            }
+        }
         //Переменная content имеет “Не важно, какой” ТИП, и я назову его CardContent.
         //Это “Не важно, какой” ТИП, и меня просят вверху в угловых скобках < > СООБЩИТЬ МИРУ, что CardContent— это generic ТИП:
         var content: CardContent
+        
+        
+        //MARK: - Bonus Time
+        
+        //может дать соответствующие бонусные баллы
+        //если карта пользователя совпала
+        //до того, как пройдет определенное время, в течение которого карта будет открыта
+        //может быть нулевым, что означает "без бонусных баллов" для этой карты
+        var bonusTimeLimit: TimeInterval = 6
+        
+        //Как долго карта была isFaceUp
+        private var faceUpTime: TimeInterval {
+            if let lastFaceUpDate = lastFaceUpDate {
+                return pastFaceUpTime + Date().timeIntervalSince(lastFaceUpDate)
+            } else {
+                return pastFaceUpTime
+            }
+        }
+        
+        //последний раз карта была перевернута лицом вверх (и все еще остается лицевом вверх)
+        var lastFaceUpDate: Date?
+        //накопленное время, когда эта карта была открыта в прошлом
+        //(то есть без учета текущего времени, когда он был открыт, это в настоящее время так)
+        var pastFaceUpTime: TimeInterval = 0
+        
+        ///“Сколько времени осталось?”
+        var bonusTimeRemaining: TimeInterval {
+            max(0, bonusTimeLimit - pastFaceUpTime)
+        }
+        
+        ///“Какой процент времени остался?”
+        var bonusRemaining: Double {
+            (bonusTimeLimit > 0 && bonusTimeRemaining > 0) ? bonusTimeRemaining / bonusTimeLimit : 0
+        }
+        ///"заслужили ли мы бонусы?"
+        var hasEarnedBonus: Bool {
+            isMatched && bonusTimeRemaining > 0
+        }
+        ///в данный момент лицом вверх, не имеем себе равных и еще не использовали бонусное окно
+        var isConsumingBonusTime: Bool {
+            isFaceUp && !isMatched && bonusTimeRemaining > 0
+        }
+        ///вызывается, когда карта переходит в открытое состояние
+        private mutating func startUsingBonusTime() {
+            if isConsumingBonusTime, lastFaceUpDate == nil {
+                lastFaceUpDate = Date()
+            }
+        }
+        ///вызывается, когда карта возвращается лицом вниз (или совпадает)
+        private mutating func stopUsingBonusTime() {
+            pastFaceUpTime = faceUpTime
+            lastFaceUpDate = nil
+        }
     }
 }

@@ -36,7 +36,7 @@ class EmojiMemoryGame: ObservableObject {
     
     //MARK: - Intent(s) Намерения новая игра
     func newGame() {
-        withAnimation(.easeInOut(duration: 0.33)) {
+        withAnimation(.easeInOut) {
             modelGame = EmojiMemoryGame.createMemoryGame()
         }
     }
