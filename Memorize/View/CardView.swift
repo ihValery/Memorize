@@ -12,6 +12,9 @@ struct CardView: View {
     
     var card: MemoryGame<String>.Card
     
+    //будем анимировать, но перед запуском анимации убедимcz, что синхронизированы с Model
+    @State private var animatedBonusRemaning: Double = 0
+    
     var body: some View {
         GeometryReader { geometry in
             bodyForCard(for: geometry.size)
@@ -24,21 +27,51 @@ struct CardView: View {
                 substrateForAnimation()
                 Text(card.content)
                     .font(.system(size: fontSize(for: size)))
-                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+//                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                    .scaleEffect(card.isMatched ? 1.1 : 1)
+                    .animation(card.isMatched ? .linear.repeatForever() : .default)
                     //эмоджи крутился бесконечно в одном направлении.аргумент autoreverses false
                     //Когда задается .repeatForever() анимация, следует быть внимательным и выключить ее, если она больше не нужна
-                    .animation(card.isMatched ? .linear(duration: 1).repeatForever(autoreverses: false) : .default)
+//                    .animation(card.isMatched ? .linear(duration: 1).repeatForever(autoreverses: false) : .default)
             }
             .cardify(isFaceUp: card.isFaceUp)
             .transition(.scale)
         }
     }
     
+    private func startBonusTimeAnimation() {
+        animatedBonusRemaning = card.bonusRemaining
+        withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+            animatedBonusRemaning = 0
+        }
+    }
+    
     @ViewBuilder private func substrateForAnimation() -> some View {
         if themeApp.number <= 8 {
-            Star().padding(5).opacity(0.25)
+            Star()
+                .padding(5)
+                .opacity(0.25)
+                .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                .animation(card.isMatched ? .linear(duration: 0.1).repeatForever(autoreverses: false) : .default)
         } else {
-            Pie(startAngle: Angle.degrees(270), endAngle: Angle.degrees(25), clockwise: true).padding(5).opacity(0.25)
+            Group {
+                if card.isConsumingBonusTime {
+                    Pie(startAngle: Angle.degrees(0 - 90),
+                        endAngle: Angle.degrees(-animatedBonusRemaning * 360 - 90),
+                        clockwise: true)
+                        .onAppear() {
+                            startBonusTimeAnimation()
+                        }
+                } else {
+                    Pie(startAngle: Angle.degrees(0 - 90),
+                        endAngle: Angle.degrees(-card.bonusRemaining * 360 - 90),
+                        clockwise: true)
+                }
+            }
+            .padding(5)
+            .opacity(0.25)
+            //анимационный пирог пусть появляется сразу
+            .transition(.identity)
         }
     }
 }

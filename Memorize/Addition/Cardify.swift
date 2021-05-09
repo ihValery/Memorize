@@ -30,13 +30,15 @@ struct Cardify: AnimatableModifier {
     ///.cardify — это “картафикатор” общего назначения, это ViewModifier, чтобы модифицировать любой View.
     func body(content: Content) -> some View {
         ZStack {
-            if isFaceUp {
+            //С помощью Group избавляемся от is-else
+            Group {
                 RoundedRectangle(cornerRadius: 13).fill(Color.white)
                 RoundedRectangle(cornerRadius: 13).stroke(lineWidth: 3)
                 content
-            } else {
-                RoundedRectangle(cornerRadius: 13).fill()
             }
+                .opacity(isFaceUp ? 1 : 0)
+            RoundedRectangle(cornerRadius: 13).fill()
+                .opacity(isFaceUp ? 0 : 1)
         }
         .rotation3DEffect(Angle.degrees(rotation), axis: (0, 1, 0))
     }
