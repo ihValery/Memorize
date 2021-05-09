@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContextMenu: View {
     
-    @ObservedObject
-    var viewModelGame: EmojiMemoryGame
+    @ObservedObject var viewModelGame: EmojiMemoryGame
     
     var body: some View {
         Text(themeApp.name)

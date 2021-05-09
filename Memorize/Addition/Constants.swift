@@ -7,7 +7,7 @@
 
 import UIKit
 
-var themeApp = ThemeFactory().createTheme(type: .halloween)
+var themeApp = ThemeFactory().createTheme(type: .child)
 
 func fontSize(for size: CGSize) -> CGFloat {
     min(size.height, size.width) * 0.7

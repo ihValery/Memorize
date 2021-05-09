@@ -8,9 +8,24 @@
 import SwiftUI
 
 //Прекрасная повторно используемая (reusable) вещь, которую мы могли бы использовать в другой игре.
-struct Cardify: ViewModifier {
+//Что бы использовать animatableData (ViewModifier и Animatable) нужно установить AnimatableModifier
+//”Я хочу быть модификатором ViewModifier, который хочет принимать участие в анимационной системе”
+struct Cardify: AnimatableModifier {
     
-    var isFaceUp: Bool
+    var rotation: Double
+    
+    init(isFaceUp: Bool) {
+        rotation = isFaceUp ? 0 : 180
+    }
+    
+    var isFaceUp: Bool {
+        rotation < 90
+    }
+    
+    var animatableData: Double {
+        get { rotation }
+        set { rotation = newValue }
+    }
     
     ///.cardify — это “картафикатор” общего назначения, это ViewModifier, чтобы модифицировать любой View.
     func body(content: Content) -> some View {
@@ -23,6 +38,7 @@ struct Cardify: ViewModifier {
                 RoundedRectangle(cornerRadius: 13).fill()
             }
         }
+        .rotation3DEffect(Angle.degrees(rotation), axis: (0, 1, 0))
     }
 }
 
