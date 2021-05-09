@@ -18,20 +18,23 @@ struct CardView: View {
         }
     }
     
-    @ViewBuilder
-    private func bodyForCard(for size: CGSize) -> some View {
+    @ViewBuilder private func bodyForCard(for size: CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {
             ZStack {
                 substrateForAnimation()
                 Text(card.content)
                     .font(.system(size: fontSize(for: size)))
+                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                    //эмоджи крутился бесконечно в одном направлении.аргумент autoreverses false
+                    //Когда задается .repeatForever() анимация, следует быть внимательным и выключить ее, если она больше не нужна
+                    .animation(card.isMatched ? .linear(duration: 1).repeatForever(autoreverses: false) : .default)
             }
             .cardify(isFaceUp: card.isFaceUp)
+            .transition(.scale)
         }
     }
     
-    @ViewBuilder
-    private func substrateForAnimation() -> some View {
+    @ViewBuilder private func substrateForAnimation() -> some View {
         if themeApp.number <= 8 {
             Star().padding(5).opacity(0.25)
         } else {

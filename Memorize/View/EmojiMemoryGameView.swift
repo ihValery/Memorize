@@ -11,15 +11,17 @@ struct EmojiMemoryGameView: View {
     
     //“обертка свойства” @ObservedObject говорит что когда переменная objectWillChange
     //этот View себя перерисовывает
-    @ObservedObject
-    var viewModelGame: EmojiMemoryGame
+    @ObservedObject var viewModelGame: EmojiMemoryGame
     
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
         VStack {
             Grid(viewModelGame.cards) { item in
                 CardView(card: item)
-                    .onTapGesture { viewModelGame.choose(item) }
+                    .onTapGesture {
+                        withAnimation(.linear(duration: 2)) {
+                            viewModelGame.choose(item) }
+                    }
                     .padding(4)
             }
             BottomPanel(viewModelGame: viewModelGame)
