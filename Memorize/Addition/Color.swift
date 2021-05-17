@@ -14,3 +14,12 @@ extension Color {
         Color(UIColor { $0.userInterfaceStyle == .dark ? .black : .white } )
     }
 }
+
+extension Color {
+    static let blueTheme = Color("blueTheme")
+    static let greenTheme = Color("greenTheme")
+    static let indigoTheme = Color("indigoTheme")
+    static let orangeTheme = Color("orangeTheme")
+    static let tealTheme = Color("tealTheme")
+    static let yellowTheme = Color("yellowTheme")
+}

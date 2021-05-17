@@ -20,14 +20,14 @@ protocol Theme {
 
 class Children: Theme {
     private (set) var name = "Child"
-    private (set) var color = Color(UIColor.systemYellow)
+    private (set) var color = Color.yellowTheme
     private (set) var collection = ["👸", "🧞", "🧜‍♀️", "🧚‍♀️", "🦄", "🦋", "🐠", "🐬"].shuffled()
     private (set) var number = 4
 }
 
 class Animals: Theme {
     private (set) var name = "Animals"
-    private (set) var color = Color(UIColor.systemIndigo)
+    private (set) var color = Color.indigoTheme
     private (set) var collection = ["🐨", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼",
                                     "🐷", "🐯", "🦁", "🐮", "🐸", "🐵"].shuffled()
     private (set) var number = 6
@@ -35,7 +35,7 @@ class Animals: Theme {
 
 class Zoo: Theme {
     private (set) var name = "Zoo"
-    private (set) var color = Color(UIColor.systemTeal)
+    private (set) var color = Color.tealTheme
     private (set) var collection = ["🐢", "🐍", "🦎", "🦑", "🦞", "🐡", "🐳", "🐅", "🐆", "🐫",
                                     "🦏", "🐘", "🦧", "🦒", "🦘", "🐄", "🐎", "🦌", "🐏", "🐈",
                                     "🐩", "🦃", "🕊", "🦩", "🦫", "🐿", "🦨"].shuffled()
@@ -44,14 +44,14 @@ class Zoo: Theme {
 
 class Halloween: Theme {
     private (set) var name = "Halloween"
-    private (set) var color = Color(UIColor.systemOrange)
+    private (set) var color = Color.orangeTheme
     private (set) var collection = ["👻", "🩸", "🕷", "☠️", "🕸", "⚰️", "🧟‍♂️", "🧛🏼", "🎃", "💀", "🦇"].shuffled()
     private (set) var number = 9
 }
 
 class Sport: Theme {
     private (set) var name = "Sport"
-    private (set) var color = Color(UIColor.systemGreen)
+    private (set) var color = Color.greenTheme
     private (set) var collection = ["⛸", "🏀", "⚽️", "🥊", "🎯", "🏈", "🏓", "🎳", "🏒", "♟",
                                     "🥏", "🪃", "🥅", "🏸", "🛹", "🥋", "🏐", "🏏", "⚾️", "🎱"].shuffled()
     var number: Int {
@@ -62,7 +62,7 @@ class Sport: Theme {
 
 class Flags: Theme {
     private (set) var name = "Flags"
-    private (set) var color = Color(UIColor.systemBlue)
+    private (set) var color = Color.blueTheme
     private (set) var collection = ["🇦🇺", "🇧🇷", "🇧🇾", "🇬🇧", "🇰🇷", "🇺🇦", "🇯🇵", "🇯🇲", "🇸🇪", "🇨🇦",
                                     "🇿🇦", "🇧🇪", "🇪🇪", "🇨🇿", "🇫🇷", "🇫🇮", "🇹🇷", "🇸🇱", "🇷🇴", "🇷🇺",
                                     "🇳🇴", "🇲🇱", "🇨🇬", "🇨🇾", "🇮🇹", "🇦🇹", "🇧🇸", "🇩🇰", "🇮🇩", "🇰🇿",
