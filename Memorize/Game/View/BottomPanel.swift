@@ -15,6 +15,7 @@ struct BottomPanel: View {
         ZStack{
             HStack {
                 ContextMenu(viewModelGame: viewModelGame)
+                    .padding(.leading, 50)
                 Spacer()
                 Text("Score:")
                 Text(viewModelGame.updateScore())

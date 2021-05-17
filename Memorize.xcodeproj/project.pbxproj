@@ -14,6 +14,12 @@
 		801128DD2642B3A600C38272 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801128DC2642B3A600C38272 /* Star.swift */; };
 		801128DF2642B41400C38272 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801128DE2642B41400C38272 /* Pie.swift */; };
 		801796452643B2D10061B4E0 /* CardOnboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801796442643B2D10061B4E0 /* CardOnboardData.swift */; };
+		804B62672652DD0200DE3792 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B625E2652DD0200DE3792 /* View.swift */; };
+		804B62682652DD0200DE3792 /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B625F2652DD0200DE3792 /* CustomCorners.swift */; };
+		804B626A2652DD0200DE3792 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B62622652DD0200DE3792 /* TabButton.swift */; };
+		804B626B2652DD0200DE3792 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B62632652DD0200DE3792 /* Home.swift */; };
+		804B626C2652DD0200DE3792 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B62642652DD0200DE3792 /* SideMenu.swift */; };
+		804B626D2652DD0200DE3792 /* SideMenuMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B62652652DD0200DE3792 /* SideMenuMainView.swift */; };
 		804BB9612641772100E9B51B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BB9602641772100E9B51B /* Theme.swift */; };
 		806A0233263F44A00076EC1A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A0232263F44A00076EC1A /* Color.swift */; };
 		806EC7C22643C9BF00B93D90 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EC7C12643C9BF00B93D90 /* OnboardingView.swift */; };
@@ -40,6 +46,12 @@
 		801128DC2642B3A600C38272 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		801128DE2642B41400C38272 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		801796442643B2D10061B4E0 /* CardOnboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnboardData.swift; sourceTree = "<group>"; };
+		804B625E2652DD0200DE3792 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		804B625F2652DD0200DE3792 /* CustomCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
+		804B62622652DD0200DE3792 /* TabButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		804B62632652DD0200DE3792 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		804B62642652DD0200DE3792 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		804B62652652DD0200DE3792 /* SideMenuMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuMainView.swift; sourceTree = "<group>"; };
 		804BB9602641772100E9B51B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		806A0232263F44A00076EC1A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		806EC7C12643C9BF00B93D90 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -103,6 +115,48 @@
 			path = Shape;
 			sourceTree = "<group>";
 		};
+		804B625B2652DC8800DE3792 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				804B62612652DD0200DE3792 /* View */,
+				804B625D2652DD0200DE3792 /* Extension */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		804B625C2652DCB100DE3792 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				80BE0664262D912D00EAF9C4 /* Model */,
+				80BE0665262D929400EAF9C4 /* ViewModel */,
+				80F95316263B431900F55642 /* View */,
+				800DB7B5263D6BC700A4A2C1 /* Addition */,
+				801128DB2642B37E00C38272 /* Shape */,
+				80A4F6732643930200A0BCA2 /* Theme */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		804B625D2652DD0200DE3792 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				804B625E2652DD0200DE3792 /* View.swift */,
+				804B625F2652DD0200DE3792 /* CustomCorners.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		804B62612652DD0200DE3792 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				804B62622652DD0200DE3792 /* TabButton.swift */,
+				804B62632652DD0200DE3792 /* Home.swift */,
+				804B62642652DD0200DE3792 /* SideMenu.swift */,
+				804B62652652DD0200DE3792 /* SideMenuMainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		80896212262C6AFB001D9C7A = {
 			isa = PBXGroup;
 			children = (
@@ -123,13 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				8089621E262C6AFB001D9C7A /* MemorizeApp.swift */,
-				80BE0664262D912D00EAF9C4 /* Model */,
-				80BE0665262D929400EAF9C4 /* ViewModel */,
-				80F95316263B431900F55642 /* View */,
-				800DB7B5263D6BC700A4A2C1 /* Addition */,
-				801128DB2642B37E00C38272 /* Shape */,
-				80A4F6732643930200A0BCA2 /* Theme */,
+				804B625C2652DCB100DE3792 /* Game */,
 				80A4F66E2643921E00A0BCA2 /* Onboarding */,
+				804B625B2652DC8800DE3792 /* SideMenu */,
 				800DB7B4263D6A5B00A4A2C1 /* System32 */,
 			);
 			path = Memorize;
@@ -284,12 +334,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				808699C7264695D700DAD8BE /* Cardify.swift in Sources */,
+				804B626D2652DD0200DE3792 /* SideMenuMainView.swift in Sources */,
 				800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */,
 				80C0419D2645DC6800501EB8 /* BottomPanel.swift in Sources */,
+				804B626C2652DD0200DE3792 /* SideMenu.swift in Sources */,
 				80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */,
 				800DB7BB263DE46000A4A2C1 /* Array+Identifiable.swift in Sources */,
+				804B626B2652DD0200DE3792 /* Home.swift in Sources */,
 				801128DD2642B3A600C38272 /* Star.swift in Sources */,
 				80A4F678264394FD00A0BCA2 /* CardOnboardView.swift in Sources */,
+				804B62682652DD0200DE3792 /* CustomCorners.swift in Sources */,
 				80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */,
 				80C0419F2645DD4800501EB8 /* CardView.swift in Sources */,
 				800233C9263EE1400078D8A6 /* Array+OnlyOne.swift in Sources */,
@@ -299,10 +353,12 @@
 				801796452643B2D10061B4E0 /* CardOnboardData.swift in Sources */,
 				8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */,
 				80A4F671264392C100A0BCA2 /* OnboardModel.swift in Sources */,
+				804B626A2652DD0200DE3792 /* TabButton.swift in Sources */,
 				80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */,
 				804BB9612641772100E9B51B /* Theme.swift in Sources */,
 				800DB7B9263D95F000A4A2C1 /* Grid.swift in Sources */,
 				806EC7C22643C9BF00B93D90 /* OnboardingView.swift in Sources */,
+				804B62672652DD0200DE3792 /* View.swift in Sources */,
 				806A0233263F44A00076EC1A /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 530;
+				CURRENT_PROJECT_VERSION = 130;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
@@ -442,7 +498,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ihValery.Memorize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -456,7 +512,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 530;
+				CURRENT_PROJECT_VERSION = 130;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
@@ -466,7 +522,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ihValery.Memorize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

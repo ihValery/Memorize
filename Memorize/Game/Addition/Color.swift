@@ -15,6 +15,7 @@ extension Color {
     }
 }
 
+//Цвет темы
 extension Color {
     static let blueTheme = Color("blueTheme")
     static let greenTheme = Color("greenTheme")
@@ -22,4 +23,11 @@ extension Color {
     static let orangeTheme = Color("orangeTheme")
     static let tealTheme = Color("tealTheme")
     static let yellowTheme = Color("yellowTheme")
+}
+
+//Цвет бокового меню
+extension Color {
+    static let purpleTheme = Color("purpleTheme")
+    static let purpleGradientStart = Color("purpleGradientStart")
+    static let purpleGradientEnd = Color("purpleGradientEnd")
 }
