@@ -14,7 +14,7 @@ struct SideMenuMainView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.purpleGradientStart, .purpleGradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: Gradient(colors: [.purpleGradientStart, themeApp.color]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 //            Color.purpleTheme
                 .ignoresSafeArea()
             
@@ -48,7 +48,7 @@ struct SideMenuMainView: View {
                     Color.white
                         .opacity(0.01)
                         .onTapGesture {
-                            withAnimation(.easeIn) {
+                            withAnimation(.spring()) {
                                 showMenu.toggle()
                             }
                         }
@@ -59,35 +59,9 @@ struct SideMenuMainView: View {
             .offset(x: showMenu ? getRect().width - 120 : 0)
             .ignoresSafeArea()
             .overlay(
-                Button(action: {
-                    withAnimation(.spring()) {
-                        showMenu.toggle()
-                    }
-                }, label: {
-                    //animate Drawing Button
-                    VStack(spacing: 5) {
-                        Capsule()
-                            .fill(showMenu ? Color.white : themeApp.color)
-                            .frame(width: 30, height: 3)
-                            //Rotating
-                            .rotationEffect(.init(degrees: showMenu ? -45 : 0))
-                            .offset(x: showMenu ? 2.5 : 0, y: showMenu ? 9 : 0)
-                        VStack(spacing: 5) {
-                            Capsule()
-                                .fill(showMenu ? Color.white : themeApp.color)
-                                .frame(width: 30, height: 3)
-                            //Moving Up when clicked
-                            Capsule()
-                                .fill(showMenu ? Color.white : themeApp.color)
-                                .frame(width: 30, height: 3)
-                                .offset(y: showMenu ? -8 : 0)
-                        }
-                        .rotationEffect(.init(degrees: showMenu ? 45 : 0))
-                    }
-                })
-                .padding()
-                .padding(.bottom, -14)
-                , alignment: .bottomLeading)
+                BurgerButton(showMenu: $showMenu)
+                    .padding(.top, -5)
+                , alignment: .topLeading)
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BottomPanel: View {
+struct TopPanelMenu: View {
     
     @ObservedObject var viewModelGame: EmojiMemoryGame
     
@@ -19,13 +19,12 @@ struct BottomPanel: View {
                 Spacer()
                 Text("Score:")
                 Text(viewModelGame.updateScore())
-                    .frame(minWidth: 25, alignment: .trailing)
+                    .frame(minWidth: 35, alignment: .trailing)
             }
             .padding([.leading, .trailing], .some(7))
             HStack {
-                Button(" NEW GAME ", action: viewModelGame.newGame)
+                Button(" new ", action: viewModelGame.newGame)
                     .font(.title.weight(.light))
-                    .padding(7)
                     .background(themeApp.color)
                     .cornerRadius(13)
                     .foregroundColor(.colorText)
@@ -36,7 +35,7 @@ struct BottomPanel: View {
 
 struct BottomPanel_Previews: PreviewProvider {
     static var previews: some View {
-        BottomPanel(viewModelGame: EmojiMemoryGame())
+        TopPanelMenu(viewModelGame: EmojiMemoryGame())
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
     }

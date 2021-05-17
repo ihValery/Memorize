@@ -65,7 +65,6 @@ struct SideMenu: View {
                     .foregroundColor(.white)
                     .opacity(0.4)
             }
-            .padding(.bottom, 35)
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

@@ -16,6 +16,8 @@ struct EmojiMemoryGameView: View {
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
         VStack {
+            TopPanelMenu(viewModelGame: viewModelGame)
+            
             Grid(viewModelGame.cards) { item in
                 CardView(card: item)
                     .onTapGesture {
@@ -24,7 +26,6 @@ struct EmojiMemoryGameView: View {
                     }
                     .padding(4)
             }
-            BottomPanel(viewModelGame: viewModelGame)
         }
         .padding(3)
         .padding([.bottom], 20)

@@ -20,6 +20,7 @@
 		804B626B2652DD0200DE3792 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B62632652DD0200DE3792 /* Home.swift */; };
 		804B626C2652DD0200DE3792 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B62642652DD0200DE3792 /* SideMenu.swift */; };
 		804B626D2652DD0200DE3792 /* SideMenuMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B62652652DD0200DE3792 /* SideMenuMainView.swift */; };
+		804B627026530ED100DE3792 /* BurgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B626F26530ED100DE3792 /* BurgerButton.swift */; };
 		804BB9612641772100E9B51B /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BB9602641772100E9B51B /* Theme.swift */; };
 		806A0233263F44A00076EC1A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A0232263F44A00076EC1A /* Color.swift */; };
 		806EC7C22643C9BF00B93D90 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EC7C12643C9BF00B93D90 /* OnboardingView.swift */; };
@@ -34,7 +35,7 @@
 		80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0661262D8B3F00EAF9C4 /* MemoryGame.swift */; };
 		80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */; };
 		80C0419B2645DA2300501EB8 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419A2645DA2300501EB8 /* ContextMenu.swift */; };
-		80C0419D2645DC6800501EB8 /* BottomPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419C2645DC6800501EB8 /* BottomPanel.swift */; };
+		80C0419D2645DC6800501EB8 /* TopPanelMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419C2645DC6800501EB8 /* TopPanelMenu.swift */; };
 		80C0419F2645DD4800501EB8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419E2645DD4800501EB8 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		804B62632652DD0200DE3792 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		804B62642652DD0200DE3792 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		804B62652652DD0200DE3792 /* SideMenuMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuMainView.swift; sourceTree = "<group>"; };
+		804B626F26530ED100DE3792 /* BurgerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerButton.swift; sourceTree = "<group>"; };
 		804BB9602641772100E9B51B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		806A0232263F44A00076EC1A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		806EC7C12643C9BF00B93D90 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		80BE0661262D8B3F00EAF9C4 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		80C0419A2645DA2300501EB8 /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
-		80C0419C2645DC6800501EB8 /* BottomPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPanel.swift; sourceTree = "<group>"; };
+		80C0419C2645DC6800501EB8 /* TopPanelMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPanelMenu.swift; sourceTree = "<group>"; };
 		80C0419E2645DD4800501EB8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 				804B62632652DD0200DE3792 /* Home.swift */,
 				804B62642652DD0200DE3792 /* SideMenu.swift */,
 				804B62652652DD0200DE3792 /* SideMenuMainView.swift */,
+				804B626F26530ED100DE3792 /* BurgerButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */,
-				80C0419C2645DC6800501EB8 /* BottomPanel.swift */,
+				80C0419C2645DC6800501EB8 /* TopPanelMenu.swift */,
 				80C0419A2645DA2300501EB8 /* ContextMenu.swift */,
 				80C0419E2645DD4800501EB8 /* CardView.swift */,
 			);
@@ -336,11 +339,12 @@
 				808699C7264695D700DAD8BE /* Cardify.swift in Sources */,
 				804B626D2652DD0200DE3792 /* SideMenuMainView.swift in Sources */,
 				800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */,
-				80C0419D2645DC6800501EB8 /* BottomPanel.swift in Sources */,
+				80C0419D2645DC6800501EB8 /* TopPanelMenu.swift in Sources */,
 				804B626C2652DD0200DE3792 /* SideMenu.swift in Sources */,
 				80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */,
 				800DB7BB263DE46000A4A2C1 /* Array+Identifiable.swift in Sources */,
 				804B626B2652DD0200DE3792 /* Home.swift in Sources */,
+				804B627026530ED100DE3792 /* BurgerButton.swift in Sources */,
 				801128DD2642B3A600C38272 /* Star.swift in Sources */,
 				80A4F678264394FD00A0BCA2 /* CardOnboardView.swift in Sources */,
 				804B62682652DD0200DE3792 /* CustomCorners.swift in Sources */,
