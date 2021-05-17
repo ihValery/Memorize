@@ -15,22 +15,26 @@ struct EmojiMemoryGameView: View {
     
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
-        VStack {
-            TopPanelMenu(viewModelGame: viewModelGame)
-            
-            Grid(viewModelGame.cards) { item in
-                CardView(card: item)
-                    .onTapGesture {
-                        withAnimation(.linear(duration: 0.5)) {
-                            viewModelGame.choose(item) }
-                    }
-                    .padding(4)
+        ZStack {
+            Color.element
+                .ignoresSafeArea()
+            VStack {
+                TopPanelMenu(viewModelGame: viewModelGame)
+                
+                Grid(viewModelGame.cards) { item in
+                    CardView(card: item)
+                        .onTapGesture {
+                            withAnimation(.linear(duration: 0.5)) {
+                                viewModelGame.choose(item) }
+                        }
+                        .padding(4)
+                }
             }
+            .padding(3)
+            .padding([.bottom], 20)
+            .foregroundColor(themeApp.color)
+            .ignoresSafeArea(.all, edges: .bottom)
         }
-        .padding(3)
-        .padding([.bottom], 20)
-        .foregroundColor(themeApp.color)
-        .ignoresSafeArea(.all, edges: .bottom)
     }
 }
 

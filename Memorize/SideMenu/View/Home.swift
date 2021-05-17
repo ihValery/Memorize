@@ -23,7 +23,7 @@ struct Home: View {
             
             //Views
             GamePage().tag("Game")
-            Scope().tag("Scope")
+            Score().tag("Score")
             Settings().tag("Settings")
             Notifications().tag("Notification")
             Help().tag("Help")
@@ -43,14 +43,14 @@ struct GamePage: View {
     }
 }
 
-struct Scope: View {
+struct Score: View {
     var body: some View {
         NavigationView {
-            Text("Scope")
+            Text("Score")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .foregroundColor(.primary)
-                .navigationTitle("Scope")
+                .navigationTitle("Score")
         }
     }
 }

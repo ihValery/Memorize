@@ -15,6 +15,7 @@ struct TabButton: View {
     @Binding var selectedTab: String
     //For Hero Animation Slide
     var animation: Namespace.ID
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         Button(action: {
@@ -28,7 +29,7 @@ struct TabButton: View {
                 Text(title)
                     .fontWeight(.semibold)
             }
-            .foregroundColor(selectedTab == title ? .purpleTheme : .white)
+            .foregroundColor(selectedTab == title ? themeApp.color : .white)
             .padding(.vertical, 12)
             .padding(.horizontal, 10)
             //max Frame
@@ -38,7 +39,7 @@ struct TabButton: View {
                 //hero Animation
                 ZStack {
                     if selectedTab == title {
-                        Color.white
+                        Color.element.opacity(colorScheme == .light ? 1 : 0.5)
                             .opacity(selectedTab == title ? 1 : 0)
                             .clipShape(CustomCorners(corner: [.topRight, .bottomRight], radius: 12))
                             //Магия )))
@@ -53,5 +54,6 @@ struct TabButton: View {
 struct TabButton_Previews: PreviewProvider {
     static var previews: some View {
         SideMenuMainView(selectedTab: "Game", showMenu: true)
+            .preferredColorScheme(.dark)
     }
 }
