@@ -8,9 +8,12 @@
 import SwiftUI
 
 extension Color {
-    static let lightScheme = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
-    static let darkScheme = Color(red: 25 / 255, green: 25 / 255, blue: 30 / 255)
-    static var colorText: Color {
+    static let element = Color("element")
+    static let colorText = Color("colorText")
+    
+//    static let lightScheme = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
+//    static let darkScheme = Color(red: 25 / 255, green: 25 / 255, blue: 30 / 255)
+    static var colorTextNewGame: Color {
         Color(UIColor { $0.userInterfaceStyle == .dark ? .black : .white } )
     }
 }

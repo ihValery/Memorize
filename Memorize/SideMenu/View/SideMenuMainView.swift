@@ -11,10 +11,14 @@ struct SideMenuMainView: View {
     //Selected tab
     @State var selectedTab = "Game"
     @State var showMenu = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.purpleGradientStart, themeApp.color]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient:
+                            Gradient(colors: [.purpleTheme.opacity(colorScheme == .dark ? 0.5 : 1),
+                                              themeApp.color]),
+                            startPoint: .topLeading, endPoint: .bottomTrailing)
                 //            Color.purpleTheme
                 .ignoresSafeArea()
             
@@ -26,14 +30,14 @@ struct SideMenuMainView: View {
             ZStack {
                 
                 //two background cards
-                Color.white
+                Color.element
                     .opacity(0.6)
                     .cornerRadius(showMenu ? 15 : 0)
                     .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
                     .offset(x: showMenu ? -25 : 0)
                     .padding(.vertical, 30)
                 
-                Color.white
+                Color.element
                     .opacity(0.4)
                     .cornerRadius(showMenu ? 15 : 0)
                     .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)

@@ -48,7 +48,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
 //                score += 2
-                score = score + 2 + Int(card.bonusTimeRemaining)
+                score = score + 2 + (themeApp.number <= 8 ? 0 : Int(card.bonusTimeRemaining))
             } else {
                 scoring(chosenIndex, potentialMatchIndex)
             }

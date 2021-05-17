@@ -42,7 +42,7 @@ struct SideMenu: View {
             VStack(alignment: .leading, spacing: 10) {
                 TabButton(image: "gamecontroller", title: "Game", selectedTab: $selectedTab, animation: animation)
                 
-                TabButton(image: "clock.arrow.circlepath", title: "Scope", selectedTab: $selectedTab, animation: animation)
+                TabButton(image: "clock.arrow.circlepath", title: "Score", selectedTab: $selectedTab, animation: animation)
                 
                 TabButton(image: "bell.badge", title: "Notification", selectedTab: $selectedTab, animation: animation)
                 

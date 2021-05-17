@@ -27,7 +27,7 @@ struct TopPanelMenu: View {
                     .font(.title.weight(.light))
                     .background(themeApp.color)
                     .cornerRadius(13)
-                    .foregroundColor(.colorText)
+                    .foregroundColor(.colorTextNewGame)
             }
         }
     }
