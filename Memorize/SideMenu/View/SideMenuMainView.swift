@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SideMenuMainView: View {
     //Selected tab
-    @State var selectedTab = "Продолжить"
+    @State var selectedTab = "Новая игра"
     @State var showMenu = false
     @Environment(\.colorScheme) var colorScheme
     
@@ -63,7 +63,7 @@ struct SideMenuMainView: View {
             .ignoresSafeArea()
             .overlay(
                 BurgerButton(showMenu: $showMenu)
-                    .padding(.top, -11)
+                    .padding(.top, -16)
                 , alignment: .topLeading)
         }
     }
@@ -71,6 +71,6 @@ struct SideMenuMainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Продолжить", showMenu: true)
+        SideMenuMainView(selectedTab: "Новая игра", showMenu: false)
     }
 }

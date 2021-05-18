@@ -35,9 +35,7 @@ struct SideMenu: View {
             
             //tab Buttons
             VStack(alignment: .leading, spacing: 10) {
-                TabButton(image: "arrowtriangle.right.circle", title: "Новая игра", selectedTab: $selectedTab, animation: animation)
-                
-                TabButton(image: "gamecontroller", title: "Продолжить", selectedTab: $selectedTab, animation: animation)
+                TabButton(image: "gamecontroller", title: "Новая игра", selectedTab: $selectedTab, animation: animation)
                 
                 TabButton(image: "clock.arrow.circlepath", title: "Счет", selectedTab: $selectedTab, animation: animation)
                 
@@ -71,7 +69,7 @@ struct SideMenu: View {
 
 struct SideMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Продолжить", showMenu: true)
+        SideMenuMainView(selectedTab: "Новая игра", showMenu: true)
             .preferredColorScheme(.dark)
     }
 }
