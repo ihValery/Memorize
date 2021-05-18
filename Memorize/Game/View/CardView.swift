@@ -9,7 +9,6 @@ import SwiftUI
 
 // Структура для одной карты
 struct CardView: View {
-    
     var card: MemoryGame<String>.Card
     
     //будем анимировать, но перед запуском анимации убедимcz, что синхронизированы с Model

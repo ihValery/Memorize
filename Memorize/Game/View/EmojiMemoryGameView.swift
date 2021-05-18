@@ -20,6 +20,7 @@ struct EmojiMemoryGameView: View {
                 .ignoresSafeArea()
             VStack {
                 TopPanelMenu(viewModelGame: viewModelGame)
+                    .padding(.bottom, -10)
                 
                 Grid(viewModelGame.cards) { item in
                     CardView(card: item)
@@ -30,9 +31,11 @@ struct EmojiMemoryGameView: View {
                         .padding(4)
                 }
             }
-            .padding(3)
-            .padding([.bottom], 20)
+            .padding(.horizontal, 3)
+            .padding(.bottom, 20)
             .foregroundColor(themeApp.color)
+//            .padding(.top, 40)
+//            .ignoresSafeArea()
             .ignoresSafeArea(.all, edges: .bottom)
         }
     }
@@ -43,6 +46,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let oneCard = EmojiMemoryGame()
         return EmojiMemoryGameView(viewModelGame: oneCard)
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
     }
 }

@@ -81,6 +81,11 @@ extension NotificationManager {
         }
     }
     
+    func removeNotification() {
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+    }
+    
     func dateForAlarm(date: Date) -> DateComponents {
         return Calendar.current.dateComponents([.hour, .minute], from: date)
     }

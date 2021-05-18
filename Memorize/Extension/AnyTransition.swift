@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension AnyTransition {
+    ///Перезапись появления и исчезновения анимации
     static var animationForAlarm: AnyTransition {
         let insertion = AnyTransition.move(edge: .leading)
             .combined(with: opacity)

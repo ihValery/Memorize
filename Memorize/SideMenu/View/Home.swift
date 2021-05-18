@@ -22,11 +22,12 @@ struct Home: View {
         TabView(selection: $selectedTab) {
             
             //Views
-            EmojiMemoryGameView(viewModelGame: EmojiMemoryGame()).tag("Game")
-            Score().tag("Score")
-            Settings().tag("Settings")
-            NotificationView().tag("Notification")
-            OnboardingView().tag("Help")
+            EmojiMemoryGameView(viewModelGame: EmojiMemoryGame()).tag("Новая игра")
+            EmojiMemoryGameView(viewModelGame: EmojiMemoryGame()).tag("Продолжить")
+            Score().tag("Счет")
+            Settings().tag("Настройки")
+            NotificationView().tag("Уведомление")
+            OnboardingView().tag("Помощь")
         }
     }
 }

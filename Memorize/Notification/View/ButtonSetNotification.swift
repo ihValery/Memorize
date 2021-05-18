@@ -8,59 +8,48 @@
 import SwiftUI
 
 struct ButtonSetNotification: View {
-    var date: Date?
-    @State var showText = false
+    @Binding var date: Date
+    @State private var setAlarm = false
+    @State private var dateString = "00:00"
     
     var body: some View {
-        ZStack {
-            
             Button(action: {
-                guard let date = date else { return }
+                dateString = dateToString(date)
                 NotificationManager.shared.sceduleNotification(date: date)
                 withAnimation(.easeOut(duration: 1)) {
-                    showText = true
+                    setAlarm = true
                 }
             }) {
                 HStack {
-                    Text(showText == false ? "Установить" : "Установленно")
+                    Text(setAlarm == false ? "Установить" : "Вкл: \(dateString)")
                         .padding(.horizontal)
                     Image(systemName: "timer")
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 30)
                 .font(.title.weight(.light))
                 .padding(7)
-                .foregroundColor(showText == false ? .blue : .black.opacity(0.7))
-                .shadow(color: .black, radius: 0.1)
+                .foregroundColor(setAlarm == false ? .blue : .black.opacity(0.7))
                 .padding(5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 15)
-                        .stroke(showText == false ? Color.blue : Color.black.opacity(0.7), lineWidth: 3))
-            }
-            
+                        .stroke(setAlarm == false ? Color.blue : Color.black.opacity(0.7), lineWidth: 3))
+            }.disabled(setAlarm == true ? true : false)
+
+        if setAlarm {
+            ButtonRemoveAlarm(setAlarm: $setAlarm)
         }
-        if showText {
-            Button(action: {
-                withAnimation(.easeOut(duration: 1)) {
-                    showText = false
-                }
-            }, label: { Text("Удалить") })
-            .font(.title2)
-            .foregroundColor(.red.opacity(0.7))
-            .transition(.animationForAlarm)
-            .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 30)
-            .padding(7)
-            .font(.title.weight(.light))
-            .padding(5)
-            .overlay(
-                RoundedRectangle(cornerRadius: 15)
-                    .stroke(Color.red.opacity(0.7), lineWidth: 3))
-        }
+    }
+    
+    private func dateToString(_ date: Date) -> String {
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeStyle = .short
+        return timeFormatter.string(from: date)
     }
 }
 
 struct ButtonSetNotification_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonSetNotification()
+        NotificationView()
             .previewLayout(.sizeThatFits)
     }
 }
