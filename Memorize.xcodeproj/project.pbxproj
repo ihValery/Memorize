@@ -24,6 +24,7 @@
 		806296722653D08F0091469E /* ButtonSetNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062966E2653D08F0091469E /* ButtonSetNotification.swift */; };
 		806296732653D08F0091469E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062966F2653D08F0091469E /* NotificationView.swift */; };
 		806296742653D08F0091469E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806296712653D08F0091469E /* NotificationManager.swift */; };
+		806296762653F98A0091469E /* AnyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806296752653F98A0091469E /* AnyTransition.swift */; };
 		806A0233263F44A00076EC1A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A0232263F44A00076EC1A /* Color.swift */; };
 		806EC7C22643C9BF00B93D90 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EC7C12643C9BF00B93D90 /* OnboardingView.swift */; };
 		808699C7264695D700DAD8BE /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808699C6264695D700DAD8BE /* Cardify.swift */; };
@@ -59,6 +60,7 @@
 		8062966E2653D08F0091469E /* ButtonSetNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSetNotification.swift; sourceTree = "<group>"; };
 		8062966F2653D08F0091469E /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		806296712653D08F0091469E /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		806296752653F98A0091469E /* AnyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransition.swift; sourceTree = "<group>"; };
 		806A0232263F44A00076EC1A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		806EC7C12643C9BF00B93D90 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		808699C6264695D700DAD8BE /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				800DB7BA263DE46000A4A2C1 /* Array.swift */,
 				806A0232263F44A00076EC1A /* Color.swift */,
+				806296752653F98A0091469E /* AnyTransition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				804B627026530ED100DE3792 /* BurgerButton.swift in Sources */,
 				801128DD2642B3A600C38272 /* Star.swift in Sources */,
 				80A4F678264394FD00A0BCA2 /* CardOnboardView.swift in Sources */,
+				806296762653F98A0091469E /* AnyTransition.swift in Sources */,
 				806296742653D08F0091469E /* NotificationManager.swift in Sources */,
 				804B62682652DD0200DE3792 /* CustomCorners.swift in Sources */,
 				80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */,

@@ -34,7 +34,7 @@ struct NotificationView: View {
                     .datePickerStyle(GraphicalDatePickerStyle())
                     .labelsHidden()
                 
-                ButtonSetNotification(date: currentDate, text: textTitle)
+                ButtonSetNotification(date: currentDate)
             }
             .font(.largeTitle)
             .padding()
