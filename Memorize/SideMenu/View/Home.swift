@@ -26,9 +26,7 @@ struct Home: View {
             Score().tag("Score")
             Settings().tag("Settings")
             NotificationView().tag("Notification")
-//            Notifications().tag("Notification")
             OnboardingView().tag("Help")
-//            Help().tag("Help")
         }
     }
 }
@@ -81,14 +79,14 @@ struct Settings: View {
 //    }
 //}
 
-struct Help: View {    
-    var body: some View {
-        NavigationView {
-            Text("Help")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundColor(.primary)
-                .navigationTitle("Help")
-        }
-    }
-}
+//struct Help: View {
+//    var body: some View {
+//        NavigationView {
+//            Text("Help")
+//                .font(.largeTitle)
+//                .fontWeight(.heavy)
+//                .foregroundColor(.primary)
+//                .navigationTitle("Help")
+//        }
+//    }
+//}

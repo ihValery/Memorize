@@ -60,16 +60,16 @@ extension NotificationManager {
     }
     
     ///Создание содержимого для локального уведомления
-    func sceduleNotification(notificationType: String, date: Date) {
+    func sceduleNotification(date: Date) {
         let content = UNMutableNotificationContent()
         
-        content.title = notificationType
+//        content.title = notificationType
         content.body = "Достаточно потратить 10-15 минут утром, чтобы выполнить простые упражнения, и мозг будет работать намного эффективнее."
         content.sound = UNNotificationSound.default
         content.badge = 1
         
         let currDate = dateForAlarm(date: date)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: currDate, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: currDate, repeats: true)
 //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
