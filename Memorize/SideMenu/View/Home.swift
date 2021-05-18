@@ -22,11 +22,13 @@ struct Home: View {
         TabView(selection: $selectedTab) {
             
             //Views
-            GamePage().tag("Game")
+            EmojiMemoryGameView(viewModelGame: EmojiMemoryGame()).tag("Game")
             Score().tag("Score")
             Settings().tag("Settings")
-            Notifications().tag("Notification")
-            Help().tag("Help")
+            NotificationView().tag("Notification")
+//            Notifications().tag("Notification")
+            OnboardingView().tag("Help")
+//            Help().tag("Help")
         }
     }
 }
@@ -37,11 +39,11 @@ struct Home_Previews: PreviewProvider {
     }
 }
 
-struct GamePage: View {
-    var body: some View {
-        EmojiMemoryGameView(viewModelGame: EmojiMemoryGame())
-    }
-}
+//struct GamePage: View {
+//    var body: some View {
+//        EmojiMemoryGameView(viewModelGame: EmojiMemoryGame())
+//    }
+//}
 
 struct Score: View {
     var body: some View {
@@ -67,17 +69,17 @@ struct Settings: View {
     }
 }
 
-struct Notifications: View {
-    var body: some View {
-        NavigationView {
-            Text("Notification")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundColor(.primary)
-                .navigationTitle("Notification")
-        }
-    }
-}
+//struct Notifications: View {
+//    var body: some View {
+//        NavigationView {
+//            Text("Notification")
+//                .font(.largeTitle)
+//                .fontWeight(.heavy)
+//                .foregroundColor(.primary)
+//                .navigationTitle("Notification")
+//        }
+//    }
+//}
 
 struct Help: View {    
     var body: some View {

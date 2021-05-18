@@ -36,7 +36,8 @@ struct SideMenu: View {
                         .opacity(0.7)
                 }
             }
-            .foregroundColor(.white)
+//            .foregroundColor(.white)
+            .foregroundColor(.colorTextNewGame)
             
             //tab Buttons
             VStack(alignment: .leading, spacing: 10) {
@@ -62,7 +63,8 @@ struct SideMenu: View {
                 Text("App version 3.4.20")
                     .font(.caption)
                     .fontWeight(.semibold)
-                    .foregroundColor(.white)
+                    .foregroundColor(.colorTextNewGame)
+//                    .foregroundColor(.white)
                     .opacity(0.4)
             }
         }
@@ -74,5 +76,6 @@ struct SideMenu: View {
 struct SideMenu_Previews: PreviewProvider {
     static var previews: some View {
         SideMenuMainView(selectedTab: "Game", showMenu: true)
+            .preferredColorScheme(.dark)
     }
 }

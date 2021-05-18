@@ -27,7 +27,6 @@ struct CardView: View {
                 substrateForAnimation()
                 Text(card.content)
                     .font(.system(size: fontSize(for: size)))
-//                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
                     .scaleEffect(card.isMatched ? 1.1 : 1)
                     .animation(card.isMatched ? .linear.repeatForever() : .default)
                     //эмоджи крутился бесконечно в одном направлении.аргумент autoreverses false

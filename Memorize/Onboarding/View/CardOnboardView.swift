@@ -46,7 +46,7 @@ struct CardOnboardView: View {
                     .padding(.bottom, 20)
                 //Button Start
 //                StartButtonOnboardView(viewModelGame: EmojiMemoryGame())
-                StartButtonOnboardView()
+//                StartButtonOnboardView()
             }//VStack
         }//ZStack
         //Добавляет действие, выполняемое при появлении этого представления.
@@ -56,9 +56,10 @@ struct CardOnboardView: View {
 //            }
 //        }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-        .background(LinearGradient(gradient: Gradient(colors: cardOnboard.gradientColors), startPoint: .bottomTrailing, endPoint: .topLeading))
+        .background(LinearGradient(gradient: Gradient(colors: cardOnboard.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(20)
         .padding(.horizontal, 15)
+        .padding(.top, 25)
     }
 }
 
