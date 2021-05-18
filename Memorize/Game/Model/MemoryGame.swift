@@ -40,7 +40,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
     
     ///Функционал когда мы выбираем карточку. Вся наша логика по совпадениею карт.
     mutating func choose(_ card: Card) {
-        guard let chosenIndex = cards.firstIndex(selected: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched else { return }
+        guard let chosenIndex = cards.firstChosenIndex(selected: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched else { return }
 
         if let potentialMatchIndex = indexOnlyOneFaceUpCard {
 

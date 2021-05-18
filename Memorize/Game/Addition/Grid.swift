@@ -37,7 +37,7 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
 
     private func body(for item: Item, in layout: GridLayout) -> some View {
         //Наш index никогда не будет равен nil (item всегда является элементом items изначально items)
-        let index = items.firstIndex(selected: item)!
+        let index = items.firstChosenIndex(selected: item)!
         return viewForItem(item)
             //3. позиционируем их туда, куда скажет location в  GridLayout
             .frame(width: layout.itemSize.width, height: layout.itemSize.height)

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Combine
+//import Combine
 
 class EmojiMemoryGame: ObservableObject {
     
@@ -34,7 +34,7 @@ class EmojiMemoryGame: ObservableObject {
         modelGame.choose(card)
     }
     
-    //MARK: - Intent(s) Намерения новая игра
+    //MARK: - Intent(s) Намерение новая игра
     func newGame() {
         withAnimation(.easeInOut) {
             modelGame = EmojiMemoryGame.createMemoryGame()
