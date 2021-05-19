@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ChoseButton: View {
+    @Binding var rotateCard: Bool
+    
     var body: some View {
         Button(action: {
-            
+            withAnimation(.spring()) {
+                rotateCard.toggle()
+            }
         }) {
             Text("Выбрать")
                 .font(.callout)
@@ -18,14 +22,13 @@ struct ChoseButton: View {
                 .padding(.vertical, 10)
                 .padding(.horizontal, 25)
                 .background(Capsule().stroke(Color.white, lineWidth: 2))
-                
         }
     }
 }
 
 struct ChoseButton_Previews: PreviewProvider {
     static var previews: some View {
-        ChoseButton()
+        ChoseButton(rotateCard: .constant(true))
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(.dark)
     }

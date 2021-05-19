@@ -19,8 +19,8 @@ class EmojiMemoryGame: ObservableObject {
     @Published private var modelGame: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
     
     static private func createMemoryGame() -> MemoryGame<String> {
-        return MemoryGame<String>(numbersOfPairsOfCards: themeApp.number) { pairIndex in
-            themeApp.collection[pairIndex]
+        return MemoryGame<String>(numbersOfPairsOfCards: ThemeFactory.themeApp.number) { pairIndex in
+            ThemeFactory.themeApp.collection[pairIndex]
         }
     }
     

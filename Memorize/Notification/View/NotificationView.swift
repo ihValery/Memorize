@@ -18,7 +18,7 @@ struct NotificationView: View {
     var body: some View {
         ZStack {
             LinearGradient(gradient:
-                            Gradient(colors: [themeApp.color,
+                            Gradient(colors: [ThemeFactory.themeApp.color,
                                               .purpleTheme.opacity(colorScheme == .dark ? 0.5 : 1)]),
                             startPoint: .topTrailing, endPoint: .bottomLeading)
                 .opacity(0.6)

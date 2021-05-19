@@ -5,15 +5,17 @@
 //  Created by Валерий Игнатьев on 19.05.21.
 //
 
-import Foundation
+import SwiftUI
+import Combine
 
 enum ThemeType {
     case child, animal, zoo, halloween, sport, flags
 }
 
-class ThemeFactory {
+class ThemeFactory: ObservableObject {
+    static var themeApp: Theme = ThemeFactory.createTheme(type: .zoo)
     
-    func createTheme(type: ThemeType) -> Theme {
+    static func createTheme(type: ThemeType) -> Theme {
         var theme: Theme
         
         switch type {
@@ -28,4 +30,4 @@ class ThemeFactory {
     }
 }
 
-var themeApp = ThemeFactory().createTheme(type: .zoo)
+//var themeApp = ThemeFactory().createTheme(type: .zoo)

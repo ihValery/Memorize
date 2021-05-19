@@ -33,7 +33,7 @@ struct EmojiMemoryGameView: View {
             }
             .padding(.horizontal, 3)
             .padding(.bottom, 20)
-            .foregroundColor(themeApp.color)
+            .foregroundColor(ThemeFactory.themeApp.color)
             .ignoresSafeArea(.all, edges: .bottom)
         }
     }
@@ -43,6 +43,7 @@ struct EmojiMemoryGameView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let oneCard = EmojiMemoryGame()
+//        let theme = ThemeFactory()
         return EmojiMemoryGameView(viewModelGame: oneCard)
 //            .preferredColorScheme(.dark)
     }

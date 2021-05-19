@@ -14,8 +14,8 @@ struct TopPanelMenu: View {
     var body: some View {
 //        ZStack{
             HStack {
-//                ContextMenu(viewModelGame: viewModelGame)
-//                    .padding(.leading, 50)
+                ContextMenu(viewModelGame: viewModelGame)
+                    .padding(.leading, 50)
                 Spacer()
                 Text("Счет:")
                 Text(viewModelGame.updateScore())
