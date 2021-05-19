@@ -21,7 +21,7 @@ struct ButtonSetNotification: View {
                 }
             }) {
                 HStack {
-                    Text(setAlarm == false ? "Установить" : "Вкл: \(dateString)")
+                    Text(setAlarm == false ? "Установить" : "Вкл:  \(dateString)")
                         .padding(.horizontal)
                     Image(systemName: "timer")
                 }
