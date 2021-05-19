@@ -12,6 +12,8 @@ protocol Theme {
     var color: Color { get }
     var collection: [String] { get }
     var number: Int { get }
+    var avatar: String { get }
+    var level: CGFloat { get }
 }
 
 class Children: Theme {
@@ -19,6 +21,8 @@ class Children: Theme {
     private (set) var color = Color.yellowTheme
     private (set) var collection = ["👸", "🧞", "🧜‍♀️", "🧚‍♀️", "🦄", "🦋", "🐠", "🐬"].shuffled()
     private (set) var number = 4
+    private (set) var avatar = "🧚‍♀️"
+    private (set) var level: CGFloat = 0.1
 }
 
 class Animals: Theme {
@@ -27,6 +31,8 @@ class Animals: Theme {
     private (set) var collection = ["🐨", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼",
                                     "🐷", "🐯", "🦁", "🐮", "🐸", "🐵"].shuffled()
     private (set) var number = 6
+    private (set) var avatar = "🐶"
+    private (set) var level: CGFloat = 0.2
 }
 
 class Zoo: Theme {
@@ -36,6 +42,8 @@ class Zoo: Theme {
                                     "🦏", "🐘", "🦧", "🦒", "🦘", "🐄", "🐎", "🦌", "🐏", "🐈",
                                     "🐩", "🦃", "🕊", "🦩", "🦫", "🐿", "🦨"].shuffled()
     private (set) var number = 9
+    private (set) var avatar = "🐘"
+    private (set) var level: CGFloat = 0.3
 }
 
 class Halloween: Theme {
@@ -43,6 +51,8 @@ class Halloween: Theme {
     private (set) var color = Color.orangeTheme
     private (set) var collection = ["👻", "🩸", "🕷", "☠️", "🕸", "⚰️", "🧟‍♂️", "🧛🏼", "🎃", "💀", "🦇"].shuffled()
     private (set) var number = 9
+    private (set) var avatar = "🦇"
+    private (set) var level: CGFloat = 0.5
 }
 
 class Sport: Theme {
@@ -54,6 +64,8 @@ class Sport: Theme {
         let random = [9, 12, 14, 16, 20].randomElement()!
         return random
     }
+    private (set) var avatar = "🏓"
+    private (set) var level: CGFloat = 0.7
 }
 
 class Flags: Theme {
@@ -64,4 +76,6 @@ class Flags: Theme {
                                     "🇳🇴", "🇲🇱", "🇨🇬", "🇨🇾", "🇮🇹", "🇦🇹", "🇧🇸", "🇩🇰", "🇮🇩", "🇰🇿",
                                     "🇦🇱", "🇧🇯", "🇧🇶", "🇧🇦", "🇧🇬", "🇻🇳", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "🇬🇪", "🇲🇬", "🇱🇺"].shuffled()
     private (set) var number = 36
+    private (set) var avatar = "🇫🇮"
+    private (set) var level: CGFloat = 1.0
 }

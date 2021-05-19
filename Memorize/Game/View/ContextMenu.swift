@@ -12,33 +12,33 @@ struct ContextMenu: View {
     @ObservedObject var viewModelGame: EmojiMemoryGame
     
     var body: some View {
-        Text(themeApp.name)
+        Text(ThemeFactory.themeApp.name)
             .contextMenu {
                 Text("Easy level")
                 Button("🧚‍♀️   Children") {
-                    themeApp = ThemeFactory().createTheme(type: .child)
+                    ThemeFactory.themeApp = ThemeFactory.createTheme(type: .child)
                     viewModelGame.newGame()
                 }
                 Button("🐶   Animal") {
-                    themeApp = ThemeFactory().createTheme(type: .animal)
+                    ThemeFactory.themeApp = ThemeFactory.createTheme(type: .animal)
                     viewModelGame.newGame()
                 }
                 Text("Middle level")
                 Button("🦜   Zoo") {
-                    themeApp = ThemeFactory().createTheme(type: .zoo)
+                    ThemeFactory.themeApp = ThemeFactory.createTheme(type: .zoo)
                     viewModelGame.newGame()
                 }
                 Button("🧛🏼   Halloween") {
-                    themeApp = ThemeFactory().createTheme(type: .halloween)
+                    ThemeFactory.themeApp = ThemeFactory.createTheme(type: .halloween)
                     viewModelGame.newGame()
                 }
                 Button("🏀   Sport (random)") {
-                    themeApp = ThemeFactory().createTheme(type: .sport)
+                    ThemeFactory.themeApp = ThemeFactory.createTheme(type: .sport)
                     viewModelGame.newGame()
                 }
                 Text("Сheck yourself")
                 Button("🇺🇦   Flags") {
-                    themeApp = ThemeFactory().createTheme(type: .flags)
+                    ThemeFactory.themeApp = ThemeFactory.createTheme(type: .flags)
                     viewModelGame.newGame()
                 }
             }

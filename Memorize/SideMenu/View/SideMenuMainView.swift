@@ -17,7 +17,7 @@ struct SideMenuMainView: View {
         ZStack {
             LinearGradient(gradient:
                             Gradient(colors: [.purpleTheme.opacity(colorScheme == .dark ? 0.5 : 1),
-                                              themeApp.color]),
+                                              ThemeFactory.themeApp.color]),
                             startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
