@@ -38,7 +38,10 @@ struct Home_Previews: PreviewProvider {
 }
 
 //struct GamePage: View {
+//
+//
 //    var body: some View {
+////        viewModelGame.newGame()
 //        EmojiMemoryGameView(viewModelGame: EmojiMemoryGame())
 //    }
 //}

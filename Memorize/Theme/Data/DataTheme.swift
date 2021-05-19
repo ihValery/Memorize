@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-enum ThemeType {
-    case child, animal, zoo, halloween, sport, flags
-}
-
 protocol Theme {
     var name: String { get }
     var color: Color { get }
@@ -68,21 +64,4 @@ class Flags: Theme {
                                     "🇳🇴", "🇲🇱", "🇨🇬", "🇨🇾", "🇮🇹", "🇦🇹", "🇧🇸", "🇩🇰", "🇮🇩", "🇰🇿",
                                     "🇦🇱", "🇧🇯", "🇧🇶", "🇧🇦", "🇧🇬", "🇻🇳", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "🇬🇪", "🇲🇬", "🇱🇺"].shuffled()
     private (set) var number = 36
-}
-
-class ThemeFactory {
-    
-    func createTheme(type: ThemeType) -> Theme {
-        var theme: Theme
-        
-        switch type {
-            case .child: theme = Children()
-            case .animal: theme = Animals()
-            case .zoo: theme = Zoo()
-            case .halloween: theme = Halloween()
-            case .sport: theme = Sport()
-            case .flags: theme = Flags()
-        }
-        return theme
-    }
 }
