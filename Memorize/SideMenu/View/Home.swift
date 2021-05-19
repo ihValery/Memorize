@@ -69,27 +69,3 @@ struct Settings: View {
         }
     }
 }
-
-//struct Notifications: View {
-//    var body: some View {
-//        NavigationView {
-//            Text("Notification")
-//                .font(.largeTitle)
-//                .fontWeight(.heavy)
-//                .foregroundColor(.primary)
-//                .navigationTitle("Notification")
-//        }
-//    }
-//}
-
-//struct Help: View {
-//    var body: some View {
-//        NavigationView {
-//            Text("Help")
-//                .font(.largeTitle)
-//                .fontWeight(.heavy)
-//                .foregroundColor(.primary)
-//                .navigationTitle("Help")
-//        }
-//    }
-//}

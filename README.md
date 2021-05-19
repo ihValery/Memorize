@@ -1,8 +1,8 @@
-# Memorize написан на SwiftUI
-CS193p Стэнфордский курс. Медленно, но настойчиво погружаемся в декларативное описание UI, которое проповедует SwiftUI
+# Memorize (найди пару) проект для защиты
+Медленно, но настойчиво погружаемся в декларативное описание UI, которое проповедует SwiftUI.
 
-- Lesson 1 Логистика курса и введение в SwiftUI.
-- Lesson 2 MVVM и система ТИПОВ в Swift.
-- Lesson 3 Реактивный UI. Протоколы Protocols.  Layout.
-- Lesson 4 Grid. Перечисления Enum. Optionals.
-- Lesson 5 Access Control. ViewBuilder. Shape. ViewModifier. 
+- Игра (логика, подсчет очков)
+- Меню (side bar menu)
+- Уведомления (+ анимация)
+- Помощь (onboarding с правилами и описанием)
+- Выбор темы (делаю ...)
