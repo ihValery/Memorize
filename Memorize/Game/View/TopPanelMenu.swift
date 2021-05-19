@@ -12,24 +12,26 @@ struct TopPanelMenu: View {
     @ObservedObject var viewModelGame: EmojiMemoryGame
     
     var body: some View {
-        ZStack{
+//        ZStack{
             HStack {
-                ContextMenu(viewModelGame: viewModelGame)
-                    .padding(.leading, 50)
+//                ContextMenu(viewModelGame: viewModelGame)
+//                    .padding(.leading, 50)
                 Spacer()
-                Text("Score:")
+                Text("Счет:")
                 Text(viewModelGame.updateScore())
                     .frame(minWidth: 35, alignment: .trailing)
+                    .padding(.trailing, 40)
             }
-            .padding([.leading, .trailing], .some(7))
-            HStack {
-                Button(" new ", action: viewModelGame.newGame)
-                    .font(.title.weight(.light))
-                    .background(themeApp.color)
-                    .cornerRadius(13)
-                    .foregroundColor(.colorTextNewGame)
-            }
-        }
+            .multilineTextAlignment(.trailing)
+//            .padding([.leading, .trailing], 7)
+//            HStack {
+//                Button(" new ", action: viewModelGame.newGame)
+//                    .font(.title.weight(.light))
+//                    .background(themeApp.color)
+//                    .cornerRadius(13)
+//                    .foregroundColor(.colorTextNewGame)
+//            }
+//        }
     }
 }
 

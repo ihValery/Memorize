@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-//Для получения размера экрана
 extension View {
+    ///Для получения размера экрана
     func getRect() -> CGRect {
         return UIScreen.main.bounds
     }

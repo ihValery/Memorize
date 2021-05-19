@@ -43,6 +43,6 @@ struct BurgerButton: View {
 
 struct BurgerButton_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Help", showMenu: true)
+        SideMenuMainView(selectedTab: "Помощь", showMenu: true)
     }
 }

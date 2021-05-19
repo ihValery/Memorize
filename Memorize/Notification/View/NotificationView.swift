@@ -11,7 +11,7 @@ struct NotificationView: View {
     
     @State private var currentDate = Date()
     @State private var toShowAlert = false
-    @State private var textTitle = ""
+//    @State private var textTitle = ""
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.colorScheme) var colorScheme
     
@@ -24,17 +24,17 @@ struct NotificationView: View {
                 .opacity(0.6)
                 .ignoresSafeArea()
             VStack {
-                Text("10 минут утром,\nчто бы мозг работал эффективнее!")
-//                    .fontWeight(.)
+                Text("10 минут,\nчто бы мозг работал эффективнее!")
                     .font(.largeTitle)
                     .foregroundColor(.black.opacity(0.7))
                     .multilineTextAlignment(.center)
                 
                 DatePicker("Время", selection: $currentDate, in: Date()...)
                     .datePickerStyle(GraphicalDatePickerStyle())
-                    .labelsHidden()
+//                    .labelsHidden()
+                    .environment(\.locale, Locale.init(identifier: "ru"))
                 
-                ButtonSetNotification(date: currentDate)
+                ButtonSetNotification(date: $currentDate)
             }
             .font(.largeTitle)
             .padding()

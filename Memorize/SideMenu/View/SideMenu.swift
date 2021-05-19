@@ -17,39 +17,33 @@ struct SideMenu: View {
         VStack(alignment: .leading, spacing: 15) {
             
             //Profile
-            Image("profile2")
+            Image("proFiler")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 70, height: 70, alignment: .top)
+                .frame(width: 150, height: 150, alignment: .top)
                 .cornerRadius(10)
-                
             //Padding top for Top Close Button
-                .padding(.top, 50)
-            VStack(alignment: .leading, spacing: 6) {
-                Text("Monika Lonskiy")
+                .padding(.top, 30)
+            
+            VStack(alignment: .leading, spacing: -5) {
+                Text("Екатерина")
                     .font(.title)
-                    .fontWeight(.heavy)
-                
-                Button(action: {}) {
-                    Text("View Profile")
-                        .fontWeight(.semibold)
-                        .opacity(0.7)
-                }
+                Text("Игнатьева")
             }
-//            .foregroundColor(.white)
+            .padding(.top, -15)
             .foregroundColor(.colorTextNewGame)
             
             //tab Buttons
             VStack(alignment: .leading, spacing: 10) {
-                TabButton(image: "gamecontroller", title: "Game", selectedTab: $selectedTab, animation: animation)
+                TabButton(image: "gamecontroller", title: "Новая игра", selectedTab: $selectedTab, animation: animation)
                 
-                TabButton(image: "clock.arrow.circlepath", title: "Score", selectedTab: $selectedTab, animation: animation)
+                TabButton(image: "clock.arrow.circlepath", title: "Счет", selectedTab: $selectedTab, animation: animation)
                 
-                TabButton(image: "bell.badge", title: "Notification", selectedTab: $selectedTab, animation: animation)
+                TabButton(image: "bell.badge", title: "Уведомление", selectedTab: $selectedTab, animation: animation)
                 
-                TabButton(image: "gearshape", title: "Settings", selectedTab: $selectedTab, animation: animation)
+                TabButton(image: "gearshape", title: "Настройки", selectedTab: $selectedTab, animation: animation)
                 
-                TabButton(image: "questionmark.circle", title: "Help", selectedTab: $selectedTab, animation: animation)
+                TabButton(image: "questionmark.circle", title: "Помощь", selectedTab: $selectedTab, animation: animation)
             }
             .padding(.leading, -15)
             .padding(.top, 50)
@@ -58,9 +52,9 @@ struct SideMenu: View {
             
             //SignOut button
             VStack(alignment: .leading, spacing: -10) {
-                TabButton(image: "rectangle.lefthalf.inset.fill.arrow.left", title: "Sing Out", selectedTab: .constant(""), animation: animation)
+                TabButton(image: "rectangle.lefthalf.inset.fill.arrow.left", title: "Выйти", selectedTab: .constant(""), animation: animation)
                     .padding(.horizontal, -15)
-                Text("App version 3.4.20")
+                Text("Версия 3.4.20")
                     .font(.caption)
                     .fontWeight(.semibold)
                     .foregroundColor(.colorTextNewGame)
@@ -75,7 +69,7 @@ struct SideMenu: View {
 
 struct SideMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Game", showMenu: true)
+        SideMenuMainView(selectedTab: "Новая игра", showMenu: true)
             .preferredColorScheme(.dark)
     }
 }

@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct CardOnboardView: View {
-    //MARK: - Properties
-    
     var cardOnboard: CardOnboard
-    
     @State private var isAnimating: Bool = false
     
     //MARK: - Body
@@ -59,7 +56,7 @@ struct CardOnboardView: View {
         .background(LinearGradient(gradient: Gradient(colors: cardOnboard.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(20)
         .padding(.horizontal, 15)
-        .padding(.top, 25)
+        .padding(.top, 15)
     }
 }
 
