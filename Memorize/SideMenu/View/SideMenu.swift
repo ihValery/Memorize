@@ -28,6 +28,7 @@ struct SideMenu: View {
             VStack(alignment: .leading, spacing: -5) {
                 Text("Екатерина")
                     .font(.title)
+                    .fontWeight(.bold)
                 Text("Игнатьева")
             }
             .padding(.top, -15)
