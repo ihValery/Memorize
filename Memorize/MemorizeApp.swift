@@ -16,8 +16,8 @@ struct MemorizeApp: App {
             //Помещаем в отдельную переменную.
 //            let game = EmojiMemoryGame()
 //            EmojiMemoryGameView(viewModelGame: game)
-//            SideMenuMainView()
-            MainThemeView()
+            SideMenuMainView()
+//            MainThemeView()
         }
     }
 }

@@ -63,7 +63,7 @@ struct SideMenuMainView: View {
             .ignoresSafeArea()
             .overlay(
                 BurgerButton(showMenu: $showMenu)
-                    .padding(.top, -16)
+                    .padding(.top, -3)
                 , alignment: .topLeading)
         }
     }
