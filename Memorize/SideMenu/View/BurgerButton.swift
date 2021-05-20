@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BurgerButton: View {
+//    var theme: ThemeCHANGEname
     @Binding var showMenu: Bool
     
     var body: some View {

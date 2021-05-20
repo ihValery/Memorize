@@ -20,7 +20,7 @@
 		804B626C2652DD0200DE3792 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B62642652DD0200DE3792 /* SideMenu.swift */; };
 		804B626D2652DD0200DE3792 /* SideMenuMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B62652652DD0200DE3792 /* SideMenuMainView.swift */; };
 		804B627026530ED100DE3792 /* BurgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804B626F26530ED100DE3792 /* BurgerButton.swift */; };
-		804BB9612641772100E9B51B /* DataTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BB9602641772100E9B51B /* DataTheme.swift */; };
+		804BB9612641772100E9B51B /* AllTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BB9602641772100E9B51B /* AllTheme.swift */; };
 		805E07772654283400DDD8FB /* ButtonRemoveAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E07762654283400DDD8FB /* ButtonRemoveAlarm.swift */; };
 		806296722653D08F0091469E /* ButtonSetNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062966E2653D08F0091469E /* ButtonSetNotification.swift */; };
 		806296732653D08F0091469E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062966F2653D08F0091469E /* NotificationView.swift */; };
@@ -33,11 +33,14 @@
 		80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */; };
 		80896223262C6AFE001D9C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896222262C6AFE001D9C7A /* Assets.xcassets */; };
 		80896226262C6AFE001D9C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896225262C6AFE001D9C7A /* Preview Assets.xcassets */; };
+		809BFA8F2657088100C37C48 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8C2657088000C37C48 /* ThemeModel.swift */; };
+		809BFA902657088100C37C48 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8D2657088000C37C48 /* ThemeSettings.swift */; };
+		809BFA912657088100C37C48 /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8E2657088000C37C48 /* ThemeData.swift */; };
 		809F4D7F26553E4D00ED0598 /* ThemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D7E26553E4D00ED0598 /* ThemeFactory.swift */; };
 		809F4D8326553EFD00ED0598 /* CardTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D8226553EFD00ED0598 /* CardTheme.swift */; };
 		809F4D852655414C00ED0598 /* IconDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D842655414C00ED0598 /* IconDescription.swift */; };
 		809F4D87265544C400ED0598 /* BackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D86265544C400ED0598 /* BackgroundCard.swift */; };
-		809F4D892655492600ED0598 /* ChoseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D882655492500ED0598 /* ChoseButton.swift */; };
+		809F4D892655492600ED0598 /* NameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D882655492500ED0598 /* NameTheme.swift */; };
 		80A2C1E72655B97B0023E28E /* MainThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2C1E62655B97B0023E28E /* MainThemeView.swift */; };
 		80A4F671264392C100A0BCA2 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F670264392C100A0BCA2 /* OnboardModel.swift */; };
 		80A4F6762643937200A0BCA2 /* StartButtonOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F6752643937200A0BCA2 /* StartButtonOnboardView.swift */; };
@@ -63,7 +66,7 @@
 		804B62642652DD0200DE3792 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		804B62652652DD0200DE3792 /* SideMenuMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuMainView.swift; sourceTree = "<group>"; };
 		804B626F26530ED100DE3792 /* BurgerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerButton.swift; sourceTree = "<group>"; };
-		804BB9602641772100E9B51B /* DataTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTheme.swift; sourceTree = "<group>"; };
+		804BB9602641772100E9B51B /* AllTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTheme.swift; sourceTree = "<group>"; };
 		805E07762654283400DDD8FB /* ButtonRemoveAlarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRemoveAlarm.swift; sourceTree = "<group>"; };
 		8062966E2653D08F0091469E /* ButtonSetNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonSetNotification.swift; sourceTree = "<group>"; };
 		8062966F2653D08F0091469E /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -78,11 +81,14 @@
 		80896222262C6AFE001D9C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80896225262C6AFE001D9C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80896227262C6AFE001D9C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		809BFA8C2657088000C37C48 /* ThemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
+		809BFA8D2657088000C37C48 /* ThemeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
+		809BFA8E2657088000C37C48 /* ThemeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
 		809F4D7E26553E4D00ED0598 /* ThemeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFactory.swift; sourceTree = "<group>"; };
 		809F4D8226553EFD00ED0598 /* CardTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTheme.swift; sourceTree = "<group>"; };
 		809F4D842655414C00ED0598 /* IconDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconDescription.swift; sourceTree = "<group>"; };
 		809F4D86265544C400ED0598 /* BackgroundCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCard.swift; sourceTree = "<group>"; };
-		809F4D882655492500ED0598 /* ChoseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseButton.swift; sourceTree = "<group>"; };
+		809F4D882655492500ED0598 /* NameTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTheme.swift; sourceTree = "<group>"; };
 		80A2C1E62655B97B0023E28E /* MainThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThemeView.swift; sourceTree = "<group>"; };
 		80A4F670264392C100A0BCA2 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
 		80A4F6752643937200A0BCA2 /* StartButtonOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonOnboardView.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				808699C6264695D700DAD8BE /* Cardify.swift */,
+				804B625D2652DD0200DE3792 /* Addition */,
 				800DB7B6263D6C7400A4A2C1 /* Constants.swift */,
 				800DB7B8263D95F000A4A2C1 /* Grid.swift */,
 			);
@@ -138,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				804B62612652DD0200DE3792 /* View */,
-				804B625D2652DD0200DE3792 /* Addition */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -252,9 +258,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		809BFA8B2657088000C37C48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				809BFA8C2657088000C37C48 /* ThemeModel.swift */,
+				809BFA8E2657088000C37C48 /* ThemeData.swift */,
+				809BFA8D2657088000C37C48 /* ThemeSettings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		809F4D7D26553DFC00ED0598 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				809BFA8B2657088000C37C48 /* Model */,
 				809F4D8026553EB900ED0598 /* Data */,
 				809F4D8126553EC400ED0598 /* View */,
 			);
@@ -264,7 +281,7 @@
 		809F4D8026553EB900ED0598 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				804BB9602641772100E9B51B /* DataTheme.swift */,
+				804BB9602641772100E9B51B /* AllTheme.swift */,
 				809F4D7E26553E4D00ED0598 /* ThemeFactory.swift */,
 			);
 			path = Data;
@@ -276,7 +293,7 @@
 				80A2C1E62655B97B0023E28E /* MainThemeView.swift */,
 				809F4D8226553EFD00ED0598 /* CardTheme.swift */,
 				809F4D86265544C400ED0598 /* BackgroundCard.swift */,
-				809F4D882655492500ED0598 /* ChoseButton.swift */,
+				809F4D882655492500ED0598 /* NameTheme.swift */,
 				809F4D842655414C00ED0598 /* IconDescription.swift */,
 			);
 			path = View;
@@ -416,6 +433,7 @@
 			files = (
 				808699C7264695D700DAD8BE /* Cardify.swift in Sources */,
 				806296722653D08F0091469E /* ButtonSetNotification.swift in Sources */,
+				809BFA902657088100C37C48 /* ThemeSettings.swift in Sources */,
 				804B626D2652DD0200DE3792 /* SideMenuMainView.swift in Sources */,
 				800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */,
 				80C0419D2645DC6800501EB8 /* TopPanelMenu.swift in Sources */,
@@ -427,24 +445,26 @@
 				805E07772654283400DDD8FB /* ButtonRemoveAlarm.swift in Sources */,
 				804B627026530ED100DE3792 /* BurgerButton.swift in Sources */,
 				801128DD2642B3A600C38272 /* Star.swift in Sources */,
+				809BFA912657088100C37C48 /* ThemeData.swift in Sources */,
 				80A4F678264394FD00A0BCA2 /* CardOnboardView.swift in Sources */,
 				809F4D87265544C400ED0598 /* BackgroundCard.swift in Sources */,
 				806296762653F98A0091469E /* AnyTransition.swift in Sources */,
 				806296742653D08F0091469E /* NotificationManager.swift in Sources */,
 				804B62682652DD0200DE3792 /* CustomCorners.swift in Sources */,
+				809BFA8F2657088100C37C48 /* ThemeModel.swift in Sources */,
 				80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */,
 				809F4D7F26553E4D00ED0598 /* ThemeFactory.swift in Sources */,
 				80C0419F2645DD4800501EB8 /* CardView.swift in Sources */,
 				801128DF2642B41400C38272 /* Pie.swift in Sources */,
 				80C0419B2645DA2300501EB8 /* ContextMenu.swift in Sources */,
 				80A4F6762643937200A0BCA2 /* StartButtonOnboardView.swift in Sources */,
-				809F4D892655492600ED0598 /* ChoseButton.swift in Sources */,
+				809F4D892655492600ED0598 /* NameTheme.swift in Sources */,
 				801796452643B2D10061B4E0 /* CardOnboardData.swift in Sources */,
 				8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */,
 				80A4F671264392C100A0BCA2 /* OnboardModel.swift in Sources */,
 				804B626A2652DD0200DE3792 /* TabButton.swift in Sources */,
 				80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */,
-				804BB9612641772100E9B51B /* DataTheme.swift in Sources */,
+				804BB9612641772100E9B51B /* AllTheme.swift in Sources */,
 				806296732653D08F0091469E /* NotificationView.swift in Sources */,
 				809F4D8326553EFD00ED0598 /* CardTheme.swift in Sources */,
 				800DB7B9263D95F000A4A2C1 /* Grid.swift in Sources */,

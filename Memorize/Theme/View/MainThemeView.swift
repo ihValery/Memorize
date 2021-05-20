@@ -8,28 +8,40 @@
 import SwiftUI
 
 struct MainThemeView: View {
+    let themes: [ThemeCHANGEname] = themeData
+    @ObservedObject var theme = ThemeSettings()
+    @State var selectedTheme: Int = UserDefaults.standard.integer(forKey: "Theme")
+    
     var body: some View {
         VStack {
             HStack {
-                Text("Все темы")
+                Text("Выбери тему")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(.colorTextNewGame)
-                    .padding(.leading)
+                    .foregroundColor(.black.opacity(0.4))
+                    .padding(.leading, 60)
+                    .padding(.bottom, -1)
                 Spacer()
             }
             
-            ScrollView(.vertical, showsIndicators: false, content: {
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    ForEach(dataTheme) { item in
-                        CardTheme(data: item)
+                    ForEach(themes) { item in
+                        CardTheme(theme: item, selectedTheme: $selectedTheme)
+                            .onTapGesture {
+                                self.theme.themeSettings = item.id
+                                UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                                withAnimation {
+                                    selectedTheme = self.theme.themeSettings
+                                }
+                            }
                     }
                 }
-            })
+            }
         }
-        .background(LinearGradient(gradient: Gradient(colors: [.purpleTheme, ThemeFactory.themeApp.color]),
-                                    startPoint: .topLeading, endPoint: .bottomTrailing)
-                         .ignoresSafeArea())
+        .background(LinearGradient(gradient: Gradient(colors:[.purpleTheme, themes[self.theme.themeSettings].color.opacity(0.4)]),
+                                   startPoint: .topLeading, endPoint: .bottomTrailing)
+                        .ignoresSafeArea())
     }
 }
 
@@ -38,21 +50,3 @@ struct MainThemeView_Previews: PreviewProvider {
         MainThemeView()
     }
 }
-
-struct ThemeData : Identifiable {
-    
-    var id : Int
-    var level : CGFloat
-    var avatar : String
-    var name : String
-    var color : Color
-}
-
-var dataTheme = [
-    ThemeData(id: 1, level: 0.1, avatar: "🧚‍♀️", name: "Child", color: Color.yellowTheme),
-    ThemeData(id: 2, level: 0.2, avatar: "🐶", name: "Animals", color: Color.indigoTheme),
-    ThemeData(id: 3, level: 0.3, avatar: "🐘", name: "Zoo", color: Color.tealTheme),
-    ThemeData(id: 4, level: 0.5, avatar: "🦇", name: "Halloween", color: Color.orangeTheme),
-    ThemeData(id: 5, level: 0.7, avatar: "🏓", name: "Sport", color: Color.greenTheme),
-    ThemeData(id: 6, level: 0.9, avatar: "🇫🇮", name: "Flags", color: Color.blueTheme)
-]

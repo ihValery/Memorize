@@ -18,9 +18,12 @@ extension Color {
 //Цвет темы
 extension Color {
     static let blueTheme = Color("blueTheme")
+    static let grayTheme = Color("grayTheme")
     static let greenTheme = Color("greenTheme")
     static let indigoTheme = Color("indigoTheme")
     static let orangeTheme = Color("orangeTheme")
+    static let pinkTheme = Color("pinkTheme")
+    static let redTheme = Color("redTheme")
     static let tealTheme = Color("tealTheme")
     static let yellowTheme = Color("yellowTheme")
 }
