@@ -15,4 +15,4 @@
     - анимированные карточки
     - сохранение текущей темы в UserDefaults
     - реактивный UI (выбира тему везде View переривовыем цвет)
-    <img src="https://github.com/ihValery/Memorize/tree/main/ImageFoeReadme/OldTheme.png?raw=true"></a> <img src="https://github.com/ihValery/Memorize/tree/main/ImageFoeReadme/NewTheme?raw=true"></a>
+    <img src="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/OldTheme.png?raw=true"></a> <img src="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/NewTheme.gif?raw=true"></a>
