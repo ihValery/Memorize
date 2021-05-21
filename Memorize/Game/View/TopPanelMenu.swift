@@ -13,16 +13,15 @@ struct TopPanelMenu: View {
     
     var body: some View {
 //        ZStack{
-            HStack {
-                ContextMenu(viewModelGame: viewModelGame)
-                    .padding(.leading, 50)
-                Spacer()
+        HStack(alignment: .center) {
+//                ContextMenu(viewModelGame: viewModelGame)
+//                    .padding(.leading, 50)
+//                Spacer()
                 Text("Счет:")
                 Text(viewModelGame.updateScore())
-                    .frame(minWidth: 35, alignment: .trailing)
-                    .padding(.trailing, 40)
+                    .frame(minWidth: 50, alignment: .center)
             }
-            .multilineTextAlignment(.trailing)
+//            .multilineTextAlignment(.center)
 //            .padding([.leading, .trailing], 7)
 //            HStack {
 //                Button(" new ", action: viewModelGame.newGame)

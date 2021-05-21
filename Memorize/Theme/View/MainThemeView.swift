@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainThemeView: View {
     let themes: [ThemeCHANGEname] = themeData
-    @ObservedObject var theme = ThemeSettings()
+    @ObservedObject var theme = ThemeSettings.shared
     @State var selectedTheme: Int = UserDefaults.standard.integer(forKey: "Theme")
     
     var body: some View {
@@ -20,6 +20,7 @@ struct MainThemeView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.black.opacity(0.4))
                     .padding(.leading, 60)
+                    .padding(.top, -10)
                     .padding(.bottom, -1)
                 Spacer()
             }

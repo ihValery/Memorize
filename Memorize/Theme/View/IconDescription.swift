@@ -27,7 +27,7 @@ struct IconInDescription: View {
                         .trim(from: 0, to: parametr ?? 0.5)
                         .stroke(Color.white, lineWidth: 5)
                 }
-                .rotationEffect(.degrees(selectedTheme == theme.id ? 270 : -90))
+                .rotationEffect(.degrees(selectedTheme == theme.id ? 630 : -90))
             )
             .clipShape(Circle())
     }

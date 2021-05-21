@@ -9,7 +9,9 @@ import SwiftUI
 
 struct BurgerButton: View {
 //    var theme: ThemeCHANGEname
+    let themes: [ThemeCHANGEname] = themeData
     @Binding var showMenu: Bool
+    @ObservedObject var theme = ThemeSettings.shared
     
     var body: some View {
         Button(action: {
@@ -20,25 +22,26 @@ struct BurgerButton: View {
             //animate Drawing Button
             VStack(spacing: 5) {
                 Capsule()
-                    .fill(showMenu ? Color.colorTextNewGame : ThemeFactory.themeApp.color)
+                    .fill(showMenu ? Color.colorTextNewGame : themes[self.theme.themeSettings].color)
                     .frame(width: 30, height: 3)
                     //Rotating
                     .rotationEffect(.init(degrees: showMenu ? -45 : 0))
                     .offset(x: showMenu ? 2.5 : 0, y: showMenu ? 9 : 0)
                 VStack(spacing: 5) {
                     Capsule()
-                        .fill(showMenu ? Color.colorTextNewGame : ThemeFactory.themeApp.color)
+                        .fill(showMenu ? Color.colorTextNewGame : themes[self.theme.themeSettings].color)
                         .frame(width: 30, height: 3)
                     //Moving Up when clicked
                     Capsule()
-                        .fill(showMenu ? Color.colorTextNewGame : ThemeFactory.themeApp.color)
+                        .fill(showMenu ? Color.colorTextNewGame : themes[self.theme.themeSettings].color)
                         .frame(width: 30, height: 3)
                         .offset(y: showMenu ? -8 : 0)
                 }
                 .rotationEffect(.init(degrees: showMenu ? 45 : 0))
             }
         })
-        .padding()
+        .padding(.top, 5)
+        .padding(.horizontal)
     }
 }
 
