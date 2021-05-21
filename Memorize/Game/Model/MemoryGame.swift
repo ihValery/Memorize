@@ -5,13 +5,11 @@
 //  Created by Валерий Игнатьев on 19.04.21.
 //
 
-import SwiftUI
+import Foundation
 
 //Это Generic struct MemoryGame с “Не важно, какой” ТИПом CardContent,
 //который представляет собой содержимое карты Card и в нашей эмоджи игре содержимым карты
 struct MemoryGame <CardContent> where CardContent: Equatable {
-    
-    @ObservedObject var theme = ThemeSettings.shared
     
     //Не хотим, чтобы кто-нибудь пошел в структуру struct Card. ViewModel нужен доступ, на чтение.
     private (set) var cards: [Card]
@@ -50,9 +48,9 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
 //                score += 2
-                score = score + 2 + (themeData[self.theme.current].number <= 8 ? 0 : Int(card.bonusTimeRemaining))
+                score = score + 2 + (themeData[ThemeSettings.shared.current].number <= 8 ? 0 : Int(card.bonusTimeRemaining))
             } else {
-                scoring(chosenIndex, potentialMatchIndex)
+                    scoring(chosenIndex, potentialMatchIndex)
             }
             cards[chosenIndex].isFaceUp = true
         } else {

@@ -39,8 +39,8 @@ struct ThemeViewMain: View {
                 }
             }
         }
-        .background(LinearGradient(gradient: Gradient(colors:[.purpleTheme, themeData[self.theme.current].color.opacity(0.4)]),
-                                   startPoint: .topLeading, endPoint: .bottomTrailing)
+        .background(LinearGradient(gradient: Gradient(colors:[themeData[self.theme.current].color.opacity(0.4), .purpleTheme]),
+                                   startPoint: .topTrailing, endPoint: .bottomLeading)
                         .ignoresSafeArea())
     }
 }

@@ -11,7 +11,7 @@ struct NotificationView: View {
     
     @State private var currentDate = Date()
     @State private var toShowAlert = false
-//    @State private var textTitle = ""
+
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.colorScheme) var colorScheme
     
@@ -21,8 +21,8 @@ struct NotificationView: View {
         ZStack {
             LinearGradient(gradient:
                             Gradient(colors: [themeData[self.theme.current].color,
-                                              .purpleTheme.opacity(colorScheme == .dark ? 0.5 : 1)]),
-                            startPoint: .topTrailing, endPoint: .bottomLeading)
+                                              .purpleTheme]),
+                           startPoint: UnitPoint(x: 0.9, y: 0.8), endPoint: UnitPoint(x: 0.1, y: 0.9))
                 .opacity(0.6)
                 .ignoresSafeArea()
             VStack {
