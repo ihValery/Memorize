@@ -24,8 +24,7 @@ struct Home: View {
             //Views
             EmojiMemoryGameView(viewModelGame: EmojiMemoryGame()).tag("Новая игра")
             Score().tag("Счет")
-            MainThemeView().tag("Настройки")
-//            Settings().tag("Настройки")
+            ThemeViewMain().tag("Настройки")
             NotificationView().tag("Уведомление")
             OnboardingView().tag("Помощь")
         }
@@ -38,15 +37,6 @@ struct Home_Previews: PreviewProvider {
     }
 }
 
-//struct GamePage: View {
-//
-//
-//    var body: some View {
-////        viewModelGame.newGame()
-//        EmojiMemoryGameView(viewModelGame: EmojiMemoryGame())
-//    }
-//}
-
 struct Score: View {
     var body: some View {
         NavigationView {
@@ -55,18 +45,6 @@ struct Score: View {
                 .fontWeight(.heavy)
                 .foregroundColor(.primary)
                 .navigationTitle("Score")
-        }
-    }
-}
-
-struct Settings: View {
-    var body: some View {
-        NavigationView {
-            Text("Settings")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundColor(.primary)
-                .navigationTitle("Settings")
         }
     }
 }

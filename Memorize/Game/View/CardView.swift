@@ -10,8 +10,9 @@ import SwiftUI
 // Структура для одной карты
 struct CardView: View {
     var card: MemoryGame<String>.Card
+    @ObservedObject var theme = ThemeSettings.shared
     
-    //будем анимировать, но перед запуском анимации убедимcz, что синхронизированы с Model
+    //будем анимировать, но перед запуском анимации убедимcя, что синхронизированы с Model
     @State private var animatedBonusRemaning: Double = 0
     
     var body: some View {
@@ -45,7 +46,7 @@ struct CardView: View {
     }
     
     @ViewBuilder private func substrateForAnimation() -> some View {
-        if ThemeFactory.themeApp.number <= 8 {
+        if themeData[self.theme.current].number <= 8 {
             Star()
                 .padding(5)
                 .opacity(0.25)

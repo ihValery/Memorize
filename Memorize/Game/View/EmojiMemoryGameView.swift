@@ -13,6 +13,8 @@ struct EmojiMemoryGameView: View {
     //этот View себя перерисовывает
     @ObservedObject var viewModelGame: EmojiMemoryGame
     
+    @ObservedObject var theme = ThemeSettings.shared
+    
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
         ZStack {
@@ -33,7 +35,7 @@ struct EmojiMemoryGameView: View {
             }
             .padding(.horizontal, 3)
             .padding(.bottom, 20)
-            .foregroundColor(ThemeFactory.themeApp.color)
+            .foregroundColor(themeData[self.theme.current].color)
             .ignoresSafeArea(.all, edges: .bottom)
         }
     }
