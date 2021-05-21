@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				808699C6264695D700DAD8BE /* Cardify.swift */,
-				804B625D2652DD0200DE3792 /* Addition */,
 				800DB7B6263D6C7400A4A2C1 /* Constants.swift */,
+				804B625F2652DD0200DE3792 /* CustomCorners.swift */,
 				800DB7B8263D95F000A4A2C1 /* Grid.swift */,
 			);
 			path = Addition;
@@ -159,14 +159,6 @@
 				801128DB2642B37E00C38272 /* Shape */,
 			);
 			path = Game;
-			sourceTree = "<group>";
-		};
-		804B625D2652DD0200DE3792 /* Addition */ = {
-			isa = PBXGroup;
-			children = (
-				804B625F2652DD0200DE3792 /* CustomCorners.swift */,
-			);
-			path = Addition;
 			sourceTree = "<group>";
 		};
 		804B62612652DD0200DE3792 /* View */ = {
