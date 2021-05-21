@@ -13,11 +13,13 @@ struct SideMenuMainView: View {
     @State var showMenu = false
     @Environment(\.colorScheme) var colorScheme
     
+    @ObservedObject var theme = ThemeSettings.shared
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient:
                             Gradient(colors: [.purpleTheme.opacity(colorScheme == .dark ? 0.5 : 1),
-                                              ThemeFactory.themeApp.color]),
+                                              themeData[self.theme.current].color]),
                             startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             

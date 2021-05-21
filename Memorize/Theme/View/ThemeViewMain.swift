@@ -1,5 +1,5 @@
 //
-//  MainThemeView.swift
+//  ThemeViewMain.swift
 //  Memorize
 //
 //  Created by Валерий Игнатьев on 20.05.21.
@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct MainThemeView: View {
-    let themes: [ThemeCHANGEname] = themeData
+struct ThemeViewMain: View {
     @ObservedObject var theme = ThemeSettings.shared
     @State var selectedTheme: Int = UserDefaults.standard.integer(forKey: "Theme")
     
@@ -27,20 +26,20 @@ struct MainThemeView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    ForEach(themes) { item in
+                    ForEach(themeData) { item in
                         CardTheme(theme: item, selectedTheme: $selectedTheme)
                             .onTapGesture {
-                                self.theme.themeSettings = item.id
-                                UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                                self.theme.current = item.id
+                                UserDefaults.standard.set(self.theme.current, forKey: "Theme")
                                 withAnimation {
-                                    selectedTheme = self.theme.themeSettings
+                                    selectedTheme = self.theme.current
                                 }
                             }
                     }
                 }
             }
         }
-        .background(LinearGradient(gradient: Gradient(colors:[.purpleTheme, themes[self.theme.themeSettings].color.opacity(0.4)]),
+        .background(LinearGradient(gradient: Gradient(colors:[.purpleTheme, themeData[self.theme.current].color.opacity(0.4)]),
                                    startPoint: .topLeading, endPoint: .bottomTrailing)
                         .ignoresSafeArea())
     }
@@ -48,6 +47,6 @@ struct MainThemeView: View {
 
 struct MainThemeView_Previews: PreviewProvider {
     static var previews: some View {
-        MainThemeView()
+        ThemeViewMain()
     }
 }

@@ -15,10 +15,12 @@ struct NotificationView: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.colorScheme) var colorScheme
     
+    @ObservedObject var theme = ThemeSettings.shared
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient:
-                            Gradient(colors: [ThemeFactory.themeApp.color,
+                            Gradient(colors: [themeData[self.theme.current].color,
                                               .purpleTheme.opacity(colorScheme == .dark ? 0.5 : 1)]),
                             startPoint: .topTrailing, endPoint: .bottomLeading)
                 .opacity(0.6)

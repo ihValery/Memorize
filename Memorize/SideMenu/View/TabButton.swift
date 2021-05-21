@@ -11,6 +11,8 @@ struct TabButton: View {
     var image: String
     var title: String
     
+    @ObservedObject var theme = ThemeSettings.shared
+    
     //Selected tab
     @Binding var selectedTab: String
     //For Hero Animation Slide
@@ -29,7 +31,7 @@ struct TabButton: View {
                 Text(title)
                     .fontWeight(.semibold)
             }
-            .foregroundColor(selectedTab == title ? ThemeFactory.themeApp.color : .colorTextNewGame)
+            .foregroundColor(selectedTab == title ? themeData[self.theme.current].color : .colorTextNewGame)
             .padding(.vertical, 12)
             .padding(.horizontal, 10)
             //max Frame

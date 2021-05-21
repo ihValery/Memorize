@@ -17,7 +17,7 @@ struct MemorizeApp: App {
 //            let game = EmojiMemoryGame()
 //            EmojiMemoryGameView(viewModelGame: game)
             SideMenuMainView()
-//            MainThemeView()
+//            ThemeViewMain()
         }
     }
 }

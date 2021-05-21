@@ -24,4 +24,7 @@ struct ThemeCHANGEname: Identifiable {
         CGFloat(age) / 18.0
     }
     var color: Color
+    
+    var number: Int
+    var collection: [String]
 }

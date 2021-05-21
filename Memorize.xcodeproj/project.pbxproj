@@ -41,7 +41,7 @@
 		809F4D852655414C00ED0598 /* IconDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D842655414C00ED0598 /* IconDescription.swift */; };
 		809F4D87265544C400ED0598 /* BackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D86265544C400ED0598 /* BackgroundCard.swift */; };
 		809F4D892655492600ED0598 /* NameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D882655492500ED0598 /* NameTheme.swift */; };
-		80A2C1E72655B97B0023E28E /* MainThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2C1E62655B97B0023E28E /* MainThemeView.swift */; };
+		80A2C1E72655B97B0023E28E /* ThemeViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2C1E62655B97B0023E28E /* ThemeViewMain.swift */; };
 		80A4F671264392C100A0BCA2 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F670264392C100A0BCA2 /* OnboardModel.swift */; };
 		80A4F6762643937200A0BCA2 /* StartButtonOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F6752643937200A0BCA2 /* StartButtonOnboardView.swift */; };
 		80A4F678264394FD00A0BCA2 /* CardOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F677264394FD00A0BCA2 /* CardOnboardView.swift */; };
@@ -89,7 +89,7 @@
 		809F4D842655414C00ED0598 /* IconDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconDescription.swift; sourceTree = "<group>"; };
 		809F4D86265544C400ED0598 /* BackgroundCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCard.swift; sourceTree = "<group>"; };
 		809F4D882655492500ED0598 /* NameTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTheme.swift; sourceTree = "<group>"; };
-		80A2C1E62655B97B0023E28E /* MainThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainThemeView.swift; sourceTree = "<group>"; };
+		80A2C1E62655B97B0023E28E /* ThemeViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewMain.swift; sourceTree = "<group>"; };
 		80A4F670264392C100A0BCA2 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
 		80A4F6752643937200A0BCA2 /* StartButtonOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonOnboardView.swift; sourceTree = "<group>"; };
 		80A4F677264394FD00A0BCA2 /* CardOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnboardView.swift; sourceTree = "<group>"; };
@@ -264,25 +264,25 @@
 			isa = PBXGroup;
 			children = (
 				809BFA8B2657088000C37C48 /* Model */,
-				809F4D8026553EB900ED0598 /* Data */,
+				809F4D8026553EB900ED0598 /* OldData */,
 				809F4D8126553EC400ED0598 /* View */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		809F4D8026553EB900ED0598 /* Data */ = {
+		809F4D8026553EB900ED0598 /* OldData */ = {
 			isa = PBXGroup;
 			children = (
 				804BB9602641772100E9B51B /* AllTheme.swift */,
 				809F4D7E26553E4D00ED0598 /* ThemeFactory.swift */,
 			);
-			path = Data;
+			path = OldData;
 			sourceTree = "<group>";
 		};
 		809F4D8126553EC400ED0598 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				80A2C1E62655B97B0023E28E /* MainThemeView.swift */,
+				80A2C1E62655B97B0023E28E /* ThemeViewMain.swift */,
 				809F4D8226553EFD00ED0598 /* CardTheme.swift */,
 				809F4D86265544C400ED0598 /* BackgroundCard.swift */,
 				809F4D882655492500ED0598 /* NameTheme.swift */,
@@ -429,7 +429,7 @@
 				804B626D2652DD0200DE3792 /* SideMenuMainView.swift in Sources */,
 				800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */,
 				80C0419D2645DC6800501EB8 /* TopPanelMenu.swift in Sources */,
-				80A2C1E72655B97B0023E28E /* MainThemeView.swift in Sources */,
+				80A2C1E72655B97B0023E28E /* ThemeViewMain.swift in Sources */,
 				804B626C2652DD0200DE3792 /* SideMenu.swift in Sources */,
 				80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */,
 				800DB7BB263DE46000A4A2C1 /* Array.swift in Sources */,
