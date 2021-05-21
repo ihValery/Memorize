@@ -22,7 +22,7 @@ struct EmojiMemoryGameView: View {
                 .ignoresSafeArea()
             VStack {
                 TopPanelMenu(viewModelGame: viewModelGame)
-//                    .padding(.bottom, -6)
+                    .padding(.bottom, -4)
                 
                 Grid(viewModelGame.cards) { item in
                     CardView(card: item)
