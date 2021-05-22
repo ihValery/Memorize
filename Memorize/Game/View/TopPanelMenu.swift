@@ -12,17 +12,18 @@ struct TopPanelMenu: View {
     @ObservedObject var viewModelGame: EmojiMemoryGame
     
     var body: some View {
-        HStack(alignment: .center) {
-            
+        HStack(alignment: .center) { 
             Text("Счет:")
                 .fontWeight(.medium)
+            
             Text(viewModelGame.updateScore())
                 .fontWeight(.medium)
                 .frame(minWidth: 50, alignment: .center)
         }
+        
         .contextMenu(ContextMenu(menuItems: {
-            Button("Пересоздать", action: {
-                withAnimation(.easeIn.delay(0.5)) {
+            Button("Новая игра", action: {
+                withAnimation(.easeIn(duration: 0.4)) {
                     viewModelGame.newGame()
                 }
             })

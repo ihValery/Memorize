@@ -13,7 +13,7 @@ import SwiftUI
 struct Cardify: AnimatableModifier {
     
     var rotation: Double
-  
+    
     var isFaceUp: Bool {
         rotation < 90
     }
@@ -36,8 +36,8 @@ struct Cardify: AnimatableModifier {
                 RoundedRectangle(cornerRadius: 13).stroke(lineWidth: 3)
                 content
             }
-                .opacity(isFaceUp ? 1 : 0)
-            RoundedRectangle(cornerRadius: 13).fill()
+            .opacity(isFaceUp ? 1 : 0.8)
+            RoundedRectangle(cornerRadius: 13).fill().opacity(0.8)
                 .opacity(isFaceUp ? 0 : 1)
         }
         .rotation3DEffect(Angle.degrees(rotation), axis: (0, 1, 0))
