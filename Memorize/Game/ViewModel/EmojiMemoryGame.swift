@@ -35,9 +35,7 @@ class EmojiMemoryGame: ObservableObject {
     
     //MARK: - Intent(s) Намерение новая игра
     func newGame() {
-        withAnimation(.spring(response: 0.35, dampingFraction: 0.75, blendDuration: 0)) {
-            modelGame = EmojiMemoryGame.createMemoryGame()
-        }
+        modelGame = EmojiMemoryGame.createMemoryGame()
     }
     
     //MARK: - Обновление счета

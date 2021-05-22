@@ -12,8 +12,7 @@ struct EmojiMemoryGameView: View {
     //“обертка свойства” @ObservedObject говорит что когда переменная objectWillChange
     //этот View себя перерисовывает
     @ObservedObject var viewModelGame: EmojiMemoryGame
-    
-    @ObservedObject var theme = ThemeSettings.shared
+    @State var theme = ThemeSettings.shared
     
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
@@ -25,23 +24,17 @@ struct EmojiMemoryGameView: View {
                     .padding(.bottom, -4)
                 
                 if viewModelGame.cards.allSatisfy({ $0.isMatched == true }) {
-                    Button(action: {
-                        viewModelGame.newGame()
-                    }, label: {
-                        Text("Новая игра")
-                            .font(.largeTitle)
-                    })
-                    .padding()
+                        VictoryView(viewModelGame: viewModelGame, theme: theme)
                 } else {
-                
-                Grid(viewModelGame.cards) { item in
-                    CardView(card: item)
-                        .onTapGesture {
-                            withAnimation(.linear(duration: 0.5)) {
-                                viewModelGame.choose(item) }
+                    Grid(viewModelGame.cards) { item in
+                        CardView(card: item)
+                            .onTapGesture {
+                                withAnimation(.linear(duration: 0.5)) {
+                                    viewModelGame.choose(item) }
                             }
-                        .padding(4)
-                }
+                            .padding(4)
+                    }
+                    .transition(.move(edge: .bottom))
                 }
             }
             .padding(.horizontal, 3)
@@ -57,6 +50,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let oneCard = EmojiMemoryGame()
         return EmojiMemoryGameView(viewModelGame: oneCard)
-//            .preferredColorScheme(.dark)
+        //            .preferredColorScheme(.dark)
     }
 }

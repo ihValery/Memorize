@@ -12,12 +12,7 @@ struct MemorizeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            //Не предназначена для тестирования, и поэтому не надо создавать значения “на лету”,
-            //Помещаем в отдельную переменную.
-//            let game = EmojiMemoryGame()
-//            EmojiMemoryGameView(viewModelGame: game)
             SideMenuMainView()
-//            ThemeViewMain()
         }
     }
 }

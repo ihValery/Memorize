@@ -56,10 +56,6 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
         } else {
             indexOnlyOneFaceUpCard = chosenIndex
         }
-        
-        if cards.allSatisfy({ $0.isMatched == true }) {
-            print("----------- struct MemoryGame <CardContent> where CardContent: Equatable -----------")
-        }
     }
     
     ///Формирование счета в игре: -1 очко за каждое несовпадение ранее увиденной карты.
