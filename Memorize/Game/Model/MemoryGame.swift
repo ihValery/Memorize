@@ -23,7 +23,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
             for index in cards.indices {
                 //Переворачиваем все карти лицом вниз кроме одной с индексом newValue
                 cards[index].isFaceUp = index == newValue
-           }
+            }
         }
     }
     
@@ -41,23 +41,27 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
     ///Функционал когда мы выбираем карточку. Вся наша логика по совпадениею карт.
     mutating func choose(_ card: Card) {
         guard let chosenIndex = cards.firstChosenIndex(selected: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched else { return }
-
+        
         if let potentialMatchIndex = indexOnlyOneFaceUpCard {
-
+            
             if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
-//                score += 2
-                score = score + 2 + (themeData[ThemeSettings.shared.current].number <= 8 ? 0 : Int(card.bonusTimeRemaining))
+                //                score += 2
+                score += (themeData[ThemeSettings.shared.current].number <= 8 ? 2 : Int(card.bonusTimeRemaining))
             } else {
-                    scoring(chosenIndex, potentialMatchIndex)
+                scoring(chosenIndex, potentialMatchIndex)
             }
             cards[chosenIndex].isFaceUp = true
         } else {
             indexOnlyOneFaceUpCard = chosenIndex
         }
+        
+        if cards.allSatisfy({ $0.isMatched == true }) {
+            print("----------- struct MemoryGame <CardContent> where CardContent: Equatable -----------")
+        }
     }
-
+    
     ///Формирование счета в игре: -1 очко за каждое несовпадение ранее увиденной карты.
     mutating private func scoring(_ chosenIndex: Int, _ potentialMatchIndex: Int) {
         sawThisCard.contains(cards[chosenIndex].id) ? score -= 1 : sawThisCard.append(cards[chosenIndex].id)
@@ -75,6 +79,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
                 isFaceUp ? startUsingBonusTime() : stopUsingBonusTime()
             }
         }
+        
         var isMatched: Bool = false {
             didSet {
                 stopUsingBonusTime()

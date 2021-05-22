@@ -20,7 +20,6 @@ class EmojiMemoryGame: ObservableObject {
     static private func createMemoryGame() -> MemoryGame<String> {
         return MemoryGame<String>(numbersOfPairsOfCards: themeData[ThemeSettings.shared.current].number) { pairIndex in
             themeData[ThemeSettings.shared.current].collection[pairIndex]
-//            ThemeFactory.themeApp.collection[pairIndex]
         }
     }
     
@@ -36,7 +35,7 @@ class EmojiMemoryGame: ObservableObject {
     
     //MARK: - Intent(s) Намерение новая игра
     func newGame() {
-        withAnimation(.easeInOut.repeatCount(3)) {
+        withAnimation(.spring(response: 0.35, dampingFraction: 0.75, blendDuration: 0)) {
             modelGame = EmojiMemoryGame.createMemoryGame()
         }
     }

@@ -348,8 +348,8 @@
 			children = (
 				80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */,
 				80C0419C2645DC6800501EB8 /* TopPanelMenu.swift */,
-				80C0419A2645DA2300501EB8 /* ContextMenu.swift */,
 				80C0419E2645DD4800501EB8 /* CardView.swift */,
+				80C0419A2645DA2300501EB8 /* ContextMenu.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -592,7 +592,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 330;
+				CURRENT_PROJECT_VERSION = 129;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
@@ -602,7 +602,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ihValery.Memorize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -616,7 +616,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 330;
+				CURRENT_PROJECT_VERSION = 129;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
@@ -626,7 +626,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ihValery.Memorize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

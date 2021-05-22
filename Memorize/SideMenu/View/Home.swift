@@ -24,7 +24,7 @@ struct Home: View {
             //Views
             EmojiMemoryGameView(viewModelGame: EmojiMemoryGame()).tag("Новая игра")
             Score().tag("Счет")
-            ThemeViewMain().tag("Настройки")
+            ThemeViewMain().tag("Темы")
             NotificationView().tag("Уведомление")
             OnboardingView().tag("Помощь")
         }

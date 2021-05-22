@@ -18,8 +18,9 @@ struct ButtonRemoveAlarm: View {
             }
         }) {
             Text("Удалить")
-        }.contentShape(Rectangle())
-        .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 30)
+                .frame(maxWidth: .infinity, maxHeight: 30)
+                .contentShape(Rectangle())
+        }
         .font(.title.weight(.light))
         .padding(7)
         .foregroundColor(.red.opacity(0.7))

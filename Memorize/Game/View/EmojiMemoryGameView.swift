@@ -24,13 +24,24 @@ struct EmojiMemoryGameView: View {
                 TopPanelMenu(viewModelGame: viewModelGame)
                     .padding(.bottom, -4)
                 
+                if viewModelGame.cards.allSatisfy({ $0.isMatched == true }) {
+                    Button(action: {
+                        viewModelGame.newGame()
+                    }, label: {
+                        Text("Новая игра")
+                            .font(.largeTitle)
+                    })
+                    .padding()
+                } else {
+                
                 Grid(viewModelGame.cards) { item in
                     CardView(card: item)
                         .onTapGesture {
                             withAnimation(.linear(duration: 0.5)) {
                                 viewModelGame.choose(item) }
-                        }
+                            }
                         .padding(4)
+                }
                 }
             }
             .padding(.horizontal, 3)
@@ -45,7 +56,6 @@ struct EmojiMemoryGameView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let oneCard = EmojiMemoryGame()
-//        let theme = ThemeFactory()
         return EmojiMemoryGameView(viewModelGame: oneCard)
 //            .preferredColorScheme(.dark)
     }
