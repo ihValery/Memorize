@@ -25,7 +25,7 @@ struct ButtonSetNotification: View {
                         .padding(.horizontal)
                     Image(systemName: "timer")
                 }
-                .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 30)
+                .frame(maxWidth: .infinity, maxHeight: 30)
                 .font(.title.weight(.light))
                 .padding(7)
                 .foregroundColor(setAlarm == false ? .blue : .black.opacity(0.7))

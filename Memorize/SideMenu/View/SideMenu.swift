@@ -42,7 +42,7 @@ struct SideMenu: View {
                 
                 TabButton(image: "bell.badge", title: "Уведомление", selectedTab: $selectedTab, animation: animation)
                 
-                TabButton(image: "gearshape", title: "Настройки", selectedTab: $selectedTab, animation: animation)
+                TabButton(image: "gearshape", title: "Темы", selectedTab: $selectedTab, animation: animation)
                 
                 TabButton(image: "questionmark.circle", title: "Помощь", selectedTab: $selectedTab, animation: animation)
             }

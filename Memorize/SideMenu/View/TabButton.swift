@@ -55,7 +55,7 @@ struct TabButton: View {
 
 struct TabButton_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Настройки", showMenu: false)
+        SideMenuMainView(selectedTab: "Темы", showMenu: false)
             .preferredColorScheme(.dark)
     }
 }

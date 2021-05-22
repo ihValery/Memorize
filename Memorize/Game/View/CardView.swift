@@ -17,21 +17,19 @@ struct CardView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            bodyForCard(for: geometry.size)
+                bodyForCard(for: geometry.size)
         }
     }
     
     @ViewBuilder private func bodyForCard(for size: CGSize) -> some View {
-        if card.isFaceUp || !card.isMatched {
-            ZStack {
+        if card.isFaceUp || !card.isMatched {       
+         ZStack {
                 substrateForAnimation()
+                
                 Text(card.content)
                     .font(.system(size: fontSize(for: size)))
                     .scaleEffect(card.isMatched ? 1.1 : 1)
                     .animation(card.isMatched ? .linear.repeatForever() : .default)
-                    //эмоджи крутился бесконечно в одном направлении.аргумент autoreverses false
-                    //Когда задается .repeatForever() анимация, следует быть внимательным и выключить ее, если она больше не нужна
-//                    .animation(card.isMatched ? .linear(duration: 1).repeatForever(autoreverses: false) : .default)
             }
             .cardify(isFaceUp: card.isFaceUp)
             .transition(.scale)
