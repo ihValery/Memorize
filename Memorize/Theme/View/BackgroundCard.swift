@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BackgroundCard: View {
     private let width = UIScreen.main.bounds.width - 20
-    var theme: ThemeCHANGEname
+    var theme: Theme
     @Binding var selectedTheme: Int
     
     var body: some View {

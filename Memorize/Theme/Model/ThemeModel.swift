@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ThemeCHANGEname: Identifiable {
+struct Theme: Identifiable {
     var id: Int
     var name: String
     var avatar: String

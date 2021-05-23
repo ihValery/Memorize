@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NameTheme: View {
-    var theme: ThemeCHANGEname
+    var theme: Theme
     @Binding var selectedTheme: Int
     
     var body: some View {

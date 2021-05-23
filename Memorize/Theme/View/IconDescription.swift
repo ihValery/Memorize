@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IconInDescription: View {
     var iconName: String
-    var theme: ThemeCHANGEname
+    var theme: Theme
     var parametr: CGFloat?
     @Binding var selectedTheme: Int
     

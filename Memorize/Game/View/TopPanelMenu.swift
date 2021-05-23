@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-struct TopPanelMenu: View {
-    
+struct TopPanelMenu: View {  
     @ObservedObject var viewModelGame: EmojiMemoryGame
     
     var body: some View {
         HStack(alignment: .center) { 
-            Text("Счет:")
+            Text(viewModelGame.cards.allSatisfy({ $0.isMatched == true}) ? "Твой результат:" : "Счет:")
                 .fontWeight(.medium)
             
             Text(viewModelGame.updateScore())
