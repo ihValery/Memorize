@@ -13,12 +13,11 @@ struct VictoryView: View {
     
     var body: some View {
         VStack {
-            Text("Ты победил!")
+            Text("Победитель!")
                 .fontWeight(.semibold)
                 .padding()
             
-            Text("🏆")
-                .font(.system(size: 250))
+            GradientTrophy()
             
             Button(action: {
                 withAnimation {
