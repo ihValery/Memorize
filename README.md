@@ -8,6 +8,7 @@
     - UNMutableNotificationContent - Создание содержимого для локального уведомления
     - ScenePhase - жизненный цикл SwiftUI
     - Реализация UNUserNotificationCenterDelegate без AppDelegate в SwiftUI
+    - Запоминаем установлен или будильник
     <img src="https://github.com/ihValery/Notification/blob/main/Notification.png?raw=true"></a>
 - Помощь (onboarding с правилами и описанием)
     - Переделать! (реализовать максимум)
