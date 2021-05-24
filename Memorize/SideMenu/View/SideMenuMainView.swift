@@ -29,11 +29,14 @@ struct SideMenuMainView: View {
             }
             
             ZStack {
-                TwoBackgroundCard(showMenu: $showMenu)
-                
-                Home(selectedTab: $selectedTab)
-                    .cornerRadius(showMenu ? 15 : 0)
-                    .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
+                ZStack {
+                    TwoBackgroundCard(showMenu: $showMenu)
+                 
+                    Home(selectedTab: $selectedTab)
+                        .cornerRadius(showMenu ? 15 : 0)
+                        .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
+                }
+                .rotation3DEffect(showMenu ? .degrees(20) : .degrees(0), axis: (x: 0.0, y: 1.0, z: 0.0))
                 
                 //Подложка (Что бы нельзя было играть при открытом меню)
                 if showMenu {

@@ -36,7 +36,7 @@ struct Cardify: AnimatableModifier {
                 RoundedRectangle(cornerRadius: 13).stroke(lineWidth: 3)
                 content
             }
-            .opacity(isFaceUp ? 1 : 0.7)
+            .opacity(isFaceUp ? 1 : 0.6)
             RoundedRectangle(cornerRadius: 13).fill().opacity(0.3)
                 .opacity(isFaceUp ? 0 : 1)
         }
