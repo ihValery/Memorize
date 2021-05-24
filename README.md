@@ -16,4 +16,4 @@
     - анимированные карточки
     - сохранение текущей темы в UserDefaults
     - реактивный UI (выбирая тему - View везде перерисовывает цвет)
-    <img src="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/previewApp.png?raw=true"></a> <imgsrc="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/NewTheme75.gif?raw=true"></a>
+    <img src="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/previewApp.png?raw=true"></a> <img src="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/NewTheme75.gif?raw=true"></a>
