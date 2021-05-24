@@ -29,20 +29,7 @@ struct SideMenuMainView: View {
             }
             
             ZStack {
-                
-                //two background cards
-                Color.element
-                    .opacity(0.6)
-                    .cornerRadius(showMenu ? 15 : 0)
-                    .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
-                    .offset(x: showMenu ? -25 : 0)
-                    .padding(.vertical, 30)
-                
-                Color.element
-                    .opacity(0.4)
-                    .cornerRadius(showMenu ? 15 : 0)
-                    .offset(x: showMenu ? -50 : 0)
-                    .padding(.vertical, 60)
+                TwoBackgroundCard(showMenu: $showMenu)
                 
                 Home(selectedTab: $selectedTab)
                     .cornerRadius(showMenu ? 15 : 0)
@@ -73,6 +60,6 @@ struct SideMenuMainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Новая игра", showMenu: false)
+        SideMenuMainView(selectedTab: "Новая игра", showMenu: true)
     }
 }

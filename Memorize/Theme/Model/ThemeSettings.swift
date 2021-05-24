@@ -19,6 +19,8 @@ final public class ThemeSettings: ObservableObject {
 //        themeIn = themeData[id].
 //    }
     
-    private init() {}
+    private init() {
+//        self.current = UserDefaults.standard.integer(forKey: "Theme")
+    }
     public static let shared = ThemeSettings()
 }
