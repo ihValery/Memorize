@@ -25,7 +25,7 @@ struct SideMenuMainView: View {
             
             //Боковое меню
             ScrollView(getRect().height < 750 ? .vertical : .init(), showsIndicators: false) {
-                SideMenu(selectedTab: $selectedTab)
+                SideMenu(selectedTab: $selectedTab, showMenu: $showMenu)
             }
             
             ZStack {
@@ -41,12 +41,12 @@ struct SideMenuMainView: View {
                 Color.element
                     .opacity(0.4)
                     .cornerRadius(showMenu ? 15 : 0)
-                    .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
                     .offset(x: showMenu ? -50 : 0)
                     .padding(.vertical, 60)
                 
                 Home(selectedTab: $selectedTab)
                     .cornerRadius(showMenu ? 15 : 0)
+                    .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
                 
                 //Подложка (Что бы нельзя было играть при открытом меню)
                 if showMenu {

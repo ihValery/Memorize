@@ -31,6 +31,7 @@
 		806A0233263F44A00076EC1A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A0232263F44A00076EC1A /* Color.swift */; };
 		806EC7C22643C9BF00B93D90 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EC7C12643C9BF00B93D90 /* OnboardingView.swift */; };
 		807B3175265A97C200F63953 /* GradientTrophy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B3174265A97C200F63953 /* GradientTrophy.swift */; };
+		807B31A2265BD16600F63953 /* SignOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B31A1265BD16600F63953 /* SignOutButton.swift */; };
 		808699C7264695D700DAD8BE /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808699C6264695D700DAD8BE /* Cardify.swift */; };
 		8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089621E262C6AFB001D9C7A /* MemorizeApp.swift */; };
 		80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */; };
@@ -79,6 +80,7 @@
 		806A0232263F44A00076EC1A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		806EC7C12643C9BF00B93D90 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		807B3174265A97C200F63953 /* GradientTrophy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTrophy.swift; sourceTree = "<group>"; };
+		807B31A1265BD16600F63953 /* SignOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutButton.swift; sourceTree = "<group>"; };
 		808699C6264695D700DAD8BE /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		8089621B262C6AFB001D9C7A /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8089621E262C6AFB001D9C7A /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				804B62642652DD0200DE3792 /* SideMenu.swift */,
 				804B62652652DD0200DE3792 /* SideMenuMainView.swift */,
 				804B626F26530ED100DE3792 /* BurgerButton.swift */,
+				807B31A1265BD16600F63953 /* SignOutButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				809F4D852655414C00ED0598 /* IconDescription.swift in Sources */,
 				8042779826595B0F00F3E217 /* Animation.swift in Sources */,
 				806A0233263F44A00076EC1A /* Color.swift in Sources */,
+				807B31A2265BD16600F63953 /* SignOutButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

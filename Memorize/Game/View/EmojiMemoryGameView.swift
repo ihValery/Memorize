@@ -12,7 +12,7 @@ struct EmojiMemoryGameView: View {
     //“обертка свойства” @ObservedObject говорит что когда переменная objectWillChange
     //этот View себя перерисовывает
     @ObservedObject var viewModelGame: EmojiMemoryGame
-    @State var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeSettings.shared
     
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
