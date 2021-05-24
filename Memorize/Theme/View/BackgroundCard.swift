@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BackgroundCard: View {
-    private let width = UIScreen.main.bounds.width - 20
     var theme: Theme
     @Binding var selectedTheme: Int
     
@@ -16,7 +15,7 @@ struct BackgroundCard: View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
                 .fill(selectedTheme == theme.id ? theme.color.opacity(1) : Color.white.opacity(0.4))
-                .frame(width: width, height: width / 1.7)
+                .frame(width: getRect().width - 20, height: getRect().width / 1.8)
             HStack {
                 Spacer()
                 VStack(spacing: 15) {

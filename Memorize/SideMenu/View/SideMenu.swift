@@ -52,20 +52,7 @@ struct SideMenu: View {
             
             Spacer()
             
-            //SignOut button
-            VStack(alignment: .leading, spacing: -10) {
-                SignOutButton()
-            }
-//            VStack(alignment: .leading, spacing: -10) {
-//                TabButton(image: "rectangle.lefthalf.inset.fill.arrow.left", title: "Выйти", showMenu: showMenu, selectedTab: .constant(""), animation: animation)
-//                    .padding(.horizontal, -15)
-//                Text("Версия 3.4.20")
-//                    .font(.caption)
-//                    .fontWeight(.semibold)
-//                    .foregroundColor(.colorTextNewGame)
-////                    .foregroundColor(.white)
-//                    .opacity(0.4)
-//            }
+            SignOutButton()
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

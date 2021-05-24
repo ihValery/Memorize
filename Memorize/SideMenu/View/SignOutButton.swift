@@ -19,15 +19,17 @@ struct SignOutButton: View {
                     Image(systemName: "rectangle.lefthalf.inset.fill.arrow.left")
                     Text("Выйти")
                         .fontWeight(.semibold)
+                        .font(.body)
                 }
             })
             Text("Версия 4.20")
                 .fontWeight(.semibold)
-                .opacity(0.4)
+                .font(.footnote)
+                .opacity(0.3)
         }
         .foregroundColor(.colorTextNewGame)
 //        .foregroundColor(.white)
-        .font(.subheadline)
+
         .alert(isPresented: $isPresented) {
             Alert(title: Text("Вы уверенны что хотите выйти?"), primaryButton: .cancel(Text("Нет")), secondaryButton: .default(Text("Да")))
         }
