@@ -8,7 +8,7 @@
 import SwiftUI
 
 let themeData = [Theme(id: 0, name: "Мультяшки", avatar: "🧚🏼‍♀️", level: 1, timer: 0, age: 3, color: .yellowTheme, number: 4,
-                                 collection: ["🧞", "🧜‍♀️", "🧚‍♀️", "🦄", "🦋", "🐠", "🐬"].shuffled()),
+                       collection: ["🧞", "🧜‍♀️", "🧚‍♀️", "🦄", "🦋", "🐠", "🐬"].shuffled()),
                  Theme(id: 1, name: "Мордочки", avatar: "🐶", level: 2, timer: 0, age: 5, color: .indigoTheme, number: 6,
                                  collection: ["🐨", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐷", "🐯", "🦁", "🐮", "🐸",
                                               "🐵"].shuffled()),

@@ -14,6 +14,11 @@ final public class ThemeSettings: ObservableObject {
         }
     }
     
+//    static func createTheme(id: Int) -> Theme {
+//        var themeIn: Theme
+//        themeIn = themeData[id].
+//    }
+    
     private init() {}
     public static let shared = ThemeSettings()
 }

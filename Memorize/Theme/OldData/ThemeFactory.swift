@@ -13,18 +13,18 @@
 //}
 //
 //class ThemeFactory: ObservableObject {
-//    static var themeApp: Theme = ThemeFactory.createTheme(type: .zoo)
+//    static var themeAppNew: Theme = ThemeFactory.createTheme(type: )
 //    
 //    static func createTheme(type: ThemeType) -> Theme {
 //        var theme: Theme
 //        
 //        switch type {
-//            case .child: theme = Children()
-//            case .animal: theme = Animals()
-//            case .zoo: theme = Zoo()
-//            case .halloween: theme = Halloween()
-//            case .sport: theme = Sport()
-//            case .flags: theme = Flags()
+//            case .child: theme = themeData[0]
+//            case .animal: theme = themeData[1]
+//            case .zoo: theme = themeData[2]
+//            case .halloween: theme = themeData[3]
+//            case .sport: theme = themeData[4]
+//            case .flags: theme = themeData[5]
 //        }
 //        return theme
 //    }

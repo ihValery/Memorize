@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GradientTrophy: View {
     @Environment(\.colorScheme) var colorScheme
-    @State var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeSettings.shared
     
     var body: some View {
         LinearGradient(gradient: Gradient(colors: [.purpleTheme, themeData[self.theme.current].color]),

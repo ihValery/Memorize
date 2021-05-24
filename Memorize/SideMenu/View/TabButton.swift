@@ -12,7 +12,7 @@ struct TabButton: View {
     var title: String
     
     @ObservedObject var theme = ThemeSettings.shared
-    
+    @Binding var showMenu: Bool
     //Selected tab
     @Binding var selectedTab: String
     //For Hero Animation Slide
@@ -21,7 +21,12 @@ struct TabButton: View {
     
     var body: some View {
         Button(action: {
-            withAnimation(.spring()) { selectedTab = title }
+            withAnimation(.spring()) {
+                selectedTab = title
+            }
+            withAnimation(.easeIn.delay(0.2)) {
+                showMenu.toggle()
+            }
         }) {
             HStack(spacing: 15) {
                 Image(systemName: image)
