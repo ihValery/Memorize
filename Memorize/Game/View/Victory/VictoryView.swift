@@ -13,9 +13,9 @@ struct VictoryView: View {
     
     var body: some View {
         VStack {
-            Text("Победитель!")
-                .fontWeight(.semibold)
-                .padding()
+//            Text("Победитель!")
+//                .fontWeight(.semibold)
+//                .padding()
             
             GradientTrophy()
             

@@ -30,7 +30,6 @@ struct ThemeViewMain: View {
                         CardTheme(theme: item, selectedTheme: $selectedTheme)
                             .onTapGesture {
                                 self.theme.current = item.id
-//                                UserDefaults.standard.set(self.theme.current, forKey: "Theme")
                                 withAnimation {
                                     selectedTheme = self.theme.current
                                 }
