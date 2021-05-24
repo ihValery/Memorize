@@ -13,14 +13,7 @@ final public class ThemeSettings: ObservableObject {
             UserDefaults.standard.set(self.current, forKey: "Theme")
         }
     }
-    
-//    static func createTheme(id: Int) -> Theme {
-//        var themeIn: Theme
-//        themeIn = themeData[id].
-//    }
-    
-    private init() {
-//        self.current = UserDefaults.standard.integer(forKey: "Theme")
-    }
+
+    private init() {}
     public static let shared = ThemeSettings()
 }

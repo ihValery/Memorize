@@ -12,7 +12,7 @@ struct ButtonRemoveAlarm: View {
     
     var body: some View {
         Button(action: {
-            withAnimation(.easeOut(duration: 1)) {
+            withAnimation(.easeOut) {
                 NotificationManager.shared.removeNotification()
                 setAlarm = false
             }

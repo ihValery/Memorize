@@ -9,14 +9,22 @@ import SwiftUI
 
 struct ButtonSetNotification: View {
     @Binding var date: Date
-    @State private var setAlarm = false
-    @State private var dateString = "00:00"
+    @State private var setAlarm: Bool = UserDefaults.standard.bool(forKey: "setAlarm") {
+        didSet {
+            UserDefaults.standard.set(self.setAlarm, forKey: "setAlarm")
+        }
+    }
+    @State private var dateString: String = UserDefaults.standard.object(forKey: "Alarm") as? String ?? "00:00" {
+        didSet {
+            UserDefaults.standard.set(self.dateString, forKey: "Alarm")
+        }
+    }
     
     var body: some View {
             Button(action: {
                 dateString = dateToString(date)
                 NotificationManager.shared.sceduleNotification(date: date)
-                withAnimation(.easeOut(duration: 1)) {
+                withAnimation(.easeOut(duration: 0.4)) {
                     setAlarm = true
                 }
             }) {
