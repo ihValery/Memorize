@@ -14,6 +14,8 @@ struct EmojiMemoryGameView: View {
     @ObservedObject var viewModelGame: EmojiMemoryGame
     @ObservedObject var theme = ThemeSettings.shared
     
+    @State var startDeal: Bool = false
+    
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
         ZStack {
@@ -24,7 +26,7 @@ struct EmojiMemoryGameView: View {
                     .padding(.bottom, -4)
                 
                 if viewModelGame.cards.allSatisfy({ $0.isMatched == true }) {
-                        VictoryView(viewModelGame: viewModelGame, theme: theme)
+                    VictoryView(viewModelGame: viewModelGame, theme: theme, startDeal: $startDeal)
                     
                 } else {
                     Grid(viewModelGame.cards) { item in
@@ -33,6 +35,7 @@ struct EmojiMemoryGameView: View {
                                 withAnimation(.linear(duration: 0.5)) {
                                     viewModelGame.choose(item) }
                             }
+                            .animation(startDeal ? .easeInOut(duration: 0.7).delay(delayForStartDeal(index: item)) : .default)
                             .padding(4)
                     }
                     .transition(.move(edge: .bottom))
@@ -43,6 +46,10 @@ struct EmojiMemoryGameView: View {
             .foregroundColor(themeData[self.theme.current].color)
             .ignoresSafeArea(.all, edges: .bottom)
         }
+    }
+    
+    private func delayForStartDeal(index: MemoryGame<String>.Card) -> Double {
+        return Double(viewModelGame.cards.firstChosenIndex(selected: index)!) * 0.2
     }
 }
 

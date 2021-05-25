@@ -10,6 +10,7 @@ import SwiftUI
 struct VictoryView: View {
     @ObservedObject var viewModelGame: EmojiMemoryGame
     @ObservedObject var theme = ThemeSettings.shared
+    @Binding var startDeal: Bool
     
     var body: some View {
         VStack {
@@ -21,7 +22,11 @@ struct VictoryView: View {
             
             Button(action: {
                 withAnimation {
+                    startDeal.toggle()
                     viewModelGame.newGame()
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    startDeal.toggle()
                 }
             }) {
                 Text("Новая игра")
@@ -43,6 +48,6 @@ struct VictoryView: View {
 
 struct ButtonNewGameVictory_Previews: PreviewProvider {
     static var previews: some View {
-        VictoryView(viewModelGame: EmojiMemoryGame())
+        VictoryView(viewModelGame: EmojiMemoryGame(), startDeal: .constant(true))
     }
 }
