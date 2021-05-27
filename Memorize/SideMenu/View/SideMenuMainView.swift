@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SideMenuMainView: View {
-    //Selected tab
     @State var selectedTab = "Новая игра"
     @State var showMenu = false
     @Environment(\.colorScheme) var colorScheme
@@ -36,7 +35,7 @@ struct SideMenuMainView: View {
                         .cornerRadius(showMenu ? 15 : 0)
                         .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
                 }
-                .rotation3DEffect(showMenu ? .degrees(20) : .degrees(0), axis: (x: 0.0, y: 1.0, z: 0.0))
+                .rotation3DEffect(.degrees(showMenu ? 20 : 0), axis: (x: 0.0, y: 1.0, z: 0.0))
                 
                 //Подложка (Что бы нельзя было играть при открытом меню)
                 if showMenu {
@@ -63,6 +62,6 @@ struct SideMenuMainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Новая игра", showMenu: true)
+        SideMenuMainView(selectedTab: "Новая игра", showMenu: false)
     }
 }

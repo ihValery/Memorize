@@ -18,11 +18,18 @@ struct TopPanelMenu: View {
             Text(viewModelGame.updateScore())
                 .fontWeight(.medium)
                 .frame(minWidth: 50, alignment: .center)
+            
+            //TEST
+            Button {
+                viewModelGame.endGame()
+            } label: {
+                Text("endGame")
+            }
         }
         
         .contextMenu(ContextMenu(menuItems: {
             Button("Новая игра", action: {
-                withAnimation(.easeIn(duration: 0.4)) {
+                withAnimation(.easeIn(duration: 0.5)) {
                     viewModelGame.newGame()
                 }
             })

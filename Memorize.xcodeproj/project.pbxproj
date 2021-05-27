@@ -13,6 +13,7 @@
 		801128DD2642B3A600C38272 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801128DC2642B3A600C38272 /* Star.swift */; };
 		801128DF2642B41400C38272 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801128DE2642B41400C38272 /* Pie.swift */; };
 		801796452643B2D10061B4E0 /* CardOnboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801796442643B2D10061B4E0 /* CardOnboardData.swift */; };
+		803D1EA4265F3709009EA74E /* AnimationForAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803D1EA3265F3709009EA74E /* AnimationForAppear.swift */; };
 		8042779626592E0B00F3E217 /* VictoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8042779526592E0B00F3E217 /* VictoryView.swift */; };
 		8042779826595B0F00F3E217 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8042779726595B0F00F3E217 /* Animation.swift */; };
 		804A61F1265C178500D0C73C /* ProFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804A61F0265C178500D0C73C /* ProFile.swift */; };
@@ -62,6 +63,7 @@
 		801128DC2642B3A600C38272 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		801128DE2642B41400C38272 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		801796442643B2D10061B4E0 /* CardOnboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnboardData.swift; sourceTree = "<group>"; };
+		803D1EA3265F3709009EA74E /* AnimationForAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationForAppear.swift; sourceTree = "<group>"; };
 		8042779526592E0B00F3E217 /* VictoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryView.swift; sourceTree = "<group>"; };
 		8042779726595B0F00F3E217 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		804A61F0265C178500D0C73C /* ProFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFile.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 				801128DE2642B41400C38272 /* Pie.swift */,
 			);
 			path = Shape;
+			sourceTree = "<group>";
+		};
+		803D1EA2265F36D5009EA74E /* onAppear */ = {
+			isa = PBXGroup;
+			children = (
+				803D1EA3265F3709009EA74E /* AnimationForAppear.swift */,
+			);
+			path = onAppear;
 			sourceTree = "<group>";
 		};
 		804B625B2652DC8800DE3792 /* SideMenu */ = {
@@ -359,6 +369,7 @@
 				80C0419C2645DC6800501EB8 /* TopPanelMenu.swift */,
 				80C0419E2645DD4800501EB8 /* CardView.swift */,
 				807B3173265A96F200F63953 /* Victory */,
+				803D1EA2265F36D5009EA74E /* onAppear */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -449,6 +460,7 @@
 				8042779626592E0B00F3E217 /* VictoryView.swift in Sources */,
 				801128DD2642B3A600C38272 /* Star.swift in Sources */,
 				809BFA912657088100C37C48 /* ThemeData.swift in Sources */,
+				803D1EA4265F3709009EA74E /* AnimationForAppear.swift in Sources */,
 				807B3175265A97C200F63953 /* GradientTrophy.swift in Sources */,
 				80A4F678264394FD00A0BCA2 /* CardOnboardView.swift in Sources */,
 				809F4D87265544C400ED0598 /* BackgroundCard.swift in Sources */,
