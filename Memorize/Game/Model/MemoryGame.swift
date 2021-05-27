@@ -58,6 +58,13 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
         }
     }
     
+    mutating func endGame() {
+        for item in cards.indices {
+            cards[item].isMatched = true
+        }
+    }
+    
+    
     ///Формирование счета в игре: -1 очко за каждое несовпадение ранее увиденной карты.
     mutating private func scoring(_ chosenIndex: Int, _ potentialMatchIndex: Int) {
         sawThisCard.contains(cards[chosenIndex].id) ? score -= 1 : sawThisCard.append(cards[chosenIndex].id)

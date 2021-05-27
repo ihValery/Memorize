@@ -22,25 +22,31 @@ struct Cardify: AnimatableModifier {
         rotation = isFaceUp ? 0 : 180
     }
     
+    //Переменная var animatableData находится в протоколе Animatable
+    //Не хотим использовать имя “animatableData” в нашем коде(надо более осмысленное).
+    //Очень часто get/set просто получают/устанавливают некоторые другие vars.
+    //(по существу, представляя их системе анимации под другими именами)
+    //подписываются на получение промежуточных значений AnimatableData.
     var animatableData: Double {
         get { rotation }
         set { rotation = newValue }
     }
-    
+
     ///.cardify — это “картафикатор” общего назначения, это ViewModifier, чтобы модифицировать любой View.
     func body(content: Content) -> some View {
         ZStack {
             //С помощью Group избавляемся от is-else
+//            if isFaceUp {
             Group {
                 RoundedRectangle(cornerRadius: 13).fill(Color.white)
                 RoundedRectangle(cornerRadius: 13).stroke(lineWidth: 3)
                 content
             }
-            .opacity(isFaceUp ? 1 : 0.6)
-            RoundedRectangle(cornerRadius: 13).fill().opacity(0.3)
+            .opacity(isFaceUp ? 1 : 0)
+            RoundedRectangle(cornerRadius: 13).fill()//.opacity(0.3)
                 .opacity(isFaceUp ? 0 : 1)
         }
-        .rotation3DEffect(Angle.degrees(rotation), axis: (0, 1, 0))
+        .rotation3DEffect(.degrees(rotation), axis: (0, 1, 0))
     }
 }
 

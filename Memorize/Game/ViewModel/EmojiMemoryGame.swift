@@ -50,4 +50,9 @@ class EmojiMemoryGame: ObservableObject {
     func updateScore() -> String {
         String(modelGame.score)
     }
+    
+    //MARK: - Временная проверка анимации
+    func endGame() {
+        modelGame.endGame()
+    }
 }
