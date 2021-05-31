@@ -54,6 +54,16 @@
 		80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */; };
 		80C0419D2645DC6800501EB8 /* TopPanelMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419C2645DC6800501EB8 /* TopPanelMenu.swift */; };
 		80C0419F2645DD4800501EB8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419E2645DD4800501EB8 /* CardView.swift */; };
+		80ECBF99266580A200684F6C /* PasswordCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBF96266580A200684F6C /* PasswordCheck.swift */; };
+		80ECBF9C266580C200684F6C /* SignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBF9B266580C200684F6C /* SignViewModel.swift */; };
+		80ECBFA6266581F300684F6C /* SignSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBF9E266581F300684F6C /* SignSelectButton.swift */; };
+		80ECBFA7266581F300684F6C /* BackgroundCardSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBF9F266581F300684F6C /* BackgroundCardSign.swift */; };
+		80ECBFA8266581F300684F6C /* AnketaSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA0266581F300684F6C /* AnketaSignIn.swift */; };
+		80ECBFA9266581F300684F6C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA1266581F300684F6C /* Line.swift */; };
+		80ECBFAA266581F300684F6C /* AnketaSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA2266581F300684F6C /* AnketaSignUp.swift */; };
+		80ECBFAB266581F300684F6C /* SignStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA3266581F300684F6C /* SignStyleButton.swift */; };
+		80ECBFAC266581F300684F6C /* SignMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA4266581F300684F6C /* SignMainView.swift */; };
+		80ECBFAD266581F300684F6C /* BackgroundAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA5266581F300684F6C /* BackgroundAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +116,16 @@
 		80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		80C0419C2645DC6800501EB8 /* TopPanelMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPanelMenu.swift; sourceTree = "<group>"; };
 		80C0419E2645DD4800501EB8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		80ECBF96266580A200684F6C /* PasswordCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordCheck.swift; sourceTree = "<group>"; };
+		80ECBF9B266580C200684F6C /* SignViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewModel.swift; sourceTree = "<group>"; };
+		80ECBF9E266581F300684F6C /* SignSelectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSelectButton.swift; sourceTree = "<group>"; };
+		80ECBF9F266581F300684F6C /* BackgroundCardSign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundCardSign.swift; sourceTree = "<group>"; };
+		80ECBFA0266581F300684F6C /* AnketaSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnketaSignIn.swift; sourceTree = "<group>"; };
+		80ECBFA1266581F300684F6C /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		80ECBFA2266581F300684F6C /* AnketaSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnketaSignUp.swift; sourceTree = "<group>"; };
+		80ECBFA3266581F300684F6C /* SignStyleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignStyleButton.swift; sourceTree = "<group>"; };
+		80ECBFA4266581F300684F6C /* SignMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignMainView.swift; sourceTree = "<group>"; };
+		80ECBFA5266581F300684F6C /* BackgroundAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,10 +200,10 @@
 		804B62612652DD0200DE3792 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				804B62652652DD0200DE3792 /* SideMenuMainView.swift */,
 				804B62622652DD0200DE3792 /* TabButton.swift */,
 				804B62632652DD0200DE3792 /* Home.swift */,
 				804B62642652DD0200DE3792 /* SideMenu.swift */,
-				804B62652652DD0200DE3792 /* SideMenuMainView.swift */,
 				804B626F26530ED100DE3792 /* BurgerButton.swift */,
 				807B31A1265BD16600F63953 /* SignOutButton.swift */,
 				807B31A3265BE5D700F63953 /* TwoBackgroundCard.swift */,
@@ -262,6 +282,7 @@
 				8089621E262C6AFB001D9C7A /* MemorizeApp.swift */,
 				804B625C2652DCB100DE3792 /* Game */,
 				804B625B2652DC8800DE3792 /* SideMenu */,
+				80ECBF922665808C00684F6C /* Sign */,
 				8062966C2653CF750091469E /* Notification */,
 				80A4F66E2643921E00A0BCA2 /* Onboarding */,
 				809F4D7D26553DFC00ED0598 /* Theme */,
@@ -362,6 +383,47 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		80ECBF922665808C00684F6C /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				80ECBF93266580A200684F6C /* Model */,
+				80ECBF9A266580C200684F6C /* ViewModel */,
+				80ECBF9D266581F300684F6C /* View */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
+		80ECBF93266580A200684F6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80ECBF96266580A200684F6C /* PasswordCheck.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80ECBF9A266580C200684F6C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				80ECBF9B266580C200684F6C /* SignViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		80ECBF9D266581F300684F6C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80ECBFA4266581F300684F6C /* SignMainView.swift */,
+				80ECBF9E266581F300684F6C /* SignSelectButton.swift */,
+				80ECBF9F266581F300684F6C /* BackgroundCardSign.swift */,
+				80ECBFA0266581F300684F6C /* AnketaSignIn.swift */,
+				80ECBFA1266581F300684F6C /* Line.swift */,
+				80ECBFA2266581F300684F6C /* AnketaSignUp.swift */,
+				80ECBFA3266581F300684F6C /* SignStyleButton.swift */,
+				80ECBFA5266581F300684F6C /* BackgroundAnimation.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		80F95316263B431900F55642 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,6 +508,7 @@
 				808699C7264695D700DAD8BE /* Cardify.swift in Sources */,
 				806296722653D08F0091469E /* ButtonSetNotification.swift in Sources */,
 				809BFA902657088100C37C48 /* ThemeSettings.swift in Sources */,
+				80ECBFAA266581F300684F6C /* AnketaSignUp.swift in Sources */,
 				804A61F1265C178500D0C73C /* ProFile.swift in Sources */,
 				804B626D2652DD0200DE3792 /* SideMenuMainView.swift in Sources */,
 				800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */,
@@ -456,7 +519,9 @@
 				800DB7BB263DE46000A4A2C1 /* Array.swift in Sources */,
 				804B626B2652DD0200DE3792 /* Home.swift in Sources */,
 				805E07772654283400DDD8FB /* ButtonRemoveAlarm.swift in Sources */,
+				80ECBFAC266581F300684F6C /* SignMainView.swift in Sources */,
 				804B627026530ED100DE3792 /* BurgerButton.swift in Sources */,
+				80ECBF99266580A200684F6C /* PasswordCheck.swift in Sources */,
 				8042779626592E0B00F3E217 /* VictoryView.swift in Sources */,
 				801128DD2642B3A600C38272 /* Star.swift in Sources */,
 				809BFA912657088100C37C48 /* ThemeData.swift in Sources */,
@@ -465,6 +530,7 @@
 				80A4F678264394FD00A0BCA2 /* CardOnboardView.swift in Sources */,
 				809F4D87265544C400ED0598 /* BackgroundCard.swift in Sources */,
 				806296762653F98A0091469E /* AnyTransition.swift in Sources */,
+				80ECBFA8266581F300684F6C /* AnketaSignIn.swift in Sources */,
 				806296742653D08F0091469E /* NotificationManager.swift in Sources */,
 				804B62682652DD0200DE3792 /* CustomCorners.swift in Sources */,
 				809BFA8F2657088100C37C48 /* ThemeModel.swift in Sources */,
@@ -472,11 +538,16 @@
 				80C0419F2645DD4800501EB8 /* CardView.swift in Sources */,
 				801128DF2642B41400C38272 /* Pie.swift in Sources */,
 				80A4F6762643937200A0BCA2 /* StartButtonOnboardView.swift in Sources */,
+				80ECBFA6266581F300684F6C /* SignSelectButton.swift in Sources */,
+				80ECBFA7266581F300684F6C /* BackgroundCardSign.swift in Sources */,
+				80ECBFAD266581F300684F6C /* BackgroundAnimation.swift in Sources */,
 				807B31A4265BE5D700F63953 /* TwoBackgroundCard.swift in Sources */,
 				809F4D892655492600ED0598 /* NameTheme.swift in Sources */,
 				801796452643B2D10061B4E0 /* CardOnboardData.swift in Sources */,
+				80ECBFA9266581F300684F6C /* Line.swift in Sources */,
 				8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */,
 				80A4F671264392C100A0BCA2 /* OnboardModel.swift in Sources */,
+				80ECBFAB266581F300684F6C /* SignStyleButton.swift in Sources */,
 				804B626A2652DD0200DE3792 /* TabButton.swift in Sources */,
 				80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */,
 				806296732653D08F0091469E /* NotificationView.swift in Sources */,
@@ -485,6 +556,7 @@
 				806EC7C22643C9BF00B93D90 /* OnboardingView.swift in Sources */,
 				804B62672652DD0200DE3792 /* View.swift in Sources */,
 				809F4D852655414C00ED0598 /* IconDescription.swift in Sources */,
+				80ECBF9C266580C200684F6C /* SignViewModel.swift in Sources */,
 				8042779826595B0F00F3E217 /* Animation.swift in Sources */,
 				806A0233263F44A00076EC1A /* Color.swift in Sources */,
 				807B31A2265BD16600F63953 /* SignOutButton.swift in Sources */,

@@ -36,7 +36,7 @@ struct TabButton: View {
                 Text(title)
                     .fontWeight(.semibold)
             }
-            .foregroundColor(selectedTab == title ? themeData[self.theme.current].color : .colorTextNewGame)
+            .foregroundColor(selectedTab == title ? themeData[theme.current].color : .colorTextNewGame)
             .padding(.vertical, 12)
             .padding(.horizontal, 10)
             //max Frame

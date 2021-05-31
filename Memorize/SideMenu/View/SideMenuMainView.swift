@@ -11,14 +11,13 @@ struct SideMenuMainView: View {
     @State var selectedTab = "Новая игра"
     @State var showMenu = false
     @Environment(\.colorScheme) var colorScheme
-    
     @ObservedObject var theme = ThemeSettings.shared
     
     var body: some View {
         ZStack {
             LinearGradient(gradient:
                             Gradient(colors: [.purpleTheme.opacity(colorScheme == .dark ? 0.5 : 1),
-                                              themeData[self.theme.current].color]),
+                                              themeData[theme.current].color]),
                             startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
@@ -48,7 +47,7 @@ struct SideMenuMainView: View {
                         }
                 }
             }
-            //Scaling and moving the view
+            //Масштабирование и перемещение вида
             .scaleEffect(showMenu ? 0.84 : 1)
             .offset(x: showMenu ? getRect().width - 120 : 0)
             .ignoresSafeArea()

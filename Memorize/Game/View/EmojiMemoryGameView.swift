@@ -52,7 +52,7 @@ struct EmojiMemoryGameView: View {
 }
 
 // Обеспечивает связь между кодом, и областью справа, которая называется Preview.
-struct ContentView_Previews: PreviewProvider {
+struct EmojiMemoryGameView_Previews: PreviewProvider {
     static var previews: some View {
         let oneCard = EmojiMemoryGame()
         return EmojiMemoryGameView(viewModelGame: oneCard)

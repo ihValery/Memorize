@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProFile: View {
+    @State private var showSign = false
+    
     var body: some View {
         VStack(spacing: -2) {
             Image("proFiler2")
@@ -17,6 +19,9 @@ struct ProFile: View {
                 .cornerRadius(10)
             //Padding top for Top Close Button
                 .padding(.top, 30)
+                .onLongPressGesture {
+                    showSign = true
+                }
             VStack(alignment: .leading, spacing: -5) {
                 Text("Апполония")
                     .font(.title)
@@ -26,6 +31,9 @@ struct ProFile: View {
         }
         .foregroundColor(.colorTextNewGame)
 //        .foregroundColor(.black)
+        .fullScreenCover(isPresented: $showSign, content: {
+            SignMainView()
+        })
     }
 }
 

@@ -34,3 +34,9 @@ extension Color {
     static let purpleGradientStart = Color("purpleGradientStart")
     static let purpleGradientEnd = Color("purpleGradientEnd")
 }
+
+//Цвет Sign
+extension Color {
+    static let orangeGradientEnd = Color("orangeGradientEnd")
+    static let orangeGradientStart = Color("orangeGradientStart")
+}
