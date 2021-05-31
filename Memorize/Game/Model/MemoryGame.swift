@@ -48,7 +48,7 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
                 //                score += 2
-                score += (themeData[ThemeSettings.shared.current].number <= 8 ? 2 : Int(card.bonusTimeRemaining))
+                score += (themeData[ThemeSettings.shared.current].timer == 0 ? 2 : Int(card.bonusTimeRemaining))
             } else {
                 scoring(chosenIndex, potentialMatchIndex)
             }
@@ -63,7 +63,6 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
             cards[item].isMatched = true
         }
     }
-    
     
     ///Формирование счета в игре: -1 очко за каждое несовпадение ранее увиденной карты.
     mutating private func scoring(_ chosenIndex: Int, _ potentialMatchIndex: Int) {
