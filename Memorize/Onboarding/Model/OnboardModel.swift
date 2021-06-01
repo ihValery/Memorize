@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardOnboard: Identifiable {
     
-    var id = UUID()
+    var id: Int
     var title: String
     var headline: String
     var image: String

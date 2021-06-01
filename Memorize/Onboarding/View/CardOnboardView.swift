@@ -9,60 +9,67 @@ import SwiftUI
 
 struct CardOnboardView: View {
     var cardOnboard: CardOnboard
-    @State private var isAnimating: Bool = false
+    @State private var isAnimating = false
+    @Binding var showMenu: Bool
+    @Binding var selectTab: String
     
-    //MARK: - Body
     var body: some View {
         ZStack {
+            VStack {
+                HStack {
+                    Spacer()
+                    SkipButtonOnboard(selectedTab: $selectTab, showMenu: $showMenu, color: cardOnboard.gradientColors.first ?? .black)
+                        .padding(.trailing, 10)
+                        .disabled(cardOnboard.id == cardOnboardData.count - 1)
+                        .opacity(cardOnboard.id != cardOnboardData.count - 1 ? 1 : 0)
+                }
+                Spacer()
+            }
+            
             VStack(spacing: 20) {
-                //cardOnboard Image
                 Image(cardOnboard.image)
                     .resizable()
                     .scaledToFill()
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 8, x: 6, y: 8)
-                    .frame(width: 200, height: 284)
+                    .shadow(color: .black.opacity(0.3), radius: 8, x: 6, y: 8)
+                    .frame(width: 200, height: 300)
                     .padding(.bottom, 40)
-                    .onAppear {
-                        withAnimation(.easeInOut(duration: 0.7)) {
-                            isAnimating = true
-                        }
-                    }
-                    .scaleEffect(isAnimating ? 1 : 0.6)
-                //cardOnboard Title
-                Text(cardOnboard.title)
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .multilineTextAlignment(.center)
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 2, x: 2, y: 2)
-                //cardOnboard Headline
-                Text(cardOnboard.headline)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 20)
-                //Button Start
-//                StartButtonOnboardView(viewModelGame: EmojiMemoryGame())
-//                StartButtonOnboardView()
-            }//VStack
-        }//ZStack
-        //Добавляет действие, выполняемое при появлении этого представления.
-//        .onAppear {
-//            withAnimation(.easeInOut(duration: 0.7)) {
-//                isAnimating = true
-//            }
-//        }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+                    .scaleEffect(isAnimating ? 1.1 : 0.6)
+                
+                VStack {
+                    Text(cardOnboard.title)
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .shadow(color: .black.opacity(0.15), radius: 2, x: 2, y: 2)
+                        .offset(x: isAnimating ? 0 : getRect().width + 200)
+                    
+                    Text(cardOnboard.headline)
+                        .padding(.horizontal, 16)
+                        .offset(x: isAnimating ? 0 : getRect().width + 800)
+                }
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+                
+            }
+            
+            SignUpButtonOnboarding(color: cardOnboard.gradientColors.first ?? .black)
+                .offset(y: 280)
+                .disabled(cardOnboard.id != cardOnboardData.count - 1)
+                .opacity(cardOnboard.id == cardOnboardData.count - 1 ? 1 : 0)
+        }
+//        .frame(width: getRect().width - 20, height: getRect().height - 100)
         .background(LinearGradient(gradient: Gradient(colors: cardOnboard.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(20)
         .padding(.horizontal, 15)
-        .padding(.top, 15)
+        .animation(.spring(dampingFraction: 0.5))
+        .onAppear { isAnimating.toggle() }
     }
 }
 
 struct CardOnboardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardOnboardView(cardOnboard: cardOnboardData[1])
-            .preferredColorScheme(.dark)
+        Group {
+            CardOnboardView(cardOnboard: cardOnboardData[1], showMenu: .constant(false), selectTab: .constant("Новая игра"))
+                .preferredColorScheme(.dark)
+        }
     }
 }

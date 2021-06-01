@@ -1,5 +1,5 @@
 //
-//  StartButtonOnboardView.swift
+//  SkipButtonOnboard.swift
 //  Memorize
 //
 //  Created by Валерий Игнатьев on 6.05.21.
@@ -7,36 +7,37 @@
 
 import SwiftUI
 
-struct StartButtonOnboardView: View {
-    //MARK: - Properties
-//    @ObservedObject var viewModelGame: EmojiMemoryGame
+struct SkipButtonOnboard: View {
+    @Binding var selectedTab: String
+    @Binding var showMenu: Bool
+    var color: Color
     
-    @AppStorage("isOnboarding") var isOnboarding: Bool?
-    
-    //MARK: - Body
     var body: some View {
         Button(action: {
             print("Всунуть логику")
-            self.isOnboarding?.toggle()
-        }) {
-            HStack(spacing: 8) {
-                Text("Skip")
+            //Логика для визуализации перехода по меню )))
+            withAnimation {
+                showMenu.toggle()
+                selectedTab = "Новая игра"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    withAnimation {
+                        showMenu.toggle()
+                        
+                    }
+                }
             }
-            .font(.title.weight(.light))
-            .padding(.horizontal, 16)
-            .padding(.vertical, 10)
-        }//Button
-        .accentColor(.white)
-        .frame(width: 300, height: 42)
-        .overlay(
-            RoundedRectangle(cornerRadius: 15)
-                .stroke(Color.white, lineWidth: 1.25))
+        }) {
+            Text("играть")
+                .foregroundColor(color)
+                .font(.title)
+                .bold()
+        }
     }
 }
 
-struct StartButtonOnboardView_Previews: PreviewProvider {
+struct StartButtonOnboard_Previews: PreviewProvider {
     static var previews: some View {
-        StartButtonOnboardView()
+        SkipButtonOnboard(selectedTab: .constant("Новая игра"), showMenu: .constant(false), color: .red)
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
     }

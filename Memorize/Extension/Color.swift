@@ -40,3 +40,19 @@ extension Color {
     static let orangeGradientEnd = Color("orangeGradientEnd")
     static let orangeGradientStart = Color("orangeGradientStart")
 }
+
+//Цвет onboarding
+extension Color {
+    static let colorAnimalEnd = Color("colorAnimalEnd")
+    static let colorAnimalStart = Color("colorAnimalStart")  
+    static let colorChildEnd = Color("colorChildEnd")
+    static let colorChildStart = Color("colorChildStart")
+    static let colorFlagEnd = Color("colorFlagEnd")
+    static let colorFlagStart = Color("colorFlagStart")
+    static let colorHalloweenEnd = Color("colorHalloweenEnd")
+    static let colorHalloweenStart = Color("colorHalloweenStart")
+    static let colorSportEnd = Color("colorSportEnd")
+    static let colorSportStart = Color("colorSportStart")
+    static let colorZooEnd = Color("colorZooEnd")
+    static let colorZooStart = Color("colorZooStart")
+}

@@ -40,6 +40,5 @@ struct SignOutButton_Previews: PreviewProvider {
     static var previews: some View {
         SignOutButton()
             .preferredColorScheme(.dark)
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
     }
 }
