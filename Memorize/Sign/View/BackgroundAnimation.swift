@@ -9,8 +9,6 @@ import SwiftUI
 
 struct BackgroundAnimation: View {
     @State private var startAnimation: Bool = false
-    private var width = UIScreen.main.bounds.width
-    private var height = UIScreen.main.bounds.height
     
     var body: some View {
         ZStack {
@@ -19,8 +17,8 @@ struct BackgroundAnimation: View {
                     Circle()
                     .fill(Color.red).opacity(.random(in: 0.3...0.4))
                     .frame(width: .random(in: 120...420), height: .random(in: 120...420))
-                    .position(x: startAnimation ? .random(in: 0...width) : .random(in: 0...width),
-                              y: startAnimation ? .random(in: 0...height) : .random(in: 0...height))
+                        .position(x: startAnimation ? .random(in: 0...getRect().width) : .random(in: 0...getRect().width),
+                                  y: startAnimation ? .random(in: 0...getRect().height) : .random(in: 0...getRect().height))
                     .animation(.linear(duration: 50).repeatCount(100, autoreverses: true))
             }
         }

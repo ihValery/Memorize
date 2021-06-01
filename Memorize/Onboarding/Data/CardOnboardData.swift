@@ -8,8 +8,9 @@
 import SwiftUI
 
 let cardOnboardData: [CardOnboard] = [
-    CardOnboard(title: "Card game", headline: "Deceptively simple. Incredibly interesting.", image: "yellowImage", gradientColors: [Color("colorChildLight"), Color("colorChildDark")]),
-    CardOnboard(title: "Hone your skills", headline: "Expand the field to incredible sizes.", image: "PurpleOne", gradientColors: [Color("colorAnimalLight"), Color("colorAnimalDark")]),
-    CardOnboard(title: "Theme to your liking", headline: "Do what you like, where you are, with what you have.", image: "chooseTheme", gradientColors: [Color("colorFlagLight"), Color("colorFlagDark")]),
-    CardOnboard(title: "Maximum score", headline: "Form a score in the game by adding 2 points for each match and a penalty of 1 point for each mismatch of a previously seen card.", image: "Halloween", gradientColors: [Color("colorHalloweenLight"), Color("colorHalloweenDark")]),
-    CardOnboard(title: "Create a unique hero", headline: "Climb to the top in the hall of fame.", image: "sportImage", gradientColors: [Color("colorSportLight"), Color("colorSportDark")])]
+    CardOnboard(id: 0, title: "Карточная игра", headline: "Обманчиво простая,\nневероятно интересная.", image: "yellowImage", gradientColors: [.colorChildStart, .colorChildEnd]),
+    CardOnboard(id: 1, title: "Оттачивай свой навык", headline: "Расширь поле до невероятных размеров.", image: "PurpleOne", gradientColors: [.colorAnimalStart, .colorAnimalEnd]),
+    CardOnboard(id: 2, title: "Темы на любой вкус", headline: "Делай, что можешь,\nс тем, что имеешь,\nтам, где ты есть.", image: "chooseTheme", gradientColors: [.colorFlagStart, .colorFlagEnd]),
+    CardOnboard(id: 3, title: "Максимальный счет", headline: "Добавляем 2 балла + бонусное время за каждую пару или штраф в 1 балл за каждое несовпадение ранее просмотренной карты.", image: "Halloween", gradientColors: [.colorHalloweenStart, .colorHalloweenEnd]),
+    CardOnboard(id: 4, title: "Прокачай свой мозг", headline: "Поднимись на вершину зала славы.", image: "sportImage", gradientColors: [.colorSportStart, .colorSportEnd]),
+    CardOnboard(id: 5, title: "Регистрация даст тебе больше", headline: "возможностей\nтем и игр", image: "noAvatar", gradientColors: [.colorZooStart, .colorZooEnd])]

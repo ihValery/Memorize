@@ -30,7 +30,7 @@ struct SideMenuMainView: View {
                 ZStack {
                     TwoBackgroundCard(showMenu: $showMenu)
                  
-                    Home(selectedTab: $selectedTab)
+                    Home(selectedTab: $selectedTab, showMenu: $showMenu)
                         .cornerRadius(showMenu ? 15 : 0)
                         .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
                 }
@@ -52,7 +52,7 @@ struct SideMenuMainView: View {
             .offset(x: showMenu ? getRect().width - 120 : 0)
             .ignoresSafeArea()
             .overlay(
-                BurgerButton(showMenu: $showMenu)
+                BurgerButton(showMenu: $showMenu, selectTab: $selectedTab)
                     .padding(.top, -3)
                 , alignment: .topLeading)
         }
@@ -61,6 +61,6 @@ struct SideMenuMainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Новая игра", showMenu: false)
+        SideMenuMainView(selectedTab: "Помощь", showMenu: false)
     }
 }

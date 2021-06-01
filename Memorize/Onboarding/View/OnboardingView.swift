@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    //MARK: - Properties
     var cardsOnboard: [CardOnboard] = cardOnboardData
+    @Binding var showMenu: Bool
+    @Binding var selectTab: String
 
-    //MARK: - Body
     var body: some View {
         TabView {
-            ForEach(cardsOnboard[0...4]) { item in
-                CardOnboardView(cardOnboard: item)
-            }//Loop
-        }//Tab
+            ForEach(cardsOnboard[0..<cardsOnboard.count]) { item in
+                CardOnboardView(cardOnboard: item, showMenu: $showMenu, selectTab: $selectTab)
+            }
+        }
         .tabViewStyle(PageTabViewStyle())
-        .padding(.vertical, 20)
+//        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView(showMenu: .constant(false), selectTab: .constant("Новая игра"))
     }
 }

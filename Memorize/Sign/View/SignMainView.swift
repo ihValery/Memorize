@@ -11,6 +11,7 @@ struct SignMainView: View {
     @ObservedObject private var signViewModel = SignViewModel.shared
     @Environment (\.presentationMode) var presentationSign
     @State private var signInSelected = false
+    @AppStorage ("isOnboarding") var isOnboarding: Bool?
     
     var body: some View {
         ZStack {
@@ -47,12 +48,13 @@ struct SignMainView: View {
                             clearTextFields()
                             presentationSign.wrappedValue.dismiss()
 //                            signUp()
+                            isOnboarding = false
                             print("--------Зарегистрироваться--------")
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white,
                                                      colorText: signViewModel.isValidSignUp ? .orangeGradientEnd : .gray))
                         .offset(y: signInSelected ? 230 : gr.size.height + 50)
-                        .disabled(!signViewModel.isValidSignUp)
+//                        .disabled(!signViewModel.isValidSignUp)
                     }
                     
                     VStack {
@@ -65,12 +67,13 @@ struct SignMainView: View {
                             clearTextFields()
                             presentationSign.wrappedValue.dismiss()
 //                            signIn()
+                            isOnboarding = false
                             print("--------Войти--------")
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white,
                                                      colorText: signViewModel.isValidSignIn ? .orangeGradientEnd : .gray))
                         .offset(y: !signInSelected ? 340 : gr.size.height + 150)
-                        .disabled(!signViewModel.isValidSignIn)
+//                        .disabled(!signViewModel.isValidSignIn)
                     }
                 }
                 .animation(.easeInOut)

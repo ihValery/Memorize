@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BurgerButton: View {
     @Binding var showMenu: Bool
+    @Binding var selectTab: String
     @ObservedObject var theme = ThemeSettings.shared
     
     var body: some View {
@@ -40,6 +41,8 @@ struct BurgerButton: View {
         })
         .padding(.top, 5)
         .padding(.horizontal)
+//        .opacity(selectTab == "Помощь" ? 0 : 1)
+//        .disabled(selectTab == "Помощь")
     }
 }
 
