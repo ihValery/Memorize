@@ -25,7 +25,6 @@ struct Home: View {
             ThemeViewMain().tag("Темы")
             NotificationView().tag("Уведомление")
             RulesView().tag("Правила")
-//            OnboardingView().tag("Правила")
         }
     }
 }

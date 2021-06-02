@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,6 +39,9 @@
 		80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */; };
 		80896223262C6AFE001D9C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896222262C6AFE001D9C7A /* Assets.xcassets */; };
 		80896226262C6AFE001D9C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896225262C6AFE001D9C7A /* Preview Assets.xcassets */; };
+		809B08A82667D14D005347C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 809B08A72667D14D005347C0 /* GoogleService-Info.plist */; };
+		809B08AB2667D26A005347C0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 809B08AA2667D26A005347C0 /* FirebaseAuth */; };
+		809B08B12668185D005347C0 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B08B02668185D005347C0 /* Authenticator.swift */; };
 		809BE209266679BF00600BCC /* SignUpButtonOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BE208266679BF00600BCC /* SignUpButtonOnboarding.swift */; };
 		809BFA8F2657088100C37C48 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8C2657088000C37C48 /* ThemeModel.swift */; };
 		809BFA902657088100C37C48 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8D2657088000C37C48 /* ThemeSettings.swift */; };
@@ -102,6 +105,8 @@
 		80896222262C6AFE001D9C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80896225262C6AFE001D9C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80896227262C6AFE001D9C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		809B08A72667D14D005347C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		809B08B02668185D005347C0 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
 		809BE208266679BF00600BCC /* SignUpButtonOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButtonOnboarding.swift; sourceTree = "<group>"; };
 		809BFA8C2657088000C37C48 /* ThemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		809BFA8D2657088000C37C48 /* ThemeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				809B08AB2667D26A005347C0 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +152,7 @@
 			children = (
 				80896222262C6AFE001D9C7A /* Assets.xcassets */,
 				80896227262C6AFE001D9C7A /* Info.plist */,
+				809B08A72667D14D005347C0 /* GoogleService-Info.plist */,
 				80896224262C6AFE001D9C7A /* Preview Content */,
 			);
 			path = System32;
@@ -408,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				80ECBF96266580A200684F6C /* PasswordCheck.swift */,
+				809B08B02668185D005347C0 /* Authenticator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +471,9 @@
 			dependencies = (
 			);
 			name = Memorize;
+			packageProductDependencies = (
+				809B08AA2667D26A005347C0 /* FirebaseAuth */,
+			);
 			productName = Memorize;
 			productReference = 8089621B262C6AFB001D9C7A /* Memorize.app */;
 			productType = "com.apple.product-type.application";
@@ -490,6 +501,9 @@
 				Base,
 			);
 			mainGroup = 80896212262C6AFB001D9C7A;
+			packageReferences = (
+				809B08A92667D26A005347C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8089621C262C6AFB001D9C7A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -506,6 +520,7 @@
 			files = (
 				80896226262C6AFE001D9C7A /* Preview Assets.xcassets in Resources */,
 				80896223262C6AFE001D9C7A /* Assets.xcassets in Resources */,
+				809B08A82667D14D005347C0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +564,7 @@
 				80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */,
 				80C0419F2645DD4800501EB8 /* CardView.swift in Sources */,
 				80A434B02666DC0B004F0343 /* RulesView.swift in Sources */,
+				809B08B12668185D005347C0 /* Authenticator.swift in Sources */,
 				801128DF2642B41400C38272 /* Pie.swift in Sources */,
 				80ECBFA6266581F300684F6C /* SignSelectButton.swift in Sources */,
 				80ECBFA7266581F300684F6C /* BackgroundCardSign.swift in Sources */,
@@ -700,7 +716,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 129;
+				CURRENT_PROJECT_VERSION = 420;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
@@ -724,7 +740,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 129;
+				CURRENT_PROJECT_VERSION = 420;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
@@ -764,6 +780,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		809B08A92667D26A005347C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		809B08AA2667D26A005347C0 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 809B08A92667D26A005347C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 80896213262C6AFB001D9C7A /* Project object */;
 }

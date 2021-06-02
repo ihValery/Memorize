@@ -37,13 +37,8 @@ struct CardOnboardView: View {
                 .multilineTextAlignment(.center)
                 
             }
-            
-            SignUpButtonOnboarding(color: cardOnboard.gradientColors.first ?? .black)
-                .offset(y: 280)
-                .disabled(cardOnboard.id != cardOnboardData.count - 1)
-                .opacity(cardOnboard.id == cardOnboardData.count - 1 ? 1 : 0)
         }
-//        .frame(width: getRect().width - 20, height: getRect().height - 80)
+        
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: cardOnboard.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(20)

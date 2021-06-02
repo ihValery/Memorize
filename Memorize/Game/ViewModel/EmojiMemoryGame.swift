@@ -8,7 +8,6 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-    @State var showOnboardingAppear = true
     //Но я назвал эту переменную model, так что если вы будете просматривать этот код, то подумаете: “О! Этот код обеспечивает доступ к Model.”
     //Когда мы пишем private (set), то это соответствует тому, что ДВЕРЬ ЗАКРЫТА, но это СТЕКЛЯННАЯ ДВЕРЬ
     //только EmojiMemoryGame может модифицировать переменную var modelGame, но любой может смотреть на modelGame.

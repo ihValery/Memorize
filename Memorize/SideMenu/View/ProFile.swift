@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ProFile: View {
+    @EnvironmentObject var authenticator: Authenticator
     
     var body: some View {
-        VStack(spacing: -2) {
-            Image("noAvatar")
+        VStack(alignment: .leading, spacing: -2) {
+            Image(authenticator.needsAuthentication ? "noAvatar" : "proFiler2")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 150, height: 150, alignment: .top)
@@ -19,20 +20,19 @@ struct ProFile: View {
                 .padding(.top, 30)
             
             VStack(alignment: .leading, spacing: -5) {
-                Text("Апполония")
+                Text(authenticator.needsAuthentication ? "Пользователь" : "Аппалония")
                     .font(.title)
                     .fontWeight(.bold)
-                Text("Сицилийская")
+                Text(authenticator.needsAuthentication ? "user@mail.net" : "first@google.com")
             }
         }
         .foregroundColor(.colorTextNewGame)
-        
-        
     }
 }
 
 struct ProFile_Previews: PreviewProvider {
     static var previews: some View {
         ProFile()
+            .environmentObject(Authenticator())
     }
 }

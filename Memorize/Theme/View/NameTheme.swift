@@ -18,7 +18,7 @@ struct NameTheme: View {
             .foregroundColor(selectedTheme == theme.id ? .white : .black.opacity(0.1))
             .padding(.vertical, 10)
             .padding(.horizontal, 25)
-            .background(Capsule().stroke(selectedTheme == theme.id ? Color.white : Color.black.opacity(0.1), lineWidth: 2))
+//            .background(Capsule().stroke(selectedTheme == theme.id ? Color.white : Color.black.opacity(0.1), lineWidth: 2))
     }
 }
 

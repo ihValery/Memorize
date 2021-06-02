@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
-//    @State private var showOnboarding = true
     //“обертка свойства” @ObservedObject говорит что когда переменная objectWillChange
     //этот View себя перерисовывает
     @ObservedObject var viewModelGame: EmojiMemoryGame
@@ -17,7 +16,7 @@ struct EmojiMemoryGameView: View {
     // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
         ZStack {
-            AnimationForAppear(color: .element)
+//            AnimationForAppear(color: .element)
 
             VStack {
                 TopPanelMenu(viewModelGame: viewModelGame)
@@ -41,8 +40,11 @@ struct EmojiMemoryGameView: View {
             }
             .padding(.horizontal, 3)
             .padding(.bottom, 20)
-            .foregroundColor(themeData[self.theme.current].color)
+            .foregroundColor(themeData[theme.current].color)
             .ignoresSafeArea(.all, edges: .bottom)
+        }
+        .onAppear {
+            print("\nНовая игра?\n")
         }
     }
 }
