@@ -44,7 +44,7 @@ struct CardView: View {
     }
     
     @ViewBuilder private func substrateForAnimation() -> some View {
-        if themeData[self.theme.current].timer == 0 {
+        if themeData[theme.current].timer == 0 {
             Star()
                 .padding(5)
                 .opacity(0.25)

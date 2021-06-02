@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SideMenuMainView: View {
     @State var selectedTab = "Новая игра"
     @State var showMenu = false
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var theme = ThemeSettings.shared
-    
-    @AppStorage ("showOndoard") var showOndoard: Bool = true
+    @EnvironmentObject var authenticator: Authenticator
     
     var body: some View {
         ZStack {
@@ -59,8 +59,15 @@ struct SideMenuMainView: View {
                 , alignment: .topLeading)
         }
                 
-        .sheet(isPresented: $showOndoard) {
+        .sheet(isPresented: $authenticator.showOnboard) {
             OnboardingView()
+            //Кажется, эта проблема была недавно исправлена ​​- мне удалось удалить эту строку, и весь проект продолжал работать.
+            //Но я еще не нашел никакой документации о том, когда объекты среды автоматически передаются в общий доступ
+                .environmentObject(authenticator)
+        }
+        
+        .onAppear {
+            print("загрузились")
         }
     }
 }
