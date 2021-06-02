@@ -18,7 +18,7 @@ struct SideMenuMainView: View {
             LinearGradient(gradient:
                             Gradient(colors: [.purpleTheme.opacity(colorScheme == .dark ? 0.5 : 1),
                                               themeData[theme.current].color]),
-                            startPoint: .topLeading, endPoint: .bottomTrailing)
+                           startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
             //Боковое меню
@@ -29,8 +29,8 @@ struct SideMenuMainView: View {
             ZStack {
                 ZStack {
                     TwoBackgroundCard(showMenu: $showMenu)
-                 
-                    Home(selectedTab: $selectedTab, showMenu: $showMenu)
+                    
+                    Home(selectedTab: $selectedTab)
                         .cornerRadius(showMenu ? 15 : 0)
                         .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
                 }
@@ -52,15 +52,19 @@ struct SideMenuMainView: View {
             .offset(x: showMenu ? getRect().width - 120 : 0)
             .ignoresSafeArea()
             .overlay(
-                BurgerButton(showMenu: $showMenu, selectTab: $selectedTab)
+                BurgerButton(showMenu: $showMenu)
                     .padding(.top, -3)
                 , alignment: .topLeading)
         }
+        
+//        .sheet(isPresented: ) {
+//            OnboardingView()
+//        }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Помощь", showMenu: false)
+        SideMenuMainView(selectedTab: "Правила", showMenu: true)
     }
 }

@@ -11,16 +11,17 @@ struct SignMainView: View {
     @ObservedObject private var signViewModel = SignViewModel.shared
     @Environment (\.presentationMode) var presentationSign
     @State private var signInSelected = false
-    @AppStorage ("isOnboarding") var isOnboarding: Bool?
+//    @State private var showOnboarding = true
+//    @AppStorage ("isOnboarding") var isOnboarding: Bool?
     
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.orangeGradientStart, .orangeGradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
-            BackgroundAnimation()
-                .drawingGroup()
-                .ignoresSafeArea()
+//            BackgroundAnimation()
+//                .drawingGroup()
+//                .ignoresSafeArea()
             
             VStack {
                 HStack(spacing: 1) {
@@ -45,16 +46,15 @@ struct SignMainView: View {
                             .offset(x: signInSelected ? 0 : gr.size.width + 50)
                         
                         Button(self.signViewModel.isValidSignUp ? "Зарегистрироваться" : "Заполните все поля") {
-                            clearTextFields()
                             presentationSign.wrappedValue.dismiss()
-//                            signUp()
-                            isOnboarding = false
+                            //                            signUp()
+//                            isOnboarding = false
                             print("--------Зарегистрироваться--------")
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white,
                                                      colorText: signViewModel.isValidSignUp ? .orangeGradientEnd : .gray))
                         .offset(y: signInSelected ? 230 : gr.size.height + 50)
-//                        .disabled(!signViewModel.isValidSignUp)
+                        //                        .disabled(!signViewModel.isValidSignUp)
                     }
                     
                     VStack {
@@ -64,57 +64,52 @@ struct SignMainView: View {
                             .offset(x: !signInSelected ? 0 : -gr.size.width - 50)
                         
                         Button(signViewModel.isValidSignIn ? "Войти" : "Заполните все поля") {
-                            clearTextFields()
                             presentationSign.wrappedValue.dismiss()
-//                            signIn()
-                            isOnboarding = false
+                            //                            signIn()
+//                            isOnboarding = false
                             print("--------Войти--------")
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white,
                                                      colorText: signViewModel.isValidSignIn ? .orangeGradientEnd : .gray))
-                        .offset(y: !signInSelected ? 340 : gr.size.height + 150)
-//                        .disabled(!signViewModel.isValidSignIn)
+                        .offset(y: !signInSelected ? 365 : gr.size.height + 150)
+                        //                        .disabled(!signViewModel.isValidSignIn)
                     }
                 }
                 .animation(.easeInOut)
             }
+            
+//            .sheet(isPresented: viewModelGame.$showOnboardingAppear) {
+//                OnboardingView()
+//            }
         }
     }
     
-    func clearTextFields() {
-        signViewModel.username = ""
-        signViewModel.email = ""
-        signViewModel.passwordSignIn = ""
-        signViewModel.password = ""
-        signViewModel.passwordAgain = ""
-    }
-    
-//    func signIn() {
-//        Auth.auth().signIn(withEmail: signViewModel.email, password: signViewModel.password) { user, error in
-//            if error != nil {
-//                print(error?.localizedDescription ?? "Хьюстон у нас проблемы")
-//                return
-//            }
-//            if user != nil {
-//                presentAlert = true
-//                return
-//            }
-//
-//        }
-//    }
+    //    func signIn() {
+    //        Auth.auth().signIn(withEmail: signViewModel.email, password: signViewModel.password) { user, error in
+    //            if error != nil {
+    //                print(error?.localizedDescription ?? "Хьюстон у нас проблемы")
+    //                return
+    //            }
+    //            if user != nil {
+    //                presentAlert = true
+    //                return
+    //            }
+    //
+    //        }
+    //    }
     
     
-//    func signUp() {
-//        Auth.auth().createUser(withEmail: signViewModel.email, password: signViewModel.password) { user, error in
-//            if error == nil {
-//                if user != nil {
-//                    presentAlert = true
-//
-//                }
-//            }
-//        }
-        
-        
+    //    func signUp() {
+    //        Auth.auth().createUser(withEmail: signViewModel.email, password: signViewModel.password) { user, error in
+    //            if error == nil {
+    //                if user != nil {
+    //                    presentAlert = true
+    //
+    //                }
+    //            }
+    //        }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -48,8 +48,8 @@
 		809F4D87265544C400ED0598 /* BackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D86265544C400ED0598 /* BackgroundCard.swift */; };
 		809F4D892655492600ED0598 /* NameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D882655492500ED0598 /* NameTheme.swift */; };
 		80A2C1E72655B97B0023E28E /* ThemeViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2C1E62655B97B0023E28E /* ThemeViewMain.swift */; };
+		80A434B02666DC0B004F0343 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A434AF2666DC0B004F0343 /* RulesView.swift */; };
 		80A4F671264392C100A0BCA2 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F670264392C100A0BCA2 /* OnboardModel.swift */; };
-		80A4F6762643937200A0BCA2 /* StartButtonOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F6752643937200A0BCA2 /* StartButtonOnboardView.swift */; };
 		80A4F678264394FD00A0BCA2 /* CardOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F677264394FD00A0BCA2 /* CardOnboardView.swift */; };
 		80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0661262D8B3F00EAF9C4 /* MemoryGame.swift */; };
 		80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */; };
@@ -111,8 +111,8 @@
 		809F4D86265544C400ED0598 /* BackgroundCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCard.swift; sourceTree = "<group>"; };
 		809F4D882655492500ED0598 /* NameTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTheme.swift; sourceTree = "<group>"; };
 		80A2C1E62655B97B0023E28E /* ThemeViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewMain.swift; sourceTree = "<group>"; };
+		80A434AF2666DC0B004F0343 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		80A4F670264392C100A0BCA2 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
-		80A4F6752643937200A0BCA2 /* StartButtonOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonOnboardView.swift; sourceTree = "<group>"; };
 		80A4F677264394FD00A0BCA2 /* CardOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnboardView.swift; sourceTree = "<group>"; };
 		80BE0661262D8B3F00EAF9C4 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
@@ -287,6 +287,7 @@
 				80ECBF922665808C00684F6C /* Sign */,
 				8062966C2653CF750091469E /* Notification */,
 				80A4F66E2643921E00A0BCA2 /* Onboarding */,
+				80A434AE2666DBEE004F0343 /* Rules */,
 				809F4D7D26553DFC00ED0598 /* Theme */,
 				8062966B2653C4290091469E /* Extension */,
 				800DB7B4263D6A5B00A4A2C1 /* System32 */,
@@ -333,6 +334,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		80A434AE2666DBEE004F0343 /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				80A434AF2666DC0B004F0343 /* RulesView.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
 		80A4F66E2643921E00A0BCA2 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,7 +371,6 @@
 		80A4F6742643931C00A0BCA2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				80A4F6752643937200A0BCA2 /* StartButtonOnboardView.swift */,
 				80A4F677264394FD00A0BCA2 /* CardOnboardView.swift */,
 				806EC7C12643C9BF00B93D90 /* OnboardingView.swift */,
 				809BE208266679BF00600BCC /* SignUpButtonOnboarding.swift */,
@@ -540,8 +548,8 @@
 				809BFA8F2657088100C37C48 /* ThemeModel.swift in Sources */,
 				80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */,
 				80C0419F2645DD4800501EB8 /* CardView.swift in Sources */,
+				80A434B02666DC0B004F0343 /* RulesView.swift in Sources */,
 				801128DF2642B41400C38272 /* Pie.swift in Sources */,
-				80A4F6762643937200A0BCA2 /* StartButtonOnboardView.swift in Sources */,
 				80ECBFA6266581F300684F6C /* SignSelectButton.swift in Sources */,
 				80ECBFA7266581F300684F6C /* BackgroundCardSign.swift in Sources */,
 				80ECBFAD266581F300684F6C /* BackgroundAnimation.swift in Sources */,
