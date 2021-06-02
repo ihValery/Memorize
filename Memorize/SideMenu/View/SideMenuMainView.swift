@@ -13,6 +13,8 @@ struct SideMenuMainView: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var theme = ThemeSettings.shared
     
+    @AppStorage ("showOndoard") var showOndoard: Bool = true
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient:
@@ -56,10 +58,10 @@ struct SideMenuMainView: View {
                     .padding(.top, -3)
                 , alignment: .topLeading)
         }
-        
-//        .sheet(isPresented: ) {
-//            OnboardingView()
-//        }
+                
+        .sheet(isPresented: $showOndoard) {
+            OnboardingView()
+        }
     }
 }
 

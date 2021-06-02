@@ -11,8 +11,7 @@ struct SignMainView: View {
     @ObservedObject private var signViewModel = SignViewModel.shared
     @Environment (\.presentationMode) var presentationSign
     @State private var signInSelected = false
-//    @State private var showOnboarding = true
-//    @AppStorage ("isOnboarding") var isOnboarding: Bool?
+    @AppStorage ("showOndoard") var showOndoard: Bool?
     
     var body: some View {
         ZStack {
@@ -46,15 +45,14 @@ struct SignMainView: View {
                             .offset(x: signInSelected ? 0 : gr.size.width + 50)
                         
                         Button(self.signViewModel.isValidSignUp ? "Зарегистрироваться" : "Заполните все поля") {
+                            
                             presentationSign.wrappedValue.dismiss()
-                            //                            signUp()
-//                            isOnboarding = false
                             print("--------Зарегистрироваться--------")
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white,
                                                      colorText: signViewModel.isValidSignUp ? .orangeGradientEnd : .gray))
                         .offset(y: signInSelected ? 230 : gr.size.height + 50)
-                        //                        .disabled(!signViewModel.isValidSignUp)
+//                        .disabled(!signViewModel.isValidSignUp)
                     }
                     
                     VStack {
@@ -64,15 +62,14 @@ struct SignMainView: View {
                             .offset(x: !signInSelected ? 0 : -gr.size.width - 50)
                         
                         Button(signViewModel.isValidSignIn ? "Войти" : "Заполните все поля") {
+                            showOndoard = false
                             presentationSign.wrappedValue.dismiss()
-                            //                            signIn()
-//                            isOnboarding = false
                             print("--------Войти--------")
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white,
                                                      colorText: signViewModel.isValidSignIn ? .orangeGradientEnd : .gray))
                         .offset(y: !signInSelected ? 365 : gr.size.height + 150)
-                        //                        .disabled(!signViewModel.isValidSignIn)
+ //                        .disabled(!signViewModel.isValidSignIn)
                     }
                 }
                 .animation(.easeInOut)

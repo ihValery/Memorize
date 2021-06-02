@@ -15,7 +15,7 @@ struct RulesView: View {
                     Image("fonGra3")
                         .resizable()
 //                        .aspectRatio(contentMode: .fill)
-                        .offset(y: -gr.frame(in: .global).origin.y / 1.3 - 200)
+                        .offset(y: -gr.frame(in: .global).origin.y / 1.3 - 160)
                 }
                 
                 VStack(spacing: 30) {
@@ -33,6 +33,7 @@ struct RulesView: View {
                 .font(.title3)
                 .multilineTextAlignment(.center)
                 .padding()
+                .padding(.top)
             }
             .ignoresSafeArea()
         }

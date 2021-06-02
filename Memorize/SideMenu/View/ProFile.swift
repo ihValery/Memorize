@@ -10,7 +10,7 @@ import SwiftUI
 struct ProFile: View {
     
     var body: some View {
-        VStack(spacing: -2) {
+        VStack(alignment: .leading, spacing: -2) {
             Image("noAvatar")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
@@ -19,15 +19,13 @@ struct ProFile: View {
                 .padding(.top, 30)
             
             VStack(alignment: .leading, spacing: -5) {
-                Text("Апполония")
+                Text("Пользователь")
                     .font(.title)
                     .fontWeight(.bold)
-                Text("Сицилийская")
+                Text("user@mail.net")
             }
         }
         .foregroundColor(.colorTextNewGame)
-        
-        
     }
 }
 
