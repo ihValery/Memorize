@@ -13,7 +13,6 @@ struct TabButton: View {
     
     @ObservedObject var theme = ThemeSettings.shared
     @Binding var showMenu: Bool
-    //Selected tab
     @Binding var selectedTab: String
     //For Hero Animation Slide
     var animation: Namespace.ID

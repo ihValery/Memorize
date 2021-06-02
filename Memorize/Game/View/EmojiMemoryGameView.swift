@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
-    
+//    @State private var showOnboarding = true
     //“обертка свойства” @ObservedObject говорит что когда переменная objectWillChange
     //этот View себя перерисовывает
     @ObservedObject var viewModelGame: EmojiMemoryGame
@@ -43,9 +43,6 @@ struct EmojiMemoryGameView: View {
             .padding(.bottom, 20)
             .foregroundColor(themeData[self.theme.current].color)
             .ignoresSafeArea(.all, edges: .bottom)
-        }
-        .onAppear {
-            
         }
     }
 }

@@ -9,12 +9,9 @@ import SwiftUI
 
 struct Home: View {
     @Binding var selectedTab: String
-    @Binding var showMenu: Bool
     
-    //Hiding tab bar
-    init(selectedTab: Binding<String>, showMenu: Binding<Bool>) {
+    init(selectedTab: Binding<String>) {
         self._selectedTab = selectedTab
-        self._showMenu = showMenu
         UITabBar.appearance().isHidden = true
     }
     
@@ -23,12 +20,12 @@ struct Home: View {
         //Tab View with tabs
         TabView(selection: $selectedTab) {
             
-            //Views
             EmojiMemoryGameView(viewModelGame: EmojiMemoryGame()).tag("Новая игра")
             Score().tag("Счет")
             ThemeViewMain().tag("Темы")
             NotificationView().tag("Уведомление")
-            OnboardingView(showMenu: $showMenu, selectTab: $selectedTab).tag("Помощь")
+            RulesView().tag("Правила")
+//            OnboardingView().tag("Правила")
         }
     }
 }

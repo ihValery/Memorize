@@ -28,7 +28,7 @@ struct SideMenu: View {
                 
                 TabButton(image: "gearshape", title: "Темы", showMenu: $showMenu, selectedTab: $selectedTab, animation: animation)
                 
-                TabButton(image: "questionmark.circle", title: "Помощь", showMenu: $showMenu, selectedTab: $selectedTab, animation: animation)
+                TabButton(image: "questionmark.circle", title: "Правила", showMenu: $showMenu, selectedTab: $selectedTab, animation: animation)
             }
             .padding(.leading, -15)
             .padding(.top, 50)

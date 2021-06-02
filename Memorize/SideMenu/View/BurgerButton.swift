@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BurgerButton: View {
     @Binding var showMenu: Bool
-    @Binding var selectTab: String
     @ObservedObject var theme = ThemeSettings.shared
     
     var body: some View {
@@ -21,18 +20,18 @@ struct BurgerButton: View {
             //animate Drawing Button
             VStack(spacing: 5) {
                 Capsule()
-                    .fill(showMenu ? Color.colorTextNewGame : themeData[self.theme.current].color)
+                    .fill(showMenu ? Color.colorTextNewGame : themeData[theme.current].color)
                     .frame(width: 30, height: 3)
                     //Rotating
                     .rotationEffect(.init(degrees: showMenu ? -45 : 0))
                     .offset(x: showMenu ? 2.5 : 0, y: showMenu ? 9 : 0)
                 VStack(spacing: 5) {
                     Capsule()
-                        .fill(showMenu ? Color.colorTextNewGame : themeData[self.theme.current].color)
+                        .fill(showMenu ? Color.colorTextNewGame : themeData[theme.current].color)
                         .frame(width: 30, height: 3)
                     //Moving Up when clicked
                     Capsule()
-                        .fill(showMenu ? Color.colorTextNewGame : themeData[self.theme.current].color)
+                        .fill(showMenu ? Color.colorTextNewGame : themeData[theme.current].color)
                         .frame(width: 30, height: 3)
                         .offset(y: showMenu ? -8 : 0)
                 }
@@ -41,13 +40,11 @@ struct BurgerButton: View {
         })
         .padding(.top, 5)
         .padding(.horizontal)
-//        .opacity(selectTab == "Помощь" ? 0 : 1)
-//        .disabled(selectTab == "Помощь")
     }
 }
 
 struct BurgerButton_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Помощь", showMenu: true)
+        SideMenuMainView(selectedTab: "Правила", showMenu: true)
     }
 }

@@ -9,13 +9,11 @@ import SwiftUI
 
 struct OnboardingView: View {
     var cardsOnboard: [CardOnboard] = cardOnboardData
-    @Binding var showMenu: Bool
-    @Binding var selectTab: String
 
     var body: some View {
         TabView {
             ForEach(cardsOnboard[0..<cardsOnboard.count]) { item in
-                CardOnboardView(cardOnboard: item, showMenu: $showMenu, selectTab: $selectTab)
+                CardOnboardView(cardOnboard: item)
             }
         }
         .tabViewStyle(PageTabViewStyle())
@@ -25,6 +23,6 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView(showMenu: .constant(false), selectTab: .constant("Новая игра"))
+        OnboardingView()
     }
 }
