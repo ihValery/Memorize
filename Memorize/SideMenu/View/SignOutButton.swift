@@ -36,7 +36,6 @@ struct SignOutButton: View {
                 .opacity(0.3)
         }
         .foregroundColor(.colorTextNewGame)
-//        .foregroundColor(.white)
 
         .fullScreenCover(isPresented: $showSign) {
             SignMainView()

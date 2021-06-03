@@ -10,13 +10,11 @@ import Combine
 import Firebase
 
 class Authenticator: ObservableObject {
-    @Published var needsAuthentication: Bool
-    @Published var showOnboard: Bool
+    @Published var needsAuthentication: Bool = true
     
-    init() {
-        self.needsAuthentication = true
-        self.showOnboard = true
-    }
+//    init() {
+//        self.needsAuthentication = true
+//    }
     
     func signIn(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
@@ -47,5 +45,13 @@ class Authenticator: ObservableObject {
             print(error.localizedDescription)
         }
         needsAuthentication = true
+    }
+    
+    func clearTextFields() {
+        SignViewModel.shared.email = ""
+        SignViewModel.shared.username = ""
+        SignViewModel.shared.passwordSignIn = ""
+        SignViewModel.shared.password = ""
+        SignViewModel.shared.passwordAgain = ""
     }
 }

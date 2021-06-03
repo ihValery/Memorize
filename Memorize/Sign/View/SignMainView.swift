@@ -78,6 +78,9 @@ struct SignMainView: View {
                 .animation(.easeInOut)
             }
         }
+        .onDisappear {
+            authenticator.clearTextFields()
+        }
     }
 }
 

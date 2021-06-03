@@ -42,6 +42,7 @@
 		809B08A82667D14D005347C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 809B08A72667D14D005347C0 /* GoogleService-Info.plist */; };
 		809B08AB2667D26A005347C0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 809B08AA2667D26A005347C0 /* FirebaseAuth */; };
 		809B08B12668185D005347C0 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B08B02668185D005347C0 /* Authenticator.swift */; };
+		809B08B3266855EC005347C0 /* WeAreAuthorized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B08B2266855EC005347C0 /* WeAreAuthorized.swift */; };
 		809BE209266679BF00600BCC /* SignUpButtonOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BE208266679BF00600BCC /* SignUpButtonOnboarding.swift */; };
 		809BFA8F2657088100C37C48 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8C2657088000C37C48 /* ThemeModel.swift */; };
 		809BFA902657088100C37C48 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8D2657088000C37C48 /* ThemeSettings.swift */; };
@@ -107,6 +108,7 @@
 		80896227262C6AFE001D9C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		809B08A72667D14D005347C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		809B08B02668185D005347C0 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		809B08B2266855EC005347C0 /* WeAreAuthorized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeAreAuthorized.swift; sourceTree = "<group>"; };
 		809BE208266679BF00600BCC /* SignUpButtonOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButtonOnboarding.swift; sourceTree = "<group>"; };
 		809BFA8C2657088000C37C48 /* ThemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		809BFA8D2657088000C37C48 /* ThemeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 			children = (
 				80ECBF96266580A200684F6C /* PasswordCheck.swift */,
 				809B08B02668185D005347C0 /* Authenticator.swift */,
+				809B08B2266855EC005347C0 /* WeAreAuthorized.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				806EC7C22643C9BF00B93D90 /* OnboardingView.swift in Sources */,
 				804B62672652DD0200DE3792 /* View.swift in Sources */,
 				809F4D852655414C00ED0598 /* IconDescription.swift in Sources */,
+				809B08B3266855EC005347C0 /* WeAreAuthorized.swift in Sources */,
 				80ECBF9C266580C200684F6C /* SignViewModel.swift in Sources */,
 				8042779826595B0F00F3E217 /* Animation.swift in Sources */,
 				806A0233263F44A00076EC1A /* Color.swift in Sources */,

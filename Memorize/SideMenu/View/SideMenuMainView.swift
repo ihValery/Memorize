@@ -59,21 +59,27 @@ struct SideMenuMainView: View {
                 , alignment: .topLeading)
         }
                 
-        .sheet(isPresented: $authenticator.showOnboard) {
+        .sheet(isPresented: $authenticator.needsAuthentication) {
             OnboardingView()
             //Кажется, эта проблема была недавно исправлена ​​- мне удалось удалить эту строку, и весь проект продолжал работать.
             //Но я еще не нашел никакой документации о том, когда объекты среды автоматически передаются в общий доступ
                 .environmentObject(authenticator)
         }
         
-        .onAppear {
-            print("загрузились")
-        }
+//        .onAppear {
+//            Auth.auth().addStateDidChangeListener { auth, user in
+//                if user != nil {
+//                    authenticator.needsAuthentication = false
+//                    authenticator.showOnboard = false
+//                }
+//            }
+//        }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         SideMenuMainView(selectedTab: "Правила", showMenu: true)
+            .environmentObject(Authenticator())
     }
 }

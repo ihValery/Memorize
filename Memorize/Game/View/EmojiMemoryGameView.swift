@@ -8,15 +8,12 @@
 import SwiftUI
 
 struct EmojiMemoryGameView: View {
-    //“обертка свойства” @ObservedObject говорит что когда переменная objectWillChange
-    //этот View себя перерисовывает
     @ObservedObject var viewModelGame: EmojiMemoryGame
     @ObservedObject var theme = ThemeSettings.shared
     
-    // Свойство var с именем body и ТИПОМ some View ещё интересна тем, является вычисляемой (computed)
     var body: some View {
         ZStack {
-//            AnimationForAppear(color: .element)
+            AnimationForAppear(color: .element)
 
             VStack {
                 TopPanelMenu(viewModelGame: viewModelGame)
@@ -43,13 +40,9 @@ struct EmojiMemoryGameView: View {
             .foregroundColor(themeData[theme.current].color)
             .ignoresSafeArea(.all, edges: .bottom)
         }
-        .onAppear {
-            print("\nНовая игра?\n")
-        }
     }
 }
 
-// Обеспечивает связь между кодом, и областью справа, которая называется Preview.
 struct EmojiMemoryGameView_Previews: PreviewProvider {
     static var previews: some View {
         let oneCard = EmojiMemoryGame()

@@ -20,6 +20,13 @@ struct MemorizeApp: App {
         WindowGroup {
             SideMenuMainView()
                 .environmentObject(authenticator)
+                .onAppear {
+                    Auth.auth().addStateDidChangeListener { auth, user in
+                        if user != nil {
+                            authenticator.needsAuthentication = false
+                        }
+                    }
+                }
         }
     }
 }
