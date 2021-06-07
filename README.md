@@ -24,4 +24,4 @@
     - Тяжелая анимация, для сглаживание активирован Metal
     - GeometryReader и использование его пространства
     - ButtonStyle кастомизация кнопки огранченна лишь фантазией, взялся - тогда анимацию и другие плюшки берешь на себя
-    <img src="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/NewTheme75.gif?raw=true"></a><img src="https://github.com/ihValery/CombineFirebase/blob/main/Lesson39Preview.gif?raw=true"></a>
+    - <img src="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/NewTheme75.gif?raw=true"></a><img src="https://github.com/ihValery/CombineFirebase/blob/main/Lesson39Preview.gif?raw=true"></a>
