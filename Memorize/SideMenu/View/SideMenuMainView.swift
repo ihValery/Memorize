@@ -13,7 +13,8 @@ struct SideMenuMainView: View {
     @State var showMenu = false
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var theme = ThemeSettings.shared
-    @EnvironmentObject var authenticator: Authenticator
+    
+    @ObservedObject var session: SessionFirebase
     
     var body: some View {
         ZStack {
@@ -25,7 +26,7 @@ struct SideMenuMainView: View {
             
             //Боковое меню
             ScrollView(getRect().height < 750 ? .vertical : .init(), showsIndicators: false) {
-                SideMenu(selectedTab: $selectedTab, showMenu: $showMenu)
+                SideMenu(selectedTab: $selectedTab, showMenu: $showMenu, session: session)
             }
             
             ZStack {
@@ -58,22 +59,19 @@ struct SideMenuMainView: View {
                     .padding(.top, -3)
                 , alignment: .topLeading)
         }
-                
-        .sheet(isPresented: $authenticator.showOnboard) {
-            OnboardingView()
-            //Кажется, эта проблема была недавно исправлена ​​- мне удалось удалить эту строку, и весь проект продолжал работать.
-            //Но я еще не нашел никакой документации о том, когда объекты среды автоматически передаются в общий доступ
-                .environmentObject(authenticator)
-        }
         
         .onAppear {
-            print("загрузились")
+            session.listen()
+        }
+                
+        .sheet(isPresented: $session.isSignIn) {
+            OnboardingView()
         }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Правила", showMenu: true)
+        SideMenuMainView(selectedTab: "Правила", showMenu: true, session: SessionFirebase())
     }
 }

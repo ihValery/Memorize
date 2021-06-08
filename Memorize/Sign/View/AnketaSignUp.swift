@@ -11,64 +11,78 @@ struct AnketaSignUp: View {
     @ObservedObject private var signViewModel = SignViewModel.shared
     @State private var showPassword = false
     
+//    @State private var image = UIImage()
+    @State private var isShowPhotoLibrary = false
+    
     var body: some View {
-        VStack(spacing: 20) {
-            
-            HStack {
-                Image(systemName: "person.fill").padding(.leading, 3).padding(.trailing, 2)
-                
-                ZStack(alignment: .leading) {
-                    if signViewModel.username.isEmpty { Text("Введите имя").opacity(0.7) }
-                    TextField("", text: $signViewModel.username)
-                }
-            }
-            Line()
-            
-            HStack {
-                Image(systemName: "envelope.fill")
-                
-                ZStack(alignment: .leading) {
-                    if signViewModel.email.isEmpty { Text("Укажите почту").opacity(0.7) }
-                    TextField("", text: $signViewModel.email)
-                }
-            }
-            Line()
-            
-            HStack {
-                Image(systemName: "lock.fill").padding(.leading, 3).padding(.trailing, 2)
-                
-                ZStack(alignment: .trailing) {
-                    if showPassword {
-                        ZStack {
-                            TextField("", text: $signViewModel.password)
-                        }
-                    } else {
-                        ZStack(alignment: .leading) {
-                            if signViewModel.password.isEmpty { Text("Придумайте пароль").opacity(0.7) }
-                            SecureField("", text: $signViewModel.password)
-                        }
-                    }
-                    Button(action: { self.showPassword.toggle()}) {
-                        Image(systemName: "eye").opacity(showPassword ? 1 : 0.2)
+        ZStack {
+            VStack(spacing: 20) {
+                HStack {
+                    Image(systemName: "person.fill").padding(.leading, 3).padding(.trailing, 2)
+                    
+                    ZStack(alignment: .leading) {
+                        if signViewModel.username.isEmpty { Text("Введите имя").opacity(0.7) }
+                        TextField("", text: $signViewModel.username)
                     }
                 }
-            }
-            Line()
-            
-            HStack {
-                Image(systemName: "lock.fill").padding(.leading, 3).padding(.trailing, 2)
+                Line()
                 
-                ZStack (alignment: .leading) {
-                    if signViewModel.passwordAgain.isEmpty { Text("Повторите пароль").opacity(0.7) }
-                    SecureField("", text: $signViewModel.passwordAgain)
+                HStack {
+                    Image(systemName: "envelope.fill")
+                    
+                    ZStack(alignment: .leading) {
+                        if signViewModel.email.isEmpty { Text("Укажите почту").opacity(0.7) }
+                        TextField("", text: $signViewModel.email)
+                    }
                 }
+                Line()
+                
+                HStack {
+                    Image(systemName: "lock.fill").padding(.leading, 3).padding(.trailing, 2)
+                    
+                    ZStack(alignment: .trailing) {
+                        if showPassword {
+                            ZStack {
+                                TextField("", text: $signViewModel.password)
+                            }
+                        } else {
+                            ZStack(alignment: .leading) {
+                                if signViewModel.password.isEmpty { Text("Придумайте пароль").opacity(0.7) }
+                                SecureField("", text: $signViewModel.password)
+                            }
+                        }
+                        Button(action: { self.showPassword.toggle()}) {
+                            Image(systemName: "eye").opacity(showPassword ? 1 : 0.2)
+                        }
+                    }
+                }
+                Line()
+                
+                HStack {
+                    Image(systemName: "lock.fill").padding(.leading, 3).padding(.trailing, 2)
+                    
+                    ZStack (alignment: .leading) {
+                        if signViewModel.passwordAgain.isEmpty { Text("Повторите пароль").opacity(0.7) }
+                        SecureField("", text: $signViewModel.passwordAgain)
+                    }
+                }
+                Line()
             }
-            Line()
+            .textFieldStyle(DefaultTextFieldStyle())
+            .font(.title2)
+            .foregroundColor(.orangeGradientEnd)
+            .padding()
+            .offset(y: 40)
+            
+            FrameAvatar(image: $signViewModel.image)
+                .offset(y: -190)
+                .onTapGesture {
+                    isShowPhotoLibrary = true
+                }
         }
-        .textFieldStyle(DefaultTextFieldStyle())
-        .font(.title2)
-        .foregroundColor(.orangeGradientEnd)
-        .padding()
+        .sheet(isPresented: $isShowPhotoLibrary) {
+            ImagePicker(selectedImage: self.$signViewModel.image, sourceType: .photoLibrary)
+        }
     }
 }
 

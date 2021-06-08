@@ -30,18 +30,26 @@
 		806296742653D08F0091469E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806296712653D08F0091469E /* NotificationManager.swift */; };
 		806296762653F98A0091469E /* AnyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806296752653F98A0091469E /* AnyTransition.swift */; };
 		806A0233263F44A00076EC1A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A0232263F44A00076EC1A /* Color.swift */; };
+		806C1A6D266FC6D800109432 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C1A6C266FC6D800109432 /* User.swift */; };
+		806C1A70266FCC8200109432 /* SessionFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C1A6F266FCC8200109432 /* SessionFirebase.swift */; };
+		806C1A72266FCC8E00109432 /* ImageLoaderAndCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C1A71266FCC8E00109432 /* ImageLoaderAndCache.swift */; };
+		806C1A75266FCD6E00109432 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 806C1A74266FCD6E00109432 /* FirebaseAuth */; };
+		806C1A77266FCD6E00109432 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 806C1A76266FCD6E00109432 /* FirebaseFirestore */; };
+		806C1A79266FCD6E00109432 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 806C1A78266FCD6E00109432 /* FirebaseStorage */; };
+		806C1A7B266FCDA400109432 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806C1A7A266FCDA400109432 /* GoogleService-Info.plist */; };
+		806C1A7D266FCF2800109432 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C1A7C266FCF2800109432 /* ImagePicker.swift */; };
+		806C1A81266FE7DD00109432 /* FrameAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C1A80266FE7DD00109432 /* FrameAvatar.swift */; };
+		806C1A84266FF3B000109432 /* ImageWithURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C1A83266FF3B000109432 /* ImageWithURL.swift */; };
 		806EC7C22643C9BF00B93D90 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806EC7C12643C9BF00B93D90 /* OnboardingView.swift */; };
 		807B3175265A97C200F63953 /* GradientTrophy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B3174265A97C200F63953 /* GradientTrophy.swift */; };
 		807B31A2265BD16600F63953 /* SignOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B31A1265BD16600F63953 /* SignOutButton.swift */; };
 		807B31A4265BE5D700F63953 /* TwoBackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B31A3265BE5D700F63953 /* TwoBackgroundCard.swift */; };
+		807C4BA8266B8F7D00C3DEA5 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */; };
 		808699C7264695D700DAD8BE /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808699C6264695D700DAD8BE /* Cardify.swift */; };
 		8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8089621E262C6AFB001D9C7A /* MemorizeApp.swift */; };
 		80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */; };
 		80896223262C6AFE001D9C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896222262C6AFE001D9C7A /* Assets.xcassets */; };
 		80896226262C6AFE001D9C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896225262C6AFE001D9C7A /* Preview Assets.xcassets */; };
-		809B08A82667D14D005347C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 809B08A72667D14D005347C0 /* GoogleService-Info.plist */; };
-		809B08AB2667D26A005347C0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 809B08AA2667D26A005347C0 /* FirebaseAuth */; };
-		809B08B12668185D005347C0 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B08B02668185D005347C0 /* Authenticator.swift */; };
 		809BE209266679BF00600BCC /* SignUpButtonOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BE208266679BF00600BCC /* SignUpButtonOnboarding.swift */; };
 		809BFA8F2657088100C37C48 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8C2657088000C37C48 /* ThemeModel.swift */; };
 		809BFA902657088100C37C48 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8D2657088000C37C48 /* ThemeSettings.swift */; };
@@ -94,10 +102,18 @@
 		806296712653D08F0091469E /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		806296752653F98A0091469E /* AnyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransition.swift; sourceTree = "<group>"; };
 		806A0232263F44A00076EC1A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		806C1A6C266FC6D800109432 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		806C1A6F266FCC8200109432 /* SessionFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionFirebase.swift; sourceTree = "<group>"; };
+		806C1A71266FCC8E00109432 /* ImageLoaderAndCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoaderAndCache.swift; sourceTree = "<group>"; };
+		806C1A7A266FCDA400109432 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		806C1A7C266FCF2800109432 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		806C1A80266FE7DD00109432 /* FrameAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameAvatar.swift; sourceTree = "<group>"; };
+		806C1A83266FF3B000109432 /* ImageWithURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageWithURL.swift; sourceTree = "<group>"; };
 		806EC7C12643C9BF00B93D90 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		807B3174265A97C200F63953 /* GradientTrophy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTrophy.swift; sourceTree = "<group>"; };
 		807B31A1265BD16600F63953 /* SignOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutButton.swift; sourceTree = "<group>"; };
 		807B31A3265BE5D700F63953 /* TwoBackgroundCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoBackgroundCard.swift; sourceTree = "<group>"; };
+		807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		808699C6264695D700DAD8BE /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		8089621B262C6AFB001D9C7A /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8089621E262C6AFB001D9C7A /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
@@ -105,8 +121,6 @@
 		80896222262C6AFE001D9C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80896225262C6AFE001D9C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80896227262C6AFE001D9C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		809B08A72667D14D005347C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		809B08B02668185D005347C0 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
 		809BE208266679BF00600BCC /* SignUpButtonOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButtonOnboarding.swift; sourceTree = "<group>"; };
 		809BFA8C2657088000C37C48 /* ThemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		809BFA8D2657088000C37C48 /* ThemeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
@@ -140,7 +154,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				809B08AB2667D26A005347C0 /* FirebaseAuth in Frameworks */,
+				806C1A75266FCD6E00109432 /* FirebaseAuth in Frameworks */,
+				806C1A77266FCD6E00109432 /* FirebaseFirestore in Frameworks */,
+				806C1A79266FCD6E00109432 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +168,7 @@
 			children = (
 				80896222262C6AFE001D9C7A /* Assets.xcassets */,
 				80896227262C6AFE001D9C7A /* Info.plist */,
-				809B08A72667D14D005347C0 /* GoogleService-Info.plist */,
+				806C1A7A266FCDA400109432 /* GoogleService-Info.plist */,
 				80896224262C6AFE001D9C7A /* Preview Content */,
 			);
 			path = System32;
@@ -260,6 +276,29 @@
 			path = NotificationManager;
 			sourceTree = "<group>";
 		};
+		806C1A6E266FCC5E00109432 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				806C1A6F266FCC8200109432 /* SessionFirebase.swift */,
+				806C1A71266FCC8E00109432 /* ImageLoaderAndCache.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		806C1A82266FE91000109432 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				806C1A83266FF3B000109432 /* ImageWithURL.swift */,
+				80ECBF9F266581F300684F6C /* BackgroundCardSign.swift */,
+				80ECBF9E266581F300684F6C /* SignSelectButton.swift */,
+				806C1A80266FE7DD00109432 /* FrameAvatar.swift */,
+				806C1A7C266FCF2800109432 /* ImagePicker.swift */,
+				80ECBFA3266581F300684F6C /* SignStyleButton.swift */,
+				80ECBFA1266581F300684F6C /* Line.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		807B3173265A96F200F63953 /* Victory */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				80A434AF2666DC0B004F0343 /* RulesView.swift */,
+				807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -406,7 +446,9 @@
 			children = (
 				80ECBF93266580A200684F6C /* Model */,
 				80ECBF9A266580C200684F6C /* ViewModel */,
+				806C1A6E266FCC5E00109432 /* NetworkManager */,
 				80ECBF9D266581F300684F6C /* View */,
+				806C1A82266FE91000109432 /* Helper */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -415,7 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				80ECBF96266580A200684F6C /* PasswordCheck.swift */,
-				809B08B02668185D005347C0 /* Authenticator.swift */,
+				806C1A6C266FC6D800109432 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -432,12 +474,8 @@
 			isa = PBXGroup;
 			children = (
 				80ECBFA4266581F300684F6C /* SignMainView.swift */,
-				80ECBF9E266581F300684F6C /* SignSelectButton.swift */,
-				80ECBF9F266581F300684F6C /* BackgroundCardSign.swift */,
 				80ECBFA0266581F300684F6C /* AnketaSignIn.swift */,
-				80ECBFA1266581F300684F6C /* Line.swift */,
 				80ECBFA2266581F300684F6C /* AnketaSignUp.swift */,
-				80ECBFA3266581F300684F6C /* SignStyleButton.swift */,
 				80ECBFA5266581F300684F6C /* BackgroundAnimation.swift */,
 			);
 			path = View;
@@ -472,7 +510,9 @@
 			);
 			name = Memorize;
 			packageProductDependencies = (
-				809B08AA2667D26A005347C0 /* FirebaseAuth */,
+				806C1A74266FCD6E00109432 /* FirebaseAuth */,
+				806C1A76266FCD6E00109432 /* FirebaseFirestore */,
+				806C1A78266FCD6E00109432 /* FirebaseStorage */,
 			);
 			productName = Memorize;
 			productReference = 8089621B262C6AFB001D9C7A /* Memorize.app */;
@@ -502,7 +542,7 @@
 			);
 			mainGroup = 80896212262C6AFB001D9C7A;
 			packageReferences = (
-				809B08A92667D26A005347C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				806C1A73266FCD6E00109432 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 8089621C262C6AFB001D9C7A /* Products */;
 			projectDirPath = "";
@@ -520,7 +560,7 @@
 			files = (
 				80896226262C6AFE001D9C7A /* Preview Assets.xcassets in Resources */,
 				80896223262C6AFE001D9C7A /* Assets.xcassets in Resources */,
-				809B08A82667D14D005347C0 /* GoogleService-Info.plist in Resources */,
+				806C1A7B266FCDA400109432 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,10 +575,13 @@
 				806296722653D08F0091469E /* ButtonSetNotification.swift in Sources */,
 				809BFA902657088100C37C48 /* ThemeSettings.swift in Sources */,
 				80ECBFAA266581F300684F6C /* AnketaSignUp.swift in Sources */,
+				806C1A70266FCC8200109432 /* SessionFirebase.swift in Sources */,
 				804A61F1265C178500D0C73C /* ProFile.swift in Sources */,
 				804B626D2652DD0200DE3792 /* SideMenuMainView.swift in Sources */,
+				806C1A81266FE7DD00109432 /* FrameAvatar.swift in Sources */,
 				800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */,
 				80C0419D2645DC6800501EB8 /* TopPanelMenu.swift in Sources */,
+				806C1A6D266FC6D800109432 /* User.swift in Sources */,
 				80A2C1E72655B97B0023E28E /* ThemeViewMain.swift in Sources */,
 				804B626C2652DD0200DE3792 /* SideMenu.swift in Sources */,
 				80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */,
@@ -551,6 +594,7 @@
 				80ECBF99266580A200684F6C /* PasswordCheck.swift in Sources */,
 				8042779626592E0B00F3E217 /* VictoryView.swift in Sources */,
 				801128DD2642B3A600C38272 /* Star.swift in Sources */,
+				807C4BA8266B8F7D00C3DEA5 /* BlurView.swift in Sources */,
 				809BFA912657088100C37C48 /* ThemeData.swift in Sources */,
 				803D1EA4265F3709009EA74E /* AnimationForAppear.swift in Sources */,
 				807B3175265A97C200F63953 /* GradientTrophy.swift in Sources */,
@@ -564,7 +608,6 @@
 				80BE0662262D8B3F00EAF9C4 /* MemoryGame.swift in Sources */,
 				80C0419F2645DD4800501EB8 /* CardView.swift in Sources */,
 				80A434B02666DC0B004F0343 /* RulesView.swift in Sources */,
-				809B08B12668185D005347C0 /* Authenticator.swift in Sources */,
 				801128DF2642B41400C38272 /* Pie.swift in Sources */,
 				80ECBFA6266581F300684F6C /* SignSelectButton.swift in Sources */,
 				80ECBFA7266581F300684F6C /* BackgroundCardSign.swift in Sources */,
@@ -576,13 +619,16 @@
 				8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */,
 				80A4F671264392C100A0BCA2 /* OnboardModel.swift in Sources */,
 				80ECBFAB266581F300684F6C /* SignStyleButton.swift in Sources */,
+				806C1A7D266FCF2800109432 /* ImagePicker.swift in Sources */,
 				804B626A2652DD0200DE3792 /* TabButton.swift in Sources */,
 				80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */,
 				806296732653D08F0091469E /* NotificationView.swift in Sources */,
 				809F4D8326553EFD00ED0598 /* CardTheme.swift in Sources */,
 				800DB7B9263D95F000A4A2C1 /* Grid.swift in Sources */,
 				806EC7C22643C9BF00B93D90 /* OnboardingView.swift in Sources */,
+				806C1A72266FCC8E00109432 /* ImageLoaderAndCache.swift in Sources */,
 				804B62672652DD0200DE3792 /* View.swift in Sources */,
+				806C1A84266FF3B000109432 /* ImageWithURL.swift in Sources */,
 				809F4D852655414C00ED0598 /* IconDescription.swift in Sources */,
 				80ECBF9C266580C200684F6C /* SignViewModel.swift in Sources */,
 				8042779826595B0F00F3E217 /* Animation.swift in Sources */,
@@ -782,7 +828,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		809B08A92667D26A005347C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		806C1A73266FCD6E00109432 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -793,10 +839,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		809B08AA2667D26A005347C0 /* FirebaseAuth */ = {
+		806C1A74266FCD6E00109432 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 809B08A92667D26A005347C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 806C1A73266FCD6E00109432 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		806C1A76266FCD6E00109432 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 806C1A73266FCD6E00109432 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		806C1A78266FCD6E00109432 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 806C1A73266FCD6E00109432 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

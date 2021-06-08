@@ -31,7 +31,7 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView()
+        SideMenuMainView(session: SessionFirebase())
     }
 }
 
