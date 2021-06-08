@@ -12,11 +12,13 @@ struct SideMenu: View {
     //For Hero Animation Slide
     @Namespace var animation
     @Binding var showMenu: Bool
+    
+    @ObservedObject var session: SessionFirebase
 
     var body: some View {
         //Боковое меню
         VStack(alignment: .leading, spacing: 15) {
-            ProFile()
+            ProFile(session: session)
             
             //tab Buttons
             VStack(alignment: .leading, spacing: 10) {
@@ -35,7 +37,7 @@ struct SideMenu: View {
             
             Spacer()
             
-            SignOutButton()
+            SignOutButton(session: session)
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -44,7 +46,7 @@ struct SideMenu: View {
 
 struct SideMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Новая игра", showMenu: true)
+        SideMenuMainView(selectedTab: "Новая игра", showMenu: true, session: SessionFirebase())
             .preferredColorScheme(.dark)
     }
 }

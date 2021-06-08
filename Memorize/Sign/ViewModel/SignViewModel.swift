@@ -6,7 +6,7 @@
 //
 
 import Combine
-import Foundation
+import UIKit
 
 class SignViewModel: ObservableObject {
     static let shared = SignViewModel()
@@ -18,6 +18,8 @@ class SignViewModel: ObservableObject {
     
     @Published var password = ""
     @Published var passwordAgain = ""
+    
+    @Published var image = UIImage()
     
     //output
     @Published var isValidSignIn = false
@@ -59,6 +61,14 @@ class SignViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
+    private var isImageEmptyPublisher: AnyPublisher<Bool, Never> {
+        $image
+            .debounce(for: 0.5, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .map { !$0.isEqual(UIImage()) }
+            .eraseToAnyPublisher()
+    }
+    
     private var isPasswordStrongPublisher: AnyPublisher<Bool, Never> {
         $password
             .debounce(for: 0.2, scheduler: RunLoop.main)
@@ -87,8 +97,8 @@ class SignViewModel: ObservableObject {
     }
     
     private var isValidSignUpPublisher: AnyPublisher<Bool , Never> {
-        Publishers.CombineLatest3(isUsernameValidPublisher, isEmailValidPublisher, isPasswordValidPublisher)
-            .map { $0 && $1 && $2 == .valid }
+        Publishers.CombineLatest4(isImageEmptyPublisher, isUsernameValidPublisher, isEmailValidPublisher, isPasswordValidPublisher)
+            .map { $0 && $1 && $2 && $3 == .valid }
             .eraseToAnyPublisher()
     }
     
@@ -155,5 +165,14 @@ class SignViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .assign(to: \.isValidSignIn, on: self)
             .store(in: &cancellableSet)
+    }
+    
+    func clearTextFields() {
+        email = ""
+        username = ""
+        passwordSignIn = ""
+        password = ""
+        passwordAgain = ""
+        image = UIImage()
     }
 }

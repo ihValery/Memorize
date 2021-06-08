@@ -19,7 +19,6 @@ class EmojiMemoryGame: ObservableObject {
     static private func createMemoryGame(_ collectionShuffled: [String]? = nil) -> MemoryGame<String> {
         
         return MemoryGame<String>(numbersOfPairsOfCards: themeData[ThemeSettings.shared.current].number) { pairIndex in
-            
             if let collectionShuffled = collectionShuffled {
                 return collectionShuffled[pairIndex]
             } else {
