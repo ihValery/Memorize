@@ -11,11 +11,11 @@ struct ProFile: View {
     @ObservedObject var session: SessionFirebase
     
     var body: some View {  
-        VStack(alignment: .leading, spacing: -2) {
+        VStack(alignment: .leading) {
             ImageWithURL(session.user?.avatarURL ?? "")
                 .padding(.top, 30)
             
-            VStack(alignment: .leading, spacing: -5) {
+            VStack(alignment: .leading) {
                 Text(session.user?.userName ?? "Без имени")
                     .font(.title)
                     .fontWeight(.bold)

@@ -59,7 +59,7 @@ struct TabButton: View {
 
 struct TabButton_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Темы", showMenu: false, session: SessionFirebase())
+        SideMenuMainView(session: SessionFirebase())
             .preferredColorScheme(.dark)
     }
 }

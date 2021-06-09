@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ThemeViewMain: View {
     @ObservedObject var theme = ThemeSettings.shared
-    @State var selectedTheme: Int = UserDefaults.standard.integer(forKey: "Theme")
+    @State private var selectedTheme: Int = UserDefaults.standard.integer(forKey: "Theme")
     
     var body: some View {
         VStack {

@@ -10,10 +10,8 @@ import Firebase
 
 struct SignMainView: View {
     @ObservedObject private var signViewModel = SignViewModel.shared
-    @Environment (\.presentationMode) var presentationSign
+    @Environment (\.presentationMode) var presentationMode
     @State private var signInSelected = false
-    
-//    @Binding var image: UIImage
     @ObservedObject var session: SessionFirebase
     
     var body: some View {
@@ -42,32 +40,27 @@ struct SignMainView: View {
                 
                 GeometryReader { gr in
                     VStack {
-                        BackgroundCardSign(height: 365)
+                        BackgroundCardSign(session: session, height: 365)
                             .overlay(AnketaSignUp().padding())
                             .offset(y: gr.size.height / 4.5)
                             .offset(x: signInSelected ? 0 : gr.size.width + 50)
                         
                         Button(self.signViewModel.isValidSignUp ? "Зарегистрироваться" : "Заполните все поля") {
                             session.signUp(email: signViewModel.email, password: signViewModel.password, name: signViewModel.username, photo: signViewModel.image)
-                            
-                            presentationSign.wrappedValue.dismiss()
                         }
-                        .buttonStyle(SignStyleButton(colorBG: .white,
-                                                     colorText: signViewModel.isValidSignUp ? .orangeGradientEnd : .gray))
+                        .buttonStyle(SignStyleButton(colorBG: .white, colorText: signViewModel.isValidSignUp ? .orangeGradientEnd : .gray))
                         .offset(y: signInSelected ? 190 : gr.size.height + 50)
                         .disabled(!signViewModel.isValidSignUp)
                     }
                     
                     VStack {
-                        BackgroundCardSign(height: 190)
+                        BackgroundCardSign(session: session, height: 190)
                             .overlay(AnketaSignIn().padding().padding(.bottom, -20))
                             .offset(y: gr.size.height / 3.5)
                             .offset(x: !signInSelected ? 0 : -gr.size.width - 50)
                         
                         Button(signViewModel.isValidSignIn ? "Войти" : "Заполните все поля") {
                             session.signIn(email: signViewModel.email, password: signViewModel.passwordSignIn)
-                            
-                            presentationSign.wrappedValue.dismiss()
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white,
                                                      colorText: signViewModel.isValidSignIn ? .orangeGradientEnd : .gray))
@@ -78,7 +71,6 @@ struct SignMainView: View {
                 .animation(.easeInOut)
             }
         }
-        
         .onDisappear {
             signViewModel.clearTextFields()
         }

@@ -50,7 +50,6 @@
 		80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80896220262C6AFB001D9C7A /* EmojiMemoryGameView.swift */; };
 		80896223262C6AFE001D9C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896222262C6AFE001D9C7A /* Assets.xcassets */; };
 		80896226262C6AFE001D9C7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80896225262C6AFE001D9C7A /* Preview Assets.xcassets */; };
-		809BE209266679BF00600BCC /* SignUpButtonOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BE208266679BF00600BCC /* SignUpButtonOnboarding.swift */; };
 		809BFA8F2657088100C37C48 /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8C2657088000C37C48 /* ThemeModel.swift */; };
 		809BFA902657088100C37C48 /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8D2657088000C37C48 /* ThemeSettings.swift */; };
 		809BFA912657088100C37C48 /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809BFA8E2657088000C37C48 /* ThemeData.swift */; };
@@ -121,7 +120,6 @@
 		80896222262C6AFE001D9C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80896225262C6AFE001D9C7A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80896227262C6AFE001D9C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		809BE208266679BF00600BCC /* SignUpButtonOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButtonOnboarding.swift; sourceTree = "<group>"; };
 		809BFA8C2657088000C37C48 /* ThemeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		809BFA8D2657088000C37C48 /* ThemeSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 		809BFA8E2657088000C37C48 /* ThemeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
@@ -288,9 +286,9 @@
 		806C1A82266FE91000109432 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				80ECBF9E266581F300684F6C /* SignSelectButton.swift */,
 				806C1A83266FF3B000109432 /* ImageWithURL.swift */,
 				80ECBF9F266581F300684F6C /* BackgroundCardSign.swift */,
-				80ECBF9E266581F300684F6C /* SignSelectButton.swift */,
 				806C1A80266FE7DD00109432 /* FrameAvatar.swift */,
 				806C1A7C266FCF2800109432 /* ImagePicker.swift */,
 				80ECBFA3266581F300684F6C /* SignStyleButton.swift */,
@@ -420,7 +418,6 @@
 			children = (
 				80A4F677264394FD00A0BCA2 /* CardOnboardView.swift */,
 				806EC7C12643C9BF00B93D90 /* OnboardingView.swift */,
-				809BE208266679BF00600BCC /* SignUpButtonOnboarding.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -586,7 +583,6 @@
 				804B626C2652DD0200DE3792 /* SideMenu.swift in Sources */,
 				80896221262C6AFB001D9C7A /* EmojiMemoryGameView.swift in Sources */,
 				800DB7BB263DE46000A4A2C1 /* Array.swift in Sources */,
-				809BE209266679BF00600BCC /* SignUpButtonOnboarding.swift in Sources */,
 				804B626B2652DD0200DE3792 /* Home.swift in Sources */,
 				805E07772654283400DDD8FB /* ButtonRemoveAlarm.swift in Sources */,
 				80ECBFAC266581F300684F6C /* SignMainView.swift in Sources */,

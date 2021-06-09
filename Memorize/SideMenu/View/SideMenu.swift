@@ -46,7 +46,7 @@ struct SideMenu: View {
 
 struct SideMenu_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Новая игра", showMenu: true, session: SessionFirebase())
+        SideMenuMainView(session: SessionFirebase())
             .preferredColorScheme(.dark)
     }
 }

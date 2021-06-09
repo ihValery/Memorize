@@ -15,12 +15,12 @@ struct ImageWithURL: View {
     }
     
     var body: some View {
-        Image(uiImage: UIImage(data: imageLoader.imageData) ?? UIImage())
+        Image(uiImage: (UIImage(data: imageLoader.imageData) ?? UIImage(named: "noAvatar"))!)
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(maxWidth: 150, maxHeight: 150)
             .clipped()
-            .background(BlurViewLight())
+//            .background(BlurViewLight())
             .cornerRadius(25)
     }
 }
