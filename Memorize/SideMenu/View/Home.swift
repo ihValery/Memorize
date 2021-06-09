@@ -16,7 +16,6 @@ struct Home: View {
     }
     
     var body: some View {
-        
         //Tab View with tabs
         TabView(selection: $selectedTab) {
             
