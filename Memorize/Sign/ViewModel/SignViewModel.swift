@@ -11,7 +11,6 @@ import UIKit
 class SignViewModel: ObservableObject {
     static let shared = SignViewModel()
     
-    //input
     @Published var username = ""
     @Published var email = ""
     @Published var passwordSignIn = ""

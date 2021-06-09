@@ -10,8 +10,6 @@ import SwiftUI
 struct AnketaSignUp: View {
     @ObservedObject private var signViewModel = SignViewModel.shared
     @State private var showPassword = false
-    
-//    @State private var image = UIImage()
     @State private var isShowPhotoLibrary = false
     
     var body: some View {

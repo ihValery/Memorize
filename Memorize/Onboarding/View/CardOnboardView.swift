@@ -38,7 +38,6 @@ struct CardOnboardView: View {
                 
             }
         }
-        
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: cardOnboard.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(20)

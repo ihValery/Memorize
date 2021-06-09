@@ -9,11 +9,10 @@ import SwiftUI
 import Firebase
 
 struct SideMenuMainView: View {
-    @State var selectedTab = "Новая игра"
-    @State var showMenu = false
+    @State private var selectedTab = "Новая игра"
+    @State private var showMenu = true
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var theme = ThemeSettings.shared
-    
     @ObservedObject var session: SessionFirebase
     
     var body: some View {
@@ -24,7 +23,6 @@ struct SideMenuMainView: View {
                            startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
-            //Боковое меню
             ScrollView(getRect().height < 750 ? .vertical : .init(), showsIndicators: false) {
                 SideMenu(selectedTab: $selectedTab, showMenu: $showMenu, session: session)
             }
@@ -63,8 +61,8 @@ struct SideMenuMainView: View {
         .onAppear {
             session.listen()
         }
-                
-        .sheet(isPresented: $session.isSignIn) {
+
+        .sheet(isPresented: $session.showOnboard) {
             OnboardingView()
         }
     }
@@ -72,6 +70,6 @@ struct SideMenuMainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Правила", showMenu: true, session: SessionFirebase())
+        SideMenuMainView(session: SessionFirebase())
     }
 }

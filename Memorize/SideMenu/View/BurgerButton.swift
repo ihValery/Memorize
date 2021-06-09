@@ -45,6 +45,6 @@ struct BurgerButton: View {
 
 struct BurgerButton_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuMainView(selectedTab: "Правила", showMenu: true, session: SessionFirebase())
+        SideMenuMainView(session: SessionFirebase())
     }
 }

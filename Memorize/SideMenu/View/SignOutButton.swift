@@ -8,23 +8,21 @@
 import SwiftUI
 
 struct SignOutButton: View {
-    @State private var isPresented = false
-    @State private var showSign = false
-    
+    @State private var isSignOut = false
     @ObservedObject var session: SessionFirebase
     
     var body: some View {
         VStack(alignment: .leading) {
             Button {
                 if session.user != nil {
-                    isPresented = true
+                    isSignOut = true
                 } else {
-                    showSign = true
+                    session.isSignIn = true
                 }
             } label: {
                 HStack {
                     Image(systemName: "rectangle.lefthalf.inset.fill.arrow.left")
-                        .rotationEffect(.degrees(180))
+                        .rotationEffect(.degrees(session.user != nil ? 0 : 180))
                     Text(session.user != nil ? "Выйти" : "Войти" )
                         .fontWeight(.semibold)
                         .font(.body)
@@ -37,11 +35,11 @@ struct SignOutButton: View {
         }
         .foregroundColor(.colorTextNewGame)
         
-        .fullScreenCover(isPresented: $showSign) {
+        .fullScreenCover(isPresented: $session.isSignIn) {
             SignMainView(session: session)
         }
         
-        .alert(isPresented: $isPresented) {
+        .alert(isPresented: $isSignOut) {
             Alert(title: Text("Вы уверенны что хотите выйти?"), primaryButton: .cancel(Text("Нет")),
                   secondaryButton: .default(Text("Да")) {
                     session.sighOut()
