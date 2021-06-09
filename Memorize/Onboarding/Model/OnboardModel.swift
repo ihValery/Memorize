@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CardOnboard: Identifiable {
-    
     var id: Int
     var title: String
     var headline: String

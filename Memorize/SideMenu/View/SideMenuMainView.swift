@@ -61,10 +61,19 @@ struct SideMenuMainView: View {
         .onAppear {
             session.listen()
         }
-
-        .sheet(isPresented: $session.showOnboard) {
+        
+        .popover(isPresented: $session.showOnboard) {
             OnboardingView()
         }
+        
+        /*
+         //Сука 6 дней на поиск ошибки, просто гребанный sheet не работает, а popover на iPad не пашет
+         //.fullScreenCover пашет
+         //Thread 1: Simultaneous accesses to 0x7fcfc7e6fc50, but modification requires exclusive access
+         .sheet(isPresented: $session.showOnboard, content: {
+         OnboardingView()
+         })
+         */
     }
 }
 
