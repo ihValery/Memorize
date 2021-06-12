@@ -9,10 +9,12 @@ import SwiftUI
 
 struct Home: View {
     @Binding var selectedTab: String
+    @ObservedObject var session: SessionFirebase
     
-    init(selectedTab: Binding<String>) {
+    init(selectedTab: Binding<String>, session: SessionFirebase) {
         self._selectedTab = selectedTab
         UITabBar.appearance().isHidden = true
+        self.session = session
     }
     
     var body: some View {
@@ -20,7 +22,7 @@ struct Home: View {
         TabView(selection: $selectedTab) {
             
             EmojiMemoryGameView(viewModelGame: EmojiMemoryGame()).tag("Новая игра")
-            Score().tag("Счет")
+            ScoreTableViewMain(session: session).tag("Счет")
             ThemeViewMain().tag("Темы")
             NotificationView().tag("Уведомление")
             RulesView().tag("Правила")
@@ -31,17 +33,5 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         SideMenuMainView(session: SessionFirebase())
-    }
-}
-
-struct Score: View {
-    var body: some View {
-        NavigationView {
-            Text("Score")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundColor(.primary)
-                .navigationTitle("Score")
-        }
     }
 }
