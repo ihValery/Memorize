@@ -43,16 +43,16 @@ extension Color {
 
 //Цвет onboarding
 extension Color {
-    static let colorAnimalEnd = Color("colorAnimalEnd")
-    static let colorAnimalStart = Color("colorAnimalStart")  
-    static let colorChildEnd = Color("colorChildEnd")
-    static let colorChildStart = Color("colorChildStart")
-    static let colorFlagEnd = Color("colorFlagEnd")
-    static let colorFlagStart = Color("colorFlagStart")
-    static let colorHalloweenEnd = Color("colorHalloweenEnd")
-    static let colorHalloweenStart = Color("colorHalloweenStart")
-    static let colorSportEnd = Color("colorSportEnd")
-    static let colorSportStart = Color("colorSportStart")
-    static let colorZooEnd = Color("colorZooEnd")
-    static let colorZooStart = Color("colorZooStart")
+    static let colorAnimalEnd = Color("ColorAnimalEnd")
+    static let colorAnimalStart = Color("ColorAnimalStart")
+    static let colorChildEnd = Color("ColorChildEnd")
+    static let colorChildStart = Color("ColorChildStart")
+    static let colorFlagEnd = Color("ColorFlagEnd")
+    static let colorFlagStart = Color("ColorFlagStart")
+    static let colorHalloweenEnd = Color("ColorHalloweenEnd")
+    static let colorHalloweenStart = Color("ColorHalloweenStart")
+    static let colorSportEnd = Color("ColorSportEnd")
+    static let colorSportStart = Color("ColorSportStart")
+    static let colorZooEnd = Color("ColorZooEnd")
+    static let colorZooStart = Color("ColorZooStart")
 }

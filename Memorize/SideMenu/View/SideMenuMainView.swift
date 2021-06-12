@@ -10,7 +10,7 @@ import Firebase
 
 struct SideMenuMainView: View {
     @State private var selectedTab = "Новая игра"
-    @State private var showMenu = true
+    @State private var showMenu = false
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var theme = ThemeSettings.shared
     @ObservedObject var session: SessionFirebase
@@ -31,7 +31,7 @@ struct SideMenuMainView: View {
                 ZStack {
                     TwoBackgroundCard(showMenu: $showMenu)
                     
-                    Home(selectedTab: $selectedTab)
+                    Home(selectedTab: $selectedTab, session: session)
                         .cornerRadius(showMenu ? 15 : 0)
                         .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
                 }
