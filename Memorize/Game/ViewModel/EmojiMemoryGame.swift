@@ -27,29 +27,26 @@ class EmojiMemoryGame: ObservableObject {
         }
     }
     
-    //MARK: - Assess to the Model
+    /// Assess to the Model
     var cards: Array<MemoryGame<String>.Card> {
         modelGame.cards
     }
     
-    //MARK: - Intent(s) Намерения позволяющие изменить model
     func choose(_ card: MemoryGame<String>.Card) {
         modelGame.choose(card)
     }
-    
-    //MARK: - Intent(s) Намерение новая игра
+
     func newGame() {
         let collectionShuffled = themeData[ThemeSettings.shared.current].collection.shuffled()
         
         modelGame = EmojiMemoryGame.createMemoryGame(collectionShuffled)
     }
-    
-    //MARK: - Обновление счета
+
     func updateScore() -> String {
         String(modelGame.score)
     }
     
-    //MARK: - Временная проверка анимации
+    // Временная проверка анимации
     func endGame() {
         modelGame.endGame()
     }

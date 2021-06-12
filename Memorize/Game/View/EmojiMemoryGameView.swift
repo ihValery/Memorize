@@ -21,6 +21,7 @@ struct EmojiMemoryGameView: View {
                 
                 if viewModelGame.cards.allSatisfy { $0.isMatched == true } {
                     VictoryView(viewModelGame: viewModelGame, theme: theme, session: SessionFirebase())
+                    
                 } else {
                     Grid(viewModelGame.cards) { item in
                         CardView(card: item)

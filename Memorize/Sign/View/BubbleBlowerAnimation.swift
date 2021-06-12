@@ -21,7 +21,7 @@ struct BubbleBlowerAnimation: View {
                         .frame(width: .random(in: frameCircle), height: .random(in: frameCircle))
                         .position(x: startAnimation ? .random(in: 0...getRect().width) : .random(in: 0...getRect().width),
                                   y: startAnimation ? .random(in: 0...positionY) : .random(in: 0...positionY))
-                    .animation(.linear(duration: 50).repeatCount(100, autoreverses: true))
+                    .animation(.linear(duration: 40).repeatCount(100, autoreverses: true))
             }
         }
         .onAppear {

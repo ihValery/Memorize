@@ -112,4 +112,8 @@ class SessionFirebase: ObservableObject {
             print(error.localizedDescription)
         }
     }
+    
+    deinit {
+        print("Мы когда нибудь сработаем?")
+    }
 }
