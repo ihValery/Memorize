@@ -9,18 +9,19 @@ import SwiftUI
 
 struct ImageWithURL: View {
     @ObservedObject var imageLoader: ImageLoaderAndCache
+    var size: CGFloat
     
-    init(_ url: String) {
+    init(_ url: String, size: CGFloat) {
         imageLoader = ImageLoaderAndCache(imageURL: url)
+        self.size = size
     }
     
     var body: some View {
         Image(uiImage: (UIImage(data: imageLoader.imageData) ?? UIImage(named: "noAvatar"))!)
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame(maxWidth: 150, maxHeight: 150)
+            .frame(width: size, height: size)
             .clipped()
-//            .background(BlurViewLight())
             .cornerRadius(25)
     }
 }

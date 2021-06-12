@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScoreTableViewMain: View {
-    @State private var isAnimation = true
+    @State private var isAnimation = false
     @ObservedObject var theme = ThemeSettings.shared
     @ObservedObject var session: SessionFirebase
     
@@ -56,9 +56,14 @@ struct ScoreTableViewMain: View {
                 .animation(.easeInOut(duration: 1))
             }
         }
-//        .onAppear {
-//            isAnimation.toggle()
-//        }
+        .onAppear {
+            print("Мы появились - ScoreTableViewMain - isAnimation = \(isAnimation)")
+            isAnimation = true
+        }
+        .onDisappear {
+            print("Мы выгрузились - ScoreTableViewMain - isAnimation = \(isAnimation)")
+            isAnimation = false
+        }
     }
 }
 
