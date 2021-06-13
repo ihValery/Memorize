@@ -14,7 +14,7 @@ struct EmojiMemoryGameView: View {
     var body: some View {
         ZStack {
             AnimationForAppear(color: .element)
-
+            
             VStack {
                 TopPanelMenu(viewModelGame: viewModelGame)
                     .padding(.bottom, -4)

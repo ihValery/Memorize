@@ -12,15 +12,12 @@ struct SideMenu: View {
     //For Hero Animation Slide
     @Namespace var animation
     @Binding var showMenu: Bool
-    
     @ObservedObject var session: SessionFirebase
 
     var body: some View {
-        //Боковое меню
         VStack(alignment: .leading, spacing: 15) {
             ProFile(session: session)
-            
-            //tab Buttons
+
             VStack(alignment: .leading, spacing: 10) {
                 TabButton(image: "gamecontroller", title: "Новая игра", showMenu: $showMenu, selectedTab: $selectedTab, animation: animation)
                 
@@ -39,8 +36,8 @@ struct SideMenu: View {
             
             SignOutButton(session: session)
         }
-        .padding()
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .padding(.leading, 14)
+        .padding(.top)
     }
 }
 

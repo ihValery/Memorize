@@ -19,9 +19,9 @@ struct SignMainView: View {
             LinearGradient(gradient: Gradient(colors: [.orangeGradientStart, .orangeGradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
-            BubbleBlowerAnimation(color: Color.red, positionY: getRect().height, frameCircle: 120...420)
-                .drawingGroup()
-                .ignoresSafeArea()
+//            BubbleBlowerAnimation(color: Color.red, positionY: getRect().height, frameCircle: 120...420)
+//                .drawingGroup()
+//                .ignoresSafeArea()
             
             VStack {
                 HStack(spacing: 1) {

@@ -12,24 +12,22 @@ struct BurgerButton: View {
     @ObservedObject var theme = ThemeSettings.shared
     
     var body: some View {
-        Button(action: {
+        Button {
             withAnimation(.spring()) {
                 showMenu.toggle()
             }
-        }, label: {
+        } label: {
             //animate Drawing Button
             VStack(spacing: 5) {
                 Capsule()
                     .fill(showMenu ? Color.colorTextNewGame : themeData[theme.current].color)
                     .frame(width: 30, height: 3)
-                    //Rotating
                     .rotationEffect(.init(degrees: showMenu ? -45 : 0))
                     .offset(x: showMenu ? 2.5 : 0, y: showMenu ? 9 : 0)
                 VStack(spacing: 5) {
                     Capsule()
                         .fill(showMenu ? Color.colorTextNewGame : themeData[theme.current].color)
                         .frame(width: 30, height: 3)
-                    //Moving Up when clicked
                     Capsule()
                         .fill(showMenu ? Color.colorTextNewGame : themeData[theme.current].color)
                         .frame(width: 30, height: 3)
@@ -37,9 +35,10 @@ struct BurgerButton: View {
                 }
                 .rotationEffect(.init(degrees: showMenu ? 45 : 0))
             }
-        })
-        .padding(.top, 5)
-        .padding(.horizontal)
+            .padding(.top, 5)
+            .padding(.horizontal)
+            .padding(.bottom)
+        }
     }
 }
 

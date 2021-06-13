@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ScoreTableViewMain: View {
-    @State private var isAnimation = false
     @ObservedObject var theme = ThemeSettings.shared
     @ObservedObject var session: SessionFirebase
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.purpleTheme, themeData[theme.current].color]), startPoint: .topTrailing, endPoint: .bottomLeading)
+            LinearGradient(gradient: Gradient(colors: [themeData[theme.current].color.opacity(0.6), .purpleTheme]), startPoint: .topTrailing, endPoint: .bottomLeading)
                 .ignoresSafeArea()
             
             VStack {
@@ -22,13 +21,12 @@ struct ScoreTableViewMain: View {
                     .drawingGroup()
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: 250)
-                    .opacity(0.5)
                 Spacer()
             }
             
             ZStack {
                 VStack {
-                    Header(isAnimation: $isAnimation, session: session)
+                    Header(session: session)
                         .frame(height: getRect().height / 6)
                         .padding(.top, 30)
                     Spacer()
@@ -38,31 +36,17 @@ struct ScoreTableViewMain: View {
                     RectangleReverseAngle(startY: 125).fill(Color.white)
                         .edgesIgnoringSafeArea([.horizontal, .bottom])
                     
-                    
-                    
                     ScrollView {
                         LazyVStack {
                             ForEach(scoreData) { item in
                                 OneCardScore(name: item.theme, result: item.score, date: item.date)
-                                    .offset(y: isAnimation ? 0 : getRect().height)
-                                    .animation(isAnimation ? .ripple(index: item.id).delay(1) : .none)
                             }
                         }
                     }
                     .frame(height: getRect().height * 4 / 6)
                     .offset(y: 120)
                 }
-                .offset(x: isAnimation ? 0 : getRect().height)
-                .animation(.easeInOut(duration: 1))
             }
-        }
-        .onAppear {
-            print("Мы появились - ScoreTableViewMain - isAnimation = \(isAnimation)")
-            isAnimation = true
-        }
-        .onDisappear {
-            print("Мы выгрузились - ScoreTableViewMain - isAnimation = \(isAnimation)")
-            isAnimation = false
         }
     }
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Header: View {
-    @Binding var isAnimation: Bool
     @ObservedObject var session: SessionFirebase
     
     var body: some View {
@@ -23,8 +22,6 @@ struct Header: View {
                         .lineLimit(1)
                         .padding(.leading).padding()
                 }
-                .offset(y: isAnimation ? 0 : getRect().height)
-                .animation(.spring(dampingFraction: 0.7).delay(1))
 
                 Spacer()
             }
@@ -37,8 +34,6 @@ struct Header: View {
                     ImageWithURL(session.user?.avatarURL ?? "", size: 120)
                         .clipShape(CustomCorners(corner: .bottomRight, radius: 35))
                         .padding().padding(.trailing)
-                        .offset(x: isAnimation ? 0 : -getRect().height)
-                        .animation(.spring(dampingFraction: 0.8).delay(0.7))
                 }
             }
         }
@@ -47,7 +42,7 @@ struct Header: View {
 
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
-        Header(isAnimation: .constant(true), session: SessionFirebase())
+        Header(session: SessionFirebase())
             .preferredColorScheme(.dark)
     }
 }

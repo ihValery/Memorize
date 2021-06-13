@@ -13,14 +13,12 @@ struct Home: View {
     
     init(selectedTab: Binding<String>, session: SessionFirebase) {
         self._selectedTab = selectedTab
-        UITabBar.appearance().isHidden = true
         self.session = session
+        UITabBar.appearance().isHidden = true
     }
     
     var body: some View {
-        //Tab View with tabs
         TabView(selection: $selectedTab) {
-            
             EmojiMemoryGameView(viewModelGame: EmojiMemoryGame()).tag("Новая игра")
             ScoreTableViewMain(session: session).tag("Счет")
             ThemeViewMain().tag("Темы")
