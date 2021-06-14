@@ -3,6 +3,7 @@
 
 - Игра (логика, подсчет очков)
 - Меню (side bar menu)
+    - Реализация через TabView (все представления загружаются сразу)  
 - Уведомления (+ анимация)
     - Запрос requestAuthorization [.alert, .badge, .sound]
     - UNMutableNotificationContent - Создание содержимого для локального уведомления
