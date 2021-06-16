@@ -32,6 +32,7 @@
     - Выбор фотки и последующая загрузка в профайл. (+ доп. поля)
     - Загрузка фотографии и кеширование.
     - .popover и .fullScreenCover vs .sheet
+    - презентация
     
     <img src="https://github.com/ihValery/CombineFirebase/blob/main/Lesson39Preview.gif?raw=true"></a>
     <img src="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/NewTheme75.gif?raw=true"></a>
