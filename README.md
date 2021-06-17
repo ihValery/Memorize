@@ -36,3 +36,6 @@
     
     <img src="https://github.com/ihValery/CombineFirebase/blob/main/Lesson39Preview.gif?raw=true"></a>
     <img src="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/NewTheme75.gif?raw=true"></a>
+
+
+мы на отдыхе
