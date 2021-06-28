@@ -10,14 +10,9 @@ import SwiftUI
 struct VictoryView: View {
     @ObservedObject var viewModelGame: EmojiMemoryGame
     @ObservedObject var theme = ThemeSettings.shared
-    @ObservedObject var session: SessionFirebase
     
     var body: some View {
         VStack {
-//            Text("Победитель!")
-//                .fontWeight(.semibold)
-//                .padding()
-            
             GradientTrophy()
             
             Button(action: {
@@ -39,11 +34,12 @@ struct VictoryView: View {
         .foregroundColor(themeData[self.theme.current].color)
         .padding()
         .transition(.animationForAlarm)
+        
     }
 }
 
 struct ButtonNewGameVictory_Previews: PreviewProvider {
     static var previews: some View {
-        VictoryView(viewModelGame: EmojiMemoryGame(), session: SessionFirebase())
+        VictoryView(viewModelGame: EmojiMemoryGame())
     }
 }

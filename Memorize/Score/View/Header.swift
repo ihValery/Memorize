@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Header: View {
     @ObservedObject var session: SessionFirebase
+    @Binding var isAnimation: Bool
     
     var body: some View {
         ZStack {
@@ -22,7 +23,9 @@ struct Header: View {
                         .lineLimit(1)
                         .padding(.leading).padding()
                 }
-
+                .offset(y: isAnimation ? 0 : getRect().height)
+                .animation(.spring(dampingFraction: 0.7).delay(1))
+                
                 Spacer()
             }
             .zIndex(1)
@@ -34,15 +37,17 @@ struct Header: View {
                     ImageWithURL(session.user?.avatarURL ?? "", size: 120)
                         .clipShape(CustomCorners(corner: .bottomRight, radius: 35))
                         .padding().padding(.trailing)
+                        .offset(x: isAnimation ? 0 : -getRect().height)
+                        .animation(.spring(dampingFraction: 0.8).delay(0.7))
                 }
             }
         }
     }
 }
 
-struct Header_Previews: PreviewProvider {
-    static var previews: some View {
-        Header(session: SessionFirebase())
-            .preferredColorScheme(.dark)
-    }
-}
+//struct Header_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Header(session: SessionFirebase())
+//            .preferredColorScheme(.dark)
+//    }
+//}
