@@ -24,12 +24,12 @@ class ScoreListViewModel: ObservableObject {
     func add(theme: String, number: String) {
         guard let number = Int(number) else { return }
         
-        guard let currentIndex = searchIndex(theme: theme) else {
+//        guard let currentIndex = searchIndex(theme: theme) else {
             let newScore = Score(theme: theme, maxScore: number)
             repository.add(newScore)
-            return
-        }
-        newScoreLargetOld(number: number, index: currentIndex)
+//            return
+//        }
+//        newScoreLargetOld(number: number, index: currentIndex)
     }
     
     private func update(_ score: Score) {
