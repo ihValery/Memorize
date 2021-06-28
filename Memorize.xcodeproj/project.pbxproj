@@ -46,7 +46,7 @@
 		807B31A4265BE5D700F63953 /* TwoBackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B31A3265BE5D700F63953 /* TwoBackgroundCard.swift */; };
 		807C4BA8266B8F7D00C3DEA5 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */; };
 		808699C7264695D700DAD8BE /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808699C6264695D700DAD8BE /* Cardify.swift */; };
-		8088FB8226742AE500A4B1B7 /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088FB8126742AE500A4B1B7 /* ScoreData.swift */; };
+		8088FB8226742AE500A4B1B7 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088FB8126742AE500A4B1B7 /* Score.swift */; };
 		8088FB852674317900A4B1B7 /* RectangleReverseAngle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088FB842674317900A4B1B7 /* RectangleReverseAngle.swift */; };
 		8088FB87267431F400A4B1B7 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088FB86267431F400A4B1B7 /* Header.swift */; };
 		8088FB892674322F00A4B1B7 /* OneCardScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088FB882674322F00A4B1B7 /* OneCardScore.swift */; };
@@ -70,6 +70,11 @@
 		80BE0667262D92C900EAF9C4 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */; };
 		80C0419D2645DC6800501EB8 /* TopPanelMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419C2645DC6800501EB8 /* TopPanelMenu.swift */; };
 		80C0419F2645DD4800501EB8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419E2645DD4800501EB8 /* CardView.swift */; };
+		80E4AE08268A048600E03BA5 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 80E4AE07268A048600E03BA5 /* FirebaseFirestoreSwift-Beta */; };
+		80E4AE0C268A13A900E03BA5 /* ScoreListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4AE0A268A13A900E03BA5 /* ScoreListViewModel.swift */; };
+		80E4AE0D268A13A900E03BA5 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4AE0B268A13A900E03BA5 /* ScoreViewModel.swift */; };
+		80E4AE10268A13D500E03BA5 /* ScoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4AE0F268A13D500E03BA5 /* ScoreRepository.swift */; };
+		80E4AE12268A144000E03BA5 /* BgCardScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4AE11268A144000E03BA5 /* BgCardScore.swift */; };
 		80ECBF99266580A200684F6C /* PasswordCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBF96266580A200684F6C /* PasswordCheck.swift */; };
 		80ECBF9C266580C200684F6C /* SignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBF9B266580C200684F6C /* SignViewModel.swift */; };
 		80ECBFA6266581F300684F6C /* SignSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBF9E266581F300684F6C /* SignSelectButton.swift */; };
@@ -79,7 +84,7 @@
 		80ECBFAA266581F300684F6C /* AnketaSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA2266581F300684F6C /* AnketaSignUp.swift */; };
 		80ECBFAB266581F300684F6C /* SignStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA3266581F300684F6C /* SignStyleButton.swift */; };
 		80ECBFAC266581F300684F6C /* SignMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA4266581F300684F6C /* SignMainView.swift */; };
-		80ECBFAD266581F300684F6C /* BubbleBlowerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA5266581F300684F6C /* BubbleBlowerAnimation.swift */; };
+		80ECBFAD266581F300684F6C /* BubbleBlower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA5266581F300684F6C /* BubbleBlower.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,7 +124,7 @@
 		807B31A3265BE5D700F63953 /* TwoBackgroundCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoBackgroundCard.swift; sourceTree = "<group>"; };
 		807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		808699C6264695D700DAD8BE /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
-		8088FB8126742AE500A4B1B7 /* ScoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
+		8088FB8126742AE500A4B1B7 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		8088FB842674317900A4B1B7 /* RectangleReverseAngle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleReverseAngle.swift; sourceTree = "<group>"; };
 		8088FB86267431F400A4B1B7 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		8088FB882674322F00A4B1B7 /* OneCardScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCardScore.swift; sourceTree = "<group>"; };
@@ -145,6 +150,10 @@
 		80BE0666262D92C900EAF9C4 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		80C0419C2645DC6800501EB8 /* TopPanelMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPanelMenu.swift; sourceTree = "<group>"; };
 		80C0419E2645DD4800501EB8 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		80E4AE0A268A13A900E03BA5 /* ScoreListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreListViewModel.swift; sourceTree = "<group>"; };
+		80E4AE0B268A13A900E03BA5 /* ScoreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
+		80E4AE0F268A13D500E03BA5 /* ScoreRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreRepository.swift; sourceTree = "<group>"; };
+		80E4AE11268A144000E03BA5 /* BgCardScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgCardScore.swift; sourceTree = "<group>"; };
 		80ECBF96266580A200684F6C /* PasswordCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordCheck.swift; sourceTree = "<group>"; };
 		80ECBF9B266580C200684F6C /* SignViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewModel.swift; sourceTree = "<group>"; };
 		80ECBF9E266581F300684F6C /* SignSelectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignSelectButton.swift; sourceTree = "<group>"; };
@@ -154,7 +163,7 @@
 		80ECBFA2266581F300684F6C /* AnketaSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnketaSignUp.swift; sourceTree = "<group>"; };
 		80ECBFA3266581F300684F6C /* SignStyleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignStyleButton.swift; sourceTree = "<group>"; };
 		80ECBFA4266581F300684F6C /* SignMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignMainView.swift; sourceTree = "<group>"; };
-		80ECBFA5266581F300684F6C /* BubbleBlowerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleBlowerAnimation.swift; sourceTree = "<group>"; };
+		80ECBFA5266581F300684F6C /* BubbleBlower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleBlower.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				806C1A75266FCD6E00109432 /* FirebaseAuth in Frameworks */,
+				80E4AE08268A048600E03BA5 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				806C1A77266FCD6E00109432 /* FirebaseFirestore in Frameworks */,
 				806C1A79266FCD6E00109432 /* FirebaseStorage in Frameworks */,
 			);
@@ -186,8 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				808699C6264695D700DAD8BE /* Cardify.swift */,
-				800DB7B6263D6C7400A4A2C1 /* Constants.swift */,
-				804B625F2652DD0200DE3792 /* CustomCorners.swift */,
 				800DB7B8263D95F000A4A2C1 /* Grid.swift */,
 			);
 			path = Addition;
@@ -320,7 +328,9 @@
 			isa = PBXGroup;
 			children = (
 				8088FB8026742AD200A4B1B7 /* Model */,
+				80E4AE09268A13A900E03BA5 /* ViewModel */,
 				8088FB7F26742AC900A4B1B7 /* View */,
+				80E4AE0E268A13D500E03BA5 /* Repositories */,
 				8088FB832674315900A4B1B7 /* Shape */,
 			);
 			path = Score;
@@ -332,6 +342,7 @@
 				8088FB8A2674335400A4B1B7 /* ScoreTableViewMain.swift */,
 				8088FB882674322F00A4B1B7 /* OneCardScore.swift */,
 				8088FB86267431F400A4B1B7 /* Header.swift */,
+				80E4AE11268A144000E03BA5 /* BgCardScore.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,7 +350,7 @@
 		8088FB8026742AD200A4B1B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8088FB8126742AE500A4B1B7 /* ScoreData.swift */,
+				8088FB8126742AE500A4B1B7 /* Score.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,6 +368,7 @@
 			children = (
 				8089621D262C6AFB001D9C7A /* Memorize */,
 				8089621C262C6AFB001D9C7A /* Products */,
+				80E4AE06268A048600E03BA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -380,6 +392,7 @@
 				80A434AE2666DBEE004F0343 /* Rules */,
 				80A4F66E2643921E00A0BCA2 /* Onboarding */,
 				809F4D7D26553DFC00ED0598 /* Theme */,
+				80CADDF6268A6C190085C11E /* Helper */,
 				8062966B2653C4290091469E /* Extension */,
 				800DB7B4263D6A5B00A4A2C1 /* System32 */,
 			);
@@ -429,7 +442,6 @@
 			isa = PBXGroup;
 			children = (
 				80A434AF2666DC0B004F0343 /* RulesView.swift */,
-				807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -485,6 +497,41 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		80CADDF6268A6C190085C11E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				804B625F2652DD0200DE3792 /* CustomCorners.swift */,
+				800DB7B6263D6C7400A4A2C1 /* Constants.swift */,
+				80ECBFA5266581F300684F6C /* BubbleBlower.swift */,
+				807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		80E4AE06268A048600E03BA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80E4AE09268A13A900E03BA5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				80E4AE0A268A13A900E03BA5 /* ScoreListViewModel.swift */,
+				80E4AE0B268A13A900E03BA5 /* ScoreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		80E4AE0E268A13D500E03BA5 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				80E4AE0F268A13D500E03BA5 /* ScoreRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		80ECBF922665808C00684F6C /* Sign */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,7 +567,6 @@
 				80ECBFA4266581F300684F6C /* SignMainView.swift */,
 				80ECBFA0266581F300684F6C /* AnketaSignIn.swift */,
 				80ECBFA2266581F300684F6C /* AnketaSignUp.swift */,
-				80ECBFA5266581F300684F6C /* BubbleBlowerAnimation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -557,6 +603,7 @@
 				806C1A74266FCD6E00109432 /* FirebaseAuth */,
 				806C1A76266FCD6E00109432 /* FirebaseFirestore */,
 				806C1A78266FCD6E00109432 /* FirebaseStorage */,
+				80E4AE07268A048600E03BA5 /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = Memorize;
 			productReference = 8089621B262C6AFB001D9C7A /* Memorize.app */;
@@ -617,12 +664,15 @@
 			files = (
 				808699C7264695D700DAD8BE /* Cardify.swift in Sources */,
 				806296722653D08F0091469E /* ButtonSetNotification.swift in Sources */,
+				80E4AE10268A13D500E03BA5 /* ScoreRepository.swift in Sources */,
 				809BFA902657088100C37C48 /* ThemeSettings.swift in Sources */,
 				80ECBFAA266581F300684F6C /* AnketaSignUp.swift in Sources */,
 				806C1A70266FCC8200109432 /* SessionFirebase.swift in Sources */,
 				804A61F1265C178500D0C73C /* ProFile.swift in Sources */,
 				804B626D2652DD0200DE3792 /* SideMenuMainView.swift in Sources */,
+				80E4AE0C268A13A900E03BA5 /* ScoreListViewModel.swift in Sources */,
 				806C1A81266FE7DD00109432 /* FrameAvatar.swift in Sources */,
+				80E4AE0D268A13A900E03BA5 /* ScoreViewModel.swift in Sources */,
 				800DB7B7263D6C7400A4A2C1 /* Constants.swift in Sources */,
 				80C0419D2645DC6800501EB8 /* TopPanelMenu.swift in Sources */,
 				806C1A6D266FC6D800109432 /* User.swift in Sources */,
@@ -635,9 +685,10 @@
 				805E07772654283400DDD8FB /* ButtonRemoveAlarm.swift in Sources */,
 				80ECBFAC266581F300684F6C /* SignMainView.swift in Sources */,
 				804B627026530ED100DE3792 /* BurgerButton.swift in Sources */,
-				8088FB8226742AE500A4B1B7 /* ScoreData.swift in Sources */,
+				8088FB8226742AE500A4B1B7 /* Score.swift in Sources */,
 				80ECBF99266580A200684F6C /* PasswordCheck.swift in Sources */,
 				8088FB8B2674335400A4B1B7 /* ScoreTableViewMain.swift in Sources */,
+				80E4AE12268A144000E03BA5 /* BgCardScore.swift in Sources */,
 				8042779626592E0B00F3E217 /* VictoryView.swift in Sources */,
 				801128DD2642B3A600C38272 /* Star.swift in Sources */,
 				807C4BA8266B8F7D00C3DEA5 /* BlurView.swift in Sources */,
@@ -659,7 +710,7 @@
 				8088FB87267431F400A4B1B7 /* Header.swift in Sources */,
 				8088FB892674322F00A4B1B7 /* OneCardScore.swift in Sources */,
 				80ECBFA7266581F300684F6C /* BackgroundCardSign.swift in Sources */,
-				80ECBFAD266581F300684F6C /* BubbleBlowerAnimation.swift in Sources */,
+				80ECBFAD266581F300684F6C /* BubbleBlower.swift in Sources */,
 				807B31A4265BE5D700F63953 /* TwoBackgroundCard.swift in Sources */,
 				809F4D892655492600ED0598 /* NameTheme.swift in Sources */,
 				801796452643B2D10061B4E0 /* CardOnboardData.swift in Sources */,
@@ -901,6 +952,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 806C1A73266FCD6E00109432 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		80E4AE07268A048600E03BA5 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 806C1A73266FCD6E00109432 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

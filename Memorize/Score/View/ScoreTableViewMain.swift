@@ -8,67 +8,61 @@
 import SwiftUI
 
 struct ScoreTableViewMain: View {
-    @State private var isAnimation = false
     @ObservedObject var theme = ThemeSettings.shared
     @ObservedObject var session: SessionFirebase
+    @ObservedObject var scoreListViewModel = ScoreListViewModel()
+    
+    @Binding var onAnimation: Bool
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.purpleTheme, themeData[theme.current].color]), startPoint: .topTrailing, endPoint: .bottomLeading)
-                .ignoresSafeArea()
             
-            VStack {
-                BubbleBlowerAnimation(color: themeData[theme.current].color, positionY: 250, frameCircle: 50...200)
-                    .drawingGroup()
-                    .edgesIgnoringSafeArea(.top)
-                    .frame(height: 250)
-                    .opacity(0.5)
-                Spacer()
-            }
             
             ZStack {
+                RectangleReverseAngle(startY: 165)
+                    .fill(LinearGradient(gradient: Gradient(colors: [themeData[theme.current].color.opacity(0.6), .purpleTheme]), startPoint: .topTrailing, endPoint: .bottomLeading))
                 VStack {
-                    Header(isAnimation: $isAnimation, session: session)
+                    BubbleBlower(color: themeData[theme.current].color, positionY: 250, frameCircle: 50...200)
+                        .drawingGroup()
+                        .clipShape(RectangleReverseAngle(startY: 165))
+                    Spacer()
+                }
+//                RectangleReverseAngle(startY: 165).fill(Color.green)
+                
+                VStack {
+                    Header(session: session, isAnimation: $onAnimation)
                         .frame(height: getRect().height / 6)
                         .padding(.top, 30)
                     Spacer()
                 }
                 
-                Group {
-                    RectangleReverseAngle(startY: 125).fill(Color.white)
-                        .edgesIgnoringSafeArea([.horizontal, .bottom])
-                    
-                    
-                    
-                    ScrollView {
-                        LazyVStack {
-                            ForEach(scoreData) { item in
-                                OneCardScore(name: item.theme, result: item.score, date: item.date)
-                                    .offset(y: isAnimation ? 0 : getRect().height)
-                                    .animation(isAnimation ? .ripple(index: item.id).delay(1) : .none)
-                            }
+            }
+            .ignoresSafeArea()
+            
+            
+            ZStack {
+                ScrollView {
+                    LazyVStack {
+                        ForEach(scoreListViewModel.scoreViewModels) { item in
+                            OneCardScore(scoreViewModel: item)
+//                                .offset(y: onAnimation ? 0 : getRect().height)
+                            //                                    .animation(.ripple(index: Int(item.id)).delay(1))
                         }
                     }
-                    .frame(height: getRect().height * 4 / 6)
-                    .offset(y: 120)
+//                    .offset(y: 95)
                 }
-                .offset(x: isAnimation ? 0 : getRect().height)
-                .animation(.easeInOut(duration: 1))
+                .frame(height: getRect().height * 4 / 5)
+                
+//                .offset(x: onAnimation ? 0 : getRect().height)
+//                .animation(.easeInOut(duration: 1))
             }
-        }
-        .onAppear {
-            print("Мы появились - ScoreTableViewMain - isAnimation = \(isAnimation)")
-            isAnimation = true
-        }
-        .onDisappear {
-            print("Мы выгрузились - ScoreTableViewMain - isAnimation = \(isAnimation)")
-            isAnimation = false
+
         }
     }
 }
 
 struct ScoreTable_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreTableViewMain(session: SessionFirebase())
+        ScoreTableViewMain(session: SessionFirebase(), onAnimation: .constant(true))
     }
 }

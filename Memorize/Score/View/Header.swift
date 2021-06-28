@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Header: View {
-    @Binding var isAnimation: Bool
     @ObservedObject var session: SessionFirebase
+    @Binding var isAnimation: Bool
     
     var body: some View {
         ZStack {
@@ -25,7 +25,7 @@ struct Header: View {
                 }
                 .offset(y: isAnimation ? 0 : getRect().height)
                 .animation(.spring(dampingFraction: 0.7).delay(1))
-
+                
                 Spacer()
             }
             .zIndex(1)
@@ -45,9 +45,9 @@ struct Header: View {
     }
 }
 
-struct Header_Previews: PreviewProvider {
-    static var previews: some View {
-        Header(isAnimation: .constant(true), session: SessionFirebase())
-            .preferredColorScheme(.dark)
-    }
-}
+//struct Header_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Header(session: SessionFirebase())
+//            .preferredColorScheme(.dark)
+//    }
+//}

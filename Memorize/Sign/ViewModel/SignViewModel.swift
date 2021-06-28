@@ -127,7 +127,7 @@ class SignViewModel: ObservableObject {
         isEmailValidPublisher
             .dropFirst()
             .receive(on: RunLoop.main)
-            .map { $0 ? "" : "Емаил не корректный" }
+            .map { $0 ? "" : "email не корректный" }
             .assign(to: \.messageError, on: self)
             .store(in: &cancellableSet)
         

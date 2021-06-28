@@ -19,12 +19,12 @@ struct TopPanelMenu: View {
                 .fontWeight(.medium)
                 .frame(minWidth: 50, alignment: .center)
             
-            //TEST
-            Button {
-                viewModelGame.endGame()
-            } label: {
-                Text("endGame")
-            }
+//            //TEST
+//            Button {
+//                viewModelGame.endGame()
+//            } label: {
+//                Text("endGame")
+//            }
         }
         
         .contextMenu(ContextMenu(menuItems: {

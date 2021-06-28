@@ -19,7 +19,7 @@ struct SignMainView: View {
             LinearGradient(gradient: Gradient(colors: [.orangeGradientStart, .orangeGradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
-            BubbleBlowerAnimation(color: Color.red, positionY: getRect().height, frameCircle: 120...420)
+            BubbleBlower(color: Color.red, positionY: getRect().height, frameCircle: 120...420)
                 .drawingGroup()
                 .ignoresSafeArea()
             
@@ -28,13 +28,17 @@ struct SignMainView: View {
                     SignSelectButton(text: "Вход")
                         .opacity(!signInSelected ? 1 : 0.4)
                         .onTapGesture {
-                            signInSelected = false
+                            withAnimation(.easeInOut) {
+                                signInSelected = false
+                            }
                         }
                     
                     SignSelectButton(text: "Регистрация")
                         .opacity(signInSelected ? 1 : 0.4)
                         .onTapGesture {
-                            signInSelected = true
+                            withAnimation(.easeInOut) {
+                                signInSelected = true
+                            }
                         }
                 }
                 
@@ -68,7 +72,6 @@ struct SignMainView: View {
                         .disabled(!signViewModel.isValidSignIn)
                     }
                 }
-                .animation(.easeInOut)
             }
         }
         .onDisappear {

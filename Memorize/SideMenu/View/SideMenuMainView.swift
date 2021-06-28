@@ -10,7 +10,7 @@ import Firebase
 
 struct SideMenuMainView: View {
     @State private var selectedTab = "Новая игра"
-    @State private var showMenu = true
+    @State private var showMenu = false
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var theme = ThemeSettings.shared
     @ObservedObject var session: SessionFirebase
@@ -56,10 +56,6 @@ struct SideMenuMainView: View {
                 BurgerButton(showMenu: $showMenu)
                     .padding(.top, -3)
                 , alignment: .topLeading)
-        }
-        
-        .onAppear {
-            session.listen()
         }
         
         .popover(isPresented: $session.showOnboard) {

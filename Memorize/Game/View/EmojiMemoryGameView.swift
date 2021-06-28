@@ -10,17 +10,21 @@ import SwiftUI
 struct EmojiMemoryGameView: View {
     @ObservedObject var viewModelGame: EmojiMemoryGame
     @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var scoreListViewModel: ScoreListViewModel
     
     var body: some View {
         ZStack {
             AnimationForAppear(color: .element)
-
+            
             VStack {
                 TopPanelMenu(viewModelGame: viewModelGame)
                     .padding(.bottom, -4)
                 
                 if viewModelGame.cards.allSatisfy { $0.isMatched == true } {
-                    VictoryView(viewModelGame: viewModelGame, theme: theme, session: SessionFirebase())
+                    VictoryView(viewModelGame: viewModelGame, theme: theme)
+                        .onAppear {
+                            scoreListViewModel.add(theme: themeData[theme.current].avatar, number: viewModelGame.updateScore())
+                        }
                     
                 } else {
                     Grid(viewModelGame.cards) { item in
@@ -46,7 +50,7 @@ struct EmojiMemoryGameView: View {
 struct EmojiMemoryGameView_Previews: PreviewProvider {
     static var previews: some View {
         let oneCard = EmojiMemoryGame()
-        return EmojiMemoryGameView(viewModelGame: oneCard)
+        return EmojiMemoryGameView(viewModelGame: oneCard, scoreListViewModel: ScoreListViewModel())
         //            .preferredColorScheme(.dark)
     }
 }

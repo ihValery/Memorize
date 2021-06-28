@@ -35,13 +35,13 @@ class EmojiMemoryGame: ObservableObject {
     func choose(_ card: MemoryGame<String>.Card) {
         modelGame.choose(card)
     }
-
+    
     func newGame() {
         let collectionShuffled = themeData[ThemeSettings.shared.current].collection.shuffled()
         
         modelGame = EmojiMemoryGame.createMemoryGame(collectionShuffled)
     }
-
+    
     func updateScore() -> String {
         String(modelGame.score)
     }

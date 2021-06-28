@@ -19,14 +19,14 @@ struct TabButton: View {
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        Button(action: {
+        Button {
             withAnimation(.spring()) {
                 selectedTab = title
             }
             withAnimation(.easeIn.delay(0.2)) {
                 showMenu.toggle()
             }
-        }) {
+        } label: {
             HStack(spacing: 15) {
                 Image(systemName: image)
                     .font(.title2)
@@ -38,16 +38,14 @@ struct TabButton: View {
             .foregroundColor(selectedTab == title ? themeData[theme.current].color : .colorTextNewGame)
             .padding(.vertical, 12)
             .padding(.horizontal, 10)
-            //max Frame
-            .frame(maxWidth: getRect().width - 170, alignment: .leading)
+            .frame(maxWidth: getRect().width * 3 / 5, alignment: .leading)
             .background(
-                
                 //hero Animation
                 ZStack {
                     if selectedTab == title {
                         Color.element.opacity(colorScheme == .light ? 1 : 0.5)
                             .opacity(selectedTab == title ? 1 : 0)
-                            .clipShape(CustomCorners(corner: [.topRight, .bottomRight], radius: 12))
+                            .clipShape(CustomCorners(corner: [.topRight, .bottomRight], radius: 13))
                             //Магия )))
                             .matchedGeometryEffect(id: "TAB", in: animation)
                     }

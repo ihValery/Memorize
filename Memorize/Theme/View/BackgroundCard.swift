@@ -19,11 +19,14 @@ struct BackgroundCard: View {
             HStack {
                 Spacer()
                 VStack(spacing: 15) {
-                    IconInDescription(iconName: "baby.feet", theme: theme, parametr: theme.ageFloat, selectedTheme: $selectedTheme)
-                    HStack {
-                        IconInDescription(iconName: "timer.deadline", theme: theme, parametr: theme.timer, selectedTheme: $selectedTheme)
-                        IconInDescription(iconName: "level.stairs.up", theme: theme, parametr: theme.levelFloat, selectedTheme: $selectedTheme)
+                    VStack {
+                        IconInDescription(iconName: "baby.feet", theme: theme, parametr: theme.ageFloat, selectedTheme: $selectedTheme)
+                        HStack {
+                            IconInDescription(iconName: "timer.deadline", theme: theme, parametr: theme.timer, selectedTheme: $selectedTheme)
+                            IconInDescription(iconName: "level.stairs.up", theme: theme, parametr: theme.levelFloat, selectedTheme: $selectedTheme)
+                        }
                     }
+                    .opacity(selectedTheme == theme.id ? 1 : 0.3)
                     
                     NameTheme(theme: theme, selectedTheme: $selectedTheme)
                 }
