@@ -35,7 +35,7 @@ struct SideMenuMainView: View {
                         .cornerRadius(showMenu ? 15 : 0)
                         .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
                 }
-                .rotation3DEffect(.degrees(showMenu ? 20 : 0), axis: (x: 0.0, y: 1.0, z: 0.0))
+                .rotation3DEffect(.degrees(showMenu ? 20 : 0), axis: (x: 0, y: 1, z: 0))
                 
                 //Подложка (Что бы нельзя было играть при открытом меню)
                 if showMenu {
