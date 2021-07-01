@@ -16,49 +16,35 @@ struct ScoreTableViewMain: View {
     
     var body: some View {
         ZStack {
-            ScrollView {
-                LazyVStack {
-                    ForEach(scoreListViewModel.scoreViewModels) { item in
-                        OneCardScore(scoreViewModel: item)
-//                                .offset(y: onAnimation ? 0 : getRect().height)
-//                                    .animation(.ripple(index: Int(item.id)).delay(1))
+            VStack {
+                GeometryReader { gr in
+                    ScrollView {
+                        ForEach(scoreListViewModel.scoreViewModels) { item in
+                            OneCardScore(scoreViewModel: item)
+                                .offset(y: onAnimation ? 0 : getRect().height)
+//                                .animation(.ripple(index: ).delay(1))
+                        }
+                        .offset(y: 25)
                     }
+                    .frame(height: gr.size.height - 165)
                 }
+                .offset(y: 170)
             }
-            .offset(y: 100)
-            .frame(height: getRect().height - 220)
             
-//                .offset(x: onAnimation ? 0 : getRect().height)
-//                .animation(.easeInOut(duration: 1))
-            
-            
+            //                .offset(x: onAnimation ? 0 : getRect().height)
+            //                .animation(.easeInOut(duration: 1))
             
             ZStack {
-//                RectangleReverseAngle(startY: 165).fill(Color.white)
-                RectangleReverseAngle(startY: 165)
-                    .fill(LinearGradient(gradient: Gradient(colors: [themeData[theme.current].color.opacity(0.6), .purpleTheme]), startPoint: .topTrailing, endPoint: .bottomLeading))
-//                VStack {
-//                    BubbleBlower(color: themeData[theme.current].color, positionY: 250, frameCircle: 50...200)
-//                        .drawingGroup()
-//                    Spacer()
-//                }
-
+                RRAnglePlusBubble()
                 
                 VStack {
-                    Header(session: session, isAnimation: $onAnimation)
+                    Header(session: session)
                         .frame(height: getRect().height / 6)
                         .padding(.top, 70)
                     Spacer()
                 }
-                
             }
             .ignoresSafeArea()
-            
-            
-
-
-            
-
         }
     }
 }
