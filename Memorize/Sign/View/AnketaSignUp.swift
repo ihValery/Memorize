@@ -16,10 +16,15 @@ struct AnketaSignUp: View {
         ZStack {
             VStack(spacing: 20) {
                 HStack {
-                    Image(systemName: "person.fill").padding(.leading, 3).padding(.trailing, 2)
+                    Image(systemName: "person.fill")
+                        .padding(.leading, 3)
+                        .padding(.trailing, 2)
                     
                     ZStack(alignment: .leading) {
-                        if signViewModel.username.isEmpty { Text("Введите имя").opacity(0.7) }
+                        if signViewModel.username.isEmpty {
+                            Text("Введите имя")
+                                .opacity(0.7)
+                        }
                         TextField("", text: $signViewModel.username)
                     }
                 }
@@ -29,14 +34,19 @@ struct AnketaSignUp: View {
                     Image(systemName: "envelope.fill")
                     
                     ZStack(alignment: .leading) {
-                        if signViewModel.email.isEmpty { Text("Укажите почту").opacity(0.7) }
+                        if signViewModel.email.isEmpty {
+                            Text("Укажите почту")
+                                .opacity(0.7)
+                        }
                         TextField("", text: $signViewModel.email)
                     }
                 }
                 Line()
                 
                 HStack {
-                    Image(systemName: "lock.fill").padding(.leading, 3).padding(.trailing, 2)
+                    Image(systemName: "lock.fill")
+                        .padding(.leading, 3)
+                        .padding(.trailing, 2)
                     
                     ZStack(alignment: .trailing) {
                         if showPassword {
@@ -45,25 +55,37 @@ struct AnketaSignUp: View {
                             }
                         } else {
                             ZStack(alignment: .leading) {
-                                if signViewModel.password.isEmpty { Text("Придумайте пароль").opacity(0.7) }
+                                if signViewModel.password.isEmpty {
+                                    Text("Придумайте пароль")
+                                        .opacity(0.7)
+                                }
                                 SecureField("", text: $signViewModel.password)
                             }
                         }
-                        Button(action: { self.showPassword.toggle()}) {
-                            Image(systemName: "eye").opacity(showPassword ? 1 : 0.2)
-                        }
+                        Button(action: {
+                            showPassword.toggle()
+                        }, label: {
+                            Image(systemName: "eye")
+                                .opacity(showPassword ? 1 : 0.2)
+                        })
                     }
                 }
                 Line()
                 
                 HStack {
-                    Image(systemName: "lock.fill").padding(.leading, 3).padding(.trailing, 2)
+                    Image(systemName: "lock.fill")
+                        .padding(.leading, 3)
+                        .padding(.trailing, 2)
                     
                     ZStack (alignment: .leading) {
-                        if signViewModel.passwordAgain.isEmpty { Text("Повторите пароль").opacity(0.7) }
+                        if signViewModel.passwordAgain.isEmpty {
+                            Text("Повторите пароль")
+                                .opacity(0.7)
+                        }
                         SecureField("", text: $signViewModel.passwordAgain)
                     }
                 }
+                
                 Line()
             }
             .textFieldStyle(DefaultTextFieldStyle())
@@ -79,7 +101,7 @@ struct AnketaSignUp: View {
                 }
         }
         .sheet(isPresented: $isShowPhotoLibrary) {
-            ImagePicker(selectedImage: self.$signViewModel.image, sourceType: .photoLibrary)
+            ImagePicker(selectedImage: $signViewModel.image, sourceType: .photoLibrary)
         }
     }
 }

@@ -18,14 +18,19 @@ struct AnketaSignIn: View {
                 Image(systemName: "envelope.fill")
                 
                 ZStack(alignment: .leading) {
-                    if signViewModel.email.isEmpty { Text("Введите почту").opacity(0.7) }
+                    if signViewModel.email.isEmpty {
+                        Text("Введите почту")
+                            .opacity(0.7)
+                    }
                     TextField("", text: $signViewModel.email)
                 }
             }
             Line()
             
             HStack {
-                Image(systemName: "lock.fill").padding(.leading, 3).padding(.trailing, 2)
+                Image(systemName: "lock.fill")
+                    .padding(.leading, 3)
+                    .padding(.trailing, 2)
                 
                 ZStack(alignment: .trailing) {
                     if showPassword {
@@ -34,13 +39,19 @@ struct AnketaSignIn: View {
                         }
                     } else {
                         ZStack(alignment: .leading) {
-                            if signViewModel.passwordSignIn.isEmpty { Text("Введите пароль").opacity(0.7) }
+                            if signViewModel.passwordSignIn.isEmpty {
+                                Text("Введите пароль")
+                                    .opacity(0.7)
+                            }
                             SecureField("", text: $signViewModel.passwordSignIn)
                         }
                     }
-                    Button(action: { self.showPassword.toggle()}) {
-                        Image(systemName: "eye").opacity(showPassword ? 1 : 0.2)
-                    }
+                    Button(action: {
+                            showPassword.toggle()
+                    }, label: {
+                        Image(systemName: "eye")
+                            .opacity(showPassword ? 1 : 0.2)
+                    })
                 }
             }
             Line()
@@ -50,7 +61,8 @@ struct AnketaSignIn: View {
                 Button("Забыли пароль?") {
                     print("Забыл пароль?")
                 }
-                .font(.subheadline.bold()).opacity(0.2)
+                .font(.subheadline.bold())
+                .opacity(0.2)
             }
             .padding(.top, -15)
         }
