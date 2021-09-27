@@ -24,23 +24,7 @@ struct SignMainView: View {
                 .ignoresSafeArea()
             
             VStack {
-                HStack(spacing: 1) {
-                    SignSelectButton(text: "Вход")
-                        .opacity(!signInSelected ? 1 : 0.4)
-                        .onTapGesture {
-                            withAnimation(.easeInOut) {
-                                signInSelected = false
-                            }
-                        }
-                    
-                    SignSelectButton(text: "Регистрация")
-                        .opacity(signInSelected ? 1 : 0.4)
-                        .onTapGesture {
-                            withAnimation(.easeInOut) {
-                                signInSelected = true
-                            }
-                        }
-                }
+                TopPanel(signInSelected: $signInSelected)
                 
                 GeometryReader { gr in
                     VStack {
@@ -58,18 +42,25 @@ struct SignMainView: View {
                     }
                     
                     VStack {
+                        Spacer()
+                        
                         BackgroundCardSign(session: session, height: 190)
-                            .overlay(AnketaSignIn().padding().padding(.bottom, -20))
-                            .offset(y: gr.size.height / 3.5)
+                            .overlay(AnketaSignIn()
+                                        .padding()
+                                        .padding(.bottom, -20))
+//                            .offset(y: gr.size.height / 3.5)
                             .offset(x: !signInSelected ? 0 : -gr.size.width - 50)
+                            .padding(.bottom, 70)
                         
                         Button(signViewModel.isValidSignIn ? "Войти" : "Заполните все поля") {
                             session.signIn(email: signViewModel.email, password: signViewModel.passwordSignIn)
                         }
                         .buttonStyle(SignStyleButton(colorBG: .white,
                                                      colorText: signViewModel.isValidSignIn ? .orangeGradientEnd : .gray))
-                        .offset(y: !signInSelected ? 365 : gr.size.height + 150)
+                        .offset(y: !signInSelected ? 0 : gr.size.height + 150)
                         .disabled(!signViewModel.isValidSignIn)
+                     
+                        Spacer()
                     }
                 }
             }

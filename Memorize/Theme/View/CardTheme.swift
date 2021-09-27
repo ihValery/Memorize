@@ -15,13 +15,16 @@ struct CardTheme: View {
         ZStack {
             BackgroundCard(theme: theme, selectedTheme: $selectedTheme)
             
-            Text(theme.avatar)
-                .rotationEffect(.degrees(selectedTheme == theme.id ? 0 : 10))
-                .font(.system(size: getRect().width / 2))
-                .offset(x: -90)
-                .shadow(color: .black.opacity(selectedTheme == theme.id ? 0.5 : 0.4),
-                        radius: selectedTheme == theme.id ? 4 : 10,
+            VStack {
+                Text(theme.avatar)
+                    .rotationEffect(.degrees(selectedTheme == theme.id ? 0 : 10))
+                    .font(.system(size: getRect().width / 2))
+    //                .offset(x: -90)
+                    .shadow(color: .black.opacity(selectedTheme == theme.id ? 0.5 : 0.4),
+                            radius: selectedTheme == theme.id ? 4 : 10,
                         x: 3, y: selectedTheme == theme.id ? 10 : 30)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.top, 25)
     }

@@ -13,7 +13,8 @@ struct SignStyleButton: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(maxWidth: .infinity, maxHeight: 50)
+            .frame(height: 50)
+            .frame(maxWidth: .infinity)
             .font(.title2)
             .foregroundColor(colorText)
             .background(Capsule().fill(colorBG))

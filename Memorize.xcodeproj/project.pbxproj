@@ -12,6 +12,7 @@
 		800DB7BB263DE46000A4A2C1 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7BA263DE46000A4A2C1 /* Array.swift */; };
 		801128DD2642B3A600C38272 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801128DC2642B3A600C38272 /* Star.swift */; };
 		801128DF2642B41400C38272 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801128DE2642B41400C38272 /* Pie.swift */; };
+		80138C3826A60F6B00072D16 /* TopPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80138C3726A60F6B00072D16 /* TopPanel.swift */; };
 		801796452643B2D10061B4E0 /* CardOnboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801796442643B2D10061B4E0 /* CardOnboardData.swift */; };
 		803D1EA4265F3709009EA74E /* AnimationForAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803D1EA3265F3709009EA74E /* AnimationForAppear.swift */; };
 		8042779626592E0B00F3E217 /* VictoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8042779526592E0B00F3E217 /* VictoryView.swift */; };
@@ -94,6 +95,7 @@
 		800DB7BA263DE46000A4A2C1 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		801128DC2642B3A600C38272 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		801128DE2642B41400C38272 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		80138C3726A60F6B00072D16 /* TopPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPanel.swift; sourceTree = "<group>"; };
 		801796442643B2D10061B4E0 /* CardOnboardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnboardData.swift; sourceTree = "<group>"; };
 		803D1EA3265F3709009EA74E /* AnimationForAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationForAppear.swift; sourceTree = "<group>"; };
 		8042779526592E0B00F3E217 /* VictoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryView.swift; sourceTree = "<group>"; };
@@ -303,10 +305,11 @@
 			path = NetworkManager;
 			sourceTree = "<group>";
 		};
-		806C1A82266FE91000109432 /* Helper */ = {
+		806C1A82266FE91000109432 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
 				80ECBF9E266581F300684F6C /* SignSelectButton.swift */,
+				80138C3726A60F6B00072D16 /* TopPanel.swift */,
 				806C1A83266FF3B000109432 /* ImageWithURL.swift */,
 				80ECBF9F266581F300684F6C /* BackgroundCardSign.swift */,
 				806C1A80266FE7DD00109432 /* FrameAvatar.swift */,
@@ -314,7 +317,7 @@
 				80ECBFA3266581F300684F6C /* SignStyleButton.swift */,
 				80ECBFA1266581F300684F6C /* Line.swift */,
 			);
-			path = Helper;
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		807B3173265A96F200F63953 /* Victory */ = {
@@ -542,7 +545,7 @@
 				80ECBF9A266580C200684F6C /* ViewModel */,
 				806C1A6E266FCC5E00109432 /* NetworkManager */,
 				80ECBF9D266581F300684F6C /* View */,
-				806C1A82266FE91000109432 /* Helper */,
+				806C1A82266FE91000109432 /* SubView */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				8088FB8226742AE500A4B1B7 /* Score.swift in Sources */,
 				80ECBF99266580A200684F6C /* PasswordCheck.swift in Sources */,
 				8088FB8B2674335400A4B1B7 /* ScoreTableViewMain.swift in Sources */,
+				80138C3826A60F6B00072D16 /* TopPanel.swift in Sources */,
 				80E4AE12268A144000E03BA5 /* BgCardScore.swift in Sources */,
 				8042779626592E0B00F3E217 /* VictoryView.swift in Sources */,
 				801128DD2642B3A600C38272 /* Star.swift in Sources */,
@@ -865,7 +869,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 420;
+				CURRENT_PROJECT_VERSION = 420.104;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
@@ -889,7 +893,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 420;
+				CURRENT_PROJECT_VERSION = 420.104;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/System32/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
