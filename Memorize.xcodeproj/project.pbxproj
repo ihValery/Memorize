@@ -62,7 +62,7 @@
 		809F4D8326553EFD00ED0598 /* CardTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D8226553EFD00ED0598 /* CardTheme.swift */; };
 		809F4D852655414C00ED0598 /* IconDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D842655414C00ED0598 /* IconDescription.swift */; };
 		809F4D87265544C400ED0598 /* BackgroundCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D86265544C400ED0598 /* BackgroundCard.swift */; };
-		809F4D892655492600ED0598 /* NameTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D882655492500ED0598 /* NameTheme.swift */; };
+		809F4D892655492600ED0598 /* TitleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F4D882655492500ED0598 /* TitleCard.swift */; };
 		80A2C1E72655B97B0023E28E /* ThemeViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2C1E62655B97B0023E28E /* ThemeViewMain.swift */; };
 		80A434B02666DC0B004F0343 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A434AF2666DC0B004F0343 /* RulesView.swift */; };
 		80A4F671264392C100A0BCA2 /* OnboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F670264392C100A0BCA2 /* OnboardModel.swift */; };
@@ -87,6 +87,7 @@
 		80ECBFAB266581F300684F6C /* SignStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA3266581F300684F6C /* SignStyleButton.swift */; };
 		80ECBFAC266581F300684F6C /* SignMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA4266581F300684F6C /* SignMainView.swift */; };
 		80ECBFAD266581F300684F6C /* BubbleBlower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECBFA5266581F300684F6C /* BubbleBlower.swift */; };
+		80F573882701587800E57B6B /* ScreenBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F573872701587800E57B6B /* ScreenBounds.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,7 +145,7 @@
 		809F4D8226553EFD00ED0598 /* CardTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTheme.swift; sourceTree = "<group>"; };
 		809F4D842655414C00ED0598 /* IconDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconDescription.swift; sourceTree = "<group>"; };
 		809F4D86265544C400ED0598 /* BackgroundCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCard.swift; sourceTree = "<group>"; };
-		809F4D882655492500ED0598 /* NameTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTheme.swift; sourceTree = "<group>"; };
+		809F4D882655492500ED0598 /* TitleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCard.swift; sourceTree = "<group>"; };
 		80A2C1E62655B97B0023E28E /* ThemeViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewMain.swift; sourceTree = "<group>"; };
 		80A434AF2666DC0B004F0343 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		80A4F670264392C100A0BCA2 /* OnboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardModel.swift; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 		80ECBFA3266581F300684F6C /* SignStyleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignStyleButton.swift; sourceTree = "<group>"; };
 		80ECBFA4266581F300684F6C /* SignMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignMainView.swift; sourceTree = "<group>"; };
 		80ECBFA5266581F300684F6C /* BubbleBlower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleBlower.swift; sourceTree = "<group>"; };
+		80F573872701587800E57B6B /* ScreenBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBounds.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -438,8 +440,8 @@
 				80A2C1E62655B97B0023E28E /* ThemeViewMain.swift */,
 				809F4D8226553EFD00ED0598 /* CardTheme.swift */,
 				809F4D86265544C400ED0598 /* BackgroundCard.swift */,
-				809F4D882655492500ED0598 /* NameTheme.swift */,
 				809F4D842655414C00ED0598 /* IconDescription.swift */,
+				809F4D882655492500ED0598 /* TitleCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -510,6 +512,7 @@
 				800DB7B6263D6C7400A4A2C1 /* Constants.swift */,
 				80ECBFA5266581F300684F6C /* BubbleBlower.swift */,
 				807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */,
+				80F573872701587800E57B6B /* ScreenBounds.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -668,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80F573882701587800E57B6B /* ScreenBounds.swift in Sources */,
 				808699C7264695D700DAD8BE /* Cardify.swift in Sources */,
 				806296722653D08F0091469E /* ButtonSetNotification.swift in Sources */,
 				80E4AE10268A13D500E03BA5 /* ScoreRepository.swift in Sources */,
@@ -720,7 +724,7 @@
 				80ECBFA7266581F300684F6C /* BackgroundCardSign.swift in Sources */,
 				80ECBFAD266581F300684F6C /* BubbleBlower.swift in Sources */,
 				807B31A4265BE5D700F63953 /* TwoBackgroundCard.swift in Sources */,
-				809F4D892655492600ED0598 /* NameTheme.swift in Sources */,
+				809F4D892655492600ED0598 /* TitleCard.swift in Sources */,
 				801796452643B2D10061B4E0 /* CardOnboardData.swift in Sources */,
 				80ECBFA9266581F300684F6C /* Line.swift in Sources */,
 				8089621F262C6AFB001D9C7A /* MemorizeApp.swift in Sources */,
@@ -798,7 +802,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -853,7 +857,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -883,7 +887,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ihValery.Memorize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -907,7 +911,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ihValery.Memorize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
