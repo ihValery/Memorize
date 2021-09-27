@@ -29,8 +29,6 @@ struct IconInDescription: View {
                 }
                 .rotationEffect(
                     .degrees(selectedTheme == theme.id ? 270 : -90))
-//                .animation(
-//                    .spring(response: 0.55, dampingFraction: 0.45, blendDuration: 0))
             )
             .clipShape(Circle())
     }

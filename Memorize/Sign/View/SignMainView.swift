@@ -50,9 +50,8 @@ struct SignMainView: View {
                                         .padding(.bottom, -20))
 //                            .offset(y: gr.size.height / 3.5)
                             .offset(x: !signInSelected ? 0 : -gr.size.width - 50)
+                            .padding(.bottom, 70)
                         
-                        
-                        Spacer()
                         Button(signViewModel.isValidSignIn ? "Войти" : "Заполните все поля") {
                             session.signIn(email: signViewModel.email, password: signViewModel.passwordSignIn)
                         }

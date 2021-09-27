@@ -29,16 +29,16 @@ struct ThemeViewMain: View {
                     ForEach(themeData) { item in
                         CardTheme(theme: item, selectedTheme: $selectedTheme)
                             .onTapGesture {
-                                self.theme.current = item.id
-                                withAnimation {
-                                    selectedTheme = self.theme.current
+                                theme.current = item.id
+                                withAnimation(.easeInOut) {
+                                    selectedTheme = theme.current
                                 }
                             }
                     }
                 }
             }
         }
-        .background(LinearGradient(gradient: Gradient(colors:[themeData[self.theme.current].color.opacity(0.4), .purpleTheme]),
+        .background(LinearGradient(gradient: Gradient(colors:[themeData[theme.current].color.opacity(0.4), .purpleTheme]),
                                    startPoint: .topTrailing, endPoint: .bottomLeading)
                         .ignoresSafeArea())
     }

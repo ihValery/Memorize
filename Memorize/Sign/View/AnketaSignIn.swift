@@ -23,6 +23,8 @@ struct AnketaSignIn: View {
                             .opacity(0.7)
                     }
                     TextField("", text: $signViewModel.email)
+                        .keyboardType(.emailAddress)
+                        .disableAutocorrection(true)
                 }
             }
             Line()

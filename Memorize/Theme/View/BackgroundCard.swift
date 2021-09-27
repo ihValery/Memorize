@@ -14,11 +14,14 @@ struct BackgroundCard: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
-                .fill(selectedTheme == theme.id ? theme.color.opacity(1) : Color.white.opacity(0.4))
-                .frame(width: getRect().width - 20, height: getRect().width / 1.8)
+                .fill(selectedTheme == theme.id ? theme.color : Color.white.opacity(0.4))
+                .padding(.horizontal, 20)
+                .frame(maxWidth: .infinity, maxHeight: getRect().width / 1.8)
+            
             HStack {
                 Spacer()
-                VStack(spacing: 15) {
+                
+                VStack {
                     VStack {
                         IconInDescription(iconName: "baby.feet", theme: theme, parametr: theme.ageFloat, selectedTheme: $selectedTheme)
                         HStack {
@@ -40,7 +43,7 @@ struct BackgroundCard: View {
 
 struct BackgroundCard_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundCard(theme: themeData.first!, selectedTheme: .constant(1))
-                    .preferredColorScheme(.dark)
+        BackgroundCard(theme: themeData.first!, selectedTheme: .constant(0))
+//                    .preferredColorScheme(.dark)
     }
 }
