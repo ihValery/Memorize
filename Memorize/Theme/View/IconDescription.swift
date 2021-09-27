@@ -11,12 +11,12 @@ struct IconInDescription: View {
     var iconName: String
     var theme: Theme
     var parametr: CGFloat?
-    @Binding var selectedTheme: Int
+    var selectedTheme: Int
     
     var body: some View {
         Image(iconName)
             .resizable()
-            .frame(width: 25, height: 25)
+            .frame(width: withBangs() ? 28 : 20, height: withBangs() ? 28 : 20)
             .padding()
             .background(
                 ZStack {
@@ -36,7 +36,7 @@ struct IconInDescription: View {
 
 struct iconInDescription_Previews: PreviewProvider {
     static var previews: some View {
-        IconInDescription(iconName: "baby.feet", theme: themeData.first!, selectedTheme: .constant(1))
+        IconInDescription(iconName: "baby.feet", theme: themeData.first!, selectedTheme: 1)
             .preferredColorScheme(.dark)
 //            .previewLayout(.sizeThatFits)
     }
