@@ -13,7 +13,7 @@ struct CardTheme: View {
     
     var body: some View {
         ZStack {
-            BackgroundCard(theme: theme, selectedTheme: $selectedTheme)
+            BackgroundCard(theme: theme, selectedTheme: selectedTheme)
             
             VStack {
                 Text(theme.avatar)
