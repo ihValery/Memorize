@@ -21,8 +21,6 @@ struct OneCardScore: View {
                     .foregroundColor(.red)
                     .offset(x: 40)
                     .offset(x: viewState.width)
-//                    .padding(.trailing, 50)
-//                    .opacity(viewState.width < 40 ? 1 : 0)
             }
             
             ZStack {
@@ -31,7 +29,7 @@ struct OneCardScore: View {
                         .font(.system(size: withBangs() ? 60 : 50))
                     
                     VStack(alignment: .leading) {
-                        Text("Результат  ")
+                        Text("Результат ")
                             .font(withBangs() ? .title : .title2)
                         Text(scoreViewModel.dateToString())
                             .font(withBangs() ? .subheadline : .footnote).opacity(0.6)
@@ -73,8 +71,9 @@ struct OneCardScore: View {
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Удалить счет"), message: Text("Это действие нельзя будет отменить"),
                       primaryButton: .destructive(Text("Удалить")) { scoreViewModel.remove() },
-                      secondaryButton: .cancel(Text("Нет")))
-        }
+                      secondaryButton: .cancel(Text("Нет"))
+                )
+            }
         }
     }
 }

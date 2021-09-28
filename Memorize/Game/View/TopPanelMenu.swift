@@ -13,9 +13,11 @@ struct TopPanelMenu: View {
     var body: some View {
         HStack(alignment: .center) { 
             Text(viewModelGame.cards.allSatisfy({ $0.isMatched == true}) ? "Твой результат:" : "Счет:")
+                .font(.title)
                 .fontWeight(.medium)
             
             Text(viewModelGame.updateScore())
+                .font(.title)
                 .fontWeight(.medium)
                 .frame(minWidth: 50, alignment: .center)
             
