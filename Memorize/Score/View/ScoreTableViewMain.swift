@@ -24,7 +24,7 @@ struct ScoreTableViewMain: View {
                                 .offset(y: onAnimation ? 0 : getRect().height)
 //                                .animation(.ripple(index: ).delay(1))
                         }
-                        .offset(y: 25)
+                        .offset(y: withBangs() ? 25 : 50)
                     }
                     .frame(height: gr.size.height - 165)
                 }

@@ -19,7 +19,7 @@ struct ThemeViewMain: View {
                     .fontWeight(.bold)
                     .foregroundColor(.black.opacity(0.4))
                     .padding(.leading, 60)
-//                    .padding(.top, -10)
+                    .padding(.top, withBangs() ? -5 : -1)
                     .padding(.bottom, -1)
                 Spacer()
             }
@@ -37,6 +37,7 @@ struct ThemeViewMain: View {
                             }
                     }
                 }
+                .padding(.top)
             }
         }
         .background(LinearGradient(gradient: Gradient(colors:[themeData[theme.current].color.opacity(0.4), .purpleTheme]),
