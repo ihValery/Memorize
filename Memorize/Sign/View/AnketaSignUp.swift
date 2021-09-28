@@ -95,10 +95,11 @@ struct AnketaSignUp: View {
             .offset(y: 40)
             
             FrameAvatar(image: $signViewModel.image)
-                .offset(y: -190)
                 .onTapGesture {
                     isShowPhotoLibrary = true
                 }
+                .clipShape(Circle())
+                .offset(y: -190)
         }
         .sheet(isPresented: $isShowPhotoLibrary) {
             ImagePicker(selectedImage: $signViewModel.image, sourceType: .photoLibrary)

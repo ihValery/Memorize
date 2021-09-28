@@ -19,26 +19,29 @@ struct SignMainView: View {
             LinearGradient(gradient: Gradient(colors: [.orangeGradientStart, .orangeGradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
-            BubbleBlower(color: Color.red, positionY: getRect().height, frameCircle: 120...420)
-                .drawingGroup()
-                .ignoresSafeArea()
+//            BubbleBlower(color: Color.red, positionY: getRect().height, frameCircle: 120...420)
+//                .drawingGroup()
+//                .ignoresSafeArea()
             
             VStack {
                 TopPanel(signInSelected: $signInSelected)
                 
                 GeometryReader { gr in
-                    VStack {
-                        BackgroundCardSign(session: session, height: 365)
-                            .overlay(AnketaSignUp().padding())
-                            .offset(y: gr.size.height / 4.5)
-                            .offset(x: signInSelected ? 0 : gr.size.width + 50)
-                        
-                        Button(self.signViewModel.isValidSignUp ? "Зарегистрироваться" : "Заполните все поля") {
-                            session.signUp(email: signViewModel.email, password: signViewModel.password, name: signViewModel.username, photo: signViewModel.image)
+                    ScrollView(withBangs() ? .init() : .vertical, showsIndicators: false) {
+                        VStack {
+                            BackgroundCardSign(session: session, height: 365)
+                                .overlay(AnketaSignUp().padding())
+                                .offset(y: gr.size.height / 4.5)
+                                .offset(x: signInSelected ? 0 : gr.size.width + 50)
+                            
+                            Button(self.signViewModel.isValidSignUp ? "Зарегистрироваться" : "Заполните все поля") {
+                                session.signUp(email: signViewModel.email, password: signViewModel.password, name: signViewModel.username, photo: signViewModel.image)
+                            }
+                            .buttonStyle(SignStyleButton(colorBG: .white, colorText: signViewModel.isValidSignUp ? .orangeGradientEnd : .gray))
+                            .offset(y: signInSelected ? 190 : gr.size.height + 50)
+                            .disabled(!signViewModel.isValidSignUp)
                         }
-                        .buttonStyle(SignStyleButton(colorBG: .white, colorText: signViewModel.isValidSignUp ? .orangeGradientEnd : .gray))
-                        .offset(y: signInSelected ? 190 : gr.size.height + 50)
-                        .disabled(!signViewModel.isValidSignUp)
+                        .padding(.bottom, withBangs() ? 0 : 300)
                     }
                     
                     VStack {
