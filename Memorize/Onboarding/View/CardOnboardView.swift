@@ -35,19 +35,22 @@ struct CardOnboardView: View {
                 }
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
-                
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: Gradient(colors: cardOnboard.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(20)
-        .padding(.top)
+        .padding(.vertical)
         .padding(.horizontal, 15)
-        .animation(.spring(dampingFraction: 0.5))
         
-        .onAppear {
-            isAnimating.toggle()
-        }
+        .onAppear(perform: {
+            isAnimating = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                withAnimation(.easeOut(duration: 0.5)) {
+                    isAnimating = true
+                }
+            }
+        })
     }
 }
 
@@ -55,7 +58,7 @@ struct CardOnboardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CardOnboardView(cardOnboard: cardOnboardData[1])
-                .preferredColorScheme(.dark)
+//                .preferredColorScheme(.dark)
         }
     }
 }

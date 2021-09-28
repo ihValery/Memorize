@@ -32,6 +32,7 @@ struct SignOutButton: View {
                 .fontWeight(.semibold)
                 .font(.footnote)
                 .opacity(0.3)
+                .padding(.bottom)
         }
         .foregroundColor(.colorTextNewGame)
         
