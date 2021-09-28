@@ -27,7 +27,8 @@ struct ThemeViewMain: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     ForEach(themeData) { item in
-                        CardTheme(theme: item, selectedTheme: $selectedTheme)
+                        CardTheme(theme: item, selectedTheme: selectedTheme)
+                            .padding(.vertical)
                             .onTapGesture {
                                 theme.current = item.id
                                 withAnimation(.easeInOut) {

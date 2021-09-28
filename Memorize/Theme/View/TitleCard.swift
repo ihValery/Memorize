@@ -18,6 +18,8 @@ struct TitleCard: View {
         Text(name)
             .font(.title3)
             .bold()
+            .fixedSize()
+            .lineLimit(1)
             .padding(.top, withBangs() ? 15 : 0)
     }
 }

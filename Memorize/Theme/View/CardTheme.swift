@@ -9,29 +9,74 @@ import SwiftUI
 
 struct CardTheme: View {
     var theme: Theme
-    @Binding var selectedTheme: Int
+    var selectedTheme: Int
     
     var body: some View {
-        ZStack {
-            BackgroundCard(theme: theme, selectedTheme: selectedTheme)
-            
+        HStack {
             VStack {
                 Text(theme.avatar)
-                    .rotationEffect(.degrees(selectedTheme == theme.id ? 0 : 10))
-                    .font(.system(size: getRect().width / 2))
-                    .shadow(color: .black.opacity(selectedTheme == theme.id ? 0.5 : 0.4),
-                            radius: selectedTheme == theme.id ? 4 : 10,
-                        x: 3, y: selectedTheme == theme.id ? 10 : 30)
+                    .font(.system(size: getRect().width / 2.5))
+                    .fixedSize()
+                    .opacity(activeTheme() ? 1 : 0.5)
+                    .rotationEffect(.degrees(activeTheme() ? 10 : 0))
+                    .shadow(color: .black.opacity(activeTheme() ? 0.5 : 0),
+                            radius: activeTheme() ? 10 : 0,
+                            x: 3, y: activeTheme() ? 30 : 0)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: getRect().width / 2, alignment: .center)
+            
+            Spacer()
+            
+            VStack {
+                VStack {
+                    IconDescription(.age(trim: theme.ageFloat), theme, activeTheme())
+                    HStack {
+                        IconDescription(.timer(trim: theme.timer), theme, activeTheme())
+                        IconDescription(.level(trim: theme.levelFloat), theme, activeTheme())
+                    }
+                }
+                .opacity(activeTheme() ? 1 : 0.3)
+                
+                TitleCard(theme.name)
+                    .foregroundColor(activeTheme() ? .white : .black.opacity(0.1))
+            }
+            .padding(.trailing, 40)
         }
-        .padding(.top, 25)
+        .frame(maxWidth: .infinity)
+        .frame(height: getRect().width / 1.8)
+        .background(
+            RoundedRectangle(cornerRadius: 25)
+                .fill(activeTheme() ? theme.color : .white.opacity(0.4))
+        )
+        .padding(.horizontal)
+        .rotation3DEffect(.degrees(rotationActiveIsMultiple()), axis: (x: 0, y: 1, z: 0))
+        .offset(x: offsetActiveIsMultiple())
+    }
+    
+    private func rotationActiveIsMultiple() -> CGFloat {
+        guard !activeTheme() else { return 0 }
+        
+        return theme.id.isMultiple(of: 2) ? -22 : 22
+    }
+    
+    private func offsetActiveIsMultiple() -> CGFloat {
+        guard !activeTheme() else { return 0 }
+        
+        if theme.id.isMultiple(of: 2) {
+            return withBangs() ? -32 : -22
+        } else {
+            return withBangs() ? 32 : 22
+        }
+    }
+    
+    private func activeTheme() -> Bool {
+        selectedTheme == theme.id
     }
 }
 
 struct CardTheme_Previews: PreviewProvider {
     static var previews: some View {
-        CardTheme(theme: themeData.first!, selectedTheme: .constant(2))
+        CardTheme(theme: themeData.last!, selectedTheme: 0)
             .preferredColorScheme(.dark)
     }
 }
