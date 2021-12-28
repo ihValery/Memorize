@@ -21,7 +21,7 @@ struct IconDescription: View {
     var body: some View {
         Image(icon.rawValue)
             .resizable()
-            .frame(width: withBangs() ? 28 : 20, height: withBangs() ? 28 : 20)
+            .frame(width: withBangs ? 28 : 20, height: withBangs ? 28 : 20)
             .padding()
             .background(
                 ZStack {

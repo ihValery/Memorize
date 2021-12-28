@@ -63,9 +63,9 @@ struct CardTheme: View {
         guard !activeTheme() else { return 0 }
         
         if theme.id.isMultiple(of: 2) {
-            return withBangs() ? -32 : -22
+            return withBangs ? -32 : -22
         } else {
-            return withBangs() ? 32 : 22
+            return withBangs ? 32 : 22
         }
     }
     

@@ -23,7 +23,7 @@ struct SideMenuMainView: View {
                            startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
-            ScrollView(withBangs() ? .init() : .vertical, showsIndicators: false) {
+            ScrollView(withBangs ? .init() : .vertical, showsIndicators: false) {
                 SideMenu(selectedTab: $selectedTab, showMenu: $showMenu, session: session)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -51,7 +51,7 @@ struct SideMenuMainView: View {
             }
             //Масштабирование и перемещение вида
             .scaleEffect(showMenu ? 0.84 : 1)
-            .offset(x: showMenu ? getRect().width - (withBangs() ? 120 : 70) : 0)
+            .offset(x: showMenu ? getRect().width - (withBangs ? 120 : 70) : 0)
             .ignoresSafeArea()
             .overlay(
                 BurgerButton(showMenu: $showMenu)
