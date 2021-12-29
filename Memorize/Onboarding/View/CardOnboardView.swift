@@ -58,7 +58,7 @@ struct CardOnboardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CardOnboardView(cardOnboard: cardOnboardData[1])
-//                .preferredColorScheme(.dark)
+                .preferredColorScheme(.dark)
         }
     }
 }

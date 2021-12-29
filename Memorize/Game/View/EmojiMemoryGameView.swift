@@ -18,7 +18,7 @@ struct EmojiMemoryGameView: View {
             
             VStack {
                 TopPanelMenu(viewModelGame: viewModelGame)
-                    .padding(.bottom, -4)
+                    .padding(.bottom, -4) 
                 
                 if viewModelGame.cards.allSatisfy { $0.isMatched == true } {
                     VictoryView(viewModelGame: viewModelGame, theme: theme)

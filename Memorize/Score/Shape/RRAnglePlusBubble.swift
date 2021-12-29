@@ -12,14 +12,13 @@ struct RRAnglePlusBubble: View {
     
     var body: some View {
         ZStack {
-            RectangleReverseAngle(startY: withBangs() ? 165 : 125)
+            RectangleReverseAngle(startY: withBangs ? 165 : 125)
                 .fill(Color.white)
-            RectangleReverseAngle(startY: withBangs() ? 165 : 125)
+            RectangleReverseAngle(startY: withBangs ? 165 : 125)
                 .fill(LinearGradient(gradient: Gradient(colors: [themeData[theme.current].color.opacity(0.6), .purpleTheme]), startPoint: .topTrailing, endPoint: .bottomLeading))
             BubbleBlower(color: themeData[theme.current].color, positionY: 250, frameCircle: 50...200)
-                .clipShape(RectangleReverseAngle(startY: withBangs() ? 165 : 125))
+                .clipShape(RectangleReverseAngle(startY: withBangs ? 165 : 125))
         }
-//        .drawingGroup()
     }
 }
 

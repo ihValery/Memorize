@@ -12,7 +12,7 @@ struct ProFile: View {
     
     var body: some View {  
         VStack(alignment: .leading) {
-            ImageWithURL(session.user?.avatarURL ?? "", size: withBangs() ? 180 : 160)
+            ImageWithURL(session.user?.avatarURL ?? "", size: withBangs ? 180 : 160)
                 .padding(.top, 30)
             
             VStack(alignment: .leading) {
@@ -31,5 +31,6 @@ struct ProFile: View {
 struct ProFile_Previews: PreviewProvider {
     static var previews: some View {
         ProFile(session: SessionFirebase())
+          .preferredColorScheme(.dark)
     }
 }

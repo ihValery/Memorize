@@ -18,7 +18,10 @@ struct MemoryGame <CardContent> where CardContent: Equatable {
     
     private var indexOnlyOneFaceUpCard: Int? {
         //Смотрим на все карты и проверяем если одна единственная карточка
-        get { cards.indices.filter { cards[$0].isFaceUp }.onlyOne }
+        get {
+           cards.indices.filter { cards[$0].isFaceUp }.onlyOne
+        }
+       
         set {
             for index in cards.indices {
                 //Переворачиваем все карти лицом вниз кроме одной с индексом newValue

@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-//Создаем структуру struct Pie, которая реализует протокол Shape, который представляет собой “Ограничения и Выгоды” (Constraints and Gains)
+//Создаем структуру struct Pie, которая реализует протокол Shape
+//который представляет собой “Ограничения и Выгоды” (Constraints and Gains)
 struct Pie: Shape {
     
     var startAngle: Angle

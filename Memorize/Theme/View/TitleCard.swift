@@ -20,6 +20,6 @@ struct TitleCard: View {
             .bold()
             .fixedSize()
             .lineLimit(1)
-            .padding(.top, withBangs() ? 15 : 0)
+            .padding(.top, withBangs ? 15 : 0)
     }
 }
