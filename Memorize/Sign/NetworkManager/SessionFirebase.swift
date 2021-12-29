@@ -8,6 +8,7 @@
 import UIKit
 import Combine
 import Firebase
+import FirebaseFirestore
 
 class SessionFirebase: ObservableObject {
     @Published var showOnboard = false
@@ -24,7 +25,8 @@ class SessionFirebase: ObservableObject {
                 self?.isSignIn = false
             } else {
                 self?.user = nil
-                self?.showOnboard = true
+               //перед сборкой true
+                self?.showOnboard = false
             }
         }
     }
