@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BackgroundCardScoreView: View {
-    @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeViewModel.shared
     
     var body: some View {
         VStack {

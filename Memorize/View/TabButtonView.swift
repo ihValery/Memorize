@@ -11,7 +11,7 @@ struct TabButtonView: View {
     var image: String
     var title: String
     
-    @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeViewModel.shared
     @Binding var showMenu: Bool
     @Binding var selectedTab: String
     //For Hero Animation Slide

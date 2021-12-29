@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct GameBoardMainView: View {
-    @ObservedObject var viewModelGame: EmojiMemoryGame
-    @ObservedObject var theme = ThemeSettings.shared
-    @ObservedObject var scoreListViewModel: ScoreListViewModel
+    @ObservedObject var viewModelGame: GameBoardViewModel
+    @ObservedObject var theme = ThemeViewModel.shared
+    @ObservedObject var scoreListViewModel: ResultsTableViewModel
     
     var body: some View {
         ZStack {
@@ -49,8 +49,8 @@ struct GameBoardMainView: View {
 
 struct GameBoardMainView_Previews: PreviewProvider {
     static var previews: some View {
-        let oneCard = EmojiMemoryGame()
-        return GameBoardMainView(viewModelGame: oneCard, scoreListViewModel: ScoreListViewModel())
+        let oneCard = GameBoardViewModel()
+        return GameBoardMainView(viewModelGame: oneCard, scoreListViewModel: ResultsTableViewModel())
         //            .preferredColorScheme(.dark)
     }
 }

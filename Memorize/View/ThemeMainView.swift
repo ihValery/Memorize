@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ThemeMainView: View {
-    @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeViewModel.shared
     @State private var selectedTheme: Int = UserDefaults.standard.integer(forKey: "Theme")
     
     var body: some View {

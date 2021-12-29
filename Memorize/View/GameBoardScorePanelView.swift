@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameBoardScorePanelView: View {  
-    @ObservedObject var viewModelGame: EmojiMemoryGame
+    @ObservedObject var viewModelGame: GameBoardViewModel
     
     var body: some View {
         HStack(alignment: .center) { 
@@ -42,7 +42,7 @@ struct GameBoardScorePanelView: View {
 
 struct GameBoardScorePanelView_Previews: PreviewProvider {
     static var previews: some View {
-        GameBoardScorePanelView(viewModelGame: EmojiMemoryGame())
+        GameBoardScorePanelView(viewModelGame: GameBoardViewModel())
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
     }

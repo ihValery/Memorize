@@ -51,7 +51,7 @@ struct GameBoard <CardContent> where CardContent: Equatable {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
                 //                score += 2
-                score += (themeData[ThemeSettings.shared.current].timer == 0 ? 2 : Int(card.bonusTimeRemaining))
+                score += (themeData[ThemeViewModel.shared.current].timer == 0 ? 2 : Int(card.bonusTimeRemaining))
             } else {
                 scoring(chosenIndex, potentialMatchIndex)
             }

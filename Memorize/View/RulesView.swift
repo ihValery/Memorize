@@ -12,7 +12,7 @@ struct RulesView: View {
         ScrollView(.vertical, showsIndicators: false) {
             ZStack {
                 GeometryReader { gr in
-                    Image("fonGra3")
+                    Image("BackgroundRules")
                         .resizable()
                         .offset(y: -gr.frame(in: .global).origin.y / 1.3 - 160)
                 }

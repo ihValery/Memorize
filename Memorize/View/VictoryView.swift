@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct VictoryView: View {
-    @ObservedObject var viewModelGame: EmojiMemoryGame
-    @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var viewModelGame: GameBoardViewModel
+    @ObservedObject var theme = ThemeViewModel.shared
     
     var body: some View {
         VStack {
@@ -39,6 +39,6 @@ struct VictoryView: View {
 
 struct ButtonNewGameVictory_Previews: PreviewProvider {
     static var previews: some View {
-        VictoryView(viewModelGame: EmojiMemoryGame())
+        VictoryView(viewModelGame: GameBoardViewModel())
     }
 }

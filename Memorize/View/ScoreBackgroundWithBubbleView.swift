@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScoreBackgroundWithBubbleView: View {
-    @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeViewModel.shared
     
     var body: some View {
         ZStack {
@@ -16,7 +16,7 @@ struct ScoreBackgroundWithBubbleView: View {
                 .fill(Color.white)
             RectangleReverseAngle(startY: withBangs ? 165 : 125)
                 .fill(LinearGradient(gradient: Gradient(colors: [themeData[theme.current].color.opacity(0.6), .purpleTheme]), startPoint: .topTrailing, endPoint: .bottomLeading))
-            BubbleBlower(color: themeData[theme.current].color, positionY: 250, frameCircle: 50...200)
+            BubbleBlowerView(color: themeData[theme.current].color, positionY: 250, frameCircle: 50...200)
                 .clipShape(RectangleReverseAngle(startY: withBangs ? 165 : 125))
         }
     }

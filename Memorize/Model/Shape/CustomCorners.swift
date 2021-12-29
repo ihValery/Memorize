@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//CustomCorners что бы выбрать какие иглы закруглять
+//CustomCorners что бы выбрать какие иглы закруглить
 struct CustomCorners: Shape {
     var corner: UIRectCorner
     var radius: CGFloat

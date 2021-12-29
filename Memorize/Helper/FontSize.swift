@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  fontSize.swift
 //  Memorize
 //
 //  Created by Валерий Игнатьев on 1.05.21.

@@ -1,6 +1,6 @@
 //
-//  ScoreListViewModel.swift
-//  ScoreCards
+//  ResultsTableViewModel.swift
+//  Memorize
 //
 //  Created by Валерий Игнатьев on 28.06.21.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class ScoreListViewModel: ObservableObject {
+class ResultsTableViewModel: ObservableObject {
     @Published private var repository = ScoreRepository()
     @Published var scoreViewModels: [ScoreViewModel] = []
     private var cancellabel: Set<AnyCancellable> = []

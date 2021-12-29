@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AnimationForAppearView: View {
     @State private var expand = true
-    @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeViewModel.shared
     var color: Color
     
     var body: some View {
