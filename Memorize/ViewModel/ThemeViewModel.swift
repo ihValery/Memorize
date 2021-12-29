@@ -1,5 +1,5 @@
 //
-//  ThemeSettings.swift
+//  ThemeViewModel.swift
 //  ThemeAplication
 //
 //  Created by Валерий Игнатьев on 20.05.21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final public class ThemeSettings: ObservableObject {
+final public class ThemeViewModel: ObservableObject {
     @Published var current: Int = UserDefaults.standard.integer(forKey: "Theme") {
         didSet {
             UserDefaults.standard.set(self.current, forKey: "Theme")
@@ -15,5 +15,5 @@ final public class ThemeSettings: ObservableObject {
     }
 
     private init() {}
-    public static let shared = ThemeSettings()
+    public static let shared = ThemeViewModel()
 }

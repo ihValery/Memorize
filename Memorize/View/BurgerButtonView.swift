@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BurgerButtonView: View {
     @Binding var showMenu: Bool
-    @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeViewModel.shared
     
     var body: some View {
         Button {

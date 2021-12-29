@@ -15,7 +15,7 @@ struct NotificationView: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.colorScheme) var colorScheme
     
-    @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeViewModel.shared
     
     var body: some View {
         ZStack {

@@ -10,7 +10,7 @@ import SwiftUI
 // Структура для одной карты
 struct GameBoardCardView: View {
     var card: GameBoard<String>.Card
-    @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeViewModel.shared
     
     //будем анимировать, но перед запуском анимации убедимcя, что синхронизированы с Model
     @State private var animatedBonusRemaning: Double = 0
@@ -75,7 +75,7 @@ struct GameBoardCardView: View {
 
 struct GameBoardCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let card = EmojiMemoryGame().cards.first!
+        let card = GameBoardViewModel().cards.first!
         GameBoardCardView(card: card)
     }
 }

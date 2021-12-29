@@ -11,9 +11,9 @@ import Firebase
 struct SideMenuMainView: View {
    @State private var selectedTab = "Новая игра"
    //перед сборкой false
-   @State private var showMenu = true
+   @State private var showMenu = false
    @Environment(\.colorScheme) var colorScheme
-   @ObservedObject var theme = ThemeSettings.shared
+   @ObservedObject var theme = ThemeViewModel.shared
    @ObservedObject var session: SessionFirebase
    
    var body: some View {

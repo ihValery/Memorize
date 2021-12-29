@@ -20,7 +20,7 @@ struct TabPanelView: View {
    
    var body: some View {
       TabView(selection: $selectedTab) {
-         GameBoardMainView(viewModelGame: EmojiMemoryGame(), scoreListViewModel: ScoreListViewModel()).tag("Новая игра")
+         GameBoardMainView(viewModelGame: GameBoardViewModel(), scoreListViewModel: ResultsTableViewModel()).tag("Новая игра")
          ScoreTableMainView(session: session, onAnimation: $onAnimation).tag("Счет")
             .onAppear {
                print("onAppear - Home - \(onAnimation)")

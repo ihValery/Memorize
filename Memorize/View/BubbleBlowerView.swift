@@ -1,5 +1,5 @@
 //
-//  BubbleBlower.swift
+//  BubbleBlowerView.swift
 //  SwiftUI_Firebase
 //
 //  Created by Валерий Игнатьев on 29.05.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BubbleBlower: View {
+struct BubbleBlowerView: View {
     @State private var startAnimation: Bool = false
     var color: Color
     var positionY: CGFloat
@@ -34,6 +34,6 @@ struct BubbleBlower: View {
 
 struct BackgroundAnimation_Previews: PreviewProvider {
     static var previews: some View {
-        BubbleBlower(color: Color.red, positionY: UIScreen.main.bounds.height, frameCircle: 120...420)
+        BubbleBlowerView(color: Color.red, positionY: UIScreen.main.bounds.height, frameCircle: 120...420)
     }
 }

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ScoreTableMainView: View {
-    @ObservedObject var theme = ThemeSettings.shared
+    @ObservedObject var theme = ThemeViewModel.shared
     @ObservedObject var session: SessionFirebase
-    @ObservedObject var scoreListViewModel = ScoreListViewModel()
+    @ObservedObject var scoreListViewModel = ResultsTableViewModel()
     
     @Binding var onAnimation: Bool
     
@@ -19,11 +19,9 @@ struct ScoreTableMainView: View {
             VStack {
                 GeometryReader { gr in
                     ScrollView {
-                        ForEach(scoreListViewModel.scoreViewModels) { item in
+                       ForEach(scoreListViewModel.scoreViewModels) { item in
                             CardScoreView(scoreViewModel: item)
                                 .offset(y: onAnimation ? 0 : getRect().height)
-                            //
-//                                .animation(.ripple(index: 1).delay(1))
                         }
                         .offset(y: 25)
                     }
@@ -31,9 +29,6 @@ struct ScoreTableMainView: View {
                 }
                 .offset(y: 170)
             }
-                            //
-//                            .offset(x: onAnimation ? 0 : getRect().height)
-//                            .animation(.easeInOut(duration: 1))
             
             ZStack {
                 ScoreBackgroundWithBubbleView()
