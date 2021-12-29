@@ -12,9 +12,11 @@
     - ScenePhase - жизненный цикл SwiftUI
     - Реализация UNUserNotificationCenterDelegate без AppDelegate в SwiftUI
     - Запоминаем установлен ли будильник
-    <img src="https://github.com/ihValery/Notification/blob/main/Notification.png?raw=true"></a>
-- Помощь (onboarding с правилами и описанием)
-    - Переделать! (реализовать максимум)
+- Onboarding
+    - Появляеться только у не авторизованных пользователей
+- Правила
+    - Чем меньше, тем лучше
+    - Красивое движение фона при скроле
 - Выбор темы
     - анимированные карточки
     - сохранение текущей темы в UserDefaults
@@ -38,6 +40,3 @@
     
     <img src="https://github.com/ihValery/CombineFirebase/blob/main/Lesson39Preview.gif?raw=true"></a>
     <img src="https://github.com/ihValery/Memorize/blob/main/Memorize/ImageForReadme/NewTheme75.gif?raw=true"></a>
-
-
-мы на отдыхе
