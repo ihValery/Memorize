@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct IconForThemeView: View {
-    var icon: IconDesc
+    var icon: IconForTheme
     var theme: Theme
     var activeTheme: Bool
     
-    init(_ icon: IconDesc, _ theme: Theme, _ activeTheme: Bool) {
+    init(_ icon: IconForTheme, _ theme: Theme, _ activeTheme: Bool) {
         self.icon = icon
         self.theme = theme
         self.activeTheme = activeTheme

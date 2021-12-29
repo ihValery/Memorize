@@ -1,5 +1,5 @@
 //
-//  IconDesc.swift
+//  IconForTheme.swift
 //  Memorize
 //
 //  Created by Валерий Игнатьев on 27.09.2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum IconDesc {
+enum IconForTheme {
     case age(trim: CGFloat)
     case timer(trim: CGFloat)
     case level(trim: CGFloat)

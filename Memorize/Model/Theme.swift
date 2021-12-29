@@ -1,5 +1,5 @@
 //
-//  ThemeModel.swift
+//  Theme.swift
 //  ThemeAplication
 //
 //  Created by Валерий Игнатьев on 20.05.21.

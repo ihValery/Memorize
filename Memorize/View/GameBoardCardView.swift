@@ -9,7 +9,7 @@ import SwiftUI
 
 // Структура для одной карты
 struct GameBoardCardView: View {
-    var card: MemoryGame<String>.Card
+    var card: GameBoard<String>.Card
     @ObservedObject var theme = ThemeSettings.shared
     
     //будем анимировать, но перед запуском анимации убедимcя, что синхронизированы с Model
