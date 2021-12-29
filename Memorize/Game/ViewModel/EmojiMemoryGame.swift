@@ -14,11 +14,11 @@ class EmojiMemoryGame: ObservableObject {
     //private (set) - но, мы хотим, чтобы дверь была закрытой, то есть строгий private
     //В нашем случае Property Wrapper (“обертка свойства”) @Published вызывает objectWillChange.send()
     //каждый раз, когда переменная modelGame изменяется.
-    @Published private var modelGame: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+    @Published private var modelGame: GameBoard<String> = EmojiMemoryGame.createMemoryGame()
     
-    static private func createMemoryGame(_ collectionShuffled: [String]? = nil) -> MemoryGame<String> {
+    static private func createMemoryGame(_ collectionShuffled: [String]? = nil) -> GameBoard<String> {
         
-        return MemoryGame<String>(numbersOfPairsOfCards: themeData[ThemeSettings.shared.current].number) { pairIndex in
+        return GameBoard<String>(numbersOfPairsOfCards: themeData[ThemeSettings.shared.current].number) { pairIndex in
             if let collectionShuffled = collectionShuffled {
                 return collectionShuffled[pairIndex]
             } else {
@@ -28,11 +28,11 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     /// Assess to the Model
-    var cards: Array<MemoryGame<String>.Card> {
+    var cards: Array<GameBoard<String>.Card> {
         modelGame.cards
     }
     
-    func choose(_ card: MemoryGame<String>.Card) {
+    func choose(_ card: GameBoard<String>.Card) {
         modelGame.choose(card)
     }
     

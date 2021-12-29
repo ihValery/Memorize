@@ -7,9 +7,9 @@
 
 import Foundation
 
-//Это Generic struct MemoryGame с “Не важно, какой” ТИПом CardContent,
+//Это Generic struct GameBoard с “Не важно, какой” ТИПом CardContent,
 //который представляет собой содержимое карты Card и в нашей эмоджи игре содержимым карты
-struct MemoryGame <CardContent> where CardContent: Equatable {
+struct GameBoard <CardContent> where CardContent: Equatable {
     
     //Не хотим, чтобы кто-нибудь пошел в структуру struct Card. ViewModel нужен доступ, на чтение.
     private (set) var cards: [Card]

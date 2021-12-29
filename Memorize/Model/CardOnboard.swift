@@ -1,5 +1,5 @@
 //
-//  OnboardModel.swift
+//  CardOnboard.swift
 //  Memorize
 //
 //  Created by Валерий Игнатьев on 6.05.21.
