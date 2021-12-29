@@ -250,7 +250,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		8062966B2653C4290091469E /* Extension */ = {
+		8062966B2653C4290091469E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				804B625E2652DD0200DE3792 /* ViewExtension.swift */,
@@ -259,7 +259,7 @@
 				8042779726595B0F00F3E217 /* AnimationExtension.swift */,
 				806A0232263F44A00076EC1A /* ColorExtension.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8062966C2653CF750091469E /* Notification */ = {
@@ -386,7 +386,7 @@
 				80CD7614277AB7720054C33E /* Model */,
 				80CD7615277AB7810054C33E /* View */,
 				80CD7616277AB78B0054C33E /* ViewModel */,
-				8062966B2653C4290091469E /* Extension */,
+				8062966B2653C4290091469E /* Extensions */,
 				80896222262C6AFE001D9C7A /* Assets.xcassets */,
 				80896227262C6AFE001D9C7A /* Info.plist */,
 				806C1A7A266FCDA400109432 /* GoogleService-Info.plist */,
