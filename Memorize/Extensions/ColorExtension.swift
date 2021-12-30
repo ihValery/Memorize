@@ -25,7 +25,7 @@ extension Color {
     
     static let sideMenuStart         = Color("sideMenuStart")
     static let signStart             = Color("signStart")
-
+    
     static let onboardAnimalStart    = Color("onboardAnimalStart")
     static let onboardAnimalEnd      = Color("onboardAnimalEnd")
     static let onboardChildStart     = Color("onboardChildStart")
