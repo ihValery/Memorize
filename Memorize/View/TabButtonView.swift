@@ -35,7 +35,7 @@ struct TabButtonView: View {
                 Text(title)
                     .fontWeight(.semibold)
             }
-            .foregroundColor(selectedTab == title ? themeData[theme.current].color : .colorTextNewGame)
+            .foregroundColor(selectedTab == title ? themeData[theme.current].color : .defaultText)
             .padding(.vertical, 12)
             .padding(.horizontal, 10)
             .frame(maxWidth: getRect().width * 3 / 5, alignment: .leading)
@@ -43,7 +43,7 @@ struct TabButtonView: View {
                 //hero Animation
                 ZStack {
                     if selectedTab == title {
-                        Color.element.opacity(colorScheme == .light ? 1 : 0.5)
+                        Color.defaultElement.opacity(colorScheme == .light ? 1 : 0.5)
                             .opacity(selectedTab == title ? 1 : 0)
                             .clipShape(CustomCorners(corner: [.topRight, .bottomRight], radius: 13))
                             //Магия )))

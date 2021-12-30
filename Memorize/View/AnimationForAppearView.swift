@@ -10,13 +10,12 @@ import SwiftUI
 struct AnimationForAppearView: View {
     @State private var expand = true
     @ObservedObject var theme = ThemeViewModel.shared
-    var color: Color
     
     var body: some View {
         themeData[theme.current].color
             .ignoresSafeArea()
         Circle()
-            .fill(color)
+            .fill(Color.defaultElement)
             .scaleEffect(expand ? 0 : 3)
             .edgesIgnoringSafeArea(.all)
             .animation(.easeIn(duration: 1))
@@ -29,6 +28,6 @@ struct AnimationForAppearView: View {
 
 struct AnimationForAppearView_Previews: PreviewProvider {
     static var previews: some View {
-        AnimationForAppearView(color: .red)
+        AnimationForAppearView()
     }
 }

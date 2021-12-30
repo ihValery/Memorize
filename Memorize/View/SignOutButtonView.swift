@@ -34,7 +34,7 @@ struct SignOutButtonView: View {
                 .opacity(0.3)
                 .padding(.bottom)
         }
-        .foregroundColor(.colorTextNewGame)
+        .foregroundColor(.defaultText)
         
         .fullScreenCover(isPresented: $session.isSignIn) {
             SignMainView(session: session)

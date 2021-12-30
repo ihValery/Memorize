@@ -26,7 +26,7 @@ class SessionFirebase: ObservableObject {
             } else {
                 self?.user = nil
                //перед сборкой true
-                self?.showOnboard = true
+                self?.showOnboard = false
             }
         }
     }

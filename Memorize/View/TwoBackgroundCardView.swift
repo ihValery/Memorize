@@ -11,7 +11,7 @@ struct TwoBackgroundCardView: View {
     @Binding var showMenu: Bool
     
     var body: some View {
-        Color.element
+        Color.defaultElement
             .opacity(0.6)
             .cornerRadius(showMenu ? 15 : 0)
             .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
@@ -19,7 +19,7 @@ struct TwoBackgroundCardView: View {
             .padding(.vertical, 30)
             .blur(radius: 1)
         
-        Color.element
+        Color.defaultElement
             .opacity(0.4)
             .cornerRadius(showMenu ? 15 : 0)
             .offset(x: showMenu ? (withBangs ? -50 : -35) : 0)

@@ -20,16 +20,16 @@ struct BurgerButtonView: View {
             //animate Drawing Button
             VStack(spacing: 5) {
                 Capsule()
-                    .fill(showMenu ? Color.colorTextNewGame : themeData[theme.current].color)
+                    .fill(showMenu ? Color.defaultText : themeData[theme.current].color)
                     .frame(width: 30, height: 3)
                     .rotationEffect(.init(degrees: showMenu ? -45 : 0))
                     .offset(x: showMenu ? 2.5 : 0, y: showMenu ? 9 : 0)
                 VStack(spacing: 5) {
                     Capsule()
-                        .fill(showMenu ? Color.colorTextNewGame : themeData[theme.current].color)
+                        .fill(showMenu ? Color.defaultText : themeData[theme.current].color)
                         .frame(width: 30, height: 3)
                     Capsule()
-                        .fill(showMenu ? Color.colorTextNewGame : themeData[theme.current].color)
+                        .fill(showMenu ? Color.defaultText : themeData[theme.current].color)
                         .frame(width: 30, height: 3)
                         .offset(y: showMenu ? -8 : 0)
                 }
