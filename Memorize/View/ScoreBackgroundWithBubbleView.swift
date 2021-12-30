@@ -15,7 +15,7 @@ struct ScoreBackgroundWithBubbleView: View {
             RectangleReverseAngle(startY: withBangs ? 165 : 125)
                 .fill(Color.white)
             RectangleReverseAngle(startY: withBangs ? 165 : 125)
-                .fill(LinearGradient(gradient: Gradient(colors: [themeData[theme.current].color.opacity(0.6), .purpleTheme]), startPoint: .topTrailing, endPoint: .bottomLeading))
+                .fill(LinearGradient(gradient: Gradient(colors: [themeData[theme.current].color.opacity(0.6), .sideMenuStart]), startPoint: .topTrailing, endPoint: .bottomLeading))
             BubbleBlowerView(color: themeData[theme.current].color, positionY: 250, frameCircle: 50...200)
                 .clipShape(RectangleReverseAngle(startY: withBangs ? 165 : 125))
         }

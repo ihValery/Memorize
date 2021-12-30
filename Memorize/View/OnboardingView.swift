@@ -13,7 +13,7 @@ struct OnboardingView: View {
     var body: some View {
         TabView {
             ForEach(cardsOnboard[0..<cardsOnboard.count]) { item in
-                CardOnboardView(cardOnboard: item)
+                CardOnboardingView(cardOnboard: item)
             }
         }
         .tabViewStyle(PageTabViewStyle())

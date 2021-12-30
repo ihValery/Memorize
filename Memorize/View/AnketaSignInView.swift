@@ -70,7 +70,7 @@ struct AnketaSignInView: View {
         }
         .textFieldStyle(DefaultTextFieldStyle())
         .font(.title2)
-        .foregroundColor(.orangeGradientEnd)
+        .foregroundColor(.signEnd)
         .padding()
     }
 }

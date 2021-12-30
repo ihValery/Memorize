@@ -90,7 +90,7 @@ struct AnketaSignUpView: View {
             }
             .textFieldStyle(DefaultTextFieldStyle())
             .font(.title2)
-            .foregroundColor(.orangeGradientEnd)
+            .foregroundColor(.signEnd)
             .padding()
             .offset(y: 40)
             

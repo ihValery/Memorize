@@ -17,12 +17,12 @@ struct FrameAvatarView: View {
             .frame(maxWidth: 200, maxHeight: 200)
             .background(Color.white
                             .overlay(Text("Выберите\n фото")
-                                        .foregroundColor(.orangeGradientEnd)
+                                        .foregroundColor(.signEnd)
                                         .font(.title2)
                                         .opacity(0.7)))
             .clipShape(Circle())
             .overlay(Circle()
-                        .stroke(Color.orangeGradientEnd, lineWidth: 2)
+                        .stroke(Color.signEnd, lineWidth: 2)
                         .opacity(0.7))
             .multilineTextAlignment(.center)
     }

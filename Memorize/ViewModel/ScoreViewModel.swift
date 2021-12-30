@@ -32,8 +32,6 @@ class ScoreViewModel: ObservableObject, Identifiable {
     
     func dateToString() -> String {
         let timeFormatter = DateFormatter()
-//        timeFormatter.timeStyle = .short
-//        timeFormatter.dateStyle = .short
         timeFormatter.dateFormat = "dd/MM/y  HH:mm"
         return timeFormatter.string(from: score.date)
     }

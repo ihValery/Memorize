@@ -65,12 +65,13 @@
 		80A2C1E72655B97B0023E28E /* ThemeMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2C1E62655B97B0023E28E /* ThemeMainView.swift */; };
 		80A434B02666DC0B004F0343 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A434AF2666DC0B004F0343 /* RulesView.swift */; };
 		80A4F671264392C100A0BCA2 /* CardOnboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F670264392C100A0BCA2 /* CardOnboard.swift */; };
-		80A4F678264394FD00A0BCA2 /* CardOnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F677264394FD00A0BCA2 /* CardOnboardView.swift */; };
+		80A4F678264394FD00A0BCA2 /* CardOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4F677264394FD00A0BCA2 /* CardOnboardingView.swift */; };
 		80BE0662262D8B3F00EAF9C4 /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0661262D8B3F00EAF9C4 /* GameBoard.swift */; };
 		80BE0667262D92C900EAF9C4 /* GameBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0666262D92C900EAF9C4 /* GameBoardViewModel.swift */; };
 		80C0419D2645DC6800501EB8 /* GameBoardScorePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419C2645DC6800501EB8 /* GameBoardScorePanelView.swift */; };
 		80C0419F2645DD4800501EB8 /* GameBoardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419E2645DD4800501EB8 /* GameBoardCardView.swift */; };
 		80CADDF8268AAA590085C11E /* ScoreBackgroundWithBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CADDF7268AAA580085C11E /* ScoreBackgroundWithBubbleView.swift */; };
+		80CD761B277D8B030054C33E /* TrueScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD761A277D8B030054C33E /* TrueScoreViewModel.swift */; };
 		80E4AE08268A048600E03BA5 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 80E4AE07268A048600E03BA5 /* FirebaseFirestoreSwift-Beta */; };
 		80E4AE0C268A13A900E03BA5 /* ResultsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4AE0A268A13A900E03BA5 /* ResultsTableViewModel.swift */; };
 		80E4AE0D268A13A900E03BA5 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4AE0B268A13A900E03BA5 /* ScoreViewModel.swift */; };
@@ -146,12 +147,13 @@
 		80A2C1E62655B97B0023E28E /* ThemeMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeMainView.swift; sourceTree = "<group>"; };
 		80A434AF2666DC0B004F0343 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		80A4F670264392C100A0BCA2 /* CardOnboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnboard.swift; sourceTree = "<group>"; };
-		80A4F677264394FD00A0BCA2 /* CardOnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnboardView.swift; sourceTree = "<group>"; };
+		80A4F677264394FD00A0BCA2 /* CardOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnboardingView.swift; sourceTree = "<group>"; };
 		80BE0661262D8B3F00EAF9C4 /* GameBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		80BE0666262D92C900EAF9C4 /* GameBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModel.swift; sourceTree = "<group>"; };
 		80C0419C2645DC6800501EB8 /* GameBoardScorePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardScorePanelView.swift; sourceTree = "<group>"; };
 		80C0419E2645DD4800501EB8 /* GameBoardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardCardView.swift; sourceTree = "<group>"; };
 		80CADDF7268AAA580085C11E /* ScoreBackgroundWithBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBackgroundWithBubbleView.swift; sourceTree = "<group>"; };
+		80CD761A277D8B030054C33E /* TrueScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueScoreViewModel.swift; sourceTree = "<group>"; };
 		80E4AE0A268A13A900E03BA5 /* ResultsTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewModel.swift; sourceTree = "<group>"; };
 		80E4AE0B268A13A900E03BA5 /* ScoreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
 		80E4AE0F268A13D500E03BA5 /* ScoreRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreRepository.swift; sourceTree = "<group>"; };
@@ -249,10 +251,7 @@
 				80CD7616277AB78B0054C33E /* ViewModel */,
 				8062966B2653C4290091469E /* Extensions */,
 				80CADDF6268A6C190085C11E /* Helper */,
-				80896222262C6AFE001D9C7A /* Assets.xcassets */,
-				80896227262C6AFE001D9C7A /* Info.plist */,
-				806C1A7A266FCDA400109432 /* GoogleService-Info.plist */,
-				80896224262C6AFE001D9C7A /* Preview Content */,
+				80CD761C277DE6430054C33E /* Resources */,
 			);
 			path = Memorize;
 			sourceTree = "<group>";
@@ -331,7 +330,7 @@
 				805E07762654283400DDD8FB /* ButtonRemoveAlarmView.swift */,
 				80A434AF2666DC0B004F0343 /* RulesView.swift */,
 				806EC7C12643C9BF00B93D90 /* OnboardingView.swift */,
-				80A4F677264394FD00A0BCA2 /* CardOnboardView.swift */,
+				80A4F677264394FD00A0BCA2 /* CardOnboardingView.swift */,
 				80A2C1E62655B97B0023E28E /* ThemeMainView.swift */,
 				809F4D86265544C400ED0598 /* CardThemeView.swift */,
 				809F4D842655414C00ED0598 /* IconForThemeView.swift */,
@@ -350,6 +349,7 @@
 				809BFA8D2657088000C37C48 /* ThemeViewModel.swift */,
 				80E4AE0A268A13A900E03BA5 /* ResultsTableViewModel.swift */,
 				80E4AE0B268A13A900E03BA5 /* ScoreViewModel.swift */,
+				80CD761A277D8B030054C33E /* TrueScoreViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -361,6 +361,17 @@
 				801796442643B2D10061B4E0 /* CardOnboardData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		80CD761C277DE6430054C33E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				80896222262C6AFE001D9C7A /* Assets.xcassets */,
+				80896227262C6AFE001D9C7A /* Info.plist */,
+				806C1A7A266FCDA400109432 /* GoogleService-Info.plist */,
+				80896224262C6AFE001D9C7A /* Preview Content */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		80E4AE06268A048600E03BA5 /* Frameworks */ = {
@@ -492,7 +503,7 @@
 				809BFA912657088100C37C48 /* ThemeData.swift in Sources */,
 				803D1EA4265F3709009EA74E /* AnimationForAppearView.swift in Sources */,
 				807B3175265A97C200F63953 /* GradientTrophyForVictoryView.swift in Sources */,
-				80A4F678264394FD00A0BCA2 /* CardOnboardView.swift in Sources */,
+				80A4F678264394FD00A0BCA2 /* CardOnboardingView.swift in Sources */,
 				809F4D87265544C400ED0598 /* CardThemeView.swift in Sources */,
 				806296762653F98A0091469E /* AnyTransitionExtension.swift in Sources */,
 				80ECBFA8266581F300684F6C /* AnketaSignInView.swift in Sources */,
@@ -503,6 +514,7 @@
 				80C0419F2645DD4800501EB8 /* GameBoardCardView.swift in Sources */,
 				80A434B02666DC0B004F0343 /* RulesView.swift in Sources */,
 				801128DF2642B41400C38272 /* Pie.swift in Sources */,
+				80CD761B277D8B030054C33E /* TrueScoreViewModel.swift in Sources */,
 				80ECBFA6266581F300684F6C /* SignSelectButtonView.swift in Sources */,
 				8088FB87267431F400A4B1B7 /* HeaderScoreView.swift in Sources */,
 				8088FB892674322F00A4B1B7 /* CardScoreView.swift in Sources */,
@@ -658,10 +670,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 420.104.436;
-				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Memorize/Info.plist;
+				INFOPLIST_FILE = Memorize/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -682,10 +694,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 420.104.436;
-				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 879U287R5Q;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Memorize/Info.plist;
+				INFOPLIST_FILE = Memorize/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
