@@ -24,7 +24,7 @@ struct ProFileView: View {
                     .opacity(0.8)
             }
         }
-        .foregroundColor(.colorTextNewGame)
+        .foregroundColor(.defaultText)
     }
 }
 

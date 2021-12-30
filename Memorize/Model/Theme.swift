@@ -29,16 +29,16 @@ struct Theme: Identifiable {
     var collection: [String]
     
     enum Name {
-        static let cartoon = "Мультяшки"
-        static let muzzle = "Мордочки"
-        static let zoo = "Зоопарк"
-        static let halloween = "Хэллоуин"
+        static let cartoon    = "Мультяшки"
+        static let muzzle     = "Мордочки"
+        static let zoo        = "Зоопарк"
+        static let halloween  = "Хэллоуин"
         static let profession = "Профессии"
-        static let food = "Еда"
-        static let smile = "Смайлики"
-        static let sport = "Спорт"
-        static let random = "Рандом"
-        static let flag = "Флаги"
-        static let symbol = "Символы"
+        static let food       = "Еда"
+        static let smile      = "Смайлики"
+        static let sport      = "Спорт"
+        static let random     = "Рандом"
+        static let flag       = "Флаги"
+        static let symbol     = "Символы"
     }
 }

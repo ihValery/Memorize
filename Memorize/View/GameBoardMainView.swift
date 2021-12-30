@@ -14,7 +14,7 @@ struct GameBoardMainView: View {
     
     var body: some View {
         ZStack {
-           AnimationForAppearView(color: .element)
+           AnimationForAppearView()
             
             VStack {
                 GameBoardScorePanelView(viewModelGame: viewModelGame)
