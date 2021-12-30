@@ -16,7 +16,7 @@ struct SignMainView: View {
    
    var body: some View {
       ZStack {
-         LinearGradient(gradient: Gradient(colors: [.orangeGradientStart, .orangeGradientEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
+         LinearGradient(gradient: Gradient(colors: [.signStart, .signEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
             .ignoresSafeArea()
          
          BubbleBlowerView(color: Color.red, positionY: getRect().height, frameCircle: 120...420)
@@ -37,7 +37,7 @@ struct SignMainView: View {
                      Button(self.signViewModel.isValidSignUp ? "Зарегистрироваться" : "Заполните все поля") {
                         session.signUp(email: signViewModel.email, password: signViewModel.password, name: signViewModel.username, photo: signViewModel.image)
                      }
-                     .buttonStyle(SignButtonStyle(colorBG: .white, colorText: signViewModel.isValidSignUp ? .orangeGradientEnd : .gray))
+                     .buttonStyle(SignButtonStyle(colorBG: .white, colorText: signViewModel.isValidSignUp ? .signEnd : .gray))
                      .offset(y: signInSelected ? 190 : gr.size.height + 50)
                      .disabled(!signViewModel.isValidSignUp)
                   }
@@ -59,7 +59,7 @@ struct SignMainView: View {
                      session.signIn(email: signViewModel.email, password: signViewModel.passwordSignIn)
                   }
                   .buttonStyle(SignButtonStyle(colorBG: .white,
-                                               colorText: signViewModel.isValidSignIn ? .orangeGradientEnd : .gray))
+                                               colorText: signViewModel.isValidSignIn ? .signEnd : .gray))
                   .offset(y: !signInSelected ? 0 : gr.size.height + 150)
                   .disabled(!signViewModel.isValidSignIn)
                   

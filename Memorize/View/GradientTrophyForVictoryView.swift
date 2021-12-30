@@ -12,7 +12,7 @@ struct GradientTrophyForVictoryView: View {
     @ObservedObject var theme = ThemeViewModel.shared
     
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [.purpleTheme, themeData[self.theme.current].color]),
+        LinearGradient(gradient: Gradient(colors: [.sideMenuStart, themeData[self.theme.current].color]),
                                  startPoint: .topLeading, endPoint: .bottomTrailing)
             .frame(width: 300, height: 300)
             .mask(MaskImageView())

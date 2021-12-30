@@ -8,52 +8,38 @@
 import SwiftUI
 
 extension Color {
-   static let element = Color("element")
-   static let colorText = Color("colorText")
-   //Способ без Assets
-   static var colorTextNewGame: Color {
-      Color(UIColor { $0.userInterfaceStyle == .dark ? .black : .white } )
-   }
+    static let element = Color("element")
+    static let colorText = Color("colorText")
+    //Способ без Assets
+    static var colorTextNewGame: Color {
+        Color(UIColor { $0.userInterfaceStyle == .dark ? .black : .white } )
+    }
 }
 
-//Цвет темы
 extension Color {
-   static let blueTheme = Color("blueTheme")
-   static let grayTheme = Color("grayTheme")
-   static let greenTheme = Color("greenTheme")
-   static let indigoTheme = Color("indigoTheme")
-   static let orangeTheme = Color("orangeTheme")
-   static let pinkTheme = Color("pinkTheme")
-   static let redTheme = Color("redTheme")
-   static let tealTheme = Color("tealTheme")
-   static let yellowTheme = Color("yellowTheme")
-}
-
-//Цвет бокового меню
-extension Color {
-   static let purpleTheme = Color("purpleTheme")
-   static let purpleGradientStart = Color("purpleGradientStart")
-   static let purpleGradientEnd = Color("purpleGradientEnd")
-}
-
-//Цвет Sign
-extension Color {
-   static let orangeGradientEnd = Color("orangeGradientEnd")
-   static let orangeGradientStart = Color("orangeGradientStart")
-}
-
-//Цвет onboarding
-extension Color {
-   static let colorAnimalEnd = Color("ColorAnimalEnd")
-   static let colorAnimalStart = Color("ColorAnimalStart")
-   static let colorChildEnd = Color("ColorChildEnd")
-   static let colorChildStart = Color("ColorChildStart")
-   static let colorFlagEnd = Color("ColorFlagEnd")
-   static let colorFlagStart = Color("ColorFlagStart")
-   static let colorHalloweenEnd = Color("ColorHalloweenEnd")
-   static let colorHalloweenStart = Color("ColorHalloweenStart")
-   static let colorSportEnd = Color("ColorSportEnd")
-   static let colorSportStart = Color("ColorSportStart")
-   static let colorZooEnd = Color("ColorZooEnd")
-   static let colorZooStart = Color("ColorZooStart")
+    static let themeCartoons = Color("themeCartoons")
+    static let blueTheme = Color("blueTheme")
+    static let grayTheme = Color("grayTheme")
+    static let greenTheme = Color("greenTheme")
+    static let indigoTheme = Color("indigoTheme")
+    static let orangeTheme = Color("orangeTheme")
+    static let pinkTheme = Color("pinkTheme")
+    static let redTheme = Color("redTheme")
+    static let tealTheme = Color("tealTheme")
+    
+    static let sideMenuStart = Color("sideMenuStart")
+    
+    static let signStart = Color("signStart")
+    static let signEnd = Color("signEnd")
+    
+    static let onboardAnimalStart = Color("onboardAnimalStart")
+    static let onboardAnimalEnd = Color("onboardAnimalEnd")
+    static let onboardChildStart = Color("onboardChildStart")
+    static let onboardChildEnd = Color("onboardChildEnd")
+    static let onboardFlagStart = Color("onboardFlagStart")
+    static let onboardFlagEnd = Color("onboardFlagEnd")
+    static let onboardHalloweenStart = Color("onboardHalloweenStart")
+    static let onboardHalloweenEnd = Color("onboardHalloweenEnd")
+    static let onboardSportStart = Color("onboardSportStart")
+    static let onboardSportEnd = Color("onboardSportEnd")
 }

@@ -30,6 +30,6 @@ struct SignStyleButton_Previews: PreviewProvider {
             Text("Example")
         })
         .preferredColorScheme(.dark)
-        .buttonStyle(SignButtonStyle(colorBG: .white, colorText: .orangeGradientEnd))
+        .buttonStyle(SignButtonStyle(colorBG: .white, colorText: .signEnd))
     }
 }

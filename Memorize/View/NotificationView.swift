@@ -21,7 +21,7 @@ struct NotificationView: View {
         ZStack {
             LinearGradient(gradient:
                             Gradient(colors: [themeData[self.theme.current].color,
-                                              .purpleTheme]),
+                                              .sideMenuStart]),
                            startPoint: UnitPoint(x: 0.9, y: 0.8), endPoint: UnitPoint(x: 0.1, y: 0.9))
                 .opacity(0.6)
                 .ignoresSafeArea()

@@ -40,7 +40,7 @@ struct ThemeMainView: View {
                 .padding(.top)
             }
         }
-        .background(LinearGradient(gradient: Gradient(colors:[themeData[theme.current].color.opacity(0.4), .purpleTheme]),
+        .background(LinearGradient(gradient: Gradient(colors:[themeData[theme.current].color.opacity(0.4), .sideMenuStart]),
                                    startPoint: .topTrailing, endPoint: .bottomLeading)
                         .ignoresSafeArea())
     }
