@@ -59,6 +59,7 @@ struct CardRuleView: View {
             .frame(height: 170)
             .overlay(
                 Text(title)
+                    .shadow(color: .ruleShadow, radius: 20, x: 0, y: 0)
                     .foregroundColor(.defaultText)
                     .padding()
             )

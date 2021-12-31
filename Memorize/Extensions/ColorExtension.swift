@@ -12,6 +12,7 @@ extension Color {
     static let defaultText           = Color("defaultText")
     
     static let ruleTop               = Color("ruleTop")
+    static let ruleShadow            = Color("ruleShadow")
     
     static let themeCartoon          = Color("themeCartoon")
     static let themeMuzzle           = Color("themeMuzzle")
