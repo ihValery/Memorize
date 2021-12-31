@@ -27,9 +27,7 @@ struct GameBoardCardView: View {
                 substrateForAnimation()
                 
                 Text(card.content)
-                    .font(.si)
-                
-                //                    .font(.system(size: fontSize(for: size)))
+                    .font(.sizeEmoji(for: size))
                     .scaleEffect(card.isMatched ? 1.1 : 1)
                     .animation(card.isMatched ? .linear.repeatForever() : .default)
             }

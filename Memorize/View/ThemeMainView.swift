@@ -19,7 +19,7 @@ struct ThemeMainView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.black.opacity(0.4))
                     .padding(.leading, 60)
-                    .padding(.top, withBangs ? -5 : -1)
+                    .padding(.top, isWithBangs ? -5 : -1)
                     .padding(.bottom, -1)
                 Spacer()
             }
