@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-///Размер текста зависящий от ширины или высоты помноженное на 0.7
-func fontSize(for size: CGSize) -> CGFloat {
-    min(size.height, size.width) * 0.7
+extension Font {
+    func fontSize(for size: CGSize) -> CGFloat {
+        min(size.height, size.width) * 0.7
+    }
 }
-

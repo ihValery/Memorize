@@ -46,7 +46,7 @@
 		807B3175265A97C200F63953 /* GradientTrophyForVictoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B3174265A97C200F63953 /* GradientTrophyForVictoryView.swift */; };
 		807B31A2265BD16600F63953 /* SignOutButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B31A1265BD16600F63953 /* SignOutButtonView.swift */; };
 		807B31A4265BE5D700F63953 /* TwoBackgroundCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807B31A3265BE5D700F63953 /* TwoBackgroundCardView.swift */; };
-		807C4BA8266B8F7D00C3DEA5 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */; };
+		807C4BA8266B8F7D00C3DEA5 /* MatteEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807C4BA7266B8F7D00C3DEA5 /* MatteEffectView.swift */; };
 		808699C7264695D700DAD8BE /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808699C6264695D700DAD8BE /* Cardify.swift */; };
 		8088FB8226742AE500A4B1B7 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088FB8126742AE500A4B1B7 /* Score.swift */; };
 		8088FB852674317900A4B1B7 /* RectangleReverseAngle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8088FB842674317900A4B1B7 /* RectangleReverseAngle.swift */; };
@@ -70,6 +70,7 @@
 		80BE0667262D92C900EAF9C4 /* GameBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BE0666262D92C900EAF9C4 /* GameBoardViewModel.swift */; };
 		80C0419D2645DC6800501EB8 /* GameBoardScorePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419C2645DC6800501EB8 /* GameBoardScorePanelView.swift */; };
 		80C0419F2645DD4800501EB8 /* GameBoardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0419E2645DD4800501EB8 /* GameBoardCardView.swift */; };
+		80C832FA277EAA11000C8B8E /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C832F9277EAA11000C8B8E /* Rule.swift */; };
 		80CADDF8268AAA590085C11E /* ScoreBackgroundWithBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CADDF7268AAA580085C11E /* ScoreBackgroundWithBubbleView.swift */; };
 		80CD761B277D8B030054C33E /* TrueScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD761A277D8B030054C33E /* TrueScoreViewModel.swift */; };
 		80E4AE08268A048600E03BA5 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 80E4AE07268A048600E03BA5 /* FirebaseFirestoreSwift-Beta */; };
@@ -126,7 +127,7 @@
 		807B3174265A97C200F63953 /* GradientTrophyForVictoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTrophyForVictoryView.swift; sourceTree = "<group>"; };
 		807B31A1265BD16600F63953 /* SignOutButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutButtonView.swift; sourceTree = "<group>"; };
 		807B31A3265BE5D700F63953 /* TwoBackgroundCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoBackgroundCardView.swift; sourceTree = "<group>"; };
-		807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		807C4BA7266B8F7D00C3DEA5 /* MatteEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatteEffectView.swift; sourceTree = "<group>"; };
 		808699C6264695D700DAD8BE /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		8088FB8126742AE500A4B1B7 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		8088FB842674317900A4B1B7 /* RectangleReverseAngle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleReverseAngle.swift; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 		80BE0666262D92C900EAF9C4 /* GameBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardViewModel.swift; sourceTree = "<group>"; };
 		80C0419C2645DC6800501EB8 /* GameBoardScorePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardScorePanelView.swift; sourceTree = "<group>"; };
 		80C0419E2645DD4800501EB8 /* GameBoardCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardCardView.swift; sourceTree = "<group>"; };
+		80C832F9277EAA11000C8B8E /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		80CADDF7268AAA580085C11E /* ScoreBackgroundWithBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBackgroundWithBubbleView.swift; sourceTree = "<group>"; };
 		80CD761A277D8B030054C33E /* TrueScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueScoreViewModel.swift; sourceTree = "<group>"; };
 		80E4AE0A268A13A900E03BA5 /* ResultsTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewModel.swift; sourceTree = "<group>"; };
@@ -272,7 +274,6 @@
 				806C1A7C266FCF2800109432 /* ImagePicker.swift */,
 				80ECBFA3266581F300684F6C /* SignButtonStyle.swift */,
 				800DB7B6263D6C7400A4A2C1 /* FontSize.swift */,
-				807C4BA7266B8F7D00C3DEA5 /* BlurView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -286,6 +287,7 @@
 				80ECBF96266580A200684F6C /* PasswordCheck.swift */,
 				806C1A6C266FC6D800109432 /* User.swift */,
 				8088FB8126742AE500A4B1B7 /* Score.swift */,
+				80C832F9277EAA11000C8B8E /* Rule.swift */,
 				80A4F670264392C100A0BCA2 /* CardOnboard.swift */,
 				809BFA8C2657088000C37C48 /* Theme.swift */,
 				806EAE5C2701E592000B913B /* IconForTheme.swift */,
@@ -329,6 +331,7 @@
 				8062966E2653D08F0091469E /* ButtonSetAlarmView.swift */,
 				805E07762654283400DDD8FB /* ButtonRemoveAlarmView.swift */,
 				80A434AF2666DC0B004F0343 /* RulesView.swift */,
+				807C4BA7266B8F7D00C3DEA5 /* MatteEffectView.swift */,
 				806EC7C12643C9BF00B93D90 /* OnboardingView.swift */,
 				80A4F677264394FD00A0BCA2 /* CardOnboardingView.swift */,
 				80A2C1E62655B97B0023E28E /* ThemeMainView.swift */,
@@ -471,6 +474,7 @@
 				808699C7264695D700DAD8BE /* Cardify.swift in Sources */,
 				806296722653D08F0091469E /* ButtonSetAlarmView.swift in Sources */,
 				80E4AE10268A13D500E03BA5 /* ScoreRepository.swift in Sources */,
+				80C832FA277EAA11000C8B8E /* Rule.swift in Sources */,
 				809BFA902657088100C37C48 /* ThemeViewModel.swift in Sources */,
 				80ECBFAA266581F300684F6C /* AnketaSignUpView.swift in Sources */,
 				806C1A70266FCC8200109432 /* SessionFirebase.swift in Sources */,
@@ -499,7 +503,7 @@
 				80E4AE12268A144000E03BA5 /* BackgroundCardScoreView.swift in Sources */,
 				8042779626592E0B00F3E217 /* VictoryView.swift in Sources */,
 				801128DD2642B3A600C38272 /* Star.swift in Sources */,
-				807C4BA8266B8F7D00C3DEA5 /* BlurView.swift in Sources */,
+				807C4BA8266B8F7D00C3DEA5 /* MatteEffectView.swift in Sources */,
 				809BFA912657088100C37C48 /* ThemeData.swift in Sources */,
 				803D1EA4265F3709009EA74E /* AnimationForAppearView.swift in Sources */,
 				807B3175265A97C200F63953 /* GradientTrophyForVictoryView.swift in Sources */,
