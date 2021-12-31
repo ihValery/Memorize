@@ -26,13 +26,13 @@ struct CardScoreView: View {
             ZStack {
                 HStack {
                     Text(scoreViewModel.score.theme)
-                        .font(.system(size: withBangs ? 60 : 50))
+                        .font(.system(size: isWithBangs ? 60 : 50))
                     
                     VStack(alignment: .leading) {
                         Text("Результат ")
-                            .font(withBangs ? .title : .title2)
+                            .font(isWithBangs ? .title : .title2)
                         Text(scoreViewModel.dateToString())
-                            .font(withBangs ? .subheadline : .footnote).opacity(0.6)
+                            .font(isWithBangs ? .subheadline : .footnote).opacity(0.6)
                     }
                     .opacity(0.6)
                     Spacer()
@@ -41,7 +41,7 @@ struct CardScoreView: View {
                 HStack {
                     Spacer()
                     Text(String(scoreViewModel.score.maxScore))
-                        .font(.system(size: withBangs ? 50 : 40).bold())
+                        .font(.system(size: isWithBangs ? 50 : 40).bold())
                         .opacity(0.7)
                 }
             }

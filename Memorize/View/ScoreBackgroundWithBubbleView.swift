@@ -12,12 +12,12 @@ struct ScoreBackgroundWithBubbleView: View {
     
     var body: some View {
         ZStack {
-            RectangleReverseAngle(startY: withBangs ? 165 : 125)
+            RectangleReverseAngle(startY: isWithBangs ? 165 : 125)
                 .fill(Color.white)
-            RectangleReverseAngle(startY: withBangs ? 165 : 125)
+            RectangleReverseAngle(startY: isWithBangs ? 165 : 125)
                 .fill(LinearGradient(gradient: Gradient(colors: [themeData[theme.current].color.opacity(0.6), .sideMenuStart]), startPoint: .topTrailing, endPoint: .bottomLeading))
             BubbleBlowerView(color: themeData[theme.current].color, positionY: 250, frameCircle: 50...200)
-                .clipShape(RectangleReverseAngle(startY: withBangs ? 165 : 125))
+                .clipShape(RectangleReverseAngle(startY: isWithBangs ? 165 : 125))
         }
     }
 }

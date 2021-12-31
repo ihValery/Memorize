@@ -17,17 +17,17 @@ struct GameBoardCardView: View {
     
     var body: some View {
         GeometryReader { geometry in
-                bodyForCard(for: geometry.size)
+            bodyForCard(for: geometry.size)
         }
     }
     
     @ViewBuilder private func bodyForCard(for size: CGSize) -> some View {
-        if card.isFaceUp || !card.isMatched {       
-         ZStack {
+        if card.isFaceUp || !card.isMatched {
+            ZStack {
                 substrateForAnimation()
                 
                 Text(card.content)
-                    .font(.system(size: fontSize(for: size)))
+                    .font(.sizeEmoji(for: size))
                     .scaleEffect(card.isMatched ? 1.1 : 1)
                     .animation(card.isMatched ? .linear.repeatForever() : .default)
             }

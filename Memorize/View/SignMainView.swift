@@ -27,7 +27,7 @@ struct SignMainView: View {
             SignTopPanelView(signInSelected: $signInSelected)
             
             GeometryReader { gr in
-               ScrollView(withBangs ? .init() : .vertical, showsIndicators: false) {
+               ScrollView(isWithBangs ? .init() : .vertical, showsIndicators: false) {
                   VStack {
                      BackgroundCardSignView(session: session, height: 365)
                         .overlay(AnketaSignUpView().padding())
@@ -41,7 +41,7 @@ struct SignMainView: View {
                      .offset(y: signInSelected ? 190 : gr.size.height + 50)
                      .disabled(!signViewModel.isValidSignUp)
                   }
-                  .padding(.bottom, withBangs ? 0 : 300)
+                  .padding(.bottom, isWithBangs ? 0 : 300)
                }
                
                VStack {

@@ -42,7 +42,7 @@ struct CardThemeView: View {
                .bold()
                .fixedSize()
                .lineLimit(1)
-               .padding(.top, withBangs ? 15 : 0)
+               .padding(.top, isWithBangs ? 15 : 0)
                .foregroundColor(activeTheme() ? .white : .black.opacity(0.1))
          }
          .padding(.trailing, 40)
@@ -68,9 +68,9 @@ struct CardThemeView: View {
       guard !activeTheme() else { return 0 }
       
       if theme.id.isMultiple(of: 2) {
-         return withBangs ? -32 : -22
+         return isWithBangs ? -32 : -22
       } else {
-         return withBangs ? 32 : 22
+         return isWithBangs ? 32 : 22
       }
    }
    

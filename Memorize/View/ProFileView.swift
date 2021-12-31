@@ -12,7 +12,7 @@ struct ProFileView: View {
     
     var body: some View {  
         VStack(alignment: .leading) {
-            ImageWithURLView(session.user?.avatarURL ?? "", size: withBangs ? 180 : 160)
+            ImageWithURLView(session.user?.avatarURL ?? "", size: isWithBangs ? 180 : 160)
                 .padding(.top, 30)
             
             VStack(alignment: .leading) {
