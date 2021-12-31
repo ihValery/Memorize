@@ -9,30 +9,44 @@ import SwiftUI
 
 struct RulesView: View {
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            ZStack {
-                GeometryReader { gr in
-                    Image(Rule.background)
-                        .resizable()
-                        .offset(y: -gr.frame(in: .global).origin.y / 1.3 - 160)
-                }
-                
-                VStack(spacing: 30) {
-                    CardRuleView(title: Rule.one)
-                    CardRuleView(title: Rule.two)
-                    CardRuleView(title: Rule.three)
-                    CardRuleView(title: Rule.four)
-                    CardRuleView(title: Rule.five)
-                    CardRuleView(title: Rule.six)
-                }
-                .font(.title2)
-                .multilineTextAlignment(.center)
-                .padding()
-                .padding(.top)
-                
+        VStack {
+            HStack {
+                Text("Правила")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black.opacity(0.4))
+                    .padding(.leading, 60)
+                    .padding(.top, isWithBangs ? -5 : -1)
+                    .padding(.bottom, -1)
+                Spacer()
             }
-            .ignoresSafeArea()
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                ZStack {
+                    GeometryReader { gr in
+                        Image(Rule.background)
+                            .resizable()
+                            .offset(y: -gr.frame(in: .global).origin.y / 1.3 - 160)
+                    }
+                    
+                    VStack(spacing: 30) {
+                        CardRuleView(title: Rule.one).padding(.top, -20)
+                        CardRuleView(title: Rule.two)
+                        CardRuleView(title: Rule.three)
+                        CardRuleView(title: Rule.four)
+                        CardRuleView(title: Rule.five)
+                        CardRuleView(title: Rule.six)
+                    }
+                    .font(.title2)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                    .padding(.top)
+                    
+                }
+                .ignoresSafeArea()
+            }
         }
+        .background(Color.ruleTop.ignoresSafeArea())
     }
 }
 
