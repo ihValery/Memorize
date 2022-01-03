@@ -8,20 +8,26 @@
 import SwiftUI
 
 struct GameBoardMainView: View {
+    
+    //MARK: - Properties
+
     @ObservedObject var viewModelGame: GameBoardViewModel
-    @ObservedObject var theme = ThemeViewModel.shared
     @ObservedObject var scoreListViewModel: ResultsTableViewModel
     
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
+    //MARK: - Body
+
     var body: some View {
         ZStack {
-           AnimationForAppearView()
+            AnimationForAppearView()
             
             VStack {
                 GameBoardScorePanelView(viewModelGame: viewModelGame)
-                    .padding(.bottom, -4) 
+                    .padding(.bottom, -4)
                 
                 if viewModelGame.cards.allSatisfy { $0.isMatched == true } {
-                    VictoryView(viewModelGame: viewModelGame, theme: theme)
+                    VictoryView(viewModelGame: viewModelGame)
                         .onAppear {
                             scoreListViewModel.add(theme: themeData[theme.current].avatar, number: viewModelGame.updateScore())
                         }
@@ -45,6 +51,7 @@ struct GameBoardMainView: View {
             .ignoresSafeArea(.all, edges: .bottom)
         }
     }
+    
 }
 
 struct GameBoardMainView_Previews: PreviewProvider {

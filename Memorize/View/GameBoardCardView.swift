@@ -9,17 +9,24 @@ import SwiftUI
 
 // Структура для одной карты
 struct GameBoardCardView: View {
-    var card: GameBoard<String>.Card
-    @ObservedObject var theme = ThemeViewModel.shared
     
-    //будем анимировать, но перед запуском анимации убедимcя, что синхронизированы с Model
+    //MARK: - Properties
+    
+    var card: GameBoard<String>.Card
+    
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
     @State private var animatedBonusRemaning: Double = 0
+    
+    //MARK: - Body
     
     var body: some View {
         GeometryReader { geometry in
             bodyForCard(for: geometry.size)
         }
     }
+    
+    //MARK: - Private Methods
     
     @ViewBuilder private func bodyForCard(for size: CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {
@@ -33,13 +40,6 @@ struct GameBoardCardView: View {
             }
             .cardify(isFaceUp: card.isFaceUp)
             .transition(.scale)
-        }
-    }
-    
-    private func startBonusTimeAnimation() {
-        animatedBonusRemaning = card.bonusRemaining
-        withAnimation(.linear(duration: card.bonusTimeRemaining)) {
-            animatedBonusRemaning = 0
         }
     }
     
@@ -67,10 +67,17 @@ struct GameBoardCardView: View {
             }
             .padding(5)
             .opacity(0.25)
-            //анимационный пирог пусть появляется сразу
             .transition(.identity)
         }
     }
+    
+    private func startBonusTimeAnimation() {
+        animatedBonusRemaning = card.bonusRemaining
+        withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+            animatedBonusRemaning = 0
+        }
+    }
+    
 }
 
 struct GameBoardCardView_Previews: PreviewProvider {

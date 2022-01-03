@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct BurgerButtonView: View {
+    
+    //MARK: - Properties
+    
     @Binding var showMenu: Bool
-    @ObservedObject var theme = ThemeViewModel.shared
+    
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
+    //MARK: - Body
     
     var body: some View {
         Button {
@@ -17,7 +23,6 @@ struct BurgerButtonView: View {
                 showMenu.toggle()
             }
         } label: {
-            //animate Drawing Button
             VStack(spacing: 5) {
                 Capsule()
                     .fill(showMenu ? Color.defaultText : themeData[theme.current].color)
@@ -40,6 +45,7 @@ struct BurgerButtonView: View {
             .padding(.bottom)
         }
     }
+    
 }
 
 struct BurgerButtonView_Previews: PreviewProvider {

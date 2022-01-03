@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct SignOutButtonView: View {
+    
+    //MARK: - Properties
+    
     @State private var isSignOut = false
+    
     @ObservedObject var session: SessionFirebase
+    
+    //MARK: - Body
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -43,10 +49,11 @@ struct SignOutButtonView: View {
         .alert(isPresented: $isSignOut) {
             Alert(title: Text("Вы уверенны что хотите выйти?"), primaryButton: .cancel(Text("Нет")),
                   secondaryButton: .default(Text("Да")) {
-                    session.signOut()
-                  })
+                session.signOut()
+            })
         }
     }
+    
 }
 
 struct SignOutButtonView_Previews: PreviewProvider {

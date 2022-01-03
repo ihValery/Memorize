@@ -19,7 +19,7 @@ struct GameBoard <CardContent> where CardContent: Equatable {
     private var indexOnlyOneFaceUpCard: Int? {
         //Смотрим на все карты и проверяем если одна единственная карточка
         get {
-           cards.indices.filter { cards[$0].isFaceUp }.onlyOne
+            cards.indices.filter { cards[$0].isFaceUp }.onlyOne
         }
        
         set {

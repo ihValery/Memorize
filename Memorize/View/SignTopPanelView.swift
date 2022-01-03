@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct SignTopPanelView: View {
-    @Binding var signInSelected: Bool
     
+    //MARK: - Properties
+
+    @Binding var signInSelected: Bool
+
+    //MARK: - Body
+
     var body: some View {
         HStack(spacing: 1) {
             SignSelectButtonView(text: "Вход")
@@ -29,6 +34,7 @@ struct SignTopPanelView: View {
                 }
         }
     }
+    
 }
 
 struct SignTopPanelView_Previews: PreviewProvider {

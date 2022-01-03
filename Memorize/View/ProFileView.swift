@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ProFileView: View {
+    
+    //MARK: - Properties
+    
     @ObservedObject var session: SessionFirebase
     
-    var body: some View {  
+    //MARK: - Body
+    
+    var body: some View {
         VStack(alignment: .leading) {
             ImageWithURLView(session.user?.avatarURL ?? "", size: isWithBangs ? 180 : 160)
                 .padding(.top, 30)
@@ -26,11 +31,12 @@ struct ProFileView: View {
         }
         .foregroundColor(.defaultText)
     }
+    
 }
 
 struct ProFile_Previews: PreviewProvider {
     static var previews: some View {
         ProFileView(session: SessionFirebase())
-          .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }

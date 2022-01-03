@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct TwoBackgroundCardView: View {
+    
+    //MARK: - Properties
+    
     @Binding var showMenu: Bool
+    
+    //MARK: - Body
     
     var body: some View {
         Color.defaultElement
@@ -26,4 +31,5 @@ struct TwoBackgroundCardView: View {
             .padding(.vertical, 60)
             .blur(radius: 2)
     }
+    
 }

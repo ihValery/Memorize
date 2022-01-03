@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct AnketaSignUpView: View {
-    @ObservedObject private var signViewModel = SignViewModel.shared
+    
+    //MARK: - Properties
+
     @State private var showPassword = false
     @State private var isShowPhotoLibrary = false
-    
+
+    @ObservedObject private var signViewModel = SignViewModel.shared
+
+    //MARK: - Body
+
     var body: some View {
         ZStack {
             VStack(spacing: 20) {
@@ -101,10 +107,12 @@ struct AnketaSignUpView: View {
                 .clipShape(Circle())
                 .offset(y: -190)
         }
+        
         .sheet(isPresented: $isShowPhotoLibrary) {
             ImagePicker(selectedImage: $signViewModel.image, sourceType: .photoLibrary)
         }
     }
+    
 }
 
 struct AnketaSignUpView_Previews: PreviewProvider {

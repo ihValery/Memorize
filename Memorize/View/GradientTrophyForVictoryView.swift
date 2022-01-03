@@ -8,22 +8,25 @@
 import SwiftUI
 
 struct GradientTrophyForVictoryView: View {
-    @Environment(\.colorScheme) var colorScheme
-    @ObservedObject var theme = ThemeViewModel.shared
     
-    var body: some View {
-        LinearGradient(gradient: Gradient(colors: [.sideMenuStart, themeData[self.theme.current].color]),
-                                 startPoint: .topLeading, endPoint: .bottomTrailing)
-            .frame(width: 300, height: 300)
-            .mask(MaskImageView())
-    }
-}
+    //MARK: - Properties
 
-struct MaskImageView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
+    //MARK: - Body
+
     var body: some View {
-        Text("🏆")
-            .font(.system(size: 250))
+        LinearGradient(gradient: Gradient(colors: [.sideMenuStart, themeData[theme.current].color]),
+                       startPoint: .topLeading, endPoint: .bottomTrailing)
+            .frame(width: 300, height: 300)
+            .mask(
+                Text("🏆")
+                    .font(.system(size: 250))
+            )
     }
+    
 }
 
 struct GradientTrophyForVictoryView_Previews: PreviewProvider {

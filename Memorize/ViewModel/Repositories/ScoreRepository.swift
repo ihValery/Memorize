@@ -81,10 +81,9 @@ final class ScoreRepository: ObservableObject {
         createStore(userId: userId)
             .addSnapshotListener { querySnapshot, error in
                 if let error = error {
-                    fatalError("Ошибка при получении карточек: \(error.localizedDescription)")
+                    print("Ошибка при получении карточек: \(error.localizedDescription)")
+                    return
                 }
-                //Используйте compactMap (_ :) on querySnapshot.documents для перебора всех элементов.
-                //Если querySnapshotесть nil установите пустой массив.
                 self.scores = querySnapshot?.documents.compactMap { document in
                     try? document.data(as: Score.self)
                 } ?? []
