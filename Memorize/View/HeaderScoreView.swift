@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct HeaderScoreView: View {
-    @ObservedObject var session: SessionFirebase
+
+    //MARK: - Properties
+
     @Binding var isAnimation: Bool
     
+    @ObservedObject var session: SessionFirebase
+    
+    //MARK: - Body
+
     var body: some View {
         ZStack {
             HStack {
@@ -44,4 +50,5 @@ struct HeaderScoreView: View {
             }
         }
     }
+    
 }

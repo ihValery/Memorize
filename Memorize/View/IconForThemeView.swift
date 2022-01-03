@@ -8,15 +8,22 @@
 import SwiftUI
 
 struct IconForThemeView: View {
+    
+    //MARK: - Properties
+    
     var icon: IconForTheme
     var theme: Theme
     var activeTheme: Bool
+    
+    //MARK: - Initializer
     
     init(_ icon: IconForTheme, _ theme: Theme, _ activeTheme: Bool) {
         self.icon = icon
         self.theme = theme
         self.activeTheme = activeTheme
     }
+    
+    //MARK: - Body
     
     var body: some View {
         Image(icon.rawValue)
@@ -32,9 +39,10 @@ struct IconForThemeView: View {
                         .trim(from: 0, to: icon.forTrim)
                         .stroke(Color.white, lineWidth: 5)
                 }
-                .rotationEffect(
-                    .degrees(activeTheme ? 270 : -90))
+                    .rotationEffect(
+                        .degrees(activeTheme ? 270 : -90))
             )
             .clipShape(Circle())
     }
+    
 }

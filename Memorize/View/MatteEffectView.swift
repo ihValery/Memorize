@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct MatteEffectView: UIViewRepresentable {
-    @Environment(\.colorScheme) var colorScheme
     
-    var effect: UIVisualEffect {
+    //MARK: - Properties
+
+    private var effect: UIVisualEffect {
         UIBlurEffect(style: colorScheme == .dark ? .systemUltraThinMaterialDark : .systemUltraThinMaterialLight)
     }
-    
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    //MARK: - Public Methods
+
     func makeUIView(context: Context) -> UIVisualEffectView {
         UIVisualEffectView()
     }
+    
     func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
         uiView.effect = effect
     }
+    
 }

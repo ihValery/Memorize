@@ -30,15 +30,16 @@ struct TabPanelView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             GameBoardMainView(viewModelGame: GameBoardViewModel(), scoreListViewModel: ResultsTableViewModel()).tag("Новая игра")
-            ScoreTableMainView(session: session, onAnimation: $onAnimation).tag("Счет")
+            ScoreTableMainView(onAnimation: $onAnimation, session: session).tag("Счет")
+
                 .onAppear {
-                    print("onAppear - Home - \(onAnimation)")
                     onAnimation.toggle()
                 }
+
                 .onDisappear {
-                    print("onDisappear - Home - \(onAnimation)")
                     onAnimation.toggle()
                 }
+            
             ThemeMainView().tag("Темы")
             NotificationView().tag("Уведомление")
             RulesView().tag("Правила")

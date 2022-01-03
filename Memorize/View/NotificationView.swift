@@ -9,13 +9,17 @@ import SwiftUI
 
 struct NotificationView: View {
     
+    //MARK: - Properties
+    
     @State private var currentDate = Date()
-    @State private var toShowAlert = false
+    @State private var isShowAlert = false
     
     @Environment(\.scenePhase) private var scenePhase
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
     
-    @ObservedObject var theme = ThemeViewModel.shared
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
+    //MARK: - Body
     
     var body: some View {
         ZStack {
@@ -35,19 +39,13 @@ struct NotificationView: View {
             .font(.largeTitle)
             .padding()
             
-//            .onChange(of: scenePhase) { phase in
-//                if phase == .active {
-//                    UIApplication.shared.applicationIconBadgeNumber = 0
-//                }
-//            }
-            
             .onAppear {
                 NotificationManager.shared.getNotification {
-                    toShowAlert.toggle()
+                    isShowAlert.toggle()
                 }
             }
             
-            .alert(isPresented: $toShowAlert, content: {
+            .alert(isPresented: $isShowAlert, content: {
                 Alert(title: Text("Уведомление отключено для этого приложения"),
                       message: Text("Пожалуйста, перейдите в настройки, чтобы включить его сейчас"),
                       primaryButton: .default(Text("Открыть настройки")) {
@@ -58,6 +56,7 @@ struct NotificationView: View {
         }
         .ignoresSafeArea(.all, edges: .all)
     }
+    
 }
 
 struct NotificationView_Previews: PreviewProvider {

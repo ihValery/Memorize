@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RulesView: View {
+    
+    //MARK: - Body
+    
     var body: some View {
         VStack {
             HStack {
@@ -48,10 +51,16 @@ struct RulesView: View {
         }
         .background(Color.ruleTop.ignoresSafeArea())
     }
+    
 }
 
 struct CardRuleView: View {
+    
+    //MARK: - Properties
+    
     let title: String
+    
+    //MARK: - Body
     
     var body: some View {
         MatteEffectView()
@@ -64,6 +73,7 @@ struct CardRuleView: View {
                     .padding()
             )
     }
+    
 }
 
 struct RulesView_Previews: PreviewProvider {
