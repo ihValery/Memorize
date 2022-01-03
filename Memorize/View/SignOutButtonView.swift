@@ -43,7 +43,7 @@ struct SignOutButtonView: View {
         .alert(isPresented: $isSignOut) {
             Alert(title: Text("Вы уверенны что хотите выйти?"), primaryButton: .cancel(Text("Нет")),
                   secondaryButton: .default(Text("Да")) {
-                    session.sighOut()
+                    session.signOut()
                   })
         }
     }

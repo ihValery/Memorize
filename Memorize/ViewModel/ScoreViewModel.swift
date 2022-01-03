@@ -8,12 +8,18 @@
 import Foundation
 import Combine
 
-class ScoreViewModel: ObservableObject, Identifiable {
-    private let repository = ScoreRepository()
+final class ScoreViewModel: ObservableObject, Identifiable {
+    
+    //MARK: - Properties
+    
     @Published var score: Score
-    //cancellables используется для хранения ваших подписок, чтобы вы могли отменить их позже.
-    private var cancellabel: Set<AnyCancellable> = []
+    
     var id = ""
+    
+    private let repository = ScoreRepository()
+    private var cancellabel: Set<AnyCancellable> = []
+    
+    //MARK: - Initializer
     
     init(score: Score) {
         self.score = score
@@ -21,10 +27,12 @@ class ScoreViewModel: ObservableObject, Identifiable {
         //Затем сохраните объект cancellables чтобы его можно было отменить позже.
         $score
             .compactMap { $0.id }
-            //Результат этого преобразования затем используется  подписчиком  assign, который — как следует из названия — назначает полученное значение
+        //Результат этого преобразования затем используется  подписчиком  assign, который — как следует из названия — назначает полученное значение
             .assign(to: \.id, on: self)
             .store(in: &cancellabel)
     }
+    
+    //MARK: - Methods
     
     func remove() {
         repository.remove(score)

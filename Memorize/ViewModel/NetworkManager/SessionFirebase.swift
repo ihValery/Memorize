@@ -10,12 +10,18 @@ import Combine
 import Firebase
 import FirebaseFirestore
 
-class SessionFirebase: ObservableObject {
-    @Published var showOnboard = false
+final class SessionFirebase: ObservableObject {
+    
+    //MARK: - Properties
+    
+    @Published var isShowOnboard = false
     @Published var isSignIn = false
     @Published var errorMessage: String = ""
     @Published var user: User?
+    
     private let store = Firestore.firestore().collection("users")
+    
+    //MARK: - Initializer
     
     init() {
         _ = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
@@ -25,27 +31,13 @@ class SessionFirebase: ObservableObject {
                 self?.isSignIn = false
             } else {
                 self?.user = nil
-               //перед сборкой true
-                self?.showOnboard = false
+                //FIXME: Before assembly true
+                self?.isShowOnboard = false
             }
         }
     }
     
-    func getUrlAndName() {
-        guard let userId = user?.uid else { return }
-        let currentDoc = store.whereField("uid", isEqualTo: userId)
-        
-        currentDoc.getDocuments() { querySnapshot, error in
-            if let error = error {
-                self.errorMessage = error.localizedDescription
-            } else {
-                for document in querySnapshot!.documents {
-                    self.user?.userName = document.data()["userName"] as? String
-                    self.user?.avatarURL = document.data()["avatarURL"] as? String
-                }
-            }
-        }
-    }
+    //MARK: - Methods
     
     func signIn(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
@@ -66,26 +58,50 @@ class SessionFirebase: ObservableObject {
             
             self.upload(currenrUid: result.user.uid, photo: photo) { [weak self] resultUrlError in
                 switch resultUrlError {
-                    case .success(let url):
-                        self?.store.document(result.user.uid)
-                            .setData(["userName" : name,
-                                      "email" : email,
-                                      "avatarURL" : url.absoluteString,
-                                      "uid" : result.user.uid]) { error in
-                                if let error = error {
-                                    self?.errorMessage = error.localizedDescription
-                                } else {
-                                    self?.getUrlAndName()
-                                }
+                case .success(let url):
+                    self?.store.document(result.user.uid)
+                        .setData(["userName" : name,
+                                  "email" : email,
+                                  "avatarURL" : url.absoluteString,
+                                  "uid" : result.user.uid]) { error in
+                            if let error = error {
+                                self?.errorMessage = error.localizedDescription
+                            } else {
+                                self?.getUrlAndName()
                             }
-                    case .failure(let error):
-                        self?.errorMessage = error.localizedDescription
+                        }
+                case .failure(let error):
+                    self?.errorMessage = error.localizedDescription
                 }
             }
         }
     }
     
-    func upload(currenrUid: String, photo: UIImage, completion: @escaping (Result<URL, Error>) -> Void) {
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    private func getUrlAndName() {
+        guard let userId = user?.uid else { return }
+        let currentDoc = store.whereField("uid", isEqualTo: userId)
+        
+        currentDoc.getDocuments() { querySnapshot, error in
+            if let error = error {
+                self.errorMessage = error.localizedDescription
+            } else {
+                for document in querySnapshot!.documents {
+                    self.user?.userName = document.data()["userName"] as? String
+                    self.user?.avatarURL = document.data()["avatarURL"] as? String
+                }
+            }
+        }
+    }
+    
+    private func upload(currenrUid: String, photo: UIImage, completion: @escaping (Result<URL, Error>) -> Void) {
         let reference = Storage.storage().reference().child("avatars").child(currenrUid)
         
         guard let imageData = photo.jpegData(compressionQuality: 0.5) else { return }
@@ -108,12 +124,5 @@ class SessionFirebase: ObservableObject {
             }
         }
     }
-    
-    func sighOut() {
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
+
 }

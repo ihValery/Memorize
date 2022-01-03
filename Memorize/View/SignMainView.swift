@@ -19,7 +19,7 @@ struct SignMainView: View {
          LinearGradient(gradient: Gradient(colors: [.signStart, .signEnd]), startPoint: .topLeading, endPoint: .bottomTrailing)
             .ignoresSafeArea()
          
-         BubbleBlowerView(color: Color.red, positionY: getRect().height, frameCircle: 120...420)
+         BubbleBlowerView(color: Color.red, positionY: getScreeSize().height, frameCircle: 120...420)
             .drawingGroup()
             .ignoresSafeArea()
          

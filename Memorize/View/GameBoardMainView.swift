@@ -51,6 +51,5 @@ struct GameBoardMainView_Previews: PreviewProvider {
     static var previews: some View {
         let oneCard = GameBoardViewModel()
         return GameBoardMainView(viewModelGame: oneCard, scoreListViewModel: ResultsTableViewModel())
-        //            .preferredColorScheme(.dark)
     }
 }

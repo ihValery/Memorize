@@ -38,7 +38,7 @@ struct TabButtonView: View {
             .foregroundColor(selectedTab == title ? themeData[theme.current].color : .defaultText)
             .padding(.vertical, 12)
             .padding(.horizontal, 10)
-            .frame(maxWidth: getRect().width * 3 / 5, alignment: .leading)
+            .frame(maxWidth: getScreeSize().width * 3 / 5, alignment: .leading)
             .background(
                 //hero Animation
                 ZStack {

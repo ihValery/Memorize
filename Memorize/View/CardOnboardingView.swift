@@ -29,11 +29,11 @@ struct CardOnboardingView: View {
                         .font(.title)
                         .fontWeight(.heavy)
                         .shadow(color: .black.opacity(0.15), radius: 2, x: 2, y: 2)
-                        .offset(x: isAnimating ? 0 : getRect().width + 200)
+                        .offset(x: isAnimating ? 0 : getScreeSize().width + 200)
                     
                     Text(cardOnboard.headline)
                         .padding(.horizontal, 16)
-                        .offset(x: isAnimating ? 0 : getRect().width + 800)
+                        .offset(x: isAnimating ? 0 : getScreeSize().width + 800)
                 }
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
