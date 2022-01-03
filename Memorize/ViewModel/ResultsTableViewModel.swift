@@ -8,10 +8,16 @@
 import Foundation
 import Combine
 
-class ResultsTableViewModel: ObservableObject {
+final class ResultsTableViewModel: ObservableObject {
+    
+    //MARK: - Properties
+    
     @Published private var repository = ScoreRepository()
     @Published var scoreViewModels: [ScoreViewModel] = []
+    
     private var cancellabel: Set<AnyCancellable> = []
+    
+    //MARK: - Initializer
     
     init() {
         repository.$scores.map { scores in
@@ -20,6 +26,8 @@ class ResultsTableViewModel: ObservableObject {
         .assign(to: \.scoreViewModels, on: self)
         .store(in: &cancellabel)
     }
+    
+    //MARK: - Methods
     
     func add(theme: String, number: String) {
         guard let number = Int(number) else { return }

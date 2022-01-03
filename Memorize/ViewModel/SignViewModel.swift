@@ -8,8 +8,13 @@
 import Combine
 import UIKit
 
-class SignViewModel: ObservableObject {
+final class SignViewModel: ObservableObject {
+    
+    //MARK: - Properties
+    
     static let shared = SignViewModel()
+    private static let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&]).{6,}$")
+    private static let emailPredicate = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
     
     @Published var username = ""
     @Published var email = ""
@@ -20,7 +25,6 @@ class SignViewModel: ObservableObject {
     
     @Published var image = UIImage()
     
-    //output
     @Published var isValidSignIn = false
     @Published var isValidSignUp = false
     
@@ -28,19 +32,16 @@ class SignViewModel: ObservableObject {
     
     private var cancellableSet: Set<AnyCancellable> = []
     
-    private static let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&]).{6,}$")
-    private static let emailPredicate = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
-    
     private var isUsernameValidPublisher: AnyPublisher<Bool, Never> {
         $username
-            //Оператор debounce позволяет нам сообщить системе, что мы хотим дождаться паузы в доставке событий,
-            //например, когда пользователь перестает печатать.
+        //Оператор debounce позволяет нам сообщить системе, что мы хотим дождаться паузы в доставке событий,
+        //например, когда пользователь перестает печатать.
             .debounce(for: 0.8, scheduler: RunLoop.main)
-            //Oператор removeDuplicates будет публиковать события, только если они отличаются от любых предыдущих событий.
+        //Oператор removeDuplicates будет публиковать события, только если они отличаются от любых предыдущих событий.
             .removeDuplicates()
             .map { $0.count >= 3 }
-            //выполняет стирание некоторого ТИПА, оно гарантирует, что мы не получим некоторые сумасшедшие вложенные ТИПЫ возврата
-            //и сможем их встроить в любую цепочку.
+        //выполняет стирание некоторого ТИПА, оно гарантирует, что мы не получим некоторые сумасшедшие вложенные ТИПЫ возврата
+        //и сможем их встроить в любую цепочку.
             .eraseToAnyPublisher()
     }
     
@@ -76,7 +77,7 @@ class SignViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    private var arePasswordEqualPublisher: AnyPublisher<Bool, Never> {
+    private var isPasswordEqualPublisher: AnyPublisher<Bool, Never> {
         //содержат ли два отдельных свойства одинаковые строки String, мы используем оператор CombineLatest
         Publishers.CombineLatest($password, $passwordAgain)
             .debounce(for: 0.2, scheduler: RunLoop.main)
@@ -85,7 +86,7 @@ class SignViewModel: ObservableObject {
     }
     
     private var isPasswordValidPublisher: AnyPublisher<PasswordCheck, Never> {
-        Publishers.CombineLatest3(isPasswordEmptyPublisher, isPasswordStrongPublisher, arePasswordEqualPublisher)
+        Publishers.CombineLatest3(isPasswordEmptyPublisher, isPasswordStrongPublisher, isPasswordEqualPublisher)
             .map {
                 if $0 { return .notEmpty }
                 if !$1 { return .notStrong }
@@ -115,6 +116,7 @@ class SignViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
+    //MARK: - Initializer
     
     private init() {
         isUsernameValidPublisher
@@ -143,10 +145,10 @@ class SignViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .map {
                 switch $0 {
-                    case .notEmpty: return "Пароль не должен быть пустым"
-                    case .notStrong: return "Пароль недостаточно надежен"
-                    case .notMatch: return "Пароли не совпадают"
-                    default: return ""
+                case .notEmpty: return "Пароль не должен быть пустым"
+                case .notStrong: return "Пароль недостаточно надежен"
+                case .notMatch: return "Пароли не совпадают"
+                default: return ""
                 }
             }
             .assign(to: \.messageError, on: self)
@@ -154,7 +156,7 @@ class SignViewModel: ObservableObject {
         
         isValidSignUpPublisher
             .dropFirst()
-            //Поскольку этот код взаимодействует с UI, он должен работать на main потоке
+        //Поскольку этот код взаимодействует с UI, он должен работать на main потоке
             .receive(on: RunLoop.main)
             .assign(to: \.isValidSignUp, on: self)
             .store(in: &cancellableSet)
@@ -165,6 +167,8 @@ class SignViewModel: ObservableObject {
             .assign(to: \.isValidSignIn, on: self)
             .store(in: &cancellableSet)
     }
+    
+    //MARK: - Methods
     
     func clearTextFields() {
         email = ""

@@ -15,7 +15,7 @@ struct CardThemeView: View {
       HStack {
          VStack {
             Text(theme.avatar)
-               .font(.system(size: getRect().width / 2.5))
+               .font(.system(size: getScreeSize().width / 2.5))
                .fixedSize()
                .opacity(activeTheme() ? 1 : 0.5)
                .rotationEffect(.degrees(activeTheme() ? 10 : 0))
@@ -23,7 +23,7 @@ struct CardThemeView: View {
                        radius: activeTheme() ? 10 : 0,
                        x: 3, y: activeTheme() ? 30 : 0)
          }
-         .frame(maxWidth: getRect().width / 2, alignment: .center)
+         .frame(maxWidth: getScreeSize().width / 2, alignment: .center)
          
          Spacer()
          
@@ -48,7 +48,7 @@ struct CardThemeView: View {
          .padding(.trailing, 40)
       }
       .frame(maxWidth: .infinity)
-      .frame(height: getRect().width / 1.8)
+      .frame(height: getScreeSize().width / 1.8)
       .background(
          RoundedRectangle(cornerRadius: 25)
             .fill(activeTheme() ? theme.color : .white.opacity(0.4))

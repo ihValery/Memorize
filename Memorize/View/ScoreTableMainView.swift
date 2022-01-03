@@ -21,7 +21,7 @@ struct ScoreTableMainView: View {
                     ScrollView {
                        ForEach(scoreListViewModel.scoreViewModels) { item in
                             CardScoreView(scoreViewModel: item)
-                                .offset(y: onAnimation ? 0 : getRect().height)
+                                .offset(y: onAnimation ? 0 : getScreeSize().height)
                         }
                         .offset(y: 25)
                     }
@@ -35,7 +35,7 @@ struct ScoreTableMainView: View {
                 
                 VStack {
                     HeaderScoreView(session: session, isAnimation: $onAnimation)
-                        .frame(height: getRect().height / 6)
+                        .frame(height: getScreeSize().height / 6)
                         .padding(.top, 70)
                     Spacer()
                 }

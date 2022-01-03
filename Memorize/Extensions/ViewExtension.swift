@@ -8,13 +8,11 @@
 import SwiftUI
 
 extension View {
-    ///iPhone с челкой?
     var isWithBangs: Bool {
         UIScreen.main.bounds.height > 750
     }
     
-    ///Получаем размер экрана
-    func getRect() -> CGRect {
+    func getScreeSize() -> CGRect {
         UIScreen.main.bounds
     }
 }

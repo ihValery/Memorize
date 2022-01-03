@@ -20,7 +20,7 @@ struct BubbleBlowerView: View {
                     .fill(color)
                     .opacity(.random(in: 0.3...0.4))
                     .frame(width: .random(in: frameCircle), height: .random(in: frameCircle))
-                    .position(x: startAnimation ? .random(in: 0...getRect().width) : .random(in: 0...getRect().width),
+                    .position(x: startAnimation ? .random(in: 0...getScreeSize().width) : .random(in: 0...getScreeSize().width),
                               y: startAnimation ? .random(in: 0...positionY) : .random(in: 0...positionY))
             }
         }

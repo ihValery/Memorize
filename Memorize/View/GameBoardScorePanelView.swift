@@ -12,7 +12,9 @@ struct GameBoardScorePanelView: View {
     
     var body: some View {
         HStack(alignment: .center) { 
-            Text(viewModelGame.cards.allSatisfy({ $0.isMatched == true}) ? "Твой результат:" : "Счет:")
+            Text(viewModelGame
+                    .cards
+                    .allSatisfy { $0.isMatched == true } ? "Твой результат:" : "Счет:")
                 .font(.title)
                 .fontWeight(.medium)
             

@@ -23,7 +23,7 @@ struct HeaderScoreView: View {
                         .lineLimit(1)
                         .padding(.leading).padding()
                 }
-                .offset(y: isAnimation ? 0 : getRect().height)
+                .offset(y: isAnimation ? 0 : getScreeSize().height)
                 .animation(.spring(dampingFraction: 0.7).delay(1))
                 
                 Spacer()
@@ -38,7 +38,7 @@ struct HeaderScoreView: View {
                         .clipShape(CustomCorners(corner: .bottomRight, radius: 35))
                         .padding()
                         .padding(.trailing)
-                        .offset(x: isAnimation ? 0 : -getRect().height)
+                        .offset(x: isAnimation ? 0 : -getScreeSize().height)
                         .animation(.spring(dampingFraction: 0.8).delay(0.7))
                 }
             }
