@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct ButtonRemoveAlarmView: View {
+    
+    //MARK: - Properties
+    
     @Binding var setAlarm: Bool
+    
+    //MARK: - Body
     
     var body: some View {
         Button(action: {
@@ -31,4 +36,5 @@ struct ButtonRemoveAlarmView: View {
         
         .transition(.animationForAlarm)
     }
+    
 }

@@ -8,24 +8,38 @@
 import SwiftUI
 
 struct BackgroundCardSignView: View {
-    @ObservedObject private var signViewModel = SignViewModel.shared
-    @ObservedObject var session: SessionFirebase
+    
+    //MARK: - Properties
+
     var height: CGFloat
     
+    @ObservedObject var session: SessionFirebase
+    
+    @ObservedObject private var signViewModel = SignViewModel.shared
+    
+    //MARK: - Initializer
+    
+    init(height: CGFloat, _ session: SessionFirebase) {
+        self.height = height
+        self.session = session
+    }
+    
+    //MARK: - Body
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 7)
                 .fill(Color.white).opacity(0.6)
                 .overlay(
                     VStack {
-                          Spacer()
+                        Spacer()
                         ZStack {
                             Text(signViewModel.messageError)
                             Text(session.errorMessage)
                         }
-                            .foregroundColor(.gray)
-                            .font(.footnote)
-                            .padding(.bottom, 10)
+                        .foregroundColor(.gray)
+                        .font(.footnote)
+                        .padding(.bottom, 10)
                     })
                 .frame(height: height)
                 .offset(y: signViewModel.messageError.isEmpty && session.errorMessage.isEmpty ? 20 : 70)
@@ -45,10 +59,11 @@ struct BackgroundCardSignView: View {
         }
         .padding(.horizontal)
     }
+    
 }
 
 struct BackgroundCardSignView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundCardSignView(session: SessionFirebase(), height: 450)
+        BackgroundCardSignView(height: 450, SessionFirebase())
     }
 }

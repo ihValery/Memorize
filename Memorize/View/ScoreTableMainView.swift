@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct ScoreTableMainView: View {
-    @ObservedObject var theme = ThemeViewModel.shared
-    @ObservedObject var session: SessionFirebase
-    @ObservedObject var scoreListViewModel = ResultsTableViewModel()
     
+    //MARK: - Properties
+ 
     @Binding var onAnimation: Bool
+
+    @ObservedObject var session: SessionFirebase
     
+    @ObservedObject private var theme = ThemeViewModel.shared
+    @ObservedObject private var scoreListViewModel = ResultsTableViewModel()
+    
+    //MARK: - Body
+
     var body: some View {
         ZStack {
             VStack {
                 GeometryReader { gr in
                     ScrollView {
-                       ForEach(scoreListViewModel.scoreViewModels) { item in
+                        ForEach(scoreListViewModel.scoreViewModels) { item in
                             CardScoreView(scoreViewModel: item)
                                 .offset(y: onAnimation ? 0 : getScreeSize().height)
                         }
@@ -34,7 +40,7 @@ struct ScoreTableMainView: View {
                 ScoreBackgroundWithBubbleView()
                 
                 VStack {
-                    HeaderScoreView(session: session, isAnimation: $onAnimation)
+                    HeaderScoreView(isAnimation: $onAnimation, session: session)
                         .frame(height: getScreeSize().height / 6)
                         .padding(.top, 70)
                     Spacer()
@@ -43,10 +49,11 @@ struct ScoreTableMainView: View {
             .ignoresSafeArea()
         }
     }
+    
 }
 
 struct ScoreTableMainView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreTableMainView(session: SessionFirebase(), onAnimation: .constant(true))
+        ScoreTableMainView(onAnimation: .constant(true), session: SessionFirebase())
     }
 }

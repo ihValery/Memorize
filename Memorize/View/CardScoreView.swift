@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct CardScoreView: View {
+    
+    //MARK: - Properties
+
     var scoreViewModel: ScoreViewModel
+    
     @State private var viewState = CGSize.zero
     @State private var showAlert = false
-    
+
+    //MARK: - Body
+
     var body: some View {
         ZStack {
             HStack {
@@ -53,6 +59,7 @@ struct CardScoreView: View {
             
             .gesture(
                 DragGesture()
+                
                     .onChanged { value in
                         if value.translation.width < 0 {
                             viewState = value.translation
@@ -60,6 +67,7 @@ struct CardScoreView: View {
                             viewState = .zero
                         }
                     }
+                
                     .onEnded { value in
                         if value.location.x < value.startLocation.x - 50 {
                             showAlert.toggle()
@@ -76,6 +84,7 @@ struct CardScoreView: View {
             }
         }
     }
+    
 }
 
 struct CardScoreView_Previews: PreviewProvider {

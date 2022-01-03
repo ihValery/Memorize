@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    //MARK: - Properties
+    
     var cardsOnboard: [CardOnboard] = cardOnboardData
-
+    
+    //MARK: - Body
+    
     var body: some View {
         TabView {
             ForEach(cardsOnboard[0..<cardsOnboard.count]) { item in
@@ -17,8 +22,8 @@ struct OnboardingView: View {
             }
         }
         .tabViewStyle(PageTabViewStyle())
-//        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
+    
 }
 
 struct OnboardingView_Previews: PreviewProvider {

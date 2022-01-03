@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ThemeMainView: View {
-    @ObservedObject var theme = ThemeViewModel.shared
+    
+    //MARK: - Properties
+    
     @State private var selectedTheme: Int = UserDefaults.standard.integer(forKey: "Theme")
+    
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
+    //MARK: - Body
     
     var body: some View {
         VStack {
@@ -29,6 +35,7 @@ struct ThemeMainView: View {
                     ForEach(themeData) { item in
                         CardThemeView(theme: item, selectedTheme: selectedTheme)
                             .padding(.vertical)
+                        
                             .onTapGesture {
                                 theme.current = item.id
                                 withAnimation(.easeInOut) {
@@ -40,14 +47,17 @@ struct ThemeMainView: View {
                 .padding(.top)
             }
         }
-        .background(LinearGradient(gradient: Gradient(colors:[themeData[theme.current].color.opacity(0.4), .sideMenuStart]),
-                                   startPoint: .topTrailing, endPoint: .bottomLeading)
-                        .ignoresSafeArea())
+        .background(
+            LinearGradient(colors:[themeData[theme.current].color.opacity(0.4), .sideMenuStart],
+                           startPoint: .topTrailing, endPoint: .bottomLeading)
+                .ignoresSafeArea()
+        )
     }
+    
 }
 
 struct ThemeMainView_Previews: PreviewProvider {
     static var previews: some View {
-       ThemeMainView()
+        ThemeMainView()
     }
 }

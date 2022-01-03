@@ -12,11 +12,13 @@ struct ButtonSetAlarmView: View {
     //MARK: - Properties
 
     @Binding var date: Date
+    
     @State private var setAlarm: Bool = UserDefaults.standard.bool(forKey: "setAlarm") {
         didSet {
             UserDefaults.standard.set(self.setAlarm, forKey: "setAlarm")
         }
     }
+    
     @State private var dateString: String = UserDefaults.standard.object(forKey: "Alarm") as? String ?? "00:00" {
         didSet {
             UserDefaults.standard.set(self.dateString, forKey: "Alarm")
@@ -61,6 +63,7 @@ struct ButtonSetAlarmView: View {
         timeFormatter.timeStyle = .short
         return timeFormatter.string(from: date)
     }
+    
 }
 
 struct ButtonSetAlarmView_Previews: PreviewProvider {

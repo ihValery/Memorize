@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct BackgroundCardScoreView: View {
-    @ObservedObject var theme = ThemeViewModel.shared
+    
+    //MARK: - Properties
+    
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
+    //MARK: - Body
     
     var body: some View {
         VStack {
@@ -19,4 +24,5 @@ struct BackgroundCardScoreView: View {
         }
         .padding()
     }
+    
 }

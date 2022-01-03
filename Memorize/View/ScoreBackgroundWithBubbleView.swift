@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ScoreBackgroundWithBubbleView: View {
-    @ObservedObject var theme = ThemeViewModel.shared
     
+    //MARK: - Properties
+
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
+    //MARK: - Body
+
     var body: some View {
         ZStack {
             RectangleReverseAngle(startY: isWithBangs ? 165 : 125)
@@ -20,6 +25,7 @@ struct ScoreBackgroundWithBubbleView: View {
                 .clipShape(RectangleReverseAngle(startY: isWithBangs ? 165 : 125))
         }
     }
+    
 }
 
 struct ScoreBackgroundWithBubbleView_Previews: PreviewProvider {

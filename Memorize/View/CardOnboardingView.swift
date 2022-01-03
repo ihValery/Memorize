@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct CardOnboardingView: View {
+    
+    //MARK: - Properties
+
     var cardOnboard: CardOnboard
+    
     @State private var isAnimating = false
     
+    //MARK: - Body
+
     var body: some View {
         ZStack {
             VStack() {
@@ -37,14 +43,14 @@ struct CardOnboardingView: View {
                 }
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
-//                .lineLimit(8)
                 .fixedSize(horizontal: false, vertical: true)
                 
                 Spacer()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(LinearGradient(gradient: Gradient(colors: cardOnboard.gradientColors), startPoint: .topLeading, endPoint: .bottomTrailing))
+        .background(LinearGradient(gradient: Gradient(colors: cardOnboard.gradientColors),
+                                   startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(20)
         .padding(.vertical)
         .padding(.horizontal, 15)
@@ -58,6 +64,7 @@ struct CardOnboardingView: View {
             }
         })
     }
+    
 }
 
 struct CardOnboardView_Previews: PreviewProvider {

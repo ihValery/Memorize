@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct LineView: View {
+    
+    //MARK: - Body
+    
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
             .frame(height: 2)
             .opacity(0.6)
     }
+    
 }
