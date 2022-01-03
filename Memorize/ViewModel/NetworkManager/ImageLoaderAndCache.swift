@@ -8,11 +8,17 @@
 import Foundation
 
 class ImageLoaderAndCache: ObservableObject {
+    
+    //MARK: - Properties
+    
     @Published var imageData = Data()
     
+    //MARK: - Initializer
+    
     init(imageURL: String) {
-        let cache = URLCache.shared
         guard let url = URL(string: imageURL) else { return }
+        
+        let cache = URLCache.shared
         
         let request = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 60.0)
         if let data = cache.cachedResponse(for: request)?.data {
@@ -20,7 +26,7 @@ class ImageLoaderAndCache: ObservableObject {
         } else {
             URLSession.shared.dataTask(with: request) { data, response, error in
                 if let data = data, let response = response {
-                let cachedData = CachedURLResponse(response: response, data: data)
+                    let cachedData = CachedURLResponse(response: response, data: data)
                     cache.storeCachedResponse(cachedData, for: request)
                     DispatchQueue.main.async {
                         self.imageData = data
@@ -29,4 +35,5 @@ class ImageLoaderAndCache: ObservableObject {
             }.resume()
         }
     }
+    
 }

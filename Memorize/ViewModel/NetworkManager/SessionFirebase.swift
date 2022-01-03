@@ -37,7 +37,7 @@ final class SessionFirebase: ObservableObject {
         }
     }
     
-    //MARK: - Methods
+    //MARK: - Public Methods
     
     func signIn(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { user, error in
@@ -84,7 +84,9 @@ final class SessionFirebase: ObservableObject {
             print(error.localizedDescription)
         }
     }
-
+    
+    //MARK: - Private Methods
+    
     private func getUrlAndName() {
         guard let userId = user?.uid else { return }
         let currentDoc = store.whereField("uid", isEqualTo: userId)
@@ -124,5 +126,5 @@ final class SessionFirebase: ObservableObject {
             }
         }
     }
-
+    
 }
