@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ButtonSetAlarmView: View {
+    
+    //MARK: - Properties
+
     @Binding var date: Date
     @State private var setAlarm: Bool = UserDefaults.standard.bool(forKey: "setAlarm") {
         didSet {
@@ -19,6 +22,8 @@ struct ButtonSetAlarmView: View {
             UserDefaults.standard.set(self.dateString, forKey: "Alarm")
         }
     }
+    
+    //MARK: - Body
     
     var body: some View {
             Button(action: {
@@ -40,14 +45,17 @@ struct ButtonSetAlarmView: View {
                 .padding(5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 15)
-                        .stroke(setAlarm == false ? Color.blue : Color.black.opacity(0.7), lineWidth: 3))
-            }.disabled(setAlarm == true ? true : false)
+                        .stroke(setAlarm == false ? Color.blue : Color.black.opacity(0), lineWidth: 3))
+            }
+            .disabled(setAlarm == true ? true : false)
 
         if setAlarm {
             ButtonRemoveAlarmView(setAlarm: $setAlarm)
         }
     }
     
+    //MARK: - Private Methods
+
     private func dateToString(_ date: Date) -> String {
         let timeFormatter = DateFormatter()
         timeFormatter.timeStyle = .short

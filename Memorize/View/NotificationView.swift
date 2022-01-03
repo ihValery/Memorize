@@ -11,7 +11,7 @@ struct NotificationView: View {
     
     @State private var currentDate = Date()
     @State private var toShowAlert = false
-
+    
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.colorScheme) var colorScheme
     
@@ -20,20 +20,14 @@ struct NotificationView: View {
     var body: some View {
         ZStack {
             LinearGradient(gradient:
-                            Gradient(colors: [themeData[self.theme.current].color,
+                            Gradient(colors: [themeData[theme.current].color,
                                               .sideMenuStart]),
                            startPoint: UnitPoint(x: 0.9, y: 0.8), endPoint: UnitPoint(x: 0.1, y: 0.9))
                 .opacity(0.6)
                 .ignoresSafeArea()
             VStack {
-                Text("10 минут,\nчто бы мозг работал эффективнее!")
-                    .font(.largeTitle)
-                    .foregroundColor(.black.opacity(0.7))
-                    .multilineTextAlignment(.center)
-                
                 DatePicker("Время", selection: $currentDate, in: Date()...)
                     .datePickerStyle(GraphicalDatePickerStyle())
-//                    .labelsHidden()
                     .environment(\.locale, Locale.init(identifier: "ru"))
                 
                 ButtonSetAlarmView(date: $currentDate)
@@ -57,20 +51,12 @@ struct NotificationView: View {
                 Alert(title: Text("Уведомление отключено для этого приложения"),
                       message: Text("Пожалуйста, перейдите в настройки, чтобы включить его сейчас"),
                       primaryButton: .default(Text("Открыть настройки")) {
-                        goToSettings()
-                      },
+                    goToSettings()
+                },
                       secondaryButton: .cancel())
-        })
+            })
         }
         .ignoresSafeArea(.all, edges: .all)
-    }
-}
-
-extension NotificationView {
-    private func goToSettings() {
-        DispatchQueue.main.async {
-            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
-        }
     }
 }
 
