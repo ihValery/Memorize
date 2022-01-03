@@ -12,8 +12,8 @@ final class ResultsTableViewModel: ObservableObject {
     
     //MARK: - Properties
     
-    @Published private var repository = ScoreRepository()
     @Published var scoreViewModels: [ScoreViewModel] = []
+    @Published private var repository = ScoreRepository()
     
     private var cancellabel: Set<AnyCancellable> = []
     
@@ -27,7 +27,7 @@ final class ResultsTableViewModel: ObservableObject {
         .store(in: &cancellabel)
     }
     
-    //MARK: - Methods
+    //MARK: - Public Methods
     
     func add(theme: String, number: String) {
         guard let number = Int(number) else { return }
@@ -40,6 +40,8 @@ final class ResultsTableViewModel: ObservableObject {
         newScoreLargetOld(number: number, index: currentIndex)
     }
     
+    //MARK: - Private Methods
+
     private func update(_ score: Score) {
         repository.update(score)
     }
@@ -61,4 +63,5 @@ final class ResultsTableViewModel: ObservableObject {
         }
         return nil
     }
+    
 }

@@ -13,6 +13,7 @@ final class SignViewModel: ObservableObject {
     //MARK: - Properties
     
     static let shared = SignViewModel()
+    
     private static let passwordPredicate = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&]).{6,}$")
     private static let emailPredicate = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
     
@@ -178,4 +179,5 @@ final class SignViewModel: ObservableObject {
         passwordAgain = ""
         image = UIImage()
     }
+    
 }

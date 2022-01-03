@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ImageLoaderAndCache: ObservableObject {
+final class ImageLoaderAndCache: ObservableObject {
     
     //MARK: - Properties
     

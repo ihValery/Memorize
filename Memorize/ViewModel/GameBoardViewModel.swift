@@ -17,18 +17,7 @@ final class GameBoardViewModel: ObservableObject {
         modelGame.cards
     }
     
-    //MARK: - Methods
-    
-    static private func createMemoryGame(_ collectionShuffled: [String]? = nil) -> GameBoard<String> {
-        
-        return GameBoard<String>(numbersOfPairsOfCards: themeData[ThemeViewModel.shared.current].number) { pairIndex in
-            if let collectionShuffled = collectionShuffled {
-                return collectionShuffled[pairIndex]
-            } else {
-                return themeData[ThemeViewModel.shared.current].collection[pairIndex]
-            }
-        }
-    }
+    //MARK: - Public Methods
     
     func choose(_ card: GameBoard<String>.Card) {
         modelGame.choose(card)
@@ -42,6 +31,19 @@ final class GameBoardViewModel: ObservableObject {
     
     func updateScore() -> String {
         String(modelGame.score)
+    }
+    
+    //MARK: - Private Methods
+    
+    static private func createMemoryGame(_ collectionShuffled: [String]? = nil) -> GameBoard<String> {
+        
+        return GameBoard<String>(numbersOfPairsOfCards: themeData[ThemeViewModel.shared.current].number) { pairIndex in
+            if let collectionShuffled = collectionShuffled {
+                return collectionShuffled[pairIndex]
+            } else {
+                return themeData[ThemeViewModel.shared.current].collection[pairIndex]
+            }
+        }
     }
     
 }

@@ -32,7 +32,7 @@ final class ScoreViewModel: ObservableObject, Identifiable {
             .store(in: &cancellabel)
     }
     
-    //MARK: - Methods
+    //MARK: - Public Methods
     
     func remove() {
         repository.remove(score)
