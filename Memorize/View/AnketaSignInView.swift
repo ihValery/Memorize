@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct AnketaSignInView: View {
-    @ObservedObject private var signViewModel = SignViewModel.shared
-    @State private var showPassword = false
     
+    //MARK: - Properties
+
+    @State private var showPassword = false
+
+    @ObservedObject private var signViewModel = SignViewModel.shared
+
+    //MARK: - Body
+
     var body: some View {
         VStack(spacing: 20) {
             
@@ -49,7 +55,7 @@ struct AnketaSignInView: View {
                         }
                     }
                     Button(action: {
-                            showPassword.toggle()
+                        showPassword.toggle()
                     }, label: {
                         Image(systemName: "eye")
                             .opacity(showPassword ? 1 : 0.2)
@@ -73,6 +79,7 @@ struct AnketaSignInView: View {
         .foregroundColor(.signEnd)
         .padding()
     }
+    
 }
 
 struct AnketaSignInView_Previews: PreviewProvider {

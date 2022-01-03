@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct BubbleBlowerView: View {
+    
+    //MARK: - Properties
+
     @State private var startAnimation: Bool = false
+    
     var color: Color
     var positionY: CGFloat
     var frameCircle: ClosedRange<CGFloat>
     
+    //MARK: - Body
+
     var body: some View {
         ZStack {
             ForEach(1...5, id: \.self) { _ in
@@ -24,12 +30,14 @@ struct BubbleBlowerView: View {
                               y: startAnimation ? .random(in: 0...positionY) : .random(in: 0...positionY))
             }
         }
+        
         .onAppear {
             withAnimation(.linear(duration: 40).repeatCount(100, autoreverses: true)) {
                 startAnimation.toggle()
             }
         }
     }
+    
 }
 
 struct BackgroundAnimation_Previews: PreviewProvider {

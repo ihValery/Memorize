@@ -35,11 +35,11 @@ struct NotificationView: View {
             .font(.largeTitle)
             .padding()
             
-            .onChange(of: scenePhase) { phase in
-                if phase == .active {
-                    UIApplication.shared.applicationIconBadgeNumber = 0
-                }
-            }
+//            .onChange(of: scenePhase) { phase in
+//                if phase == .active {
+//                    UIApplication.shared.applicationIconBadgeNumber = 0
+//                }
+//            }
             
             .onAppear {
                 NotificationManager.shared.getNotification {

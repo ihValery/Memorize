@@ -8,26 +8,41 @@
 import SwiftUI
 
 struct CompositeSideMenuView: View {
+    
+    //MARK: - Properties
+    
     @Binding var selectedTab: String
-    //For Hero Animation Slide
-    @Namespace var animation
     @Binding var showMenu: Bool
+    
+    //For Hero Animation Slide
+    @Namespace private var animation
+    
     @ObservedObject var session: SessionFirebase
+    
+    //MARK: - Initializer
 
+    init(_ selectedTab: Binding<String>, _ showMenu: Binding<Bool>, _ session: SessionFirebase) {
+        self._selectedTab = selectedTab
+        self._showMenu = showMenu
+        self.session = session
+    }
+    
+    //MARK: - Body
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             ProFileView(session: session)
-
+            
             VStack(alignment: .leading, spacing: 10) {
-                TabButtonView(image: "gamecontroller", title: "Новая игра", showMenu: $showMenu, selectedTab: $selectedTab, animation: animation)
+                TabButtonView("gamecontroller", "Новая игра", animation, $showMenu, $selectedTab)
                 
-                TabButtonView(image: "clock.arrow.circlepath", title: "Счет", showMenu: $showMenu, selectedTab: $selectedTab, animation: animation)
+                TabButtonView("clock.arrow.circlepath", "Счет", animation, $showMenu, $selectedTab)
                 
-                TabButtonView(image: "bell.badge", title: "Уведомление", showMenu: $showMenu, selectedTab: $selectedTab, animation: animation)
+                TabButtonView("bell.badge", "Уведомление", animation, $showMenu, $selectedTab)
                 
-                TabButtonView(image: "gearshape", title: "Темы", showMenu: $showMenu, selectedTab: $selectedTab, animation: animation)
+                TabButtonView("gearshape", "Темы", animation, $showMenu, $selectedTab)
                 
-                TabButtonView(image: "questionmark.circle", title: "Правила", showMenu: $showMenu, selectedTab: $selectedTab, animation: animation)
+                TabButtonView("questionmark.circle", "Правила", animation, $showMenu, $selectedTab)
             }
             .padding(.leading, -15)
             .padding(.top, 50)
@@ -39,6 +54,7 @@ struct CompositeSideMenuView: View {
         .padding(.leading, 14)
         .padding(.top)
     }
+    
 }
 
 struct CompositeSideMenuView_Previews: PreviewProvider {

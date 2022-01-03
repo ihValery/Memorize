@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct AnimationForAppearView: View {
-    @State private var expand = true
-    @ObservedObject var theme = ThemeViewModel.shared
     
+    //MARK: - Properties
+
+    @State private var expand = true
+    
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
+    //MARK: - Body
+
     var body: some View {
         themeData[theme.current].color
             .ignoresSafeArea()
@@ -24,6 +30,7 @@ struct AnimationForAppearView: View {
                 expand = false
             }
     }
+    
 }
 
 struct AnimationForAppearView_Previews: PreviewProvider {

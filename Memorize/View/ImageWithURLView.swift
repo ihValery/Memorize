@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct ImageWithURLView: View {
-    @ObservedObject var imageLoader: ImageLoaderAndCache
-    var size: CGFloat
+    
+    //MARK: - Properties
+    
+    private var size: CGFloat
+    
+    @ObservedObject private var imageLoader: ImageLoaderAndCache
+    
+    //MARK: - Initializer
     
     init(_ url: String, size: CGFloat) {
         imageLoader = ImageLoaderAndCache(imageURL: url)
         self.size = size
     }
+    
+    //MARK: - Body
     
     var body: some View {
         Image(uiImage: (UIImage(data: imageLoader.imageData) ?? UIImage(named: "noAvatar"))!)
@@ -24,4 +32,5 @@ struct ImageWithURLView: View {
             .clipped()
             .cornerRadius(25)
     }
+    
 }

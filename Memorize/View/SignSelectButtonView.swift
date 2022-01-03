@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct SignSelectButtonView: View {
-    var text: String
     
+    //MARK: - Properties
+
+    var text: String
+
+    //MARK: - Body
+
     var body: some View {
         VStack {
             Text(text)
@@ -20,6 +25,7 @@ struct SignSelectButtonView: View {
         }
         .foregroundColor(.white)
     }
+    
 }
 
 struct SignSelectButtonView_Previews: PreviewProvider {

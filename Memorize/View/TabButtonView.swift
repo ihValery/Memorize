@@ -8,15 +8,34 @@
 import SwiftUI
 
 struct TabButtonView: View {
+
+    //MARK: - Properties
+    
     var image: String
     var title: String
-    
-    @ObservedObject var theme = ThemeViewModel.shared
-    @Binding var showMenu: Bool
-    @Binding var selectedTab: String
     //For Hero Animation Slide
     var animation: Namespace.ID
+    
+    @Binding var showMenu: Bool
+    @Binding var selectedTab: String
+
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
     @Environment(\.colorScheme) var colorScheme
+    
+    //MARK: - Initializer
+    
+    init(_ image: String, _ title: String, _ animation: Namespace.ID,
+         _ showMenu: Binding<Bool>, _ selectedTab: Binding<String>) {
+        
+        self.image = image
+        self.title = title
+        self.animation = animation
+        self._showMenu = showMenu
+        self._selectedTab = selectedTab
+    }
+    
+    //MARK: - Body
     
     var body: some View {
         Button {
@@ -46,13 +65,14 @@ struct TabButtonView: View {
                         Color.defaultElement.opacity(colorScheme == .light ? 1 : 0.5)
                             .opacity(selectedTab == title ? 1 : 0)
                             .clipShape(CustomCorners(corner: [.topRight, .bottomRight], radius: 13))
-                            //Магия )))
+                        //Магия )))
                             .matchedGeometryEffect(id: "TAB", in: animation)
                     }
                 }
             )
         }
     }
+    
 }
 
 struct TabButtonView_Previews: PreviewProvider {

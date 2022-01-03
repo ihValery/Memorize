@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct VictoryView: View {
-    @ObservedObject var viewModelGame: GameBoardViewModel
-    @ObservedObject var theme = ThemeViewModel.shared
     
+    //MARK: - Properties
+
+    @ObservedObject var viewModelGame: GameBoardViewModel
+    
+    @ObservedObject private var theme = ThemeViewModel.shared
+    
+    //MARK: - Body
+
     var body: some View {
         VStack {
             GradientTrophyForVictoryView()
@@ -35,6 +41,7 @@ struct VictoryView: View {
         .padding()
         .transition(.animationForAlarm)
     }
+    
 }
 
 struct ButtonNewGameVictory_Previews: PreviewProvider {

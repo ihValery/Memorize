@@ -13,13 +13,14 @@ struct SideMenuMainView: View {
     //MARK: - Properties
     
     @State private var selectedTab = "Новая игра"
-    //FIXME: Before assembly false
-    @State private var showMenu = true
+    @State private var showMenu = true //FIXME: Before assembly false
     
+    @Environment(\.scenePhase) private var scenePhase
     @Environment(\.colorScheme) private var colorScheme
     
-    @ObservedObject private var theme = ThemeViewModel.shared
     @ObservedObject var session: SessionFirebase
+    
+    @ObservedObject private var theme = ThemeViewModel.shared
     
     //MARK: - Body
     
@@ -32,7 +33,7 @@ struct SideMenuMainView: View {
                 .ignoresSafeArea()
             
             ScrollView(isWithBangs ? .init() : .vertical, showsIndicators: false) {
-                CompositeSideMenuView(selectedTab: $selectedTab, showMenu: $showMenu, session: session)
+                CompositeSideMenuView($selectedTab, $showMenu, session)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -66,6 +67,12 @@ struct SideMenuMainView: View {
                 , alignment: .topLeading)
         }
         
+        .onChange(of: scenePhase) { phase in
+            if phase == .active {
+                UIApplication.shared.applicationIconBadgeNumber = 0
+            }
+        }
+        
         .popover(isPresented: $session.isShowOnboard) {
             OnboardingView()
         }
@@ -79,6 +86,7 @@ struct SideMenuMainView: View {
          })
          */
     }
+    
 }
 
 struct MainView_Previews: PreviewProvider {
