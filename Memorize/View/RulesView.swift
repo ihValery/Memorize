@@ -12,7 +12,7 @@ import SwiftUI
 struct RulesView: View {
     
     //MARK: Properties
-
+    
     fileprivate struct InternalConstant {
         fileprivate static let ruleOne = "Классическая игра «Мэмори» или «Найди пару!»."
         fileprivate static let nameScreen = "Правило"
