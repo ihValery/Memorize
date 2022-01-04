@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-//Создаем структуру struct Pie, которая реализует протокол Shape
-//который представляет собой “Ограничения и Выгоды” (Constraints and Gains)
 struct Pie: Shape {
+    
+    //MARK: - Properties
     
     var startAngle: Angle
     var endAngle: Angle
@@ -25,7 +25,9 @@ struct Pie: Shape {
         }
     }
     
-                    //Аббревиатура CG — это Core Graphics
+    //MARK: - Public Methods
+    
+    //Аббревиатура CG — это Core Graphics
     func path(in rect: CGRect) -> Path {
         //начнем с середины прямоугольника rect, который нам дан
         let center = CGPoint(x: rect.midX, y: rect.midY)
@@ -42,4 +44,5 @@ struct Pie: Shape {
         
         return p
     }
+    
 }

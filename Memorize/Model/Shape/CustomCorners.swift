@@ -9,8 +9,13 @@ import SwiftUI
 
 //CustomCorners что бы выбрать какие иглы закруглить
 struct CustomCorners: Shape {
+    
+    //MARK: - Properties
+    
     var corner: UIRectCorner
     var radius: CGFloat
+    
+    //MARK: - Public Methods
     
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect,
@@ -19,4 +24,5 @@ struct CustomCorners: Shape {
         
         return Path(path.cgPath)
     }
+    
 }

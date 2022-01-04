@@ -7,14 +7,34 @@
 
 import SwiftUI
 
+//MARK: RulesView
+
 struct RulesView: View {
     
-    //MARK: - Body
+    //MARK: Properties
+    
+    fileprivate struct InternalConstant {
+        fileprivate static let ruleOne = "Классическая игра «Мэмори» или «Найди пару!»."
+        fileprivate static let nameScreen = "Правило"
+    }
+    
+    
+    fileprivate enum Rule {
+        static let background = "backgroundRules"
+        
+        static let one        = "Классическая игра «Мэмори» или «Найди пару!»."
+        static let two        = "Направлена на эффективное развитие способности к запоминанию и концентрации внимания."
+        static let three      = "В начале игры на экран выставляются карты рубашкой вверх."
+        static let four       = "Игрок может в желаемой последовательности открывать карты."
+        static let five       = "Одновременно могут быть открыты только две карты."
+        static let six        = "Пара карт с одинаковой картинкой считаеться найденой, когда открыты одновременно лишь они."
+    }
+    
     
     var body: some View {
         VStack {
             HStack {
-                Text("Правила")
+                Text(InternalConstant.nameScreen)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.black.opacity(0.4))
@@ -33,7 +53,7 @@ struct RulesView: View {
                     }
                     
                     VStack(spacing: 30) {
-                        CardRuleView(title: Rule.one).padding(.top, -20)
+                        CardRuleView(title: InternalConstant.ruleOne).padding(.top, -20)
                         CardRuleView(title: Rule.two)
                         CardRuleView(title: Rule.three)
                         CardRuleView(title: Rule.four)
@@ -54,14 +74,14 @@ struct RulesView: View {
     
 }
 
+//MARK: CardRuleView
+
 struct CardRuleView: View {
     
-    //MARK: - Properties
+    //MARK: Properties
     
     let title: String
-    
-    //MARK: - Body
-    
+        
     var body: some View {
         MatteEffectView()
             .cornerRadius(25)

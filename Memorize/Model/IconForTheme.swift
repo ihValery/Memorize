@@ -12,6 +12,8 @@ enum IconForTheme {
     case timer(trim: CGFloat)
     case level(trim: CGFloat)
     
+    //MARK: - Properties
+    
     var rawValue: String {
         switch self {
         case .age:
@@ -33,4 +35,5 @@ enum IconForTheme {
             return trim
         }
     }
+    
 }

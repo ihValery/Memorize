@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		800DB7B9263D95F000A4A2C1 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7B8263D95F000A4A2C1 /* Grid.swift */; };
+		800DB7B9263D95F000A4A2C1 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7B8263D95F000A4A2C1 /* GridView.swift */; };
 		800DB7BB263DE46000A4A2C1 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800DB7BA263DE46000A4A2C1 /* ArrayExtension.swift */; };
 		801128DD2642B3A600C38272 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801128DC2642B3A600C38272 /* Star.swift */; };
 		801128DF2642B41400C38272 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801128DE2642B41400C38272 /* Pie.swift */; };
@@ -91,7 +91,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		800DB7B8263D95F000A4A2C1 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		800DB7B8263D95F000A4A2C1 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		800DB7BA263DE46000A4A2C1 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		801128DC2642B3A600C38272 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		801128DE2642B41400C38272 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
@@ -254,7 +254,6 @@
 				80CD7615277AB7810054C33E /* View */,
 				80CD7616277AB78B0054C33E /* ViewModel */,
 				8062966B2653C4290091469E /* Extensions */,
-				80CADDF6268A6C190085C11E /* Helper */,
 				80CD761C277DE6430054C33E /* Resources */,
 			);
 			path = Memorize;
@@ -268,24 +267,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		80CADDF6268A6C190085C11E /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				800DB7B8263D95F000A4A2C1 /* Grid.swift */,
-				808699C6264695D700DAD8BE /* Cardify.swift */,
-				806C1A7C266FCF2800109432 /* ImagePicker.swift */,
-				80ECBFA3266581F300684F6C /* SignButtonStyle.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
 		80CD7614277AB7720054C33E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				80CD7619277CDB380054C33E /* Data */,
 				8088FB832674315900A4B1B7 /* Shape */,
 				80BE0661262D8B3F00EAF9C4 /* GameBoard.swift */,
+				80ECBFA3266581F300684F6C /* SignButtonStyle.swift */,
+				808699C6264695D700DAD8BE /* Cardify.swift */,
 				80ECBF96266580A200684F6C /* PasswordCheck.swift */,
+				806C1A7C266FCF2800109432 /* ImagePicker.swift */,
 				806C1A6C266FC6D800109432 /* User.swift */,
 				8088FB8126742AE500A4B1B7 /* Score.swift */,
 				80C832F9277EAA11000C8B8E /* Rule.swift */,
@@ -299,6 +290,7 @@
 		80CD7615277AB7810054C33E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				800DB7B8263D95F000A4A2C1 /* GridView.swift */,
 				80896220262C6AFB001D9C7A /* GameBoardMainView.swift */,
 				80C0419C2645DC6800501EB8 /* GameBoardScorePanelView.swift */,
 				80C0419E2645DD4800501EB8 /* GameBoardCardView.swift */,
@@ -534,7 +526,7 @@
 				804B626A2652DD0200DE3792 /* TabButtonView.swift in Sources */,
 				80BE0667262D92C900EAF9C4 /* GameBoardViewModel.swift in Sources */,
 				806296732653D08F0091469E /* NotificationView.swift in Sources */,
-				800DB7B9263D95F000A4A2C1 /* Grid.swift in Sources */,
+				800DB7B9263D95F000A4A2C1 /* GridView.swift in Sources */,
 				806EC7C22643C9BF00B93D90 /* OnboardingView.swift in Sources */,
 				806C1A72266FCC8E00109432 /* ImageLoaderAndCache.swift in Sources */,
 				804B62672652DD0200DE3792 /* ViewExtension.swift in Sources */,

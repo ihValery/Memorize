@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScoreTableMainView: View {
     
-    //MARK: - Properties
+    //MARK: Properties
  
     @Binding var onAnimation: Bool
 
@@ -18,8 +18,6 @@ struct ScoreTableMainView: View {
     @ObservedObject private var theme = ThemeViewModel.shared
     @ObservedObject private var scoreListViewModel = ResultsTableViewModel()
     
-    //MARK: - Body
-
     var body: some View {
         ZStack {
             VStack {
