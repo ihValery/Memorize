@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct SignButtonStyle: ButtonStyle {
+    
+    //MARK: - Properties
+    
     var colorBG: Color
     var colorText: Color
+    
+    //MARK: - Public Methods
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -22,6 +27,7 @@ struct SignButtonStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 0.99 : 1)
             .padding()
     }
+    
 }
 
 struct SignStyleButton_Previews: PreviewProvider {
@@ -29,7 +35,7 @@ struct SignStyleButton_Previews: PreviewProvider {
         Button(action: {}, label: {
             Text("Example")
         })
-        .preferredColorScheme(.dark)
-        .buttonStyle(SignButtonStyle(colorBG: .white, colorText: .signEnd))
+            .preferredColorScheme(.dark)
+            .buttonStyle(SignButtonStyle(colorBG: .white, colorText: .signEnd))
     }
 }

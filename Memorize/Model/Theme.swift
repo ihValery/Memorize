@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Theme: Identifiable {
+    
+    //MARK: - Properties
+
     var id: Int
     var name: String
     var avatar: String

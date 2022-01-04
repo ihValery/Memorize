@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct RectangleReverseAngle: Shape {
+    
+    //MARK: - Properties
+
     var startY: CGFloat
     
+    //MARK: - Public Methods
+
     func path(in rect: CGRect) -> Path {
         let startPoint = CGPoint(x: rect.width, y: startY)
         
@@ -27,9 +32,10 @@ struct RectangleReverseAngle: Shape {
         path.addLine(to: CGPoint(x: 0, y: 0))
         path.addLine(to: CGPoint(x: rect.width, y: 0))
         path.closeSubpath()
-
+        
         return path
     }
+    
 }
 
 struct RectangleReverseAngle_Previews: PreviewProvider {

@@ -33,7 +33,7 @@ struct GameBoardMainView: View {
                         }
                     
                 } else {
-                    Grid(viewModelGame.cards) { item in
+                    GridView(viewModelGame.cards) { item in
                         GameBoardCardView(card: item)
                             .onTapGesture {
                                 withAnimation(.linear(duration: 0.5)) {

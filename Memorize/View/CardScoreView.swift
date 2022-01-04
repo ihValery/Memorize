@@ -87,9 +87,15 @@ struct CardScoreView: View {
     
 }
 
-struct CardScoreView_Previews: PreviewProvider {
-    static var previews: some View {
-        let score = testData[5]
-        CardScoreView(scoreViewModel: ScoreViewModel(score: score))
-    }
-}
+//struct CardScoreView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let indexFoodCard = 5
+//
+//        if indexFoodCard < testData.count {
+//            let score = testData[indexFoodCard]
+//            CardScoreView(scoreViewModel: ScoreViewModel(score: score))
+//        } else {
+//            CardScoreView(scoreViewModel: ScoreViewModel(score: <#T##Score#>))
+//        }
+//    }
+//}

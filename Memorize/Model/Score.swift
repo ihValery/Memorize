@@ -9,11 +9,15 @@ import Foundation
 import FirebaseFirestoreSwift
 
 struct Score: Identifiable, Codable {
+    
+    //MARK: - Properties
+
     @DocumentID var id: String?
     var theme: String
     var maxScore: Int
     var date = Date()
     var userId: String?
+    
 }
 
 #if DEBUG
