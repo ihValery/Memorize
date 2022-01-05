@@ -15,6 +15,12 @@ struct TitleView: View {
     
     let title: String
     
+    private let paddingLeading: CGFloat = 60
+    private let paddingBottom: CGFloat = -1
+    private var paddingTop: CGFloat {
+        isWithBangs ? -5 : -1
+    }
+    
     //MARK: Initializer
     
     init(_ title: String) {
@@ -26,10 +32,12 @@ struct TitleView: View {
             Text(title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundColor(.black.opacity(0.4))
-                .padding(.leading, 60)
-                .padding(.top, isWithBangs ? -5 : -1)
-                .padding(.bottom, -1)
+                .foregroundColor(.black.opacity(Constant.Opacity.forty))
+                .padding(.leading, paddingLeading)
+                .padding(.top, paddingTop)
+                .padding(.bottom, paddingBottom)
+            
+            Spacer()
         }
     }
 }

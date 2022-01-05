@@ -12,8 +12,8 @@ import SwiftUI
 struct LineView: View {
 
     var body: some View {
-        RoundedRectangle(cornerRadius: 20)
+        RoundedRectangle(cornerRadius: Constant.cornerRadius)
             .frame(height: 2)
-            .opacity(0.6)
+            .opacity(Constant.Opacity.sixty)
     }
 }

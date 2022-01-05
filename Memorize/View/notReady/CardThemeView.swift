@@ -13,22 +13,16 @@ struct CardThemeView: View {
     
     //MARK: Properties
 
-    var theme: Theme
-    var selectedTheme: Int
+    let theme: Theme
+    let selectedTheme: Int
+    
+    private var isActiveTheme: Bool {
+        selectedTheme == theme.id
+    }
 
     var body: some View {
         HStack {
-            VStack {
-                Text(theme.avatar)
-                    .font(.system(size: getScreeSize().width / 2.5))
-                    .fixedSize()
-                    .opacity(activeTheme() ? 1 : 0.5)
-                    .rotationEffect(.degrees(activeTheme() ? 10 : 0))
-                    .shadow(color: .black.opacity(activeTheme() ? 0.5 : 0),
-                            radius: activeTheme() ? 10 : 0,
-                            x: 3, y: activeTheme() ? 30 : 0)
-            }
-            .frame(maxWidth: getScreeSize().width / 2, alignment: .center)
+            EmojiThemeView(theme, isActiveTheme)
             
             Spacer()
             
@@ -54,25 +48,24 @@ struct CardThemeView: View {
         .frame(maxWidth: .infinity)
         .frame(height: getScreeSize().width / 1.8)
         .background(
-            RoundedRectangle(cornerRadius: 25)
-                .fill(activeTheme() ? theme.color : .white.opacity(0.4))
+            RoundedRectangle(cornerRadius: Constant.cornerRadius)
+                .fill(activeTheme() ? theme.color : .white.opacity(Constant.Opacity.forty))
         )
         .padding(.horizontal)
         .rotation3DEffect(.degrees(activeTheme() ? 0 : 22), axis: (x: 0, y: 1, z: 0))
-        .offset(x: activeTheme() ? 0 : 22)
+        .offset(x: activeTheme() ? 0 : (isWithBangs ? 32 : 22))
     }
 
     //MARK: Private Methods
-    
+
     private func activeTheme() -> Bool {
         selectedTheme == theme.id
     }
-    
 }
 
 struct CardTheme_Previews: PreviewProvider {
     static var previews: some View {
-        CardThemeView(theme: themeData.first!, selectedTheme: 0)
+        CardThemeView(theme: themeData.first!, selectedTheme: 1)
             .preferredColorScheme(.dark)
     }
 }
