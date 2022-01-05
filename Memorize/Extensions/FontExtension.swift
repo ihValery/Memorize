@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-/*
- static: Значения этих свойст едины для всех экземпляров данного типа.
- Определяет методы, вызываемые для самого типа.
- Дочитать почему в ViewExtension я не использую static, а тут без него не работает
- */
-
 extension Font {
+    static var sizeEmojiTheme: Font {
+        Font.system(size: UIScreen.main.bounds.width / 2.5)
+    }
+    
     ///Размер Эмодзи зависящий от ширины или высоты ячеки помноженное на коэффициент
     static func sizeEmoji(for size: CGSize) -> Font {
         Font.system(size: min(size.height, size.width) * 0.7)

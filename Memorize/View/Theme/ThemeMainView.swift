@@ -7,28 +7,19 @@
 
 import SwiftUI
 
+//MARK: ThemeMainView
+
 struct ThemeMainView: View {
     
-    //MARK: - Properties
+    //MARK: Properties
     
-    @State private var selectedTheme: Int = UserDefaults.standard.integer(forKey: "Theme")
+    @State private var selectedTheme: Int = UserDefaults.standard.integer(forKey: Constant.Theme.key)
     
     @ObservedObject private var theme = ThemeViewModel.shared
     
-    //MARK: - Body
-    
     var body: some View {
         VStack {
-            HStack {
-                Text("Выбери тему")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.black.opacity(0.4))
-                    .padding(.leading, 60)
-                    .padding(.top, isWithBangs ? -5 : -1)
-                    .padding(.bottom, -1)
-                Spacer()
-            }
+            TitleView(Constant.Theme.title)
             
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
@@ -48,12 +39,13 @@ struct ThemeMainView: View {
             }
         }
         .background(
-            LinearGradient(colors:[themeData[theme.current].color.opacity(0.4), .sideMenuStart],
-                           startPoint: .topTrailing, endPoint: .bottomLeading)
-                .ignoresSafeArea()
+            LinearGradient(
+                colors:[themeData[theme.current].color.opacity(Constant.Opacity.forty),
+                        .sideMenuStart],
+                startPoint: .topTrailing, endPoint: .bottomLeading
+            ).ignoresSafeArea()
         )
     }
-    
 }
 
 struct ThemeMainView_Previews: PreviewProvider {

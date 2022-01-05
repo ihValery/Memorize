@@ -42,7 +42,7 @@ struct SideMenuMainView: View {
                     TwoBackgroundCardView(showMenu: $showMenu)
                     
                     TabPanelView(selectedTab: $selectedTab, session: session)
-                        .cornerRadius(showMenu ? 15 : 0)
+                        .cornerRadius(showMenu ? 25 : 0)
                         .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
                 }
                 .rotation3DEffect(.degrees(showMenu ? 20 : 0), axis: (x: 0, y: 1, z: 0))
@@ -59,7 +59,7 @@ struct SideMenuMainView: View {
                 }
             }
             //Масштабирование и перемещение вида
-            .scaleEffect(showMenu ? 0.84 : 1)
+            .scaleEffect(showMenu ? 0.85 : 1)
             .offset(x: showMenu ? getScreeSize().width - (isWithBangs ? 120 : 70) : 0)
             .ignoresSafeArea()
             .overlay(

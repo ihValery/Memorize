@@ -11,8 +11,8 @@ import SwiftUI
 
 struct RulesView: View {
     
-    //MARK: Properties
-        
+    //MARK: InternalConstant
+    
     fileprivate struct InternalConstant {
         static let title = "Правило"
         static let background = "backgroundRules"
@@ -25,23 +25,27 @@ struct RulesView: View {
         static let ruleSix = "Пара карт с одинаковой картинкой считаеться найденой, когда открыты одновременно лишь они."
     }
     
+    //MARK: Properties
+    
+    private let paddingTop: CGFloat = -20
+    private var offseBackground: CGFloat {
+        isWithBangs ? 60 : -160
+    }
+    
     var body: some View {
         VStack {
-            HStack {
-                TitleView(InternalConstant.title)
-                Spacer()
-            }
+            TitleView(InternalConstant.title)
             
             ScrollView(.vertical, showsIndicators: false) {
                 ZStack {
                     GeometryReader { gr in
                         Image(InternalConstant.background)
                             .resizable()
-                            .offset(y: -gr.frame(in: .global).origin.y / 1.3 - 160)
+                            .offset(y: -gr.frame(in: .global).origin.y / 1.3 + offseBackground)
                     }
                     
                     VStack(spacing: 30) {
-                        CardRuleView(title: InternalConstant.ruleOne).padding(.top, -20)
+                        CardRuleView(title: InternalConstant.ruleOne).padding(.top, paddingTop)
                         CardRuleView(title: InternalConstant.ruleTwo)
                         CardRuleView(title: InternalConstant.ruleThree)
                         CardRuleView(title: InternalConstant.ruleFour)
@@ -58,28 +62,6 @@ struct RulesView: View {
             }
         }
         .background(Color.ruleTop.ignoresSafeArea())
-    }
-    
-}
-
-//MARK: CardRuleView
-
-struct CardRuleView: View {
-    
-    //MARK: Properties
-    
-    let title: String
-        
-    var body: some View {
-        MatteEffectView()
-            .cornerRadius(25)
-            .frame(height: 170)
-            .overlay(
-                Text(title)
-                    .shadow(color: .ruleShadow, radius: 20, x: 0, y: 0)
-                    .foregroundColor(.defaultText)
-                    .padding()
-            )
     }
 }
 

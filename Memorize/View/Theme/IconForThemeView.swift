@@ -19,7 +19,7 @@ struct IconForThemeView: View {
     
     private let lineWidth: CGFloat = 5
     private var cardRotationAngle: Double {
-        activeTheme ? 270 : 0
+        activeTheme ? 270 : -90
     }
     private var sizeIcon: CGFloat {
         isWithBangs ? 28 : 20
@@ -45,7 +45,7 @@ struct IconForThemeView: View {
                 ZStack {
                     theme.color
                     Circle()
-                        .stroke(Color.black.opacity(0.1), lineWidth: lineWidth)
+                        .stroke(Color.black.opacity(Constant.Opacity.ten), lineWidth: lineWidth)
                     Circle()
                         .trim(from: 0, to: trimTo)
                         .stroke(Color.white, lineWidth: lineWidth)

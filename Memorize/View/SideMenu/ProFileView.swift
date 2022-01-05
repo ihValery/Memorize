@@ -11,6 +11,14 @@ import SwiftUI
 
 struct ProFileView: View {
     
+    //MARK: InternalConstant
+    
+    fileprivate struct InternalConstant {
+        static let avatar = ""
+        static let name = "Без имени"
+        static let email = "игрок@mail.net"
+    }
+    
     //MARK: Properties
     
     @ObservedObject var session: SessionFirebase
@@ -19,23 +27,24 @@ struct ProFileView: View {
     private let userName: String
     private let userEmail: String
     
+    private let paddingTop: CGFloat = 30
     private var sizeImage: CGFloat {
         isWithBangs ? 180 : 160
     }
     
     //MARK: Initializer
-
+    
     init(session: SessionFirebase) {
         self.session = session
-        userAvatar = session.user?.avatarURL ?? ""
-        userName = session.user?.userName ?? "Без имени"
-        userEmail = session.user?.email ?? "игрок@mail.net"
+        userAvatar = session.user?.avatarURL ?? InternalConstant.avatar
+        userName = session.user?.userName ?? InternalConstant.name
+        userEmail = session.user?.email ?? InternalConstant.email
     }
     
     var body: some View {
         VStack(alignment: .leading) {
             ImageWithURLView(userAvatar, size: sizeImage)
-                .padding(.top, 30)
+                .padding(.top, paddingTop)
             
             VStack(alignment: .leading) {
                 Text(userName)
@@ -43,7 +52,7 @@ struct ProFileView: View {
                     .fontWeight(.bold)
                 Text(userEmail)
                     .font(.subheadline)
-                    .opacity(0.8)
+                    .opacity(Constant.Opacity.seventy)
             }
         }
         .foregroundColor(.defaultText)
