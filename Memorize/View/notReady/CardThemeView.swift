@@ -7,14 +7,14 @@
 
 import SwiftUI
 
+//MARK: CardThemeView
+
 struct CardThemeView: View {
     
-    //MARK: - Properties
+    //MARK: Properties
 
     var theme: Theme
     var selectedTheme: Int
-
-    //MARK: - Body
 
     var body: some View {
         HStack {
@@ -49,7 +49,7 @@ struct CardThemeView: View {
                     .padding(.top, isWithBangs ? 15 : 0)
                     .foregroundColor(activeTheme() ? .white : .black.opacity(0.1))
             }
-            .padding(.trailing, 40)
+            .padding(.trailing, isWithBangs ? 40 : 20)
         }
         .frame(maxWidth: .infinity)
         .frame(height: getScreeSize().width / 1.8)
@@ -61,9 +61,8 @@ struct CardThemeView: View {
         .rotation3DEffect(.degrees(activeTheme() ? 0 : 22), axis: (x: 0, y: 1, z: 0))
         .offset(x: activeTheme() ? 0 : 22)
     }
-    
 
-    //MARK: - Private Methods
+    //MARK: Private Methods
     
     private func activeTheme() -> Bool {
         selectedTheme == theme.id
@@ -73,7 +72,7 @@ struct CardThemeView: View {
 
 struct CardTheme_Previews: PreviewProvider {
     static var previews: some View {
-        CardThemeView(theme: themeData.last!, selectedTheme: 0)
+        CardThemeView(theme: themeData.first!, selectedTheme: 0)
             .preferredColorScheme(.dark)
     }
 }
