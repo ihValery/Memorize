@@ -9,14 +9,12 @@ import SwiftUI
 
 struct GameBoardMainView: View {
     
-    //MARK: - Properties
+    //MARK: Properties
 
     @ObservedObject var viewModelGame: GameBoardViewModel
     @ObservedObject var scoreListViewModel: ResultsTableViewModel
     
     @ObservedObject private var theme = ThemeViewModel.shared
-    
-    //MARK: - Body
 
     var body: some View {
         ZStack {
