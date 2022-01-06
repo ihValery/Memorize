@@ -45,7 +45,7 @@ struct IconForThemeView: View {
                 ZStack {
                     theme.color
                     Circle()
-                        .stroke(Color.black.opacity(Constant.Opacity.ten), lineWidth: lineWidth)
+                        .stroke(Color.black.opacity(Constant.Opacity.weak), lineWidth: lineWidth)
                     Circle()
                         .trim(from: 0, to: trimTo)
                         .stroke(Color.white, lineWidth: lineWidth)
@@ -55,5 +55,14 @@ struct IconForThemeView: View {
                     )
             )
             .clipShape(Circle())
+    }
+}
+
+struct IconForThemeView_Previews: PreviewProvider {
+    static var previews: some View {
+//        CardThemeView(theme: themeData.first!, selectedTheme: 1)
+//            .previewLayout(.fixed(width: UIScreen.main.bounds.width, height: 400))
+//            .preferredColorScheme(.dark)
+        IconForThemeView(.age(trim: 8), themeData.first!, true)
     }
 }

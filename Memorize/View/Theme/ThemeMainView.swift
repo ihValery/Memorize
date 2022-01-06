@@ -17,30 +17,33 @@ struct ThemeMainView: View {
     
     @ObservedObject private var theme = ThemeViewModel.shared
     
+    private var paddingVertical: CGFloat? {
+        isWithBangs ? 25 : nil
+    }
+    
     var body: some View {
         VStack {
             TitleView(Constant.Theme.title)
             
             ScrollView(.vertical, showsIndicators: false) {
-                VStack {
-                    ForEach(themeData) { item in
-                        CardThemeView(theme: item, selectedTheme: selectedTheme)
-                            .padding(.vertical)
-                        
-                            .onTapGesture {
-                                theme.current = item.id
-                                withAnimation(.easeInOut) {
-                                    selectedTheme = theme.current
-                                }
+                
+                ForEach(themeData) { item in
+                    CardThemeView(theme: item, selectedTheme: selectedTheme)
+                        .padding(.vertical, paddingVertical)
+                    
+                        .onTapGesture {
+                            theme.current = item.id
+                            withAnimation(.easeInOut) {
+                                selectedTheme = theme.current
                             }
-                    }
+                        }
                 }
                 .padding(.top)
             }
         }
         .background(
             LinearGradient(
-                colors:[themeData[theme.current].color.opacity(Constant.Opacity.forty),
+                colors:[themeData[theme.current].color.opacity(Constant.Opacity.meddle),
                         .sideMenuStart],
                 startPoint: .topTrailing, endPoint: .bottomLeading
             ).ignoresSafeArea()

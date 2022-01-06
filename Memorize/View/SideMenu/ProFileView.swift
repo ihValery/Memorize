@@ -52,7 +52,7 @@ struct ProFileView: View {
                     .fontWeight(.bold)
                 Text(userEmail)
                     .font(.subheadline)
-                    .opacity(Constant.Opacity.seventy)
+                    .opacity(Constant.Opacity.strong)
             }
         }
         .foregroundColor(.defaultText)

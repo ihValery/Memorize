@@ -14,6 +14,6 @@ struct LineView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: Constant.cornerRadius)
             .frame(height: 2)
-            .opacity(Constant.Opacity.sixty)
+            .opacity(Constant.Opacity.strong)
     }
 }

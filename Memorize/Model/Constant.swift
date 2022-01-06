@@ -13,10 +13,10 @@ struct Constant {
     static let cornerRadius: CGFloat = 25
     
     struct Opacity {
-        static let ten: CGFloat = 0.1
-        static let forty: CGFloat = 0.4
-        static let sixty: CGFloat = 0.6
-        static let seventy: CGFloat = 0.7
+        static let weak: CGFloat = 0.1
+        static let meddle: CGFloat = 0.4
+        static let strong: CGFloat = 0.7
+//        static let max: CGFloat = 0.7
     }
     
     struct Theme {
