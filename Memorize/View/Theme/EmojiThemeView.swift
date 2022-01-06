@@ -28,10 +28,10 @@ struct EmojiThemeView: View {
     private var radiusShadowEmoji: Double {
         isActiveTheme ? 10 : 0
     }
-    private var yShadowEmoji: Double {
+    private var yOffsetShadow: Double {
         isActiveTheme ? 30 : 0
     }
-    private let xShadowEmoji: Double = 3
+    private let xOffsetShadow: Double = 3
     
     private var occupiedSpace: CGFloat {
         UIScreen.main.bounds.width / 2
@@ -53,7 +53,7 @@ struct EmojiThemeView: View {
                 .rotationEffect(.degrees(pivotEmoji))
                 .shadow(color: .black.opacity(opacityShadowEmoji),
                         radius: radiusShadowEmoji,
-                        x: xShadowEmoji, y: yShadowEmoji)
+                        x: xOffsetShadow, y: yOffsetShadow)
         }
         .frame(maxWidth: occupiedSpace, alignment: .center)
     }

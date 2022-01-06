@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+//MARK: TabButtonView
+
 struct TabButtonView: View {
 
-    //MARK: - Properties
+    //MARK: Properties
     
     var image: String
     var title: String
@@ -23,7 +25,21 @@ struct TabButtonView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    //MARK: - Initializer
+    private let spacing: CGFloat = 15
+    private let sizeIcon: CGFloat = 30
+    private let uniforWidth: CGFloat = UIScreen.main.bounds.width * 3 / 5
+    
+    private var isActiveTab: Bool {
+        selectedTab == title
+    }
+    private var colorButton: Color {
+        isActiveTab ? themeData[theme.current].color : .defaultText
+    }
+    private var opacityBackground: CGFloat {
+        colorScheme == .light ? 1 : Constant.Opacity.strong
+    }
+    
+    //MARK: Initializer
     
     init(_ image: String, _ title: String, _ animation: Namespace.ID,
          _ showMenu: Binding<Bool>, _ selectedTab: Binding<String>) {
@@ -35,44 +51,42 @@ struct TabButtonView: View {
         self._selectedTab = selectedTab
     }
     
-    //MARK: - Body
-    
     var body: some View {
         Button {
             withAnimation(.spring()) {
                 selectedTab = title
             }
-            withAnimation(.easeIn.delay(0.2)) {
+            withAnimation(.spring()) {
                 showMenu.toggle()
             }
         } label: {
-            HStack(spacing: 15) {
+            HStack(spacing: spacing) {
                 Image(systemName: image)
                     .font(.title2)
-                    .frame(width: 30)
+                    .frame(width: sizeIcon, height: sizeIcon)
                 
                 Text(title)
                     .fontWeight(.semibold)
             }
-            .foregroundColor(selectedTab == title ? themeData[theme.current].color : .defaultText)
-            .padding(.vertical, 12)
-            .padding(.horizontal, 10)
-            .frame(maxWidth: getScreeSize().width * 3 / 5, alignment: .leading)
+            .foregroundColor(colorButton)
+            .padding(.vertical)
+            .padding(.horizontal)
+            .frame(maxWidth: uniforWidth, alignment: .leading)
+            
             .background(
                 //hero Animation
                 ZStack {
-                    if selectedTab == title {
-                        Color.defaultElement.opacity(colorScheme == .light ? 1 : 0.5)
-                            .opacity(selectedTab == title ? 1 : 0)
-                            .clipShape(CustomCorners(corner: [.topRight, .bottomRight], radius: 13))
-                        //Магия )))
-                            .matchedGeometryEffect(id: "TAB", in: animation)
+                    if isActiveTab {
+                        Color.defaultElement.opacity(opacityBackground)
+                            .clipShape(CustomCorners(corner: [.topRight, .bottomRight],
+                                                     radius: Constant.cornerRadius - 5))
+                            .matchedGeometryEffect(id: "TAB", in: animation)              //Магия )))
+
                     }
                 }
             )
         }
     }
-    
 }
 
 struct TabButtonView_Previews: PreviewProvider {

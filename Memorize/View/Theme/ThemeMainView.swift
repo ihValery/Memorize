@@ -13,22 +13,22 @@ struct ThemeMainView: View {
     
     //MARK: Properties
     
-    @State private var selectedTheme: Int = UserDefaults.standard.integer(forKey: Constant.Theme.key)
-    
-    @ObservedObject private var theme = ThemeViewModel.shared
-    
     private var paddingVertical: CGFloat? {
         isWithBangs ? 25 : nil
     }
+
+    @State private var selectedTheme: Int = UserDefaults.standard.integer(forKey: Constant.Theme.key)
     
+    @ObservedObject private var theme = ThemeViewModel.shared
+        
     var body: some View {
         VStack {
-            TitleView(Constant.Theme.title)
+            TitleTextStyleView(Constant.Theme.title)
             
             ScrollView(.vertical, showsIndicators: false) {
                 
                 ForEach(themeData) { item in
-                    CardThemeView(theme: item, selectedTheme: selectedTheme)
+                    CardThemeView(item, selectedTheme)
                         .padding(.vertical, paddingVertical)
                     
                         .onTapGesture {

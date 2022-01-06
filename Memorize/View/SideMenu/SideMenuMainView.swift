@@ -8,11 +8,13 @@
 import SwiftUI
 import Firebase
 
+//MARK: SideMenuMainView
+
 struct SideMenuMainView: View {
     
-    //MARK: - Properties
+    //MARK: Properties
     
-    @State private var selectedTab = "Новая игра"
+    @State private var selectedTab = Constant.SideMenu.game
     @State private var showMenu = true //FIXME: Before assembly false
     
     @Environment(\.scenePhase) private var scenePhase
@@ -22,14 +24,28 @@ struct SideMenuMainView: View {
     
     @ObservedObject private var theme = ThemeViewModel.shared
     
-    //MARK: - Body
+    private let cleanBadge: Int = 0
+    private var gradient: Gradient {
+        Gradient(colors: [.sideMenuStart.opacity(colorScheme == .dark ? 0.5 : 1),
+                          themeData[theme.current].color])
+    }
+    private var cornerRadius: CGFloat {
+        showMenu ? 25 : 0
+    }
+    private var rotationAngle: Angle {
+        .degrees(showMenu ? 20 : 0)
+    }
+    private var scale: Double {
+        showMenu ? 0.8 : 1
+    }
+    private var horizontalOffset: CGFloat {
+        showMenu ? (UIScreen.main.bounds.width * 3 / 4) : 0
+    }
+    
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient:
-                            Gradient(colors: [.sideMenuStart.opacity(colorScheme == .dark ? 0.5 : 1),
-                                              themeData[theme.current].color]),
-                           startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
             ScrollView(isWithBangs ? .init() : .vertical, showsIndicators: false) {
@@ -39,37 +55,39 @@ struct SideMenuMainView: View {
             
             ZStack {
                 ZStack {
-                    TwoBackgroundCardView(showMenu: $showMenu)
+                    TwoBackgroundCardView(showMenu)
                     
-                    TabPanelView(selectedTab: $selectedTab, session: session)
-                        .cornerRadius(showMenu ? 25 : 0)
-                        .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: 0)
+                    TabPanelView($selectedTab, session)
+                        .cornerRadius(cornerRadius)
+                        .shadow(color: .defaultText.opacity(Constant.Opacity.weak),
+                                radius: 5, x: -5, y: 0)
                 }
-                .rotation3DEffect(.degrees(showMenu ? 20 : 0), axis: (x: 0, y: 1, z: 0))
                 
                 //Подложка (Что бы нельзя было играть при открытом меню)
                 if showMenu {
-                    Color.white
-                        .opacity(0.01)
+                    Color.white.opacity(Constant.Opacity.substrate)
+                    
                         .onTapGesture {
-                            withAnimation(.spring()) {
-                                showMenu.toggle()
+                            withAnimation(.easeIn) {
+                                showMenu = false
                             }
                         }
                 }
             }
-            //Масштабирование и перемещение вида
-            .scaleEffect(showMenu ? 0.85 : 1)
-            .offset(x: showMenu ? getScreeSize().width - (isWithBangs ? 120 : 70) : 0)
+            .rotation3DEffect(rotationAngle, axis: (x: 0, y: 1, z: 0))
+            .offset(x: horizontalOffset)
+            .scaleEffect(scale)
             .ignoresSafeArea()
+            
             .overlay(
                 BurgerButtonView(showMenu: $showMenu)
-                , alignment: .topLeading)
+                , alignment: .topLeading
+            )
         }
         
         .onChange(of: scenePhase) { phase in
             if phase == .active {
-                UIApplication.shared.applicationIconBadgeNumber = 0
+                UIApplication.shared.applicationIconBadgeNumber = cleanBadge
             }
         }
         
@@ -86,7 +104,6 @@ struct SideMenuMainView: View {
          })
          */
     }
-    
 }
 
 struct MainView_Previews: PreviewProvider {

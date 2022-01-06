@@ -9,7 +9,7 @@ import SwiftUI
 
 //MARK: TitleView
 
-struct TitleView: View {
+struct TitleTextStyleView: View {
     
     //MARK: Properties
     
@@ -36,7 +36,7 @@ struct TitleView: View {
                 .padding(.leading, paddingLeading)
                 .padding(.top, paddingTop)
                 .padding(.bottom, paddingBottom)
-            
+
             Spacer()
         }
     }
@@ -44,6 +44,6 @@ struct TitleView: View {
 
 struct TitleView_Previews: PreviewProvider {
     static var previews: some View {
-        TitleView("Title")
+        TitleTextStyleView("Title")
     }
 }

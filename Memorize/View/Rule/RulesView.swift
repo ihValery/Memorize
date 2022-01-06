@@ -27,14 +27,16 @@ struct RulesView: View {
     
     //MARK: Properties
     
+    private let cardSpacing: Double = 30
     private let paddingTop: CGFloat = -20
+    
     private var offseBackground: CGFloat {
         isWithBangs ? 60 : -160
     }
     
     var body: some View {
         VStack {
-            TitleView(InternalConstant.title)
+            TitleTextStyleView(InternalConstant.title)
             
             ScrollView(.vertical, showsIndicators: false) {
                 ZStack {
@@ -44,7 +46,7 @@ struct RulesView: View {
                             .offset(y: -gr.frame(in: .global).origin.y / 1.3 + offseBackground)
                     }
                     
-                    VStack(spacing: 30) {
+                    VStack(spacing: cardSpacing) {
                         CardRuleView(title: InternalConstant.ruleOne).padding(.top, paddingTop)
                         CardRuleView(title: InternalConstant.ruleTwo)
                         CardRuleView(title: InternalConstant.ruleThree)
@@ -68,5 +70,6 @@ struct RulesView: View {
 struct RulesView_Previews: PreviewProvider {
     static var previews: some View {
         RulesView()
+            .preferredColorScheme(.dark)
     }
 }

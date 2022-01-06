@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+let plugTheme = Theme(id: 1, name: "Загрушка", avatar: "👤", level: 4, timer: 1, age: 7, color: .gray, number: 9,
+                      collection: ["👤"])
+
 let themeData = [
     Theme(id: 0, name: Theme.Name.cartoon, avatar: "🧚🏼‍♀️", level: 1, timer: 0, age: 3, color: .themeCartoon, number: 4,
           collection: ["🧜‍♀️", "🧚‍♀️", "🦄", "🦋", "🐠", "🐬", "🧝‍♀️", "🧞‍♂️", "👼", "🧸", "🎁", "🪄", "🧙🏼", "👑",
