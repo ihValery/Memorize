@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+//MARK: CompositeSideMenuView
+
 struct CompositeSideMenuView: View {
     
-    //MARK: - Properties
+    //MARK: Properties
     
     @Binding var selectedTab: String
     @Binding var showMenu: Bool
@@ -19,21 +21,21 @@ struct CompositeSideMenuView: View {
     
     @ObservedObject var session: SessionFirebase
     
-    //MARK: - Initializer
+    private let spacing: CGFloat = 15
+    
+    //MARK: Initializer
 
     init(_ selectedTab: Binding<String>, _ showMenu: Binding<Bool>, _ session: SessionFirebase) {
         self._selectedTab = selectedTab
         self._showMenu = showMenu
         self.session = session
     }
-    
-    //MARK: - Body
-    
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
+        VStack(alignment: .leading, spacing: spacing) {
             ProFileView(session: session)
             
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading) {
                 TabButtonView("gamecontroller", "Новая игра", animation, $showMenu, $selectedTab)
                 
                 TabButtonView("clock.arrow.circlepath", "Счет", animation, $showMenu, $selectedTab)
@@ -44,14 +46,14 @@ struct CompositeSideMenuView: View {
                 
                 TabButtonView("questionmark.circle", "Правила", animation, $showMenu, $selectedTab)
             }
-            .padding(.leading, -15)
-            .padding(.top, 50)
+            .padding(.leading, -spacing)
+            .padding(.top, spacing * 3)
             
             Spacer()
             
             SignOutButtonView(session: session)
         }
-        .padding(.leading, 14)
+        .padding(.leading)
         .padding(.top)
     }
     

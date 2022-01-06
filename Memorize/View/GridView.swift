@@ -9,22 +9,23 @@ import SwiftUI
 
 //“Немного важно, какой” ТИП Item. Мы все таки беспокоимся о том, какой ТИП имеет Item, а именно о том, чтобы он был Identifiable.
 //Связываем generic с протоколами
-//          ____Generic____             _____Protocol_____  ___Protocol___
+//              ____Generic____             _____Protocol_____  ___Protocol___
+
+//MARK: GridView
+
 struct GridView<Item, ItemView>: View where Item: Identifiable, ItemView: View {
 
-    //MARK: - Properties
+    //MARK: Properties
 
     private var items: [Item]
     private var viewForItem: (Item) -> ItemView
 
-    //MARK: - Initializer
+    //MARK: Initializer
 
     init(_ items: [Item], viewForItem: @escaping (Item) -> ItemView) {
         self.items = items
         self.viewForItem = viewForItem
     }
-
-    //MARK: - Body
 
     var body: some View {
         //1. geometry - получаем пространство, которое нам предлагается.
@@ -33,7 +34,7 @@ struct GridView<Item, ItemView>: View where Item: Identifiable, ItemView: View {
         }
     }
 
-    //MARK: - Private Methods
+    //MARK: Private Methods
 
     //2. используем GridLayout, чтобы поделить его, а затем предлагаем эти кусочки нашим маленьким sub-Views.
     private func body(for layout: GridLayout) -> some View {
@@ -53,9 +54,11 @@ struct GridView<Item, ItemView>: View where Item: Identifiable, ItemView: View {
 
 }
 
+//MARK: GridLayout
+
 struct GridLayout {
 
-    //MARK: - Properties
+    //MARK: Properties
 
     private (set) var size: CGSize
     private (set) var rowCount: Int = 0
@@ -70,7 +73,7 @@ struct GridLayout {
         }
     }
 
-    //MARK: - Initializer
+    //MARK: Initializer
 
     init(itemCount: Int, nearAspectRatio desiredAspectRatio: Double = 1, in size: CGSize) {
         self.size = size
@@ -100,7 +103,7 @@ struct GridLayout {
         columnCount = bestLayout.columnCount
     }
 
-    //MARK: - Public Methods
+    //MARK: Public Methods
 
     //где размещается каждый отдельный item, эта функция возвращает точку CGPoint центра каждого item.
     func location(ofItemAt index: Int) -> CGPoint {

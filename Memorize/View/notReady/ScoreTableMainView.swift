@@ -11,9 +11,9 @@ struct ScoreTableMainView: View {
     
     //MARK: Properties
  
-    @Binding var onAnimation: Bool
-
     @ObservedObject var session: SessionFirebase
+    
+    @State private var onAnimation = false
     
     @ObservedObject private var theme = ThemeViewModel.shared
     @ObservedObject private var scoreListViewModel = ResultsTableViewModel()
@@ -46,12 +46,20 @@ struct ScoreTableMainView: View {
             }
             .ignoresSafeArea()
         }
+        
+        .onAppear {
+            onAnimation.toggle()
+        }
+    
+        .onDisappear {
+            onAnimation.toggle()
+        }
     }
     
 }
 
 struct ScoreTableMainView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreTableMainView(onAnimation: .constant(true), session: SessionFirebase())
+        ScoreTableMainView(session: SessionFirebase())
     }
 }

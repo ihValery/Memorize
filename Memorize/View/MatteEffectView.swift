@@ -7,17 +7,19 @@
 
 import SwiftUI
 
+//MARK: MatteEffectView
+
 struct MatteEffectView: UIViewRepresentable {
     
-    //MARK: - Properties
+    //MARK: Properties
+
+    @Environment(\.colorScheme) private var colorScheme
 
     private var effect: UIVisualEffect {
         UIBlurEffect(style: colorScheme == .dark ? .systemUltraThinMaterialDark : .systemUltraThinMaterialLight)
     }
 
-    @Environment(\.colorScheme) private var colorScheme
-
-    //MARK: - Public Methods
+    //MARK: Public Methods
 
     func makeUIView(context: Context) -> UIVisualEffectView {
         UIVisualEffectView()

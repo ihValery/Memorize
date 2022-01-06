@@ -7,23 +7,22 @@
 
 import SwiftUI
 
+//MARK: OnboardingView
+
 struct OnboardingView: View {
     
-    //MARK: - Properties
+    //MARK: Properties
     
     var cardsOnboard: [CardOnboard] = cardOnboardData
-    
-    //MARK: - Body
-    
+
     var body: some View {
         TabView {
             ForEach(cardsOnboard[0..<cardsOnboard.count]) { item in
-                CardOnboardingView(cardOnboard: item)
+                CardOnboardingView(item)
             }
         }
         .tabViewStyle(PageTabViewStyle())
     }
-    
 }
 
 struct OnboardingView_Previews: PreviewProvider {

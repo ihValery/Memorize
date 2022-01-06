@@ -9,7 +9,7 @@ import SwiftUI
 
 //MARK: TitleView
 
-struct TitleView: View {
+struct TitleTextStyleView: View {
     
     //MARK: Properties
     
@@ -32,11 +32,11 @@ struct TitleView: View {
             Text(title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundColor(.black.opacity(Constant.Opacity.forty))
+                .foregroundColor(.black.opacity(Constant.Opacity.meddle))
                 .padding(.leading, paddingLeading)
                 .padding(.top, paddingTop)
                 .padding(.bottom, paddingBottom)
-            
+
             Spacer()
         }
     }
@@ -44,6 +44,6 @@ struct TitleView: View {
 
 struct TitleView_Previews: PreviewProvider {
     static var previews: some View {
-        TitleView("Title")
+        TitleTextStyleView("Title")
     }
 }
