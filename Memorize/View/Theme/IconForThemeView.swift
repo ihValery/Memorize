@@ -47,7 +47,7 @@ struct IconForThemeView: View {
                 ZStack {
                     theme.color
                     Circle()
-                        .stroke(Color.black.opacity(Constant.Opacity.weak), lineWidth: lineWidth)
+                        .stroke(Color.black.opacity(GlobalConstant.Opacity.weak), lineWidth: lineWidth)
                     Circle()
                         .trim(from: 0, to: trimTo)
                         .stroke(Color.defaultText, lineWidth: lineWidth)

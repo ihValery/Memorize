@@ -14,7 +14,7 @@ struct SideMenuMainView: View {
     
     //MARK: Properties
     
-    @State private var selectedTab = Constant.SideMenu.game
+    @State private var selectedTab = GlobalConstant.SideMenu.game
     @State private var showMenu = true //FIXME: Before assembly false
     
     @Environment(\.scenePhase) private var scenePhase
@@ -59,13 +59,13 @@ struct SideMenuMainView: View {
                     
                     TabPanelView($selectedTab, session)
                         .cornerRadius(cornerRadius)
-                        .shadow(color: .defaultText.opacity(Constant.Opacity.weak),
+                        .shadow(color: .defaultText.opacity(GlobalConstant.Opacity.weak),
                                 radius: 5, x: -5, y: 0)
                 }
                 
                 //Подложка (Что бы нельзя было играть при открытом меню)
                 if showMenu {
-                    Color.white.opacity(Constant.Opacity.substrate)
+                    Color.white.opacity(GlobalConstant.Opacity.substrate)
                     
                         .onTapGesture {
                             withAnimation(.easeIn) {

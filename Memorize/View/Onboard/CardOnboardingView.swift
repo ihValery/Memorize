@@ -47,7 +47,7 @@ struct CardOnboardingView: View {
             Image(cardOnboard.image)
                 .resizable()
                 .scaledToFill()
-                .shadow(color: .black.opacity(Constant.Opacity.meddle),
+                .shadow(color: .black.opacity(GlobalConstant.Opacity.meddle),
                         radius: 8, x: 6, y: 8)
                 .frame(width: width, height: height)
                 .scaleEffect(scale)
@@ -63,14 +63,14 @@ struct CardOnboardingView: View {
             }
             .foregroundColor(.defaultText)
             .multilineTextAlignment(.center)
-            .shadow(color: .ruleShadow.opacity(Constant.Opacity.weak),
+            .shadow(color: .ruleShadow.opacity(GlobalConstant.Opacity.weak),
                     radius: 2, x: 2, y: 2)
             .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LinearGradient(gradient: gradient,
                                    startPoint: .topLeading, endPoint: .bottomTrailing))
-        .cornerRadius(Constant.cornerRadius)
+        .cornerRadius(GlobalConstant.cornerRadius)
         .padding()
         
         .onAppear(perform: {

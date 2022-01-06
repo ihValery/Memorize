@@ -28,15 +28,19 @@ struct TabButtonView: View {
     private let spacing: CGFloat = 15
     private let sizeIcon: CGFloat = 30
     private let uniforWidth: CGFloat = UIScreen.main.bounds.width * 3 / 5
+    private let cornerRadius: CGFloat = GlobalConstant.cornerRadius - 10
     
     private var isActiveTab: Bool {
         selectedTab == title
+    }
+    private var paddingVertical: CGFloat? {
+        isWithBangs ? nil : 10
     }
     private var colorButton: Color {
         isActiveTab ? themeData[theme.current].color : .defaultText
     }
     private var opacityBackground: CGFloat {
-        colorScheme == .light ? 1 : Constant.Opacity.strong
+        colorScheme == .light ? 1 : GlobalConstant.Opacity.strong
     }
     
     //MARK: Initializer
@@ -69,7 +73,7 @@ struct TabButtonView: View {
                     .fontWeight(.semibold)
             }
             .foregroundColor(colorButton)
-            .padding(.vertical)
+            .padding(.vertical, paddingVertical)
             .padding(.horizontal)
             .frame(maxWidth: uniforWidth, alignment: .leading)
             
@@ -79,7 +83,7 @@ struct TabButtonView: View {
                     if isActiveTab {
                         Color.defaultElement.opacity(opacityBackground)
                             .clipShape(CustomCorners(corner: [.topRight, .bottomRight],
-                                                     radius: Constant.cornerRadius - 5))
+                                                     radius: cornerRadius))
                             .matchedGeometryEffect(id: "TAB", in: animation)              //Магия )))
 
                     }

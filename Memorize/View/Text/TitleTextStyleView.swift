@@ -32,7 +32,7 @@ struct TitleTextStyleView: View {
             Text(title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundColor(.black.opacity(Constant.Opacity.meddle))
+                .foregroundColor(.black.opacity(GlobalConstant.Opacity.meddle))
                 .padding(.leading, paddingLeading)
                 .padding(.top, paddingTop)
                 .padding(.bottom, paddingBottom)

@@ -23,7 +23,7 @@ struct CardThemeView: View {
     }
     
     private var cardColor: Color {
-        isActiveTheme ? theme.color : .defaultText.opacity(Constant.Opacity.meddle)
+        isActiveTheme ? theme.color : .defaultText.opacity(GlobalConstant.Opacity.meddle)
     }
 
     private var angleRotation: Angle {
@@ -49,7 +49,7 @@ struct CardThemeView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: cardHeight)
-        .background(RoundedRectangle(cornerRadius: Constant.cornerRadius).fill(cardColor))
+        .background(RoundedRectangle(cornerRadius: GlobalConstant.cornerRadius).fill(cardColor))
         .padding(.horizontal)
         .rotation3DEffect(angleRotation, axis: (x: 0, y: 1, z: 0))
         .offset(x: xOffset)
@@ -58,7 +58,7 @@ struct CardThemeView: View {
 
 struct CardTheme_Previews: PreviewProvider {
     static var previews: some View {
-        let indexFoodCard = 5354
+        let indexFoodCard = 1
         
         guard indexFoodCard < themeData.count else {
             return CardThemeView()

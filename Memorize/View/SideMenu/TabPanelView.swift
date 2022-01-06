@@ -28,19 +28,19 @@ struct TabPanelView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             GameBoardMainView(viewModelGame: GameBoardViewModel(), scoreListViewModel: ResultsTableViewModel())
-                .tag(Constant.SideMenu.game)
+                .tag(GlobalConstant.SideMenu.game)
 
             ScoreTableMainView(session: session)
-                .tag(Constant.SideMenu.score)
+                .tag(GlobalConstant.SideMenu.score)
 
             ThemeMainView()
-                .tag(Constant.SideMenu.theme)
+                .tag(GlobalConstant.SideMenu.theme)
 
             NotificationView()
-                .tag(Constant.SideMenu.notification)
+                .tag(GlobalConstant.SideMenu.notification)
 
             RulesView()
-                .tag(Constant.SideMenu.rule)
+                .tag(GlobalConstant.SideMenu.rule)
         }
     }
 }

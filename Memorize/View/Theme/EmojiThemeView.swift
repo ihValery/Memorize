@@ -20,10 +20,10 @@ struct EmojiThemeView: View {
         isActiveTheme ? 10 : 0
     }
     private var opacityEmoji: Double {
-        isActiveTheme ? 1 : Constant.Opacity.strong
+        isActiveTheme ? 1 : GlobalConstant.Opacity.strong
     }
     private var opacityShadowEmoji: Double {
-        isActiveTheme ? Constant.Opacity.strong : 0
+        isActiveTheme ? GlobalConstant.Opacity.strong : 0
     }
     private var radiusShadowEmoji: Double {
         isActiveTheme ? 10 : 0
@@ -50,7 +50,7 @@ struct EmojiThemeView: View {
                 .font(.sizeEmojiTheme)
                 .fixedSize()
                 .opacity(opacityEmoji)
-                .rotationEffect(.degrees(pivotEmoji))
+                .rotationEffect(.degrees(pivotEmoji)) //fixme
                 .shadow(color: .black.opacity(opacityShadowEmoji),
                         radius: radiusShadowEmoji,
                         x: xOffsetShadow, y: yOffsetShadow)

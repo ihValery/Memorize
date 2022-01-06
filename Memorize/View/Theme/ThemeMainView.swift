@@ -17,24 +17,24 @@ struct ThemeMainView: View {
         isWithBangs ? 25 : nil
     }
 
-    @State private var selectedTheme: Int = UserDefaults.standard.integer(forKey: Constant.Theme.key)
+    @State private var indexSelectedTheme: Int = UserDefaults.standard.integer(forKey: GlobalConstant.Theme.key)
     
     @ObservedObject private var theme = ThemeViewModel.shared
         
     var body: some View {
         VStack {
-            TitleTextStyleView(Constant.Theme.title)
+            TitleTextStyleView(GlobalConstant.Theme.title)
             
             ScrollView(.vertical, showsIndicators: false) {
                 
                 ForEach(themeData) { item in
-                    CardThemeView(item, selectedTheme)
+                    CardThemeView(item, indexSelectedTheme)
                         .padding(.vertical, paddingVertical)
                     
                         .onTapGesture {
                             theme.current = item.id
                             withAnimation(.easeInOut) {
-                                selectedTheme = theme.current
+                                indexSelectedTheme = theme.current
                             }
                         }
                 }
@@ -43,7 +43,7 @@ struct ThemeMainView: View {
         }
         .background(
             LinearGradient(
-                colors:[themeData[theme.current].color.opacity(Constant.Opacity.meddle),
+                colors:[themeData[theme.current].color.opacity(GlobalConstant.Opacity.meddle),
                         .sideMenuStart],
                 startPoint: .topTrailing, endPoint: .bottomLeading
             ).ignoresSafeArea()

@@ -17,7 +17,7 @@ struct CardDescriptionThemeView: View {
     let isActiveTheme: Bool
     
     private var opacity: Double {
-        isActiveTheme ? 1 : Constant.Opacity.meddle
+        isActiveTheme ? 1 : GlobalConstant.Opacity.meddle
     }
     private var paddingTrailing: CGFloat {
         isWithBangs ? 40 : 20

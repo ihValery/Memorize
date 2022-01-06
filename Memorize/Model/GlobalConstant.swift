@@ -1,5 +1,5 @@
 //
-//  Constant.swift
+//  GlobalConstant.swift
 //  Memorize
 //
 //  Created by Валерий Игнатьев on 05.01.2022.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-//MARK: Constant
+//MARK: GlobalConstant
 
-struct Constant {
+struct GlobalConstant {
     static let cornerRadius: CGFloat = 25
     
     struct Opacity {
@@ -30,7 +30,7 @@ struct Constant {
         static let version: String      = "Theme"
     }
     
-    struct Theme {
+    struct Theme { //fixme
         static let key: String   = "Theme"
         static let title: String = "Тема"
     }

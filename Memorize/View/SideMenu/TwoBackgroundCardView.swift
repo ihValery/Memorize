@@ -18,7 +18,7 @@ struct TwoBackgroundCardView: View {
     private let paddingVertical: CGFloat = 30
     private let blurDegree: CGFloat = 1
     private var cornerRadius: CGFloat {
-        showMenu ? Constant.cornerRadius : 0
+        showMenu ? GlobalConstant.cornerRadius : 0
     }
     private var coefficient: CGFloat {
         (isWithBangs ? -25 : -20)
@@ -35,16 +35,16 @@ struct TwoBackgroundCardView: View {
 
     var body: some View {
         Color.defaultElement
-            .opacity(Constant.Opacity.strong)
+            .opacity(GlobalConstant.Opacity.strong)
             .cornerRadius(cornerRadius)
-            .shadow(color: .defaultText.opacity(Constant.Opacity.weak),
+            .shadow(color: .defaultText.opacity(GlobalConstant.Opacity.weak),
                     radius: 5, x: -5, y: 0)
             .offset(x: horizontalOffset)
             .padding(.vertical, paddingVertical)
             .blur(radius: blurDegree)
         
         Color.defaultElement
-            .opacity(Constant.Opacity.meddle)
+            .opacity(GlobalConstant.Opacity.meddle)
             .cornerRadius(cornerRadius)
             .offset(x: horizontalOffset * 2)
             .padding(.vertical, paddingVertical * 2)

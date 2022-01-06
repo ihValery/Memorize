@@ -19,7 +19,7 @@ struct CardRuleView: View {
         
     var body: some View {
         MatteEffectView()
-            .cornerRadius(Constant.cornerRadius)
+            .cornerRadius(GlobalConstant.cornerRadius)
             .frame(height: cardRuleHeight)
             .overlay(
                 Text(title)
